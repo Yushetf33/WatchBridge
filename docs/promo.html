@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js?render=6LdBI8YtAAAAAEmfgtt2C-E7gr5RwG3ITbKH_JM3"></script>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -249,15 +250,38 @@
   refreshStatus();
   setInterval(refreshStatus, 30000);
 
+  var RECAPTCHA_SITE_KEY = "6LdBI8YtAAAAAEmfgtt2C-E7gr5RwG3ITbKH_JM3";
+
+  // v3 es invisible: no hay casillas ni fotos, grecaptcha.execute() genera
+  // un token en el momento justo de reclamar (no se reutiliza, cada token
+  // vale para una sola comprobación en el backend).
+  function getRecaptchaToken() {
+    return new Promise(function (resolve, reject) {
+      if (typeof grecaptcha === "undefined") {
+        reject(new Error("recaptcha_not_loaded"));
+        return;
+      }
+      grecaptcha.ready(function () {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "claim" }).then(resolve, reject);
+      });
+    });
+  }
+
   async function claimCode() {
     var btn = document.getElementById('claim-btn');
     btn.disabled = true;
     var statusText = document.getElementById('claim-status-text');
     try {
+      var recaptchaToken;
+      try {
+        recaptchaToken = await getRecaptchaToken();
+      } catch (e) {
+        recaptchaToken = null; // el backend igual lo rechaza si exige captcha
+      }
       var res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "claim", deviceId: getDeviceId() })
+        body: JSON.stringify({ action: "claim", deviceId: getDeviceId(), recaptchaToken: recaptchaToken })
       });
       var data = await res.json();
       if (data.ok) {
