@@ -1,6 +1,6 @@
 # WatchBridge TV
 
-🌐 **[Official site](https://yushetf33.github.io/TvReccomendationBridge/)** — a friendlier overview than this README, if that's more your speed.
+🌐 **[Official site](https://yushetf33.github.io/WatchBridge/)** — a friendlier overview than this README, if that's more your speed.
 
 App for Android TV / Google TV that lets you customize how recommendations behave on the Google TV launcher.
 
@@ -21,7 +21,7 @@ WatchBridge TV is an independent automation and redirection tool. **It does not 
 
 WatchBridge TV is not currently distributed through Google Play. The app is installed manually ("sideloaded") using the APK file available in this repository's releases section.
 
-👉 **[Visual step-by-step install guide](https://yushetf33.github.io/TvReccomendationBridge/install.html)** — the same steps below, laid out more clearly.
+👉 **[Visual step-by-step install guide](https://yushetf33.github.io/WatchBridge/install.html)** — the same steps below, laid out more clearly.
 
 ### Option A: using Downloader (easiest, no phone or computer needed)
 
@@ -37,7 +37,7 @@ This code always points to the latest version — no need to look up a new one f
 1. On the TV, install **[Send Files to TV](https://play.google.com/store/apps/details?id=com.jstenpal.sendfilestotv)** from Google Play.
 2. Open the app on the TV. It will show an address or a QR code to connect from your phone.
 3. From your phone's browser, go to that address and select the `app-release.apk` file, which you can download from the releases section:
-   👉 **[Download the latest version](https://github.com/Yushetf33/TvReccomendationBridge/releases/latest)**
+   👉 **[Download the latest version](https://github.com/Yushetf33/WatchBridge/releases/latest)**
 4. Once the file has transferred, the TV will let you start the installation.
 5. If Android TV shows a warning about installing from an unknown source, you'll need to temporarily allow installation from that source.
 
