@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yushetf33.github.io/WatchBridge/sitemap.xml
+Sitemap: https://watchbridge.app/sitemap.xml

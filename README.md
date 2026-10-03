@@ -1,6 +1,6 @@
 # WatchBridge TV
 
-🌐 **[Official site](https://yushetf33.github.io/WatchBridge/)** — a friendlier overview than this README, if that's more your speed.
+🌐 **[Official site](https://watchbridge.app/)** — a friendlier overview than this README, if that's more your speed.
 
 App for Android TV / Google TV that lets you customize how recommendations behave on the Google TV launcher.
 
@@ -21,7 +21,7 @@ WatchBridge TV is an independent automation and redirection tool. **It does not 
 
 WatchBridge TV is not currently distributed through Google Play. The app is installed manually ("sideloaded") using the APK file available in this repository's releases section.
 
-👉 **[Visual step-by-step install guide](https://yushetf33.github.io/WatchBridge/install.html)** — the same steps below, laid out more clearly.
+👉 **[Visual step-by-step install guide](https://watchbridge.app/install.html)** — the same steps below, laid out more clearly.
 
 ### Option A: using Downloader (easiest, no phone or computer needed)
 
