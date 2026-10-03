@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup & Troubleshooting — WatchBridge TV</title>
+<meta name="description" content="Fix the Accessibility toggle turning itself off, activate Fire TV mode and voice search, connect Jellyfin, and troubleshoot Google TV Streamer, TCL, and Nuvio/Stremio issues — by error code.">
+<link rel="canonical" href="https://watchbridge.app/setup.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://watchbridge.app/setup.html">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="Setup & Troubleshooting — WatchBridge TV">
+<meta property="og:description" content="Fix the Accessibility toggle turning itself off, activate Fire TV mode and voice search, connect Jellyfin, and troubleshoot Google TV Streamer, TCL, and Nuvio/Stremio issues — by error code.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setup & Troubleshooting — WatchBridge TV">
+<meta name="twitter:description" content="Fix the Accessibility toggle turning itself off, activate Fire TV mode and voice search, connect Jellyfin, and troubleshoot Google TV Streamer, TCL, and Nuvio/Stremio issues — by error code.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "E01 — The Accessibility toggle turns itself off immediately",
+      "acceptedAnswer": { "@type": "Answer", "text": "On Android 13+, the system blocks any sideloaded app from enabling Accessibility by default (Restricted Settings). Go to Settings → Apps → WatchBridge TV and look for an option like \"Allow restricted setting\", enable it, then try Accessibility again." }
+    },
+    {
+      "@type": "Question",
+      "name": "E02 — Google TV Streamer: no visible option to allow it",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Google TV Streamer doesn't expose the restricted-setting toggle at all. A one-time ADB command (adb shell pm grant com.tunombre.tvbridge android.permission.WRITE_SECURE_SETTINGS) or the free atvTools app from your phone fixes it permanently — no ADB needed again after that." }
+    },
+    {
+      "@type": "Question",
+      "name": "E03 — Service is enabled but tapping a recommendation doesn't open Nuvio or Stremio",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usually an outdated Nuvio/Stremio build not registering its deep link correctly — update it first. On some devices (confirmed on TCL) the top mixed recommendation row doesn't expose a title via accessibility at all; enabling voice search in Settings turns on an OCR fallback that fixes this row specifically." }
+    },
+    {
+      "@type": "Question",
+      "name": "E04 — TCL devices: service stops working after a while",
+      "acceptedAnswer": { "@type": "Answer", "text": "Some TCL units lock down background auto-start with no toggle in Settings. Fix with ADB: adb shell appops set com.tunombre.tvbridge APP_AUTO_START allow, then the same for APP_ASSOC_START. May need repeating after an app update." }
+    },
+    {
+      "@type": "Question",
+      "name": "E05 — Fire TV: nothing works at all",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fire TV needs its own mode activated from inside the app (a screen-recording permission, plus Usage access on Fire TVs that have that screen), since Fire OS blocks the standard Accessibility method for sideloaded apps. Once active, hold a recommendation for a couple of seconds and confirm with OK." }
+    },
+    {
+      "@type": "Question",
+      "name": "E06 — Voice search doesn't work",
+      "acceptedAnswer": { "@type": "Answer", "text": "Voice search recommendations aren't picked up by default — it's an opt-in toggle in Settings (\"Enable voice search\") that asks for a one-time screen-recording permission, Google TV only." }
+    }
+  ]
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface-2: #ecf0f3;
+    --text: #16202b;
+    --text-muted: #57687a;
+    --accent: #3E6FD9;
+    --accent-strong: #2952A8;
+    --accent-ink: #ffffff;
+    --border: #dce3e9;
+    --success: #1a9a5c;
+    --warn: #b5540b;
+    --code-bg: #eef2f5;
+    --shadow: 0 1px 2px rgba(16, 24, 32, 0.06), 0 8px 24px -12px rgba(16, 24, 32, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1720;
+      --surface: #172436;
+      --surface-2: #1e3247;
+      --text: #e8edf2;
+      --text-muted: #8fa1b3;
+      --accent: #5B8DEF;
+      --accent-strong: #86A9F5;
+      --accent-ink: #0B0D12;
+      --border: #2a3b4e;
+      --success: #4ade80;
+      --warn: #f5a35e;
+      --code-bg: #101b28;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1720;
+    --surface: #172436;
+    --surface-2: #1e3247;
+    --text: #e8edf2;
+    --text-muted: #8fa1b3;
+    --accent: #5B8DEF;
+    --accent-strong: #86A9F5;
+    --accent-ink: #0B0D12;
+    --border: #2a3b4e;
+    --success: #4ade80;
+    --warn: #f5a35e;
+    --code-bg: #101b28;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', system-ui, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .page { max-width: 760px; margin: 0 auto; }
+
+  h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; text-wrap: balance; margin: 0; }
+
+  header.hero { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 3rem; }
+
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+
+  h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em; }
+
+  .lede { color: var(--text-muted); font-size: 1.05rem; max-width: 56ch; }
+  .lede strong { color: var(--text); font-weight: 700; }
+
+  nav.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+  nav.jump a { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--text-muted); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 0.8rem; }
+  nav.jump a:hover { border-color: var(--accent); color: var(--text); }
+
+  section.method { margin-bottom: 3.25rem; scroll-margin-top: 2rem; }
+
+  .method-head { display: flex; align-items: baseline; gap: 0.7rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
+  .method-head .num { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); width: 1.9rem; height: 1.9rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .method-head h2 { font-size: 1.3rem; }
+  .method-head .sub { color: var(--text-muted); font-size: 0.85rem; margin-left: auto; font-family: 'JetBrains Mono', monospace; }
+
+  ol.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: step; }
+  ol.steps > li { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.85rem; }
+  ol.steps > li::before { counter-increment: step; content: counter(step); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text-muted); padding-top: 0.1rem; }
+  .step-body p { margin: 0 0 0.5rem; }
+  .step-body p:last-child { margin-bottom: 0; }
+
+  code.inline { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; background: var(--code-bg); padding: 0.12em 0.4em; border-radius: 5px; border: 1px solid var(--border); word-break: break-word; }
+
+  pre { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; overflow-x: auto; margin: 0.5rem 0 0; line-height: 1.6; }
+  .code-line { display: block; }
+  .code-line + .code-line { margin-top: 0.15rem; }
+
+  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); margin-top: 0.4rem; }
+  .callout strong { color: var(--text); }
+  .callout.warn { border-left-color: var(--warn); }
+
+  ul.limits { margin: 0.4rem 0 0; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  ul.limits li strong { color: var(--text); }
+
+  section.trouble { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 2.5rem; }
+  section.trouble > .th { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.3rem; }
+  section.trouble h2 { font-size: 1.35rem; }
+  section.trouble > p.intro { color: var(--text-muted); font-size: 0.92rem; margin: 0.4rem 0 1.4rem; }
+
+  .code-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); border-radius: 6px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
+
+  .qa { display: flex; flex-direction: column; gap: 1.6rem; }
+  .qa-item { padding-top: 1.4rem; border-top: 1px solid var(--border); }
+  .qa-item:first-child { padding-top: 0; border-top: none; }
+  .qa .q { display: flex; align-items: baseline; gap: 0.6rem; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+  .qa .a { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 0.6rem; }
+  .qa .a:last-child { margin-bottom: 0; }
+  .qa .a strong { color: var(--text); }
+
+  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+  footer a { color: var(--accent-strong); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    section.trouble { padding: 1.3rem 1.1rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <a href="./" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">&larr; WatchBridge</a>
+    <span class="eyebrow" data-i18n="eyebrow">Setup guide</span>
+    <h1 data-i18n="h1">Configure &amp; troubleshoot WatchBridge TV</h1>
+    <p class="lede" data-i18n="lede">
+      Not installed yet, or the Accessibility toggle won't stay on? Start
+      with the <a href="install.html">install guide</a> — this page picks up
+      right after: verifying your subscription, syncing with the mobile app,
+      <strong>Fire TV mode</strong>, <strong>voice search</strong>, and
+      <strong>Jellyfin</strong>, plus a fix for every known issue, by error
+      code.
+    </p>
+    <nav class="jump">
+      <a href="#verify" data-i18n="jump.verify">Verify &amp; sync mobile</a>
+      <a href="#firetv" data-i18n="jump.firetv">Fire TV mode</a>
+      <a href="#voice" data-i18n="jump.voice">Voice search</a>
+      <a href="#jellyfin" data-i18n="jump.jellyfin">Jellyfin</a>
+      <a href="#errors" data-i18n="jump.errors">Error codes (E01–E06)</a>
+    </nav>
+  </header>
+
+  <section class="method" id="verify">
+    <div class="method-head">
+      <span class="num">1</span>
+      <h2 data-i18n="vf.h2">Verify your subscription &amp; sync with mobile</h2>
+      <span class="sub" data-i18n="vf.sub">same email, both apps</span>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="vf.intro">
+      There's no account or password — just an email. Using that <strong>same
+      email</strong> on the mobile app is also what links it to your TV, so
+      watch history and recommendations sync both ways. How you pay depends
+      on where you got WatchBridge TV from:
+    </p>
+
+    <p style="font-weight: 700; font-size: 0.92rem; margin: 1.2rem 0 0.6rem;" data-i18n="vf.playhead">Installed from Google Play</p>
+    <ol class="steps">
+      <li><div class="step-body"><p data-i18n="vf.play1">Settings → Subscription. Buy the lifetime plan right there with <strong>Google Play Billing</strong> — pay with your Google account, directly on the remote, no phone or QR code involved.</p></div></li>
+      <li><div class="step-body"><p data-i18n="vf.play2">Prefer to try it free first? Type an email and tap <strong>"Start 2-day free trial"</strong> instead — no card, no Play purchase yet.</p></div></li>
+      <li><div class="step-body"><p data-i18n="vf.play3">To also use it on your phone: with that email still in the field, tap <strong>"Verify subscription"</strong> — this links your Play purchase (or your trial) to that email.</p></div></li>
+    </ol>
+
+    <p style="font-weight: 700; font-size: 0.92rem; margin: 1.4rem 0 0.6rem;" data-i18n="vf.apkhead">Installed the APK (sideload)</p>
+    <ol class="steps">
+      <li><div class="step-body"><p data-i18n="vf.apk1">Scan the QR code shown for the free trial (no card, 2 days) or the €4.99 lifetime plan with your phone, and pay with whichever email you want linked to your account.</p></div></li>
+      <li><div class="step-body"><p data-i18n="vf.apk2">Back on the TV, enter that same email and tap <strong>"Verify subscription"</strong>. That's it — the TV is linked.</p></div></li>
+    </ol>
+
+    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 1.3rem 0 0;" data-i18n="vf.common">Either way, once you have an email verified on the TV: install <a href="index.html#mobile">WatchBridge Mobile</a> on your phone or tablet and verify it there with <strong>the exact same email</strong> — no separate purchase needed. Watch history and recommendations now sync automatically between the TV and the phone.</p>
+    <div class="callout" data-i18n="vf.note">The same email can link up to <strong>5 devices</strong> at once (a phone/tablet counts separately from your TVs). Settings → "Manage devices" shows every linked device and lets you unlink any of them, anytime — no waiting period. A Google Play purchase alone doesn't show up there until you link an email to it (step 3 above).</div>
+  </section>
+
+  <section class="method" id="firetv">
+    <div class="method-head">
+      <span class="num">2</span>
+      <h2 data-i18n="ft.h2">Fire TV mode</h2>
+      <span class="sub" data-i18n="ft.sub">hold + confirm</span>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="ft.intro">
+      Fire OS blocks the standard Accessibility method for any app not installed from the Amazon Appstore — the same method every recommendation-redirect app depends on. Fire TV mode works around it using on-device text recognition instead, nothing recorded leaves the device.
+    </p>
+    <ol class="steps">
+      <li><div class="step-body"><p data-i18n="ft.s1">Open the app — Fire TV is detected automatically and shows the right activation button.</p></div></li>
+      <li><div class="step-body"><p data-i18n="ft.s2">Accept the one-time <strong>screen recording</strong> permission (the standard Android system dialog). Android keeps a persistent notification visible while it's active — a system requirement, not something the app adds.</p></div></li>
+      <li><div class="step-body"><p data-i18n="ft.s3">If the app asks for <strong>Usage access</strong>: Settings → Apps → Special app access → Usage access → WatchBridge TV → enable it. Many Fire TVs (older sticks on Fire OS 6, for example) don't have that screen at all — the app detects it and skips this step.</p></div></li>
+    </ol>
+    <p style="font-weight: 700; font-size: 0.85rem; margin: 1.3rem 0 0.5rem;" data-i18n="ft.limitstitle">Known limitations</p>
+    <ul class="limits">
+      <li data-i18n="ft.l1">Only works from the actual home screen — nothing happens from inside another app.</li>
+      <li data-i18n="ft.l2">Not instant like Google TV: hold still on a recommendation for a couple of seconds, then confirm with <strong>OK</strong> on the prompt that appears (use its on-screen "Back" to dismiss, not the remote's physical Back button).</li>
+      <li data-i18n="ft.l4">Fire OS has no row for recommendations on its home screen. The "Recommended for you" screen — with IPTV, Search, History and My list — lives inside the app: turn it on in Settings, then press Back to open it.</li>
+      <li data-i18n="ft.l3">Survives standby (screen off), but a real power loss or reboot clears it — you'll need to tap "Activate Fire TV mode" again.</li>
+    </ul>
+  </section>
+
+  <section class="method" id="voice">
+    <div class="method-head">
+      <span class="num">3</span>
+      <h2 data-i18n="vs.h2">Voice search</h2>
+      <span class="sub" data-i18n="vs.sub">Google TV only</span>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="vs.intro">
+      By default, a recommendation opened by voice ("Ok Google, open &lt;title&gt;", or holding the remote's mic button) isn't picked up automatically the way a regular click is — it's opt-in.
+    </p>
+    <ol class="steps">
+      <li><div class="step-body"><p data-i18n="vs.s1">Open the app and tap <strong>"Enable voice search (experimental)"</strong> — only shown on Google TV, since Fire TV mode already covers this on Fire TV.</p></div></li>
+      <li><div class="step-body"><p data-i18n="vs.s2">Accept the one-time <strong>screen recording</strong> permission. Android shows a persistent notification while it's on, same as Fire TV mode.</p></div></li>
+    </ol>
+    <p style="font-weight: 700; font-size: 0.85rem; margin: 1.3rem 0 0.5rem;" data-i18n="vs.limitstitle">Known limitations</p>
+    <ul class="limits">
+      <li data-i18n="vs.l1">Keeps the screen-recording notification visible for as long as it's enabled.</li>
+      <li data-i18n="vs.l2">Only helps once a voice search lands you on a movie/show detail page — it doesn't add voice search itself, just makes recommendations opened that way work like a regular click.</li>
+    </ul>
+  </section>
+
+  <section class="method" id="jellyfin">
+    <div class="method-head">
+      <span class="num">4</span>
+      <h2 data-i18n="jf.h2">Check my Jellyfin first</h2>
+      <span class="sub" data-i18n="jf.sub">optional</span>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="jf.intro">
+      A self-hosted library has no universal catalog to link to directly, so WatchBridge TV can check <strong>your own server</strong> first — if the recommendation is already there, it opens straight to that exact title instead of your regular player.
+    </p>
+    <ol class="steps">
+      <li><div class="step-body"><p data-i18n="jf.s1">Settings → <strong>"Check my Jellyfin first"</strong> → enter your server URL and an API key from your Jellyfin admin dashboard.</p></div></li>
+      <li><div class="step-body"><p data-i18n="jf.s2">Found in your library → opens directly there, in <strong>Jellyfin</strong> or <strong>Wholphin</strong>, whichever you've picked as your destination.</p></div></li>
+      <li><div class="step-body"><p data-i18n="jf.s3">Not in your library → falls back to your regular app (Nuvio, Stremio, Wuplay, Plex...) as usual, no extra step needed.</p></div></li>
+    </ol>
+    <div class="callout" data-i18n="jf.note">See <a href="apps.html#jellyfin">Jellyfin vs Wholphin</a> if you're still deciding which client to use as your destination — this setting works the same with either.</div>
+  </section>
+
+  <section class="trouble" id="errors">
+    <div class="th"><h2 data-i18n="tr.h2">Troubleshooting, by error code</h2></div>
+    <p class="intro" data-i18n="tr.intro">The app's own "Having trouble? Get help" screen in Settings uses these same codes — jump straight to the matching one here, or mention the code if you ask for help elsewhere.</p>
+    <div class="qa">
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E01</span><span data-i18n="tr.q1">The toggle turns itself off immediately</span></p>
+        <p class="a" data-i18n="tr.a1">On Android 13 and newer, the system blocks any sideloaded app from enabling Accessibility by default, as a security measure — the toggle flips back off right after you enable it, sometimes right away, sometimes a few seconds later.</p>
+        <p class="a" data-i18n="tr.a1b">On some devices you can lift this from <strong>Settings → Apps → WatchBridge TV</strong> — look for an option like "Allow restricted setting" (wording and location vary by manufacturer), enable it, then try Accessibility again. If you can't find any such option (e.g. the Google TV Streamer), see E02 below.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E02</span><span data-i18n="tr.q2">Google TV Streamer: no visible option to allow it</span></p>
+        <p class="a" data-i18n="tr.a2">This specific device doesn't expose any "Allow restricted setting" option at all — you can accept the permission dialog and see the toggle turn on, but it flips back off shortly after. The fix needs ADB access, but it's <strong>one time only</strong>:</p>
+        <pre><span class="code-line">adb connect &lt;tv-ip&gt;:5555</span><span class="code-line">adb shell appops set com.tunombre.tvbridge ACCESS_RESTRICTED_SETTINGS allow</span><span class="code-line">adb shell pm grant com.tunombre.tvbridge android.permission.WRITE_SECURE_SETTINGS</span></pre>
+        <p class="a" data-i18n="tr.a2b">On Android 14 (confirmed on the Google TV Streamer) the first line is required, not optional. Then open the app and tap "Enable the service in Accessibility" again — it enables directly this time. No computer? The free <strong><a href="https://play.google.com/store/apps/details?id=dev.vodik7.atvtools">atvTools</a></strong> app does the same thing from your phone: pair with the TV over the same Network debugging connection, open WatchBridge TV in its app list, and flip on <code class="inline">WRITE_SECURE_SETTINGS</code> under Permissions.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E03</span><span data-i18n="tr.q3">Service is enabled, but tapping a recommendation doesn't open Nuvio/Stremio</span></p>
+        <p class="a" data-i18n="tr.a3">Check Nuvio/Stremio is up to date first — an outdated or unofficial build (common since neither is on Google Play) sometimes doesn't register its deep link scheme correctly, so the app opens but nothing responds.</p>
+        <p class="a" data-i18n="tr.a3b"><strong>The top mixed recommendation row specifically</strong> ("Recommended for you" or whatever your launcher calls it): on some devices (confirmed on TCL) the accessibility APIs simply don't expose a title for cards in that row, no matter how long you wait — a platform limitation, not a bug in how the app reads it. Turning on <strong>voice search</strong> in Settings fixes this row too, even if you never use voice search, since it enables an on-device OCR fallback that reads the title directly off the screen.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E04</span><span data-i18n="tr.q4">TCL devices: service stops working after a while</span></p>
+        <p class="a" data-i18n="tr.a4">Some TCL units lock down background auto-start permissions for third-party apps at the OS level, with no toggle exposed in Settings. If the service shows as enabled but silently stops detecting clicks after some time and there's no autostart/battery exception option to find, this is why.</p>
+        <pre><span class="code-line">adb connect &lt;tv-ip&gt;:5555</span><span class="code-line">adb shell appops set com.tunombre.tvbridge APP_AUTO_START allow</span><span class="code-line">adb shell appops set com.tunombre.tvbridge APP_ASSOC_START allow</span></pre>
+        <p class="a" data-i18n="tr.a4b">May need repeating after reinstalling or updating the app, since that can reset these permissions.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E05</span><span data-i18n="tr.q5">Fire TV: nothing works at all</span></p>
+        <p class="a" data-i18n="tr.a5">Fire TV needs its own separate activation — see <a href="#firetv">Fire TV mode</a> above. It isn't automatic like Google TV: standard Accessibility is blocked for sideloaded apps on Fire OS, so this app works around it with on-device text recognition instead.</p>
+      </div>
+      <div class="qa-item">
+        <p class="q"><span class="code-badge">E06</span><span data-i18n="tr.q6">Voice search doesn't work</span></p>
+        <p class="a" data-i18n="tr.a6">It's opt-in, not on by default — see <a href="#voice">Voice search</a> above to turn it on. Google TV only; Fire TV mode already covers this as part of its own activation.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span data-i18n="footer.tag">WatchBridge TV · 2-day free trial, then €4.99 one-time</span>
+    <span>
+      <a href="install.html" data-i18n="footer.install">Install guide</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/Yushetf33/WatchBridge" data-i18n="footer.repo">GitHub repository →</a>
+      &nbsp;·&nbsp;
+      <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
+    </span>
+  </footer>
+
+</div>
+
+<script src="i18n.js"></script>
+<script>
+  tvrbApplyI18n({
+    "eyebrow": "Guía de configuración",
+    "h1": "Configura y soluciona problemas de WatchBridge TV",
+    "lede": "\n      ¿Todavía no la has instalado, o el interruptor de Accesibilidad no se\n      queda activado? Empieza por la <a href=\"install.html\">guía de instalación</a> —\n      esta página sigue justo después: verificar tu suscripción, sincronizar\n      con la app de móvil, <strong>el modo Fire TV</strong>, <strong>la\n      búsqueda por voz</strong> y <strong>Jellyfin</strong>, más la solución\n      a cada problema conocido, por código de error.\n    ",
+    "jump.verify": "Verificar y sincronizar móvil",
+    "jump.firetv": "Modo Fire TV",
+    "jump.voice": "Búsqueda por voz",
+    "jump.jellyfin": "Jellyfin",
+    "jump.errors": "Códigos de error (E01–E06)",
+    "vf.h2": "Verifica tu suscripción y sincroniza con el móvil",
+    "vf.sub": "mismo email, las dos apps",
+    "vf.intro": "No hay cuenta ni contraseña — solo un email. Usar <strong>ese mismo email</strong> en la app de móvil es también lo que la vincula a tu TV, así que el historial y las recomendaciones se sincronizan en ambos sentidos. Cómo pagas depende de dónde hayas conseguido WatchBridge TV:",
+    "vf.playhead": "Instalada desde Google Play",
+    "vf.play1": "Ajustes → Suscripción. Compra el plan de por vida ahí mismo con <strong>Google Play Billing</strong> — pagas con tu cuenta de Google, directamente con el mando, sin móvil ni código QR de por medio.",
+    "vf.play2": "¿Prefieres probarla gratis primero? Escribe un email y toca <strong>\"Empezar prueba gratis de 2 días\"</strong> en su lugar — sin tarjeta, sin pasar todavía por Play.",
+    "vf.play3": "Para usarla también en tu móvil: con ese email todavía escrito, toca <strong>\"Verificar suscripción\"</strong> — esto vincula tu compra de Play (o tu prueba) a ese email.",
+    "vf.apkhead": "Instalada con el APK (sideload)",
+    "vf.apk1": "Escanea con el móvil el código QR de la prueba gratis (sin tarjeta, 2 días) o del plan de por vida a 4,99 €, y paga con el email que quieras vincular a tu cuenta.",
+    "vf.apk2": "Vuelve a la TV, introduce ese mismo email y toca <strong>\"Verificar suscripción\"</strong>. Con eso, la TV ya está vinculada.",
+    "vf.common": "En cualquiera de los dos casos, una vez tengas un email verificado en la TV: instala <a href=\"index.html#mobile\">WatchBridge Mobile</a> en tu móvil o tablet y verifícala ahí con <strong>el mismo email exacto</strong> — no hace falta pagar de nuevo. El historial y las recomendaciones ya se sincronizan solos entre la TV y el móvil.",
+    "vf.note": "El mismo email puede vincular hasta <strong>5 dispositivos</strong> a la vez (un móvil/tablet cuenta aparte de tus TVs). Ajustes → \"Gestionar dispositivos\" muestra todos los vinculados y te deja desvincular cualquiera cuando quieras — sin periodo de espera. Una compra de Google Play sola no aparece ahí hasta que le vincules un email (paso 3 de arriba).",
+    "ft.h2": "Modo Fire TV",
+    "ft.sub": "mantener + confirmar",
+    "ft.intro": "Fire OS bloquea el método estándar de Accesibilidad para cualquier app no instalada desde la Amazon Appstore — el mismo método del que depende cualquier app de redirección de recomendaciones. El modo Fire TV lo evita usando reconocimiento de texto en el propio dispositivo — nada grabado sale de él.",
+    "ft.s1": "Abre la app — detecta Fire TV automáticamente y muestra el botón de activación correcto.",
+    "ft.s2": "Acepta el permiso de <strong>grabación de pantalla</strong> (el diálogo estándar de Android), una sola vez. Android muestra una notificación persistente mientras está activo — un requisito del sistema, no algo que añada la app.",
+    "ft.s3": "Si la app te pide <strong>Acceso de uso</strong>: Ajustes → Apps → Acceso especial de apps → Acceso de uso → WatchBridge TV → actívalo. Muchos Fire TV (por ejemplo los Stick antiguos con Fire OS 6) no tienen esa pantalla — la app lo detecta y se salta este paso.",
+    "ft.l4": "Fire OS no tiene fila de recomendaciones en su pantalla de inicio. La pantalla \"Recomendado para ti\" — con IPTV, Buscar, Historial y Mi lista — está dentro de la app: actívala en Ajustes y pulsa Atrás para abrirla.",
+    "ft.limitstitle": "Limitaciones conocidas",
+    "ft.l1": "Solo funciona desde la propia pantalla de inicio — dentro de otra app no pasa nada.",
+    "ft.l2": "No es instantáneo como en Google TV: mantén pulsada una recomendación un par de segundos y confirma con <strong>OK</strong> en el aviso que aparece (usa su \"Atrás\" en pantalla para descartarlo, no el botón físico Atrás del mando).",
+    "ft.l3": "Sobrevive al reposo (pantalla apagada), pero un apagado real o reinicio lo borra — tendrás que volver a tocar \"Activar modo Fire TV\".",
+    "vs.h2": "Búsqueda por voz",
+    "vs.sub": "solo Google TV",
+    "vs.intro": "Por defecto, una recomendación abierta por voz (\"Ok Google, abre &lt;título&gt;\", o manteniendo el botón del micro del mando) no se detecta automáticamente igual que un clic normal — es opcional.",
+    "vs.s1": "Abre la app y toca <strong>\"Activar búsqueda por voz (experimental)\"</strong> — solo aparece en Google TV, ya que el modo Fire TV ya cubre esto en Fire TV.",
+    "vs.s2": "Acepta el permiso de <strong>grabación de pantalla</strong>, una sola vez. Android muestra una notificación persistente mientras está activo, igual que el modo Fire TV.",
+    "vs.limitstitle": "Limitaciones conocidas",
+    "vs.l1": "Mantiene visible la notificación de grabación de pantalla todo el tiempo que esté activado.",
+    "vs.l2": "Solo ayuda cuando una búsqueda por voz te lleva a la ficha de una película o serie — no añade búsqueda por voz en sí, solo hace que las recomendaciones abiertas así funcionen igual que un clic normal.",
+    "jf.h2": "Revisar mi Jellyfin primero",
+    "jf.sub": "opcional",
+    "jf.intro": "Una biblioteca autoalojada no tiene un catálogo universal al que enlazar directamente, así que WatchBridge TV puede revisar <strong>tu propio servidor</strong> primero — si la recomendación ya está ahí, abre directo esa ficha exacta en vez de tu reproductor habitual.",
+    "jf.s1": "Ajustes → <strong>\"Revisar mi Jellyfin primero\"</strong> → introduce la URL de tu servidor y una clave API de tu panel de administración de Jellyfin.",
+    "jf.s2": "Si está en tu biblioteca → abre directo ahí, en <strong>Jellyfin</strong> o <strong>Wholphin</strong>, el que hayas elegido como destino.",
+    "jf.s3": "Si no está en tu biblioteca → cae de vuelta a tu app habitual (Nuvio, Stremio, Wuplay, Plex...) como siempre, sin ningún paso extra.",
+    "jf.note": "Consulta <a href=\"apps.html#jellyfin\">Jellyfin vs Wholphin</a> si aún no has decidido qué cliente usar como destino — este ajuste funciona igual con cualquiera de los dos.",
+    "tr.h2": "Solución de problemas, por código de error",
+    "tr.intro": "La propia pantalla \"¿Problemas? Obtener ayuda\" de Ajustes en la app usa estos mismos códigos — ve directo al que te toque aquí, o menciona el código si pides ayuda en otro sitio.",
+    "tr.q1": "El interruptor se desactiva solo, al momento",
+    "tr.a1": "Desde Android 13, el sistema bloquea por defecto que cualquier app instalada fuera de Google Play active Accesibilidad, como medida de seguridad — el interruptor se apaga solo justo después de activarlo, a veces al instante, a veces unos segundos después.",
+    "tr.a1b": "En algunos dispositivos puedes desbloquearlo desde <strong>Ajustes → Apps → WatchBridge TV</strong> — busca una opción como \"Permitir ajuste restringido\" (el texto y dónde está varía según el fabricante), actívala, y vuelve a intentar Accesibilidad. Si no encuentras esa opción (p. ej. el Google TV Streamer), mira E02 más abajo.",
+    "tr.q2": "Google TV Streamer: no aparece ninguna opción para permitirlo",
+    "tr.a2": "Este dispositivo en concreto no muestra ninguna opción de \"Permitir ajuste restringido\" — puedes aceptar el diálogo de permiso y ver el interruptor activarse, pero se apaga solo poco después. La solución necesita acceso ADB, pero es <strong>solo una vez</strong>:",
+    "tr.a2b": "En Android 14 (confirmado en el Google TV Streamer) la primera línea es obligatoria, no opcional. Luego abre la app y toca \"Activar el servicio en Accesibilidad\" otra vez — esta vez se activa directamente. ¿Sin ordenador? La app gratuita <strong><a href=\"https://play.google.com/store/apps/details?id=dev.vodik7.atvtools\">atvTools</a></strong> hace lo mismo desde tu móvil: empareja con la TV por la misma conexión de Depuración por red, abre WatchBridge TV en su lista de apps, y activa <code class=\"inline\">WRITE_SECURE_SETTINGS</code> en Permisos.",
+    "tr.q3": "El servicio está activado, pero tocar una recomendación no abre Nuvio/Stremio",
+    "tr.a3": "Comprueba primero que Nuvio/Stremio esté actualizado — una compilación antigua o no oficial (habitual porque ninguna de las dos está en Google Play) a veces no registra bien su enlace directo, así que la app se abre pero no responde a nada.",
+    "tr.a3b": "<strong>La fila mixta de arriba en concreto</strong> (\"Recomendado para ti\" o como la llame tu launcher): en algunos dispositivos (confirmado en TCL) las APIs de accesibilidad simplemente no exponen el título de las tarjetas de esa fila, por mucho que esperes — una limitación de la plataforma, no un fallo de cómo la lee la app. Activar la <strong>búsqueda por voz</strong> en Ajustes también arregla esta fila, aunque nunca uses la búsqueda por voz, porque activa un sistema de reconocimiento de texto en el propio dispositivo que lee el título directamente de la pantalla.",
+    "tr.q4": "Dispositivos TCL: el servicio deja de funcionar al rato",
+    "tr.a4": "Algunos TCL bloquean a nivel de sistema los permisos de autoarranque en segundo plano para apps de terceros, sin ningún interruptor visible en Ajustes. Si el servicio aparece activado pero deja de detectar clics silenciosamente al rato, y no encuentras ninguna opción de autoarranque/excepción de batería, es por esto.",
+    "tr.a4b": "Puede que haga falta repetirlo tras reinstalar o actualizar la app, ya que eso puede resetear estos permisos.",
+    "tr.q5": "Fire TV: no funciona nada en absoluto",
+    "tr.a5": "Fire TV necesita su propia activación aparte — ver <a href=\"#firetv\">Modo Fire TV</a> más arriba. No es automático como en Google TV: la Accesibilidad estándar está bloqueada para apps sideloaded en Fire OS, así que esta app lo evita con reconocimiento de texto en el propio dispositivo.",
+    "tr.q6": "La búsqueda por voz no funciona",
+    "tr.a6": "Es opcional, no viene activada por defecto — ver <a href=\"#voice\">Búsqueda por voz</a> más arriba para activarla. Solo Google TV; el modo Fire TV ya cubre esto como parte de su propia activación.",
+    "footer.tag": "WatchBridge TV · Prueba gratis de 2 días, luego 4,99 € pago único",
+    "footer.install": "Guía de instalación",
+    "footer.repo": "Repositorio de GitHub →",
+    "footer.privacy": "Política de privacidad"
+  });
+</script>
+</body>
+</html>
