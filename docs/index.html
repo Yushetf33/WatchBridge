@@ -88,6 +88,18 @@
     .install-tabs { flex-direction: column !important; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "WatchBridge TV — 45-second tour",
+  "description": "WatchBridge TV opens your Google TV recommendations, voice searches and Surprise me picks in the player you choose, and syncs with your phone: recommendations, My list, calendar and a live TV guide.",
+  "thumbnailUrl": "https://watchbridge.app/watchbridge-promo-poster.jpg",
+  "uploadDate": "2026-10-04",
+  "contentUrl": "https://watchbridge.app/watchbridge-promo.mp4",
+  "duration": "PT46S"
+}
+</script>
 </head>
 <body>
 
@@ -115,7 +127,7 @@
 <!-- HERO -->
 <section id="top" style="padding-top: 100px; padding-bottom: 64px;">
   <div class="wrap">
-    <div class="hero-grid" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.86fr); gap: 60px; align-items: center;">
+    <div class="hero-grid" style="display: grid; grid-template-columns: minmax(0,0.88fr) minmax(0,1.12fr); gap: 52px; align-items: center;">
       <div>
         <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #262B36; border-radius: 999px; background: #12151C; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #9AA1AC; margin-bottom: 28px;">
           <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span data-i18n="hero.eyebrow">Google TV &amp; Fire TV</span>
@@ -136,24 +148,13 @@
         </div>
       </div>
 
-      <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 28px; box-shadow: 0 30px 80px -40px rgba(0,0,0,0.85);">
-        <p style="margin: 0 0 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280;" data-i18n="demo.title">On a recommendation click</p>
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><rect x="2" y="2" width="16" height="16" rx="3" stroke="#5B8DEF" stroke-width="1.6"/><path d="M2 6H18" stroke="#5B8DEF" stroke-width="1.6"/></svg>
-            <div><p style="margin: 0 0 2px; font-weight: 600; font-size: 14.5px; color: #FFFFFF;">"Dune"</p><p style="margin: 0; font-size: 12.5px; color: #6B7280;" data-i18n="demo.step1">recommended on the launcher home screen</p></div>
-          </div>
-          <div style="display: flex; justify-content: center;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2V14M8 14L4 10M8 14L12 10" stroke="#3A5CA8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><circle cx="8.5" cy="8.5" r="6" stroke="#5B8DEF" stroke-width="1.6"/><path d="M13 13L17.5 17.5" stroke="#5B8DEF" stroke-width="1.6" stroke-linecap="round"/></svg>
-            <div><p style="margin: 0 0 2px; font-weight: 600; font-size: 14.5px; color: #FFFFFF;" data-i18n="demo.step2title">Identified via TMDB</p><p style="margin: 0; font-size: 12.5px; color: #6B7280;" data-i18n="demo.step2sub">Dune (2021) — not the 1984 original</p></div>
-          </div>
-          <div style="display: flex; justify-content: center;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2V14M8 14L4 10M8 14L12 10" stroke="#3A5CA8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 10px; background: rgba(76,217,100,0.08); border: 1px solid rgba(76,217,100,0.35);">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0;"><path d="M4 10.5L8 14.5L16 5.5" stroke="#4CD964" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><p style="margin: 0 0 2px; font-weight: 600; font-size: 14.5px; color: #FFFFFF;" data-i18n="demo.step3title">Opens in Stremio</p><p style="margin: 0; font-size: 12.5px; color: #6B7280;" data-i18n="demo.step3sub">the player you picked in Settings</p></div>
-          </div>
+      <div class="hero-video">
+        <div style="border: 1px solid #2B3040; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 40px 110px -40px rgba(122,47,224,0.6), 0 30px 80px -40px rgba(0,0,0,0.85);">
+          <video controls playsinline preload="metadata" poster="watchbridge-promo-poster.jpg" aria-label="WatchBridge TV — 45-second tour" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+            <source src="watchbridge-promo.mp4" type="video/mp4">
+          </video>
         </div>
+        <p style="margin: 14px 0 0; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8B93A3;" data-i18n="hero.videocap">45-second tour · sound on</p>
       </div>
     </div>
   </div>
@@ -542,6 +543,7 @@ adb install app-release.apk</code></pre>
     "mobile.b4": "¿Encontraste algo en el móvil? Pulsa \"Enviar a la TV\" y se abre solo ahí",
     "cta.see": "Ver cómo funciona",
     "hero.eyebrow": "Google TV y Fire TV",
+    "hero.videocap": "Tour de 45 segundos · con sonido",
     "hero.h1": "La recomendación es la correcta.<br>La app, la equivocada — siempre.",
     "hero.sub": "Google TV te recomienda una película y la abre en la app de streaming de la que vino, no en la que tú usas. WatchBridge TV intercepta ese clic y la manda directa a la app que elegiste.",
     "stats.apps": "apps compatibles",
