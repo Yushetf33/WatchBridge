@@ -106,8 +106,13 @@ function transformJsonLd(doc, name, cfg, dict) {
         'Guía de TV en directo con marcadores para tu propia lista IPTV',
       ];
     } else if (data['@type'] === 'VideoObject') {
-      data.name = 'WatchBridge TV — tour de 45 segundos';
-      data.description = 'WatchBridge TV abre en tu reproductor las recomendaciones de Google TV, las búsquedas por voz y las sugerencias de Sorpréndeme, y se sincroniza con el móvil: recomendaciones, Mi lista, calendario y guía de TV en directo.';
+      if (/watchbridge-short/.test(data.contentUrl || '')) {
+        data.name = 'WatchBridge TV — vista previa de 16 segundos';
+        data.description = 'Se pulsa una recomendación de Google TV y WatchBridge la abre en el reproductor que elegiste, también por voz.';
+      } else {
+        data.name = 'WatchBridge TV — tour de 45 segundos';
+        data.description = 'WatchBridge TV abre en tu reproductor las recomendaciones de Google TV, las búsquedas por voz y las sugerencias de Sorpréndeme, y se sincroniza con el móvil: recomendaciones, Mi lista, calendario y guía de TV en directo.';
+      }
     } else if (data['@type'] === 'FAQPage') {
       // setup usa tr.q1..n / tr.a1..n (con el codigo E0n delante); apps usa faq.q1..n / faq.a1..n
       const items = [];
@@ -186,19 +191,25 @@ export function buildEs() {
     }
     // el <link rel=preload as=image href=…> tambien pasa por aqui (href)
 
-    // 8) video de la portada con los rotulos en espanol (el resto de idiomas usa el ingles)
-    if (file === 'index.html') {
-      doc.querySelector('.hero-video video')?.setAttribute('poster', '/watchbridge-promo-es-poster.jpg');
-      doc.querySelector('.hero-video video source')?.setAttribute('src', '/watchbridge-promo-es.mp4');
-      doc.querySelector('link[rel="preload"][as="image"]')?.setAttribute('href', '/watchbridge-promo-es-poster.jpg');
-      for (const script of doc.querySelectorAll('script[type="application/ld+json"]')) {
-        const data = JSON.parse(script.textContent);
-        if (data['@type'] === 'VideoObject') {
-          data.contentUrl = SITE + '/watchbridge-promo-es.mp4';
-          data.thumbnailUrl = SITE + '/watchbridge-promo-es-poster.jpg';
-          script.textContent = '\n' + JSON.stringify(data, null, 2) + '\n';
-        }
-      }
+    // 8) vídeos con los rótulos en español (los marca data-es-src; el resto de idiomas usa el inglés)
+    const esVideos = {}; // contentUrl inglés -> [contentUrl, miniatura] en español
+    for (const v of doc.querySelectorAll('video[data-es-src]')) {
+      const src = v.getAttribute('data-es-src'), poster = v.getAttribute('data-es-poster');
+      const en = v.querySelector('source')?.getAttribute('src') || '';
+      esVideos[path.basename(en)] = [SITE + src, SITE + poster];
+      v.querySelector('source')?.setAttribute('src', src);
+      v.setAttribute('poster', poster);
+    }
+    const heroVideo = doc.querySelector('.hero-video video');
+    if (heroVideo) doc.querySelector('link[rel="preload"][as="image"]')?.setAttribute('href', heroVideo.getAttribute('poster'));
+    for (const script of doc.querySelectorAll('script[type="application/ld+json"]')) {
+      const data = JSON.parse(script.textContent);
+      if (data['@type'] !== 'VideoObject') continue;
+      const key = path.basename(data.contentUrl || '');
+      const [url, thumb] = esVideos[key] || [];
+      if (!url) throw new Error('VideoObject sin versión en español: ' + data.contentUrl);
+      data.contentUrl = url; data.thumbnailUrl = thumb;
+      script.textContent = '\n' + JSON.stringify(data, null, 2) + '\n';
     }
 
     const out = path.join(DOCS, 'es', file);
