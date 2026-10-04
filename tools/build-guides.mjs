@@ -244,8 +244,6 @@ const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g
 
 function page({ lang, url, enUrl, esUrl, title, desc, eyebrow, h1, lede, body, jsonld }) {
   const t = T[lang];
-  const other = lang === 'en' ? esUrl : enUrl;
-  const alt = lang === 'en' ? 'es' : 'en';
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -304,8 +302,6 @@ ${EXTRA_CSS}
       <a href="${t.guides[0]}">${t.guides[1]}</a>
       &nbsp;·&nbsp;
       <a href="${t.privacy[0]}">${t.privacy[1]}</a>
-      &nbsp;·&nbsp;
-      <a href="${other}" hreflang="${alt}" lang="${alt}">${t.switch}</a>
     </span>
   </footer>
 
