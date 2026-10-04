@@ -4,7 +4,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
 
-const DOCS = path.resolve(import.meta.dirname, '..', 'docs');
+const DOCS = process.env.SITE_DOCS ? path.resolve(process.env.SITE_DOCS) : path.resolve(import.meta.dirname, '..', 'docs');
 const SITE = 'https://watchbridge.app';
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
 const all = walk(DOCS).map((f) => path.relative(DOCS, f).replace(/\\/g, '/'));

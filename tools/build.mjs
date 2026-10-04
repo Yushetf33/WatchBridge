@@ -5,7 +5,7 @@ import path from 'node:path';
 import { buildEs } from './build-es.mjs';
 import { buildGuides } from './build-guides.mjs';
 
-const DOCS = path.resolve(import.meta.dirname, '..', 'docs');
+const DOCS = process.env.SITE_DOCS ? path.resolve(process.env.SITE_DOCS) : path.resolve(import.meta.dirname, '..', 'docs');
 const SITE = 'https://watchbridge.app';
 
 const es = buildEs();

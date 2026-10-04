@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const DOCS = path.resolve(import.meta.dirname, '..', 'docs');
+const DOCS = process.env.SITE_DOCS ? path.resolve(process.env.SITE_DOCS) : path.resolve(import.meta.dirname, '..', 'docs');
 const SITE = 'https://watchbridge.app';
 const DATE = '2026-10-04';
 const OG_ALT = {

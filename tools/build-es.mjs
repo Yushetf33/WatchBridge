@@ -11,7 +11,7 @@ import vm from 'node:vm';
 import path from 'node:path';
 import { JSDOM } from 'jsdom';
 
-const DOCS = path.resolve(import.meta.dirname, '..', 'docs');
+const DOCS = process.env.SITE_DOCS ? path.resolve(process.env.SITE_DOCS) : path.resolve(import.meta.dirname, '..', 'docs');
 const SITE = 'https://watchbridge.app';
 
 // Paginas que tienen traduccion. El resto (apps, privacy...) se enlazan en ingles.
