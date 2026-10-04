@@ -43,6 +43,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/setup.html"/>
   </url>
   <url>
+    <loc>https://watchbridge.app/apps.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/apps.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/apps.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/apps.html"/>
+  </url>
+  <url>
     <loc>https://watchbridge.app/guides/</loc>
     <lastmod>2026-10-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/"/>
@@ -83,10 +97,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
-  </url>
-  <url>
-    <loc>https://watchbridge.app/apps.html</loc>
-    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://watchbridge.app/privacy.html</loc>

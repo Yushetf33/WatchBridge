@@ -75,7 +75,7 @@ for (const [f, doc] of docs) {
 console.log('\nTexto sin traducir (idéntico al inglés) en las páginas /es/:');
 const vis = (doc) => { const out = []; const w = doc.createTreeWalker(doc.body, 4); let n; while ((n = w.nextNode())) { if (n.parentElement.closest('script,style')) continue; const t = n.textContent.replace(/\s+/g, ' ').trim(); if (t.length > 2) out.push(t); } return out; };
 const BRANDS = /^(WatchBridge( TV| Mobile)?|Nuvio|Stremio|Plex|Jellyfin|WuPlay|Wholphin|SmartTube|TizenTube Cobalt|TMDB|Fire TV|Google TV|Android TV|APK|ADB|OK|Downloader|iOS|Wuplay)$/;
-for (const f of ['index.html', 'install.html', 'setup.html']) {
+for (const f of ['index.html', 'install.html', 'setup.html', 'apps.html']) {
   const enSet = new Set(vis(docs.get(f)));
   const same = vis(docs.get('es/' + f)).filter((t) => enSet.has(t) && /[A-Za-z]{3,}/.test(t) && !BRANDS.test(t) && !/^[\W\d_]+$/.test(t) && !/^[A-Z0-9 .:·€,/+()-]+$/.test(t));
   console.log(` es/${f}: ${same.length}`, same.length ? '\n    - ' + [...new Set(same)].slice(0, 25).join('\n    - ') : '');

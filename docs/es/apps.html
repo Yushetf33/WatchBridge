@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WuPlay, Nuvio, Jellyfin y más: apps compatibles | WatchBridge</title>
+<meta name="description" content="Compara WuPlay, Nuvio, Stremio, Jellyfin, Plex y Wholphin: cómo funciona cada uno con WatchBridge en Google TV y Fire TV y cómo cambiar entre ellos.">
+<link rel="canonical" href="https://watchbridge.app/es/apps.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/apps.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/apps.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/apps.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://watchbridge.app/es/apps.html">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="WuPlay, Nuvio, Jellyfin y más: apps compatibles | WatchBridge">
+<meta property="og:description" content="Compara WuPlay, Nuvio, Stremio, Jellyfin, Plex y Wholphin: cómo funciona cada uno con WatchBridge en Google TV y Fire TV y cómo cambiar entre ellos.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WuPlay, Nuvio, Jellyfin y más: apps compatibles | WatchBridge">
+<meta name="twitter:description" content="Compara WuPlay, Nuvio, Stremio, Jellyfin, Plex y Wholphin: cómo funciona cada uno con WatchBridge en Google TV y Fire TV y cómo cambiar entre ellos.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿WatchBridge TV funciona con Nuvio y con Wuplay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí: Nuvio, Wuplay y Stremio funcionan igual. WatchBridge TV identifica el título recomendado con TMDB y abre su página exacta en el que hayas elegido en Ajustes de los tres. Puedes cambiar entre ellos cuando quieras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Wuplay funciona con WatchBridge TV en Google TV y en Fire TV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, en ambos. Elige Wuplay como app de destino en Ajustes y, al pulsar una recomendación en la pantalla de inicio de Google TV o Fire TV, se abre ese título exacto directamente dentro de Wuplay, emparejado con TMDB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Wholphin es lo mismo que Jellyfin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: Wholphin es una app cliente de código abierto distinta que se conecta al mismo tipo de servidor Jellyfin autoalojado. Si usas Jellyfin, puedes elegir como destino la app oficial de Jellyfin o Wholphin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SmartTube o TizenTube Cobalt: ¿cuál admite WatchBridge TV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas. En Google TV, las recomendaciones de YouTube pueden redirigirse a SmartTube o a TizenTube Cobalt; elige el cliente alternativo de YouTube que ya uses."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 70px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0B0D12; color: #FFFFFF; font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; }
+  p { margin: 0; }
+  a { color: #5B8DEF; text-decoration: none; }
+  a:hover { color: #86A9F5; text-decoration: underline; }
+  ::selection { background: #5B8DEF; color: #FFFFFF; }
+  img, svg { display: block; }
+
+  .navlink { color: #9AA1AC; text-decoration: none; font-size: 14px; transition: color .15s ease; }
+  .navlink:hover { color: #FFFFFF; text-decoration: none; }
+  .cta-primary { display: inline-flex; align-items: center; gap: 10px; border-radius: 9px; background: #5B8DEF; color: #0B0D12; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .cta-primary:hover { background: #6E9CF2; text-decoration: none; }
+  .card { border: 1px solid #262B36; border-radius: 12px; background: #12151C; transition: border-color .15s ease; }
+  .card:hover { border-color: #3A5CA8; }
+  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; border: 1px solid #262B36; background: #171B24; font-size: 12.5px; font-weight: 600; color: #B9BCC4; }
+
+  section { padding-left: 40px; padding-right: 40px; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .col-2 { grid-template-columns: 1fr !important; }
+    .h1 { font-size: 36px !important; }
+    .h2 { font-size: 26px !important; }
+    section { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(11,13,18,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26;">
+  <a href="/es/" style="display: flex; align-items: center; gap: 11px;">
+    <img src="/logo.png" width="30" height="30" alt="" style="border-radius: 8px; display: block;">
+    <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; color: #FFFFFF;">WatchBridge</span>
+  </a>
+  <div style="display: flex; align-items: center; gap: 28px;">
+    <nav style="display: flex; align-items: center; gap: 28px;" class="nav-links">
+      <a href="/es/#how" class="navlink">Cómo funciona</a>
+      <a href="/es/#pricing" class="navlink">Precios</a>
+      <a href="/es/#install" class="navlink">Instalación</a>
+      <a href="/es/install.html" class="navlink">Guía visual</a>
+      <a href="/es/setup.html" class="navlink">Configuración y ayuda</a>
+      <a href="/es/guias/" class="navlink">Guías</a>
+    </nav>
+    <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="padding: 9px 18px; font-size: 13.5px; flex-shrink: 0;">Descargar el APK</a>
+  </div>
+</header>
+
+<section style="padding-top: 72px; padding-bottom: 56px;">
+  <div class="wrap" style="max-width: 820px;">
+    <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #262B36; border-radius: 999px; background: #12151C; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #9AA1AC; margin-bottom: 24px;">
+      <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span>Compatibilidad</span>
+    </div>
+    <h1 class="h1" style="font-weight: 700; font-size: 44px; line-height: 1.12; letter-spacing: -0.03em; color: #FFFFFF; margin: 0 0 20px;">Nuvio, Wuplay, Wholphin, SmartTube: no tienes que elegir un favorito</h1>
+    <p style="font-size: 17px; line-height: 1.65; color: #9AA1AC; margin: 0 0 14px; text-wrap: pretty;">WatchBridge TV no te encierra en un solo reproductor. Uses el que uses —o si aún estás decidiendo entre dos—, abre ahí el título recomendado exacto, siempre. Cambia de app cuando quieras en Ajustes, sin reinstalar.</p>
+    <p style="font-size: 14px; line-height: 1.6; color: #6B7280;">No es una reseña ni un «cuál es mejor»: eso depende de tu propio catálogo e interfaz preferidos. Esta página trata de lo que hace cada uno por ti <em>con WatchBridge TV en concreto</em>.</p>
+  </div>
+</section>
+
+<!-- GENERAL STREAMING APPS -->
+<section id="streaming" style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 72px; padding-bottom: 72px;">
+  <div class="wrap">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Streaming general</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 16px;">Nuvio vs Wuplay vs Stremio</h2>
+    <p style="max-width: 44em; color: #9AA1AC; font-size: 16px; line-height: 1.65; margin: 0 0 40px;">Los tres organizan el contenido de los complementos instalados en una interfaz de películas y series para Android TV. Desde el lado de WatchBridge TV son funcionalmente idénticos: un título se identifica con TMDB y su página exacta se abre directamente en el que hayas puesto como destino, sin buscar por nombre ni adivinar.</p>
+    <div class="col-2" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px;">
+      <div class="card" style="padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Nuvio</h3>
+        <p style="color: #9AA1AC; font-size: 14px; line-height: 1.6; margin: 0 0 14px;">Navegador multimedia para Android TV basado en complementos. Apertura instantánea en Google TV, mantener y confirmar en Fire TV.</p>
+        <span class="pill">Google TV · Fire TV</span>
+      </div>
+      <div class="card" style="padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Wuplay</h3>
+        <p style="color: #9AA1AC; font-size: 14px; line-height: 1.6; margin: 0 0 14px;">Un navegador de películas y series para Android TV basado en complementos, de la misma categoría que Nuvio. Si ya tienes Wuplay instalado en tu Google TV o Fire TV, WatchBridge TV funciona con él sin configurar nada: elige una recomendación en la pantalla de inicio y se abre ese título exacto directamente dentro de Wuplay, emparejado con TMDB, sin buscar por nombre.</p>
+        <span class="pill">Google TV · Fire TV</span>
+      </div>
+      <div class="card" style="padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Stremio</h3>
+        <p style="color: #9AA1AC; font-size: 14px; line-height: 1.6; margin: 0 0 14px;">El más conocido de los tres, multiplataforma más allá de Android TV. La misma integración en ambos casos.</p>
+        <span class="pill">Google TV · Fire TV</span>
+      </div>
+    </div>
+    <div style="margin-top: 22px; padding: 16px 20px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;">
+      <p style="color: #6B7280; font-size: 13.5px; line-height: 1.6;">¿Usas una versión antigua o no oficial de Nuvio o Stremio? Si al pulsar una recomendación la app se abre pero no llega a ningún sitio, casi siempre es eso: actualizar a la última versión lo arregla. Consulta la <a href="/es/setup.html#errors">guía de solución de problemas</a> para más detalles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SELF-HOSTED -->
+<section id="jellyfin" style="padding-top: 72px; padding-bottom: 72px;">
+  <div class="wrap">
+    <div class="col-2" style="display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1fr); gap: 48px; align-items: center;">
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Tu propio servidor</p>
+        <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 16px; line-height: 1.2;">Jellyfin vs Wholphin</h2>
+        <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65; margin: 0 0 16px;">Jellyfin es un software de servidor multimedia autoalojado, gratuito y de código abierto: lo ejecutas en tu propio hardware y organiza tu propia biblioteca. <strong style="color: #E8E9EB;"><a href="https://github.com/damontecres/Wholphin">Wholphin</a></strong> no es otro servidor, sino una app <em>cliente</em> de código abierto distinta que se conecta a ese mismo tipo de servidor Jellyfin: elige cualquiera de las dos como destino.</p>
+        <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65; margin: 0;">Como una biblioteca autoalojada no tiene un catálogo universal al que enlazar directamente, WatchBridge TV puede comprobar opcionalmente <strong style="color: #E8E9EB;">primero tu propio servidor</strong>: si la recomendación ya está en tu biblioteca, abre directamente ese título exacto, sin buscar. Si no está, recurre a tu app de destino habitual.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <p style="margin: 0 0 18px; color: #E8E9EB; font-size: 15px; font-weight: 600;">Ajustes → «Comprobar mi Jellyfin primero»</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; gap: 12px;"><span style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5B8DEF;">1</span><p style="color: #B9BCC4; font-size: 14px; line-height: 1.5;">Introduce la URL de tu servidor y una clave de API de tu panel de administración</p></div>
+          <div style="display: flex; gap: 12px;"><span style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5B8DEF;">2</span><p style="color: #B9BCC4; font-size: 14px; line-height: 1.5;">Está en tu biblioteca → abre ese título exacto, en Wholphin o Jellyfin (el que elijas)</p></div>
+          <div style="display: flex; gap: 12px;"><span style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5B8DEF;">3</span><p style="color: #B9BCC4; font-size: 14px; line-height: 1.5;">No está → recurre a Nuvio, Stremio, Wuplay o Plex como de costumbre</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLEX -->
+<section id="plex" style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 72px; padding-bottom: 72px;">
+  <div class="wrap">
+    <div class="col-2" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.8fr); gap: 48px; align-items: center;">
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #E5A00D; margin: 0 0 14px;">Catálogo gratuito</p>
+        <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 16px;">Plex</h2>
+        <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65;">Plex funciona de dos maneras aquí: como tu propio servidor multimedia (la misma idea que Jellyfin, si lo usas así) o a través del catálogo de streaming gratuito con anuncios del propio Plex, sin necesidad de un servidor propio. En ambos casos, el emparejamiento con TMDB abre directamente el título recomendado exacto.</p>
+      </div>
+      <div class="card" style="padding: 28px;">
+        <span class="pill" style="background: rgba(229,160,13,0.1); border-color: rgba(229,160,13,0.35); color: #E5A00D;">Google TV · Fire TV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<section id="youtube" style="padding-top: 72px; padding-bottom: 88px;">
+  <div class="wrap">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #CC1F2D; margin: 0 0 14px;">Redirección de YouTube</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 16px;">SmartTube vs TizenTube Cobalt</h2>
+    <p style="max-width: 44em; color: #9AA1AC; font-size: 16px; line-height: 1.65; margin: 0 0 32px;">Un interruptor aparte del de tu reproductor de películas y series: las recomendaciones de YouTube en Google TV pueden enviarse a <strong style="color: #E8E9EB;"><a href="https://github.com/yuliskov/SmartTube">SmartTube</a></strong> o <strong style="color: #E8E9EB;"><a href="https://github.com/reisxd/TizenTubeCobalt">TizenTube Cobalt</a></strong> en lugar de la app oficial de YouTube; elige el cliente alternativo que ya tengas instalado. Fire TV no es compatible con esta opción: solo Google TV.</p>
+    <div class="col-2" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: 700px;">
+      <div class="card" style="padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">SmartTube</h3>
+        <p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Cliente de YouTube de código abierto creado para Android TV.</p>
+      </div>
+      <div class="card" style="padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">TizenTube Cobalt</h3>
+        <p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Otro cliente alternativo de YouTube de código abierto, con la misma compatibilidad de redirección.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 72px; padding-bottom: 88px;">
+  <div class="wrap">
+    <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 40px 44px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div style="max-width: 32em;">
+        <h2 class="h2" style="font-weight: 700; font-size: 24px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 10px;">Elige uno, varios o cambia más tarde</h2>
+        <p style="color: #9AA1AC; font-size: 15px; line-height: 1.6;">Uses el que uses, WatchBridge TV funciona con él hoy. Cambiar de opinión después es un interruptor en Ajustes, no una reinstalación.</p>
+      </div>
+      <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="flex-shrink: 0; padding: 15px 28px; font-size: 15.5px;">Descargar el APK</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top: 1px solid #1C1F26; background: #0E1014; padding: 40px 40px 56px;">
+  <div class="wrap">
+    <p style="margin: 0 0 10px; color: #6B7280; font-size: 13px; line-height: 1.7;">WatchBridge TV es una herramienta independiente de automatización y redirección. No aloja, almacena, distribuye ni ofrece películas, series, emisiones ni ningún otro contenido audiovisual.</p>
+    <p style="margin: 0 0 20px; color: #6B7280; font-size: 13px; line-height: 1.7;">No está afiliada, patrocinada ni respaldada por Nuvio, Wuplay, Stremio, Plex, Jellyfin, Wholphin, SmartTube ni TizenTube Cobalt; esos nombres son marcas de sus respectivos propietarios.</p>
+    <a href="/es/" style="font-size: 14px;">← Volver a WatchBridge</a>
+    <a href="/es/setup.html" style="font-size: 14px; margin-left: 16px;">Configuración y ayuda</a>
+    <a href="/privacy.html" style="font-size: 14px; margin-left: 16px;">Política de privacidad (en inglés)</a>
+    <a href="/apps.html" data-lang-switch="en" hreflang="en" lang="en" style="font-size: 14px; margin-left: 16px;">English</a>
+  </div>
+</footer>
+
+
+<script>
+  
+</script>
+
+
+</body></html>

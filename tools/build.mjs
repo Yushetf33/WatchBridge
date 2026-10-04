@@ -27,10 +27,11 @@ const pairs = [
   ['/', '/es/'],
   ['/install.html', '/es/install.html'],
   ['/setup.html', '/es/setup.html'],
+  ['/apps.html', '/es/apps.html'],
   ['/guides/', '/es/guias/'],
   ...guideSlugs.map((s, i) => ['/guides/' + s, '/es/guias/' + esGuideSlugs[i]]),
 ];
-const single = ['/apps.html', '/privacy.html'];
+const single = ['/privacy.html']; // solo en inglés
 const entry = (loc, alts) => `  <url>\n    <loc>${SITE}${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n${alts}  </url>\n`;
 const links = (en, es) => `    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${en}"/>\n    <xhtml:link rel="alternate" hreflang="es" href="${SITE}${es}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${en}"/>\n`;
 

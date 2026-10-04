@@ -28,6 +28,12 @@ const PAGES = {
     title: 'Instalar WatchBridge TV en Google TV y Fire TV — APK, Downloader, ADB',
     desc: 'Guía paso a paso para instalar WatchBridge TV en Android TV, Google TV y Fire TV: instala el APK, activa la accesibilidad y sin root.',
   },
+  'apps.html': {
+    url: '/es/apps.html',
+    en: '/apps.html',
+    title: 'WuPlay, Nuvio, Jellyfin y más: apps compatibles | WatchBridge',
+    desc: 'Compara WuPlay, Nuvio, Stremio, Jellyfin, Plex y Wholphin: cómo funciona cada uno con WatchBridge en Google TV y Fire TV y cómo cambiar entre ellos.',
+  },
   'setup.html': {
     url: '/es/setup.html',
     en: '/setup.html',
@@ -50,6 +56,7 @@ const PAGE_MAP = {
   '': '/es/',
   'install.html': '/es/install.html',
   'setup.html': '/es/setup.html',
+  'apps.html': '/es/apps.html',
   'guides/': '/es/guias/',
 };
 
@@ -102,13 +109,16 @@ function transformJsonLd(doc, name, cfg, dict) {
       data.name = 'WatchBridge TV — tour de 45 segundos';
       data.description = 'WatchBridge TV abre en tu reproductor las recomendaciones de Google TV, las búsquedas por voz y las sugerencias de Sorpréndeme, y se sincroniza con el móvil: recomendaciones, Mi lista, calendario y guía de TV en directo.';
     } else if (data['@type'] === 'FAQPage') {
+      // setup usa tr.q1..n / tr.a1..n (con el codigo E0n delante); apps usa faq.q1..n / faq.a1..n
       const items = [];
+      const prefix = dict['faq.q1'] ? 'faq' : 'tr';
       for (let n = 1; n <= 12; n++) {
-        const q = dict['tr.q' + n], a = dict['tr.a' + n];
+        const q = dict[`${prefix}.q${n}`], a = dict[`${prefix}.a${n}`];
         if (!q || !a) continue;
-        items.push({ '@type': 'Question', name: `E0${n} — ${stripTags(q)}`, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } });
+        const name = prefix === 'tr' ? `E0${n} — ${stripTags(q)}` : stripTags(q);
+        items.push({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } });
       }
-      if (!items.length) throw new Error('setup: no se pudo construir el FAQ en español');
+      if (!items.length) throw new Error(name + ': no se pudo construir el FAQ en español');
       data.mainEntity = items;
     }
     script.textContent = '\n' + JSON.stringify(data, null, 2) + '\n';

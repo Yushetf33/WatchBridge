@@ -136,7 +136,7 @@ const GUIDES = {
   <li><strong>Búsqueda por voz.</strong> Pide un título («pon La casa de papel») y se abre directo en tu reproductor. En Google TV es opcional, se activa en Ajustes y pide un permiso de grabación de pantalla, una sola vez.</li>
   <li><strong>Sorpréndeme.</strong> Un botón de la pantalla «Recomendado para ti» de la app elige al azar una película o serie de lo que estás viendo y la abre directamente.</li>
 </ul>
-<div class="cta"><a href="/es/install.html">Guía de instalación</a><a class="alt" href="/apps.html">Apps compatibles</a><a class="alt" href="/es/setup.html">Configuración y ayuda</a></div>`,
+<div class="cta"><a href="/es/install.html">Guía de instalación</a><a class="alt" href="/es/apps.html">Apps compatibles</a><a class="alt" href="/es/setup.html">Configuración y ayuda</a></div>`,
     },
   },
   versus: {
@@ -219,12 +219,12 @@ const GUIDES = {
   <li><strong>Plex</strong> funciona de dos maneras aquí: como tu propio servidor multimedia, o mediante el catálogo gratuito con anuncios de Plex, sin necesidad de servidor propio. En ambos casos, el emparejamiento con TMDB abre el título recomendado exacto.</li>
   <li><strong>Jellyfin</strong> es un servidor autoalojado, gratuito y de código abierto que organiza tu propia biblioteca. <strong>Wholphin</strong> no es otro servidor, sino un cliente de código abierto distinto para ese mismo tipo de servidor: elige cualquiera de los dos como destino. Con <em>Comprobar mi Jellyfin primero</em>, WatchBridge mira en tu biblioteca antes de usar tu reproductor habitual.</li>
 </ul>
-<p>El desglose completo, incluida la redirección de YouTube a SmartTube o TizenTube Cobalt en Google TV, está en la página de <a href="/apps.html">apps compatibles</a> (en inglés).</p>
+<p>El desglose completo, incluida la redirección de YouTube a SmartTube o TizenTube Cobalt en Google TV, está en la página de <a href="/es/apps.html">apps compatibles</a>.</p>
 
 <h2>Cómo elegir</h2>
 <p>Como la integración es la misma, elige el que prefieras por catálogo e interfaz. Prueba cada uno unos días (cambiar te cuesta un ajuste) y quédate con el que más abras.</p>
 <div class="callout warn"><strong>Herramienta independiente.</strong> WatchBridge TV no aloja, almacena ni ofrece ninguna película, serie o emisión, y no está afiliada, patrocinada ni respaldada por Nuvio, Wuplay, Stremio, Plex, Jellyfin ni Wholphin. Esos nombres son marcas de sus respectivos propietarios.</div>
-<div class="cta"><a href="/es/guias/abrir-recomendaciones-google-tv-en-nuvio.html">Cómo configurarlo</a><a class="alt" href="/apps.html">Apps compatibles</a><a class="alt" href="/es/install.html">Guía de instalación</a></div>`,
+<div class="cta"><a href="/es/guias/abrir-recomendaciones-google-tv-en-nuvio.html">Cómo configurarlo</a><a class="alt" href="/es/apps.html">Apps compatibles</a><a class="alt" href="/es/install.html">Guía de instalación</a></div>`,
     },
   },
 };
