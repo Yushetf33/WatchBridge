@@ -1,0 +1,8 @@
+{
+  "name": "watchbridge-site",
+  "private": true,
+  "description": "Herramientas de generacion de la web (version en espanol y guias). No se publica nada de esta carpeta: GitHub Pages sirve solo docs/.",
+  "type": "module",
+  "scripts": { "build": "node tools/build.mjs" },
+  "devDependencies": { "jsdom": "^25.0.1" }
+}

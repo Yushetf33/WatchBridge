@@ -1,0 +1,567 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin</title>
+<meta name="description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<link rel="canonical" href="https://watchbridge.app/es/">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://watchbridge.app/es/">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin">
+<meta property="og:description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin">
+<meta name="twitter:description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<link rel="preload" as="image" href="/watchbridge-promo-poster.jpg" fetchpriority="high">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WatchBridge TV",
+  "url": "https://watchbridge.app/es/",
+  "image": "https://watchbridge.app/og-image.jpg",
+  "description": "Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Android TV, Google TV, Fire TV",
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "EUR",
+    "description": "Pago único de 4,99 € tras una prueba gratuita de 2 días, sin tarjeta para empezar la prueba."
+  },
+  "inLanguage": "es",
+  "downloadUrl": "https://github.com/Yushetf33/WatchBridge/releases/latest",
+  "screenshot": [
+    "https://watchbridge.app/screenshot-home.jpg",
+    "https://watchbridge.app/screenshot-calendar.jpg",
+    "https://watchbridge.app/screenshot-search.jpg"
+  ],
+  "featureList": [
+    "Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin",
+    "Búsqueda por voz que abre el título en tu reproductor",
+    "Recomendado para ti, Continuar viendo, Mi lista y un calendario de próximos episodios",
+    "App para móvil y tablet con Enviar a la TV",
+    "Guía de TV en directo con marcadores para tu propia lista IPTV"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "WatchBridge",
+    "url": "https://watchbridge.app/",
+    "logo": "https://watchbridge.app/logo-180.png"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 70px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0B0D12; color: #FFFFFF; font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; }
+  p { margin: 0; }
+  a { color: #5B8DEF; text-decoration: none; }
+  a:hover { color: #86A9F5; text-decoration: underline; }
+  ::selection { background: #5B8DEF; color: #FFFFFF; }
+  img, svg { display: block; }
+
+  .navlink { color: #9AA1AC; text-decoration: none; font-size: 14px; transition: color .15s ease; }
+  .navlink:hover { color: #FFFFFF; text-decoration: none; }
+  .cta-primary { display: inline-flex; align-items: center; gap: 10px; border-radius: 9px; background: #5B8DEF; color: #0B0D12; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .cta-primary:hover { background: #6E9CF2; text-decoration: none; }
+  .cta-secondary { display: inline-flex; align-items: center; gap: 10px; border-radius: 9px; border: 1px solid #262B36; background: #12151C; color: #FFFFFF; font-weight: 600; text-decoration: none; transition: border-color .15s ease, background .15s ease; }
+  .cta-secondary:hover { border-color: #3A5CA8; background: #1B2029; text-decoration: none; }
+  .card { border: 1px solid #262B36; border-radius: 12px; background: #12151C; transition: border-color .15s ease; }
+  .card:hover { border-color: #3A5CA8; }
+  .chip { transition: transform .15s ease; }
+  .tab-btn { padding: 10px 18px; border-radius: 8px; border: none; cursor: pointer; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; background: transparent; color: #9AA1AC; transition: background .15s ease, color .15s ease; }
+  .tab-btn.active { background: #5B8DEF; color: #0B0D12; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; padding: 5px 10px; border: 1px solid #262B36; border-radius: 6px; background: #171B24; color: #9AA1AC; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; transition: color .15s ease, border-color .15s ease; }
+  .copy-btn:hover { color: #FFFFFF; border-color: #3A5CA8; }
+  .install-panel { display: none; }
+  .install-panel.active { display: block; }
+
+  section { padding-left: 40px; padding-right: 40px; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .nav-links { display: none !important; }
+    .col-3 { grid-template-columns: 1fr !important; }
+    .col-2 { grid-template-columns: 1fr !important; }
+    .col-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+    .firetv-grid { grid-template-columns: 1fr !important; }
+    .h1 { font-size: 40px !important; }
+    .h2 { font-size: 28px !important; }
+    section { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+  @media (max-width: 560px) {
+    .col-4 { grid-template-columns: 1fr !important; }
+    .stats { flex-direction: column !important; align-items: flex-start !important; gap: 18px !important; }
+    .install-tabs { flex-direction: column !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "WatchBridge TV — tour de 45 segundos",
+  "description": "WatchBridge TV abre en tu reproductor las recomendaciones de Google TV, las búsquedas por voz y las sugerencias de Sorpréndeme, y se sincroniza con el móvil: recomendaciones, Mi lista, calendario y guía de TV en directo.",
+  "thumbnailUrl": "https://watchbridge.app/watchbridge-promo-poster.jpg",
+  "uploadDate": "2026-10-04",
+  "contentUrl": "https://watchbridge.app/watchbridge-promo.mp4",
+  "duration": "PT46S"
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(11,13,18,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26;">
+  <a href="#top" style="display: flex; align-items: center; gap: 11px;">
+    <img src="/logo.png" width="30" height="30" alt="" style="border-radius: 8px; display: block;">
+    <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; color: #FFFFFF;">WatchBridge</span>
+  </a>
+  <div style="display: flex; align-items: center; gap: 28px;">
+    <nav style="display: flex; align-items: center; gap: 28px;" class="nav-links">
+      <a href="#how" class="navlink">Cómo funciona</a>
+      <a href="#firetv" class="navlink">Fire TV</a>
+      <a href="#pricing" class="navlink">Precios</a>
+      <a href="#install" class="navlink">Instalación</a>
+      <a href="#mobile" class="navlink">App de móvil</a>
+      <a href="/apps.html" class="navlink">Apps compatibles</a>
+      <a href="/es/install.html" class="navlink">Guía visual</a>
+      <a href="/es/setup.html" class="navlink">Configuración y ayuda</a>
+      <a href="/es/guias/" class="navlink">Guías</a>
+    </nav>
+    <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="padding: 9px 18px; font-size: 13.5px; flex-shrink: 0;">Descargar el APK</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="padding-top: 100px; padding-bottom: 64px;">
+  <div class="wrap">
+    <div class="hero-grid" style="display: grid; grid-template-columns: minmax(0,0.88fr) minmax(0,1.12fr); gap: 52px; align-items: center;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #262B36; border-radius: 999px; background: #12151C; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #9AA1AC; margin-bottom: 28px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span>Google TV y Fire TV</span>
+        </div>
+        <h1 class="h1" style="font-weight: 700; font-size: 52px; line-height: 1.05; letter-spacing: -0.03em; color: #FFFFFF; margin: 0 0 22px;">La recomendación es la correcta.<br>La app, la equivocada — siempre.</h1>
+        <p style="font-size: 18px; line-height: 1.58; color: #9AA1AC; max-width: 32em; margin: 0 0 30px; text-wrap: pretty;">Google TV te recomienda una película y la abre en la app de streaming de la que vino, no en la que tú usas. WatchBridge TV intercepta ese clic y la manda directa a la app que elegiste.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px;">
+          <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="padding: 15px 26px; font-size: 15.5px;">
+            <span>Descargar el APK</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2V11M8 11L4.5 7.5M8 11L11.5 7.5M2.5 13.5H13.5" stroke="#0B0D12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a href="#how" class="cta-secondary" style="padding: 15px 26px; font-size: 15.5px;">Ver cómo funciona</a>
+        </div>
+        <div class="stats" style="display: flex; gap: 34px; flex-wrap: wrap;">
+          <div><p style="margin: 0 0 3px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF;">6</p><p style="color: #6B7280; font-size: 13px;">apps compatibles</p></div>
+          <div><p style="margin: 0 0 3px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF;">€4.99</p><p style="color: #6B7280; font-size: 13px;">pago único, no es suscripción</p></div>
+          <div><p style="margin: 0 0 3px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF;">5</p><p style="color: #6B7280; font-size: 13px;">dispositivos por licencia</p></div>
+        </div>
+      </div>
+
+      <div class="hero-video">
+        <div style="border: 1px solid #2B3040; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 40px 110px -40px rgba(122,47,224,0.6), 0 30px 80px -40px rgba(0,0,0,0.85);">
+          <video controls="" playsinline="" preload="metadata" poster="/watchbridge-promo-poster.jpg" aria-label="WatchBridge TV — tour de 45 segundos" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+            <source src="/watchbridge-promo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p style="margin: 14px 0 0; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8B93A3;">Tour de 45 segundos · con sonido</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER STRIP -->
+<section style="padding-top: 8px; padding-bottom: 72px;">
+  <div class="wrap">
+    <p style="text-align: center; margin: 0 0 20px; color: #6B7280; font-size: 13px; letter-spacing: 0.04em;">Se abre directo en la que tú uses</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+      <a href="/apps.html#streaming" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #E85D75;"></span>Nuvio</a>
+      <a href="/apps.html#streaming" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #7B5EEA;"></span>Stremio</a>
+      <a href="/apps.html#plex" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #E5A00D;"></span>Plex</a>
+      <a href="/apps.html#jellyfin" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #00A4DC;"></span>Jellyfin</a>
+      <a href="/apps.html#streaming" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #FF6B35;"></span>WuPlay</a>
+      <a href="/apps.html#jellyfin" class="chip" style="display: flex; align-items: center; gap: 9px; padding: 10px 18px; border-radius: 999px; border: 1px solid #262B36; background: #12151C; font-size: 14.5px; font-weight: 600; color: #E8E9EB;"><span style="width: 9px; height: 9px; border-radius: 50%; background: #29C4D9;"></span>Wholphin</a>
+    </div>
+    <p style="text-align: center; margin: 34px auto 0; max-width: 46em; color: #6B7280; font-size: 13.5px; line-height: 1.7; text-wrap: balance;">
+      <span>Visto en</span>
+      <strong style="color: #9AA1AC; font-weight: 600;">AVPasión</strong>
+      <span style="color: #3A4152;">&nbsp;·&nbsp;</span>
+      <a href="https://www.avpasion.com/app-abre-recomendaciones-google-tv-nuvio-jellyfin/" target="_blank" rel="noopener" style="color: #9AA1AC; border-bottom: 1px solid #3A4152; font-style: italic;">«Esta app abre las recomendaciones de Google TV directamente en Nuvio, Jellyfin, Plex o Stremio»</a>
+      <span></span>
+    </p>
+  </div>
+</section>
+
+<!-- DEMO VIDEO -->
+<section style="padding-top: 8px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p style="text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Míralo en acción</p>
+    <h2 class="h2" style="text-align: center; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 auto 32px; max-width: 30em;">Una recomendación pulsada, de principio a fin</h2>
+
+    <div style="max-width: 900px; margin: 0 auto; border: 1px solid #262B36; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 30px 80px -40px rgba(0,0,0,0.85);">
+      <video controls="" playsinline="" preload="metadata" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+        <source src="/demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p style="text-align: center; max-width: 40em; margin: 18px auto 0; color: #6B7280; font-size: 13.5px; line-height: 1.6;">Grabación de pantalla real, sin editar: una recomendación se abre en Nuvio, luego "Recomendado para ti" arma sus filas a partir de lo que se ha visto, y después un tráiler se reproduce directo desde la propia fila de recomendaciones.</p>
+
+    <h3 style="text-align: center; font-weight: 600; font-size: 17px; color: #FFFFFF; margin: 56px auto 18px; max-width: 30em;">Búsqueda por voz, también</h3>
+    <div style="max-width: 900px; margin: 0 auto; border: 1px solid #262B36; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 30px 80px -40px rgba(0,0,0,0.85);">
+      <video controls="" playsinline="" preload="metadata" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+        <source src="/voice_search_demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p style="text-align: center; max-width: 40em; margin: 18px auto 0; color: #6B7280; font-size: 13.5px; line-height: 1.6;">También sin editar: pedir un título por voz ("pon la casa de papel") lo abre directo en Nuvio igual que un clic normal en una tarjeta.</p>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section style="padding-top: 8px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p style="text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">La propia app</p>
+    <h2 class="h2" style="text-align: center; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 auto 44px; max-width: 32em;">No es solo un redirector — una pantalla que merece la pena abrir</h2>
+    <div class="col-3" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
+      <div class="card" style="overflow: hidden;">
+        <img src="/screenshot-home.jpg" width="1920" height="1080" alt="Pantalla de inicio de WatchBridge TV: filas de Continuar viendo y Recomendado para ti" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;">Recomendado para ti, con Continuar viendo</p>
+      </div>
+      <div class="card" style="overflow: hidden;">
+        <img src="/screenshot-calendar.jpg" width="1920" height="1080" alt="Calendario de WatchBridge TV con las fechas de los próximos episodios de las series que sigues" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;">Calendario — fechas del próximo episodio de lo que sigues</p>
+      </div>
+      <div class="card" style="overflow: hidden;">
+        <img src="/screenshot-search.jpg" width="1920" height="1080" alt="Pantalla de búsqueda de WatchBridge TV con búsqueda por voz" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;">Búsqueda, con voz</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="padding-top: 24px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Cómo funciona</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 18px;">Un trabajo concreto, hecho con cuidado</h2>
+    <p style="max-width: 44em; color: #9AA1AC; font-size: 16.5px; line-height: 1.6; margin: 0 0 44px; text-wrap: pretty;">La API de Accesibilidad de Android permite a una app observar lo que hay en pantalla con fines de asistencia. WatchBridge TV la usa de forma muy concreta — solo vigila los clics en las tarjetas de recomendación del launcher. Cualquier otro clic (iconos de apps, menús, lo que sea que no sea una recomendación) se deja completamente en paz.</p>
+    <div class="col-3" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
+      <div class="card" style="padding: 28px;">
+        <div style="width: 38px; height: 38px; border-radius: 9px; background: rgba(91,141,239,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M4 4L15 8L10 10L8 15L4 4Z" stroke="#5B8DEF" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
+        <h3 style="font-size: 18.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Detecta el clic</h3>
+        <p style="color: #9AA1AC; font-size: 15px; line-height: 1.6;">Seleccionas una recomendación. WatchBridge TV ve el contenido de ese clic — nada más de lo que hay en pantalla.</p>
+      </div>
+      <div class="card" style="padding: 28px;">
+        <div style="width: 38px; height: 38px; border-radius: 9px; background: rgba(91,141,239,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#5B8DEF" stroke-width="1.6"></circle><path d="M12.5 12.5L16.5 16.5" stroke="#5B8DEF" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <h3 style="font-size: 18.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Identifica el título</h3>
+        <p style="color: #9AA1AC; font-size: 15px; line-height: 1.6;">Se busca en <a href="https://www.themoviedb.org/">TMDB</a> con una clave incluida — no hay que configurar nada. Los remakes y secuelas con el mismo nombre se desambiguan, no se adivinan.</p>
+      </div>
+      <div class="card" style="padding: 28px;">
+        <div style="width: 38px; height: 38px; border-radius: 9px; background: rgba(91,141,239,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M3 9.5H15M15 9.5L10.5 5M15 9.5L10.5 14" stroke="#5B8DEF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <h3 style="font-size: 18.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF;">Te la entrega</h3>
+        <p style="color: #9AA1AC; font-size: 15px; line-height: 1.6;">Se abre directo en la app que elegiste — o muestra antes un botón <strong style="color: #E8E9EB;">"Ver ahora"</strong>, si prefieres confirmarlo tú.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRE TV -->
+<section id="firetv" style="border-top: 1px solid #1C1F26; border-bottom: 1px solid #1C1F26; background: #0E1014; padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <div class="firetv-grid" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.8fr); gap: 56px; align-items: start;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid rgba(255,138,61,0.35); border-radius: 999px; background: rgba(255,138,61,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #FF8A3D; margin-bottom: 22px;">Modo Fire TV</div>
+        <h2 class="h2" style="font-weight: 700; font-size: 36px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 20px; line-height: 1.15;">Fire OS bloquea esto para cualquier app instalada por fuera. Aun así, lo hicimos funcionar.</h2>
+        <p style="margin: 0 0 18px; color: #B9BCC4; font-size: 16.5px; line-height: 1.65; text-wrap: pretty;">Fire OS desactiva el método estándar de Accesibilidad de Android para cualquier app que no venga de la Amazon Appstore — el mismo método del que dependen todas las apps de este tipo. El truco habitual es rootear temporalmente el Fire TV Stick y sustituir el launcher de Fire OS por el de Google TV.</p>
+        <p style="margin: 0 0 30px; color: #B9BCC4; font-size: 16.5px; line-height: 1.65; text-wrap: pretty;">WatchBridge TV no te pide nada de eso. El modo Fire TV lee el título de la recomendación directamente de la pantalla usando reconocimiento de texto en el propio dispositivo — nada de lo grabado sale de él. Concede Acceso a datos de uso y un permiso de grabación de pantalla de un solo uso, y funciona desde la pantalla de inicio real de tu Fire TV, sin root ni cambiar de launcher.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">Sin root, sin sustituir el launcher de Fire OS</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">El reconocimiento de texto se ejecuta en el dispositivo — no se sube nada</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">Con la verdad por delante: mantén el foco en una tarjeta un par de segundos y confirma con OK — no es instantáneo como en Google TV, pero funciona</p></div>
+        </div>
+      </div>
+      <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 28px;">
+        <p style="margin: 0 0 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280;">Configuración — una sola vez</p>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; gap: 14px;"><span style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5B8DEF;">1</span><p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.55;">Abre la app — detecta que estás en Fire TV automáticamente y muestra el botón correcto</p></div>
+          <div style="display: flex; gap: 14px;"><span style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5B8DEF;">2</span><p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.55;">Concede <strong style="color: #E8E9EB;">Acceso a datos de uso</strong> — Ajustes → Apps → Acceso especial de apps</p></div>
+          <div style="display: flex; gap: 14px;"><span style="flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: #171B24; border: 1px solid #262B36; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5B8DEF;">3</span><p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.55;">Acepta el permiso de grabación de pantalla de un solo uso</p></div>
+        </div>
+        <div style="margin-top: 22px; padding: 16px 18px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;">
+          <p style="color: #6B7280; font-size: 13px; line-height: 1.6;">Android mantiene visible un indicador de grabación mientras está activo — es un requisito del sistema, no algo que añadamos nosotros.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMART MATCHING -->
+<section style="padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <div class="col-2" style="display: grid; grid-template-columns: minmax(0,0.85fr) minmax(0,1fr); gap: 56px; align-items: center;">
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Coincidencias</p>
+        <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 18px; line-height: 1.2;">Pregunta una vez. Nunca más.</h2>
+        <p style="margin: 0 0 16px; color: #9AA1AC; font-size: 16px; line-height: 1.65; text-wrap: pretty;">Cuando dos títulos comparten el nombre exacto pero no el año — un remake, por ejemplo — WatchBridge TV pregunta cuál querías en vez de adivinar.</p>
+        <p style="margin: 0 0 16px; color: #9AA1AC; font-size: 16px; line-height: 1.65; text-wrap: pretty;">Lo eliges una vez y se recuerda: el mismo título nunca vuelve a preguntar. Y cuando un candidato es claramente el más popular — un estreno reciente frente a algo oscuro de hace décadas — se salta la pregunta directamente.</p>
+        <p style="color: #6B7280; font-size: 14px; line-height: 1.6;">Desactívalo desde Ajustes → "Preguntar cuando una coincidencia sea ambigua" si prefieres que siempre elija automáticamente.</p>
+      </div>
+      <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 30px;">
+        <p style="margin: 0 0 20px; color: #E8E9EB; font-size: 15.5px; font-weight: 600;">"Dune" — dos coincidencias exactas</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 10px; background: rgba(91,141,239,0.1); border: 1px solid #5B8DEF;"><span style="font-size: 14.5px; color: #FFFFFF; font-weight: 600;">Dune (2021)</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #5B8DEF;">elegida una vez</span></div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><span style="font-size: 14.5px; color: #9AA1AC;">Dune (1984)</span></div>
+        </div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #262B36; display: flex; align-items: center; gap: 12px;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <p style="color: #9AA1AC; font-size: 13.5px;">Recomendada de nuevo más tarde — abre directo la elección de 2021, sin volver a preguntar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section id="mobile" style="border-top: 1px solid #1C1F26; padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <div class="col-2" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.8fr); gap: 56px; align-items: center;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #262B36; border-radius: 999px; background: #12151C; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #9AA1AC; margin-bottom: 22px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span>Novedad: móvil y tablet</span>
+        </div>
+        <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 20px; line-height: 1.15;">Lleva tus recomendaciones al móvil</h2>
+        <p style="margin: 0 0 18px; color: #B9BCC4; font-size: 16.5px; line-height: 1.65; text-wrap: pretty;"><strong style="color: #FFFFFF;">WatchBridge Mobile</strong> es una app complementaria para móviles y tablets Android — misma cuenta, mismo historial y recomendaciones compartidas con tu TV. Navega por Películas, Series y Mi lista, y toca un título para abrirlo directamente en Nuvio, Stremio, WuPlay, Plex, Jellyfin o Wholphin en tu móvil.</p>
+        <p style="margin: 0 0 30px; color: #B9BCC4; font-size: 16.5px; line-height: 1.65; text-wrap: pretty;">Todavía no está en Google Play — build inicial, se instala igual que la app de TV. Misma prueba gratis y pago único, verificado con el mismo email.</p>
+        <a href="https://github.com/Yushetf33/TvRecommendationBridge-mobile-public/releases/latest/download/app-release.apk" class="cta-primary" style="padding: 15px 28px; font-size: 15.5px;">Descargar el APK</a>
+      </div>
+      <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 28px;">
+        <div style="border: 1px solid #262B36; border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 22px; box-shadow: 0 20px 60px -35px rgba(0,0,0,0.85);">
+          <video controls="" playsinline="" preload="metadata" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+            <source src="/mobile_demo_music.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">Películas, Series, Mi lista e Historial completo — igual que en la TV</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">Misma cuenta: verifica una vez, el historial se sincroniza en ambos sentidos</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">Un móvil/tablet cuenta aparte de tus TVs — no gasta hueco de dispositivo de TV</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="color: #E8E9EB; font-size: 14.5px; line-height: 1.55;">¿Encontraste algo en el móvil? Pulsa "Enviar a la TV" y se abre solo ahí</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALSO INCLUDED -->
+<section style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 88px; padding-bottom: 88px;">
+  <div class="wrap">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">También incluido</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 40px;">Más interruptores que merece la pena conocer</h2>
+    <div class="col-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px;">
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><rect x="3" y="4" width="14" height="10" rx="2" stroke="#00A4DC" stroke-width="1.5"></rect><path d="M8 17H12M10 14V17" stroke="#00A4DC" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Comprobar mi Jellyfin primero</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">¿Ya está en tu propio servidor? Se abre ahí directamente en vez de en tu app habitual — sin necesidad de buscar.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><path d="M10 3V6M10 3L7 5M10 3L13 5" stroke="#5B8DEF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="10" cy="11" r="6" stroke="#5B8DEF" stroke-width="1.5"></circle></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Confirmación "Ver ahora"</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Botón de confirmación opcional antes de abrir, para que un clic accidental nunca te redirija sin querer.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><rect x="2.5" y="5" width="15" height="10" rx="2.5" stroke="#CC1F2D" stroke-width="1.5"></rect><path d="M8.5 8.5L12 10L8.5 11.5V8.5Z" fill="#CC1F2D"></path></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Redirección de YouTube</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Manda las recomendaciones de YouTube a SmartTube o TizenTube Cobalt — independiente de tu app de películas/series.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><rect x="2.5" y="3.5" width="6" height="13" rx="1.3" stroke="#4CD964" stroke-width="1.5"></rect><rect x="11.5" y="3.5" width="6" height="13" rx="1.3" stroke="#4CD964" stroke-width="1.5"></rect></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Gestionar dispositivos</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Una licencia, hasta 5 TVs. Ve todos los dispositivos vinculados y desvincula el que quieras, cuando quieras.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><path d="M10 3l1.9 4.1L16 8l-3 3 .7 4.2L10 13l-3.7 2.2L7 11 4 8l4.1-.9L10 3z" stroke="#7B5EEA" stroke-width="1.3" stroke-linejoin="round"></path></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Recomendado para ti</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Una pantalla completa dentro de la app: pestañas de Películas, Series, Mi lista e Historial, una fila de Continuar viendo, fechas del próximo episodio de las series que sigues, y títulos recomendados por dos o más cosas que has visto a la vez — vía TMDB, compartido entre todos los TVs vinculados a tu cuenta.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><path d="M10 3.5l1.4 3.1L15 7l-2.8 2.4.6 3.4L10 11.3l-2.8 1.5.6-3.4L5 7l3.6-.4L10 3.5z" stroke="#FF7A59" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Sorpréndeme</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Un botón junto a las pestañas elige algo al azar de lo que estés viendo — películas o series — y lo abre directamente. Sin tener que hacer scroll.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><rect x="2.5" y="3.5" width="6.5" height="6.5" rx="1.3" stroke="#5B8DEF" stroke-width="1.5"></rect><rect x="11" y="10" width="6.5" height="6.5" rx="1.3" stroke="#4CD964" stroke-width="1.5"></rect></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Reglas por tipo de contenido</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Opcional, desactivado por defecto: elige una app distinta para películas que para series, en vez de una sola app para todo.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><path d="M2 10C2 10 5 4 10 4C15 4 18 10 18 10C18 10 15 16 10 16C5 16 2 10 2 10Z" stroke="#1B998B" stroke-width="1.5" stroke-linejoin="round"></path><circle cx="10" cy="10" r="2.5" stroke="#1B998B" stroke-width="1.5"></circle></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Detecta qué estás viendo</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Funciona con Nuvio, Stremio y WuPlay: reconoce qué estás reproduciendo aunque no lo hayas abierto desde la app, alimentando Continuar viendo y quitando títulos de Mi lista automáticamente. Opcional, experimental.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-bottom: 16px;"><rect x="3" y="8.5" width="14" height="8" rx="1.3" stroke="#F5A623" stroke-width="1.5"></rect><path d="M3 8.5H17V6.5C17 5.67157 16.3284 5 15.5 5H4.5C3.67157 5 3 5.67157 3 6.5V8.5Z" stroke="#F5A623" stroke-width="1.5"></path><path d="M10 5V17" stroke="#F5A623" stroke-width="1.3"></path></svg>
+        <h3 style="font-size: 15.5px; margin: 0 0 9px; font-weight: 600; color: #FFFFFF;">Programa de referidos</h3>
+        <p style="color: #9AA1AC; font-size: 13.5px; line-height: 1.55;">Invita a un amigo desde Ajustes → Suscripción — ganas +4 días de prueba cuando use la app de verdad, +15 más si compra Lifetime, y Lifetime gratis tras 10 amigos que compren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <div style="text-align: center; max-width: 40em; margin: 0 auto 48px;">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Precios</p>
+      <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 16px;">Un pago. No es una suscripción.</h2>
+      <p style="color: #9AA1AC; font-size: 16.5px; line-height: 1.6;">Pagas una vez y es tuyo. Sin cargos recurrentes, sin cuenta, sin contraseña — solo el email con el que pagaste.</p>
+    </div>
+    <div class="col-2" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; max-width: 760px; margin: 0 auto;">
+      <div style="border: 1px solid #262B36; border-radius: 14px; background: #12151C; padding: 32px;">
+        <p style="margin: 0 0 8px; color: #9AA1AC; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;">Prueba gratis</p>
+        <p style="margin: 0 0 6px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 38px; color: #FFFFFF;">2 días</p>
+        <p style="margin: 0 0 24px; color: #6B7280; font-size: 14px;">sin tarjeta, una vez por dispositivo</p>
+        <div style="display: flex; align-items: center; gap: 10px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5L13 4.5" stroke="#4CD964" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="color: #B9BCC4; font-size: 13.5px;">Todas las funciones, nada bloqueado</span></div>
+      </div>
+      <div style="border: 1px solid #5B8DEF; border-radius: 14px; background: #12151C; padding: 32px; position: relative;">
+        <span style="position: absolute; top: -12px; right: 24px; padding: 4px 12px; border-radius: 999px; background: #5B8DEF; color: #0B0D12; font-size: 11.5px; font-weight: 700;">PAGO ÚNICO</span>
+        <p style="margin: 0 0 8px; color: #9AA1AC; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;">De por vida</p>
+        <p style="margin: 0 0 6px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 38px; color: #FFFFFF;">€4.99</p>
+        <p style="margin: 0 0 24px; color: #6B7280; font-size: 14px;">se paga una vez, tuyo para siempre</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5L13 4.5" stroke="#4CD964" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="color: #B9BCC4; font-size: 13.5px;">Hasta 5 dispositivos, gestiónalos cuando quieras</span></div>
+          <div style="display: flex; align-items: center; gap: 10px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6 11.5L13 4.5" stroke="#4CD964" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="color: #B9BCC4; font-size: 13.5px;">Se verifica por email, sin necesidad de cuenta</span></div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; margin: 28px 0 0; color: #6B7280; font-size: 13.5px;">Escanea el código QR que muestra la app con el móvil, paga con ese mismo email, y verifícalo luego en la TV.</p>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section id="install" style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Instalación</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 14px;">Instala el APK manualmente</h2>
+    <p style="max-width: 46em; color: #9AA1AC; font-size: 16.5px; line-height: 1.6; margin: 0 0 34px;">Ya está en prueba cerrada en <a href="https://play.google.com/apps/testing/com.tunombre.tvbridge.play">Google Play</a> — únete a la prueba para instalarla desde ahí, o descarga el APK de la <a href="https://github.com/Yushetf33/WatchBridge/releases/latest">última versión</a> si prefieres instalarla manualmente.</p>
+
+    <div class="install-tabs" style="display: flex; padding: 4px; gap: 4px; border: 1px solid #262B36; border-radius: 11px; background: #12151C; margin-bottom: 26px; width: fit-content;">
+      <button class="tab-btn active" data-tab="dl" onclick="tvrbSwitchTab('dl')">Código de Downloader</button>
+      <button class="tab-btn" data-tab="phone" onclick="tvrbSwitchTab('phone')">Desde tu móvil</button>
+      <button class="tab-btn" data-tab="adb" onclick="tvrbSwitchTab('adb')">Por ADB</button>
+    </div>
+
+    <div class="install-panel active" data-panel="dl">
+      <div class="col-2" style="border: 1px solid #262B36; border-radius: 14px; background: #12151C; padding: 34px 36px; display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 44px; align-items: center;">
+        <ol style="margin: 0; padding-left: 22px; color: #B9BCC4; font-size: 15.5px; line-height: 1.7; display: flex; flex-direction: column; gap: 12px;">
+          <li>En la TV, instala <strong style="color: #E8E9EB;">Downloader</strong> (de AFTVnews) desde Google Play.</li>
+          <li>Ábrela e introduce este código en el campo de URL.</li>
+          <li>Descarga el APK y ofrece instalarlo al momento.</li>
+          <li>Si Android TV avisa de origen desconocido, permite esa instalación temporalmente.</li>
+        </ol>
+        <div style="border: 1px solid #262B36; border-radius: 12px; background: #0B0D12; padding: 26px 28px; text-align: center;">
+          <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Código de Downloader</p>
+          <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 38px; letter-spacing: 0.05em; color: #5B8DEF;">4414843</p>
+          <p style="margin: 12px 0 0; color: #6B7280; font-size: 12.5px;">Siempre apunta a la última versión</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="install-panel" data-panel="phone">
+      <div style="border: 1px solid #262B36; border-radius: 14px; background: #12151C; padding: 34px 36px;">
+        <ol style="margin: 0; padding-left: 22px; color: #B9BCC4; font-size: 15.5px; line-height: 1.7; display: flex; flex-direction: column; gap: 12px; max-width: 42em;">
+          <li>En la TV, instala <strong style="color: #E8E9EB;">Send Files to TV</strong> desde Google Play.</li>
+          <li>Ábrela — muestra una dirección o código QR para conectar desde el móvil.</li>
+          <li>Desde el navegador del móvil, entra ahí y elige el APK de la <a href="https://github.com/Yushetf33/WatchBridge/releases/latest">última versión</a>.</li>
+          <li>Cuando termine de transferirse, la TV te deja empezar la instalación.</li>
+          <li>Si Android TV avisa de origen desconocido, permite esa instalación temporalmente.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="install-panel" data-panel="adb">
+      <div style="border: 1px solid #262B36; border-radius: 14px; background: #12151C; padding: 34px 36px;">
+        <p style="margin: 0 0 20px; color: #B9BCC4; font-size: 15.5px; line-height: 1.6;">Activa las opciones de desarrollador: <strong style="color: #E8E9EB;">Ajustes → Preferencias del dispositivo → Acerca de → toca "Compilación" 7 veces</strong>, activa <strong style="color: #E8E9EB;">Depuración por red</strong>, y luego desde tu ordenador:</p>
+        <div style="position: relative; border: 1px solid #262A33; border-radius: 10px; background: #0B0D12; padding: 18px 20px;">
+          <button class="copy-btn" onclick="tvrbCopy(this)">copiar</button>
+          <pre style="margin: 0; overflow-x: auto;"><code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.9; color: #CFD2D8;">adb connect &lt;tv-ip&gt;:5555
+adb install app-release.apk</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin: 28px 0 0; color: #6B7280; font-size: 14px;">Guía completa con capturas de pantalla: <a href="/es/install.html">la guía visual de instalación</a>.</p>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section style="padding-top: 88px; padding-bottom: 88px;">
+  <div class="wrap">
+    <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 40px 44px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div style="max-width: 30em;">
+        <h2 class="h2" style="font-weight: 700; font-size: 26px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 12px;">Listo cuando tu TV lo esté</h2>
+        <p style="color: #9AA1AC; font-size: 15.5px; line-height: 1.6;">Cualquier dispositivo <strong style="color: #E8E9EB;">Google TV</strong> — Chromecast con Google TV, o una edición Google TV de Sony, TCL, Hisense — o cualquier <strong style="color: #E8E9EB;">Fire TV</strong>, mediante el modo Fire TV de arriba. Además de una de las seis apps compatibles ya instalada.</p>
+      </div>
+      <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="flex-shrink: 0; padding: 15px 28px; font-size: 15.5px;">Descargar el APK</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid #1C1F26; background: #0E1014; padding: 56px 40px 64px;">
+  <div class="wrap col-2" style="display: grid; grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); gap: 56px;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+        <img src="/logo.png" width="22" height="22" alt="" style="border-radius: 6px; display: block;">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; color: #E8E9EB;">WatchBridge</span>
+      </div>
+      <p style="margin: 0 0 14px; color: #6B7280; font-size: 13px; line-height: 1.7;">Detecta ciertas recomendaciones que muestra el launcher del dispositivo, identifica el contenido seleccionado, y abre su ficha en una app de terceros que tú ya has instalado y configurado. No aloja, almacena, distribuye ni proporciona películas, series, streams, torrents ni ningún otro contenido audiovisual — eres responsable de tu propio uso de las apps de terceros a las que da paso.</p>
+      <p style="color: #6B7280; font-size: 13px; line-height: 1.7;">No está afiliada, patrocinada ni respaldada por Google, Google TV, Amazon, Fire TV, Nuvio, Stremio, WuPlay, Plex, Jellyfin ni Wholphin — esos nombres son marcas de sus respectivos dueños.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <p style="margin: 0 0 4px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Enlaces</p>
+      <a href="https://github.com/Yushetf33/WatchBridge" style="font-size: 14px;">Repositorio</a>
+      <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" style="font-size: 14px;">Última versión</a>
+      <a href="/es/install.html" style="font-size: 14px;">Guía visual</a>
+      <a href="/es/setup.html" style="font-size: 14px;">Configuración y ayuda</a>
+      <a href="/es/guias/" style="font-size: 14px;">Guías</a>
+      <a href="/apps.html" style="font-size: 14px;">Apps compatibles</a>
+      <a href="/privacy.html" style="font-size: 14px;">Política de privacidad</a>
+      <a href="/" data-lang-switch="en" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  function tvrbSwitchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.toggle('active', b.dataset.tab === name); });
+    document.querySelectorAll('.install-panel').forEach(function (p) { p.classList.toggle('active', p.dataset.panel === name); });
+  }
+  function tvrbCopy(btn) {
+    var code = btn.parentElement.querySelector('code');
+    if (!code) return;
+    navigator.clipboard && navigator.clipboard.writeText(code.innerText);
+    var prev = btn.textContent;
+    btn.textContent = (document.documentElement.lang === 'es') ? 'copiado' : 'copied';
+    setTimeout(function () { btn.textContent = prev; }, 1400);
+  }
+  
+</script>
+
+
+</body></html>

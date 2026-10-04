@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to open Google TV recommendations in Nuvio, Stremio or Plex</title>
+<meta name="description" content="Google TV opens each recommendation in the app it came from. Here is how to send it to Nuvio, Stremio, Plex or Jellyfin instead, step by step.">
+<link rel="canonical" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/abrir-recomendaciones-google-tv-en-nuvio.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="How to open Google TV recommendations in Nuvio, Stremio or Plex">
+<meta property="og:description" content="Google TV opens each recommendation in the app it came from. Here is how to send it to Nuvio, Stremio, Plex or Jellyfin instead, step by step.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to open Google TV recommendations in Nuvio, Stremio or Plex">
+<meta name="twitter:description" content="Google TV opens each recommendation in the app it came from. Here is how to send it to Nuvio, Stremio, Plex or Jellyfin instead, step by step.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to open Google TV recommendations in Nuvio, Stremio or Plex",
+      "description": "Google TV opens each recommendation in the app it came from. Here is how to send it to Nuvio, Stremio, Plex or Jellyfin instead, step by step.",
+      "inLanguage": "en",
+      "datePublished": "2026-10-04",
+      "dateModified": "2026-10-04",
+      "image": "https://watchbridge.app/og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WatchBridge",
+          "item": "https://watchbridge.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://watchbridge.app/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to open Google TV recommendations in Nuvio, Stremio or Plex",
+          "item": "https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface-2: #ecf0f3;
+    --text: #16202b;
+    --text-muted: #57687a;
+    --accent: #3E6FD9;
+    --accent-strong: #2952A8;
+    --accent-ink: #ffffff;
+    --border: #dce3e9;
+    --success: #1a9a5c;
+    --warn: #b5540b;
+    --code-bg: #eef2f5;
+    --shadow: 0 1px 2px rgba(16, 24, 32, 0.06), 0 8px 24px -12px rgba(16, 24, 32, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1720;
+      --surface: #172436;
+      --surface-2: #1e3247;
+      --text: #e8edf2;
+      --text-muted: #8fa1b3;
+      --accent: #5B8DEF;
+      --accent-strong: #86A9F5;
+      --accent-ink: #0B0D12;
+      --border: #2a3b4e;
+      --success: #4ade80;
+      --warn: #f5a35e;
+      --code-bg: #101b28;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1720;
+    --surface: #172436;
+    --surface-2: #1e3247;
+    --text: #e8edf2;
+    --text-muted: #8fa1b3;
+    --accent: #5B8DEF;
+    --accent-strong: #86A9F5;
+    --accent-ink: #0B0D12;
+    --border: #2a3b4e;
+    --success: #4ade80;
+    --warn: #f5a35e;
+    --code-bg: #101b28;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', system-ui, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .page { max-width: 760px; margin: 0 auto; }
+
+  h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; text-wrap: balance; margin: 0; }
+
+  header.hero { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 3rem; }
+
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+
+  h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em; }
+
+  .lede { color: var(--text-muted); font-size: 1.05rem; max-width: 56ch; }
+  .lede strong { color: var(--text); font-weight: 700; }
+
+  nav.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+  nav.jump a { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--text-muted); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 0.8rem; }
+  nav.jump a:hover { border-color: var(--accent); color: var(--text); }
+
+  section.method { margin-bottom: 3.25rem; scroll-margin-top: 2rem; }
+
+  .method-head { display: flex; align-items: baseline; gap: 0.7rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
+  .method-head .num { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); width: 1.9rem; height: 1.9rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .method-head h2 { font-size: 1.3rem; }
+  .method-head .sub { color: var(--text-muted); font-size: 0.85rem; margin-left: auto; font-family: 'JetBrains Mono', monospace; }
+
+  ol.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: step; }
+  ol.steps > li { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.85rem; }
+  ol.steps > li::before { counter-increment: step; content: counter(step); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text-muted); padding-top: 0.1rem; }
+  .step-body p { margin: 0 0 0.5rem; }
+  .step-body p:last-child { margin-bottom: 0; }
+
+  code.inline { font-family: 'JetBrains Mono', monospace; font-size: 0.88em; background: var(--code-bg); padding: 0.12em 0.4em; border-radius: 5px; border: 1px solid var(--border); word-break: break-word; }
+
+  pre { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; overflow-x: auto; margin: 0.5rem 0 0; line-height: 1.6; }
+  .code-line { display: block; }
+  .code-line + .code-line { margin-top: 0.15rem; }
+
+  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); margin-top: 0.4rem; }
+  .callout strong { color: var(--text); }
+  .callout.warn { border-left-color: var(--warn); }
+
+  ul.limits { margin: 0.4rem 0 0; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  ul.limits li strong { color: var(--text); }
+
+  section.trouble { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 2.5rem; }
+  section.trouble > .th { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.3rem; }
+  section.trouble h2 { font-size: 1.35rem; }
+  section.trouble > p.intro { color: var(--text-muted); font-size: 0.92rem; margin: 0.4rem 0 1.4rem; }
+
+  .code-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); border-radius: 6px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
+
+  .qa { display: flex; flex-direction: column; gap: 1.6rem; }
+  .qa-item { padding-top: 1.4rem; border-top: 1px solid var(--border); }
+  .qa-item:first-child { padding-top: 0; border-top: none; }
+  .qa .q { display: flex; align-items: baseline; gap: 0.6rem; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+  .qa .a { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 0.6rem; }
+  .qa .a:last-child { margin-bottom: 0; }
+  .qa .a strong { color: var(--text); }
+
+  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+  footer a { color: var(--accent-strong); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    section.trouble { padding: 1.3rem 1.1rem 1.5rem; }
+  }
+</style>
+<style>
+  article h2 { font-size: 1.4rem; margin: 2.6rem 0 0.9rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); }
+  article p { margin: 0 0 1.05rem; }
+  article ul, article ol { margin: 0 0 1.2rem; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  article a { color: var(--accent-strong); }
+  article strong { color: var(--text); }
+  .table-wrap { overflow-x: auto; margin: 0 0 1.4rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 560px; }
+  th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
+  tr:last-child td { border-bottom: none; }
+  .cards { display: grid; gap: 1rem; margin-top: 1.5rem; }
+  .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.4rem; text-decoration: none; color: var(--text); box-shadow: var(--shadow); }
+  .card:hover { border-color: var(--accent); }
+  .card h2 { font-size: 1.15rem; border: 0; margin: 0 0 0.4rem; padding: 0; }
+  .card p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.6rem 0 0; }
+  .cta a { background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 700; padding: 0.7rem 1.1rem; border-radius: 10px; font-size: 0.92rem; }
+  .cta a.alt { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <a href="/" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">← WatchBridge</a>
+    <span class="eyebrow">Guide</span>
+    <h1>How to open Google TV recommendations in Nuvio, Stremio or Plex</h1>
+    <p class="lede">Google TV recommends movies and shows on its home screen, but clicking one opens the app it came from — not the player you actually use. <strong>WatchBridge TV</strong> catches that click and opens the same title in the app you chose. This guide covers the whole path, from install to your first redirected recommendation.</p>
+  </header>
+
+  <article>
+<h2>What you need</h2>
+<ul>
+  <li>A <strong>Google TV / Android TV</strong> device or a <strong>Fire TV</strong>.</li>
+  <li>One of the supported players installed: <strong>Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin</strong>.</li>
+  <li><strong>WatchBridge TV</strong> — a 2-day free trial with no card, then €4.99 once. No subscription.</li>
+</ul>
+<div class="callout"><strong>WatchBridge doesn't provide or host any content.</strong> It only opens the title in the app you already use, so you still need your own sources or subscriptions in that app.</div>
+
+<h2>Step by step</h2>
+<ol>
+  <li><strong>Install WatchBridge TV.</strong> Follow the <a href="/install.html">install guide</a>: the APK goes on the TV with Downloader, Send Files to TV or ADB.</li>
+  <li><strong>Turn it on.</strong> On Google TV, WatchBridge uses Android's Accessibility service in a narrow way: it only watches for clicks on the launcher's recommendation cards, and ignores every other click. If the toggle switches itself off, see the <a href="/setup.html#errors">troubleshooting guide</a>. On Fire TV, Fire OS blocks Accessibility for sideloaded apps, so there is a dedicated <strong>Fire TV mode</strong> instead — see <a href="/setup.html#firetv">Fire TV mode</a>.</li>
+  <li><strong>Pick your player.</strong> In Settings choose Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin. You can change it any time, with no reinstall. If you use a Nuvio fork such as Nuvio Reshaped, WatchBridge detects any app that handles <code class="inline">nuvio://</code> links.</li>
+  <li><strong>Click a recommendation</strong> on the Google TV home screen. The exact title opens in your player.</li>
+</ol>
+
+<h2>What happens when you click</h2>
+<ol>
+  <li><strong>Catch the click.</strong> WatchBridge sees the payload of the recommendation you selected — nothing else on screen.</li>
+  <li><strong>Identify the title.</strong> It is looked up on <a href="https://www.themoviedb.org/" rel="noopener">TMDB</a>. Remakes and same-named sequels are disambiguated rather than guessed: if two titles share an exact name, WatchBridge asks once and remembers your pick. You can turn that question off in Settings.</li>
+  <li><strong>Hand it off.</strong> The title opens directly in the player you chose. If you prefer to confirm first, enable the optional <strong>Watch now</strong> button.</li>
+</ol>
+
+<h2>On Fire TV: hold and confirm</h2>
+<p>Fire TV mode reads the title of the selected card from the screen with on-device text recognition. It isn't instant like Google TV: hold still on a card for a couple of seconds, then confirm with <strong>OK</strong> on the prompt that appears. It needs a one-time screen-recording permission, and a reboot clears it.</p>
+
+<h2>Have your own server? Check it first</h2>
+<p>With <strong>Check my Jellyfin first</strong> enabled (Settings), WatchBridge looks in your own server before anything else. If the recommendation is already in your library it opens that exact title in Jellyfin or Wholphin; if not, it falls back to your usual player. You enter your server URL and an API key from the admin dashboard.</p>
+
+<h2>If it doesn't work</h2>
+<ul>
+  <li><strong>The player opens but lands nowhere.</strong> Almost always an outdated or unofficial build of Nuvio or Stremio. Update it to the latest build.</li>
+  <li><strong>The Accessibility toggle turns itself off.</strong> Android 13+ blocks it for apps installed outside Google Play by default. The <a href="/setup.html#errors">troubleshooting guide</a> has the fix, including the one-time ADB step for the Google TV Streamer.</li>
+  <li><strong>Nothing happens on Fire TV.</strong> Activate <a href="/setup.html#firetv">Fire TV mode</a> from inside the app.</li>
+</ul>
+
+<h2>Two extras worth trying</h2>
+<ul>
+  <li><strong>Voice search.</strong> Ask for a title ("put on La Casa de Papel") and it opens straight in your player. It is opt-in on Google TV, from Settings, and asks for a one-time screen-recording permission.</li>
+  <li><strong>Surprise me.</strong> A button in the in-app "Recommended for you" screen picks a random movie or series from what you are browsing and opens it directly.</li>
+</ul>
+<div class="cta"><a href="/install.html">Install guide</a><a class="alt" href="/apps.html">Compatible apps</a><a class="alt" href="/setup.html">Setup &amp; troubleshooting</a></div>
+  </article>
+
+  <footer>
+    <span>WatchBridge TV · 2-day free trial, then €4.99 one-time</span>
+    <span>
+      <a href="/install.html">Install guide</a>
+      &nbsp;·&nbsp;
+      <a href="/setup.html">Setup & troubleshooting</a>
+      &nbsp;·&nbsp;
+      <a href="/guides/">Guides</a>
+      &nbsp;·&nbsp;
+      <a href="/privacy.html">Privacy policy</a>
+      &nbsp;·&nbsp;
+      <a href="/es/guias/abrir-recomendaciones-google-tv-en-nuvio.html" hreflang="es" lang="es">Español</a>
+    </span>
+  </footer>
+
+</div>
+
+</body>
+</html>
