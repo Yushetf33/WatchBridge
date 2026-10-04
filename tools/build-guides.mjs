@@ -8,6 +8,7 @@ import path from 'node:path';
 const DOCS = process.env.SITE_DOCS ? path.resolve(process.env.SITE_DOCS) : path.resolve(import.meta.dirname, '..', 'docs');
 const SITE = 'https://watchbridge.app';
 const DATE = '2026-10-04';
+const ANALYTICS = `<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->`; // Cloudflare Web Analytics: sin cookies
 const OG_ALT = {
   en: 'WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions',
   es: 'Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti',
@@ -307,6 +308,7 @@ ${EXTRA_CSS}
 
 </div>
 
+${ANALYTICS}
 </body>
 </html>
 `;
