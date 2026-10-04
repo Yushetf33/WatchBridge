@@ -186,6 +186,21 @@ export function buildEs() {
     }
     // el <link rel=preload as=image href=…> tambien pasa por aqui (href)
 
+    // 8) video de la portada con los rotulos en espanol (el resto de idiomas usa el ingles)
+    if (file === 'index.html') {
+      doc.querySelector('.hero-video video')?.setAttribute('poster', '/watchbridge-promo-es-poster.jpg');
+      doc.querySelector('.hero-video video source')?.setAttribute('src', '/watchbridge-promo-es.mp4');
+      doc.querySelector('link[rel="preload"][as="image"]')?.setAttribute('href', '/watchbridge-promo-es-poster.jpg');
+      for (const script of doc.querySelectorAll('script[type="application/ld+json"]')) {
+        const data = JSON.parse(script.textContent);
+        if (data['@type'] === 'VideoObject') {
+          data.contentUrl = SITE + '/watchbridge-promo-es.mp4';
+          data.thumbnailUrl = SITE + '/watchbridge-promo-es-poster.jpg';
+          script.textContent = '\n' + JSON.stringify(data, null, 2) + '\n';
+        }
+      }
+    }
+
     const out = path.join(DOCS, 'es', file);
     fs.writeFileSync(out, dom.serialize());
     report.push({ file: 'es/' + file, translated, missing: [...new Set(missing)] });

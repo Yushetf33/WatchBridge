@@ -689,6 +689,18 @@ adb install app-release.apk</code></pre>
     "footer.release": "Última versión",
     "footer.privacy": "Política de privacidad"
   });
+
+  // Navegador en español (aunque llegue a la URL inglesa): el video con los rótulos en español.
+  // Rutas absolutas y comprobación previa: la versión /es/ ya viene con ese video y no se toca.
+  (function () {
+    if (document.documentElement.lang !== 'es') return;
+    var v = document.querySelector('.hero-video video');
+    var s = v && v.querySelector('source');
+    if (!s || s.getAttribute('src') === '/watchbridge-promo-es.mp4') return;
+    v.setAttribute('poster', '/watchbridge-promo-es-poster.jpg');
+    s.setAttribute('src', '/watchbridge-promo-es.mp4');
+    v.load();
+  })();
 </script>
 </body>
 </html>
