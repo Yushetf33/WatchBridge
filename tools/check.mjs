@@ -29,7 +29,7 @@ for (const [f, doc] of docs) {
       const v = el.getAttribute(attr); if (v === null) continue;
       if (/^(https?:|mailto:|tel:|data:|\/\/)/i.test(v) && !v.startsWith(SITE)) continue;
       let target = v.startsWith(SITE) ? v.slice(SITE.length) || '/' : v;
-      const [p, hash] = target.split('#');
+      const [pq, hash] = target.split('#'); const p = pq.split('?')[0]; // el ?v=n solo evita la cache
       let file;
       if (p === '') file = f;
       else if (p.startsWith('/')) file = urlToFile(p);

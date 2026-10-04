@@ -390,6 +390,22 @@
   <div class="wrap">
     <p style="text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;" data-i18n="shots.eyebrow">The app itself</p>
     <h2 class="h2" style="text-align: center; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 auto 44px; max-width: 32em;" data-i18n="shots.h2">Not just a redirect — a real screen worth opening</h2>
+    <div class="col-2" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; margin: 0 0 20px;">
+      <div class="card" style="overflow: hidden;">
+        <video controls playsinline preload="metadata" poster="clip-surprise-poster.jpg" data-es-src="/clip-surprise-es.mp4" data-es-poster="/clip-surprise-es-poster.jpg" aria-label="Surprise me" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+          <source src="clip-surprise.mp4" type="video/mp4">
+        </video>
+        <p style="padding: 16px 18px 4px; margin: 0; color: #E8E9EB; font-size: 15px; font-weight: 600;" data-i18n="clip.s.t">Surprise me</p>
+        <p style="padding: 0 18px 18px; margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="clip.s.c">Can't decide? One button picks a movie at random from what you're browsing and opens it in your player.</p>
+      </div>
+      <div class="card" style="overflow: hidden;">
+        <video controls playsinline preload="metadata" poster="clip-send-poster.jpg" data-es-src="/clip-send-es.mp4" data-es-poster="/clip-send-es-poster.jpg" aria-label="Send to TV" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+          <source src="clip-send.mp4" type="video/mp4">
+        </video>
+        <p style="padding: 16px 18px 4px; margin: 0; color: #E8E9EB; font-size: 15px; font-weight: 600;" data-i18n="clip.d.t">Send to TV</p>
+        <p style="padding: 0 18px 18px; margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="clip.d.c">Found something on your phone? Tap Send to TV and it opens on your TV.</p>
+      </div>
+    </div>
     <div class="col-3" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
       <div class="card" style="overflow: hidden;">
         <img src="screenshot-home.jpg" width="1920" height="1080" alt="WatchBridge TV home screen: Continue watching and Recommended for you rows" loading="lazy" style="width: 100%; height: auto; display: block;">
@@ -643,8 +659,8 @@ adb install app-release.apk</code></pre>
       </div>
       <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 28px;">
         <div style="width: fit-content; max-width: 100%; margin: 0 auto 26px; border: 1px solid #262B36; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 20px 60px -35px rgba(0,0,0,0.85);">
-          <video controls playsinline preload="metadata" aria-label="WatchBridge Mobile" style="display: block; height: min(520px, 72vh); width: auto; max-width: 100%; aspect-ratio: 11 / 24; background: #000;">
-            <source src="mobile_demo_phone.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" aria-label="WatchBridge Mobile" style="display: block; height: min(520px, 72vh); width: auto; max-width: 100%; aspect-ratio: 600 / 1230; background: #000;">
+            <source src="mobile_demo_phone.mp4?v=2" type="video/mp4">
           </video>
         </div>
         <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -938,7 +954,11 @@ adb install app-release.apk</code></pre>
       "footer.product": "Producto",
       "footer.support": "Ayuda",
       "nav.mobilebtn": "WatchBridge Mobile",
-      "hero.mobilelink": "También en tu móvil: WatchBridge Mobile →"
+      "hero.mobilelink": "También en tu móvil: WatchBridge Mobile →",
+      "clip.s.t": "Sorpréndeme",
+      "clip.s.c": "¿No sabes qué ver? Un botón elige una película al azar de lo que estás viendo y la abre en tu reproductor.",
+      "clip.d.t": "Enviar a la TV",
+      "clip.d.c": "¿Has encontrado algo en el móvil? Pulsa Enviar a la TV y se abre en tu televisión."
   });
 
   // Navegador en español (aunque llegue a la URL inglesa): vídeos con los rótulos en español.
