@@ -209,6 +209,11 @@
   @media (max-width: 520px) {
     header > a > span { display: none; }
   }
+  .mobile-btn svg { flex-shrink: 0; }
+  @media (max-width: 1080px) {
+    .mobile-btn { display: none !important; }
+    .hero-mobile-link { display: block !important; }
+  }
   details.faq { border-top: 1px solid #262B36; padding: 18px 0; }
   details.faq:last-of-type { border-bottom: 1px solid #262B36; }
   details.faq summary, details.tech summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #FFFFFF; font-weight: 600; font-size: 16.5px; }
@@ -251,6 +256,7 @@
       <a href="#firetv" class="navlink">Fire TV</a>
       <a href="#faq" class="navlink" data-i18n="nav.faq">FAQ</a>
     </nav>
+    <a href="#mobile" class="cta-secondary mobile-btn" style="padding: 8px 16px; font-size: 13.5px; flex-shrink: 0;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="3.5" y="1" width="7" height="12" rx="1.6" stroke="currentColor" stroke-width="1.4"/><path d="M6 11H8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span data-i18n="nav.mobilebtn">WatchBridge Mobile</span></a>
     <a href="#install" class="cta-primary" style="padding: 9px 18px; font-size: 13.5px; flex-shrink: 0;" data-i18n="cta.get">Get WatchBridge</a>
   </div>
 </header>
@@ -278,6 +284,7 @@
           <span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M3 8.5L6 11.5L13 4.5" stroke="#4CD964" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.p2">€4.99 once</span></span>
           <span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M3 8.5L6 11.5L13 4.5" stroke="#4CD964" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.p3">No subscription</span></span>
         </div>
+        <p class="hero-mobile-link" style="display: none; margin: 20px 0 0; font-size: 14.5px;"><a href="#mobile" style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="3.5" y="1" width="7" height="12" rx="1.6" stroke="currentColor" stroke-width="1.4"/><path d="M6 11H8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span data-i18n="hero.mobilelink">Also on your phone: WatchBridge Mobile →</span></a></p>
       </div>
 
       <div class="hero-video">
@@ -929,7 +936,9 @@ adb install app-release.apk</code></pre>
       "faq.q8": "¿Está en Google Play?",
       "faq.a8": "Hay una versión en Google Play en prueba cerrada, camino de su lanzamiento público. Mientras tanto puedes instalar el APK, que funciona igual.",
       "footer.product": "Producto",
-      "footer.support": "Ayuda"
+      "footer.support": "Ayuda",
+      "nav.mobilebtn": "WatchBridge Mobile",
+      "hero.mobilelink": "También en tu móvil: WatchBridge Mobile →"
   });
 
   // Navegador en español (aunque llegue a la URL inglesa): vídeos con los rótulos en español.
