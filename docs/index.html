@@ -3,20 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WatchBridge — open recommendations in the app you actually want</title>
-<meta name="description" content="WatchBridge TV catches a Google TV / Fire TV recommendation click and opens it in Nuvio, Stremio, Plex, Jellyfin, WuPlay, or Wholphin — whichever you picked. Native Fire TV support, no root required.">
+<title>WatchBridge TV — Google TV recommendations in Nuvio, Plex &amp; Jellyfin</title>
+<meta name="description" content="Opens Google TV and Fire TV recommendations in the app you actually use — Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin. €4.99 once, 2-day free trial.">
 <link rel="canonical" href="https://watchbridge.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://watchbridge.app/">
 <meta property="og:site_name" content="WatchBridge">
-<meta property="og:title" content="WatchBridge — open recommendations in the app you actually want">
-<meta property="og:description" content="Catches a Google TV / Fire TV recommendation click and opens it in Nuvio, Stremio, Plex, Jellyfin, WuPlay, or Wholphin — whichever you picked. Native Fire TV support, no root required.">
+<meta property="og:title" content="WatchBridge TV — Google TV recommendations in Nuvio, Plex &amp; Jellyfin">
+<meta property="og:description" content="Opens Google TV and Fire TV recommendations in the app you actually use — Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin. €4.99 once, 2-day free trial.">
 <meta property="og:image" content="https://watchbridge.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WatchBridge — open recommendations in the app you actually want">
-<meta name="twitter:description" content="Catches a Google TV / Fire TV recommendation click and opens it in Nuvio, Stremio, Plex, Jellyfin, WuPlay, or Wholphin — whichever you picked. Native Fire TV support, no root required.">
+<meta name="twitter:title" content="WatchBridge TV — Google TV recommendations in Nuvio, Plex &amp; Jellyfin">
+<meta name="twitter:description" content="Opens Google TV and Fire TV recommendations in the app you actually use — Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin. €4.99 once, 2-day free trial.">
 <meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<link rel="preload" as="image" href="watchbridge-promo-poster.jpg" fetchpriority="high">
 <link rel="icon" type="image/png" sizes="32x32" href="logo-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="logo-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
@@ -35,7 +40,21 @@
     "price": "4.99",
     "priceCurrency": "EUR",
     "description": "One-time payment after a free 2-day trial, no card required to start the trial."
-  }
+  },
+  "inLanguage": ["en", "es"],
+  "downloadUrl": "https://github.com/Yushetf33/WatchBridge/releases/latest",
+  "screenshot": [
+    "https://watchbridge.app/screenshot-home.jpg",
+    "https://watchbridge.app/screenshot-calendar.jpg",
+    "https://watchbridge.app/screenshot-search.jpg"
+  ],
+  "featureList": [
+    "Opens Google TV and Fire TV recommendations in Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin",
+    "Voice search that opens the title in your player",
+    "Recommended for you, Continue watching, My list and a calendar of next episodes",
+    "Phone and tablet companion app with Send to TV"
+  ],
+  "publisher": { "@type": "Organization", "name": "WatchBridge", "url": "https://watchbridge.app/", "logo": "https://watchbridge.app/logo-180.png" }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,15 +232,15 @@
     <h2 class="h2" style="text-align: center; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 auto 44px; max-width: 32em;" data-i18n="shots.h2">Not just a redirect — a real screen worth opening</h2>
     <div class="col-3" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
       <div class="card" style="overflow: hidden;">
-        <img src="screenshot-home.jpg" width="1920" height="1080" alt="" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <img src="screenshot-home.jpg" width="1920" height="1080" alt="WatchBridge TV home screen: Continue watching and Recommended for you rows" loading="lazy" style="width: 100%; height: auto; display: block;">
         <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;" data-i18n="shots.home">Recommended for you, with Continue watching</p>
       </div>
       <div class="card" style="overflow: hidden;">
-        <img src="screenshot-calendar.jpg" width="1920" height="1080" alt="" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <img src="screenshot-calendar.jpg" width="1920" height="1080" alt="WatchBridge TV calendar with next-episode dates for the series you follow" loading="lazy" style="width: 100%; height: auto; display: block;">
         <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;" data-i18n="shots.calendar">Calendar — next-episode dates for what you follow</p>
       </div>
       <div class="card" style="overflow: hidden;">
-        <img src="screenshot-search.jpg" width="1920" height="1080" alt="" loading="lazy" style="width: 100%; height: auto; display: block;">
+        <img src="screenshot-search.jpg" width="1920" height="1080" alt="WatchBridge TV search screen with voice search" loading="lazy" style="width: 100%; height: auto; display: block;">
         <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;" data-i18n="shots.search">Search, with voice</p>
       </div>
     </div>

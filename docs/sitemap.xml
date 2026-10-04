@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://watchbridge.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://watchbridge.app/install.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://watchbridge.app/apps.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-04</lastmod>
   </url>
   <url>
     <loc>https://watchbridge.app/setup.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-04</lastmod>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/privacy.html</loc>
+    <lastmod>2026-10-04</lastmod>
   </url>
 </urlset>
