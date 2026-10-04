@@ -20,7 +20,7 @@ const PAGES = {
     url: '/es/',
     en: '/',
     title: 'WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin',
-    desc: 'Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.',
+    desc: 'Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin, y añade una guía de TV para tu propia lista IPTV (M3U, Xtream Codes) y Enviar a la TV desde el móvil. 4,99 € una vez, 2 días gratis.',
   },
   'install.html': {
     url: '/es/install.html',

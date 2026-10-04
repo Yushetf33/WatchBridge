@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin</title>
-<meta name="description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<meta name="description" content="Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin, y añade una guía de TV para tu propia lista IPTV (M3U, Xtream Codes) y Enviar a la TV desde el móvil. 4,99 € una vez, 2 días gratis.">
 <link rel="canonical" href="https://watchbridge.app/es/">
 <link rel="alternate" hreflang="en" href="https://watchbridge.app/">
 <link rel="alternate" hreflang="es" href="https://watchbridge.app/es/">
@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://watchbridge.app/es/">
 <meta property="og:site_name" content="WatchBridge">
 <meta property="og:title" content="WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin">
-<meta property="og:description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<meta property="og:description" content="Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin, y añade una guía de TV para tu propia lista IPTV (M3U, Xtream Codes) y Enviar a la TV desde el móvil. 4,99 € una vez, 2 días gratis.">
 <meta property="og:image" content="https://watchbridge.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WatchBridge TV — Recomendaciones de Google TV en Nuvio, Plex y Jellyfin">
-<meta name="twitter:description" content="Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.">
+<meta name="twitter:description" content="Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin, y añade una guía de TV para tu propia lista IPTV (M3U, Xtream Codes) y Enviar a la TV desde el móvil. 4,99 € una vez, 2 días gratis.">
 <meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
 <meta name="twitter:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
 <link rel="preload" as="image" href="/watchbridge-short-es-poster.jpg" fetchpriority="high">
@@ -33,7 +33,7 @@
   "name": "WatchBridge TV",
   "url": "https://watchbridge.app/es/",
   "image": "https://watchbridge.app/og-image.jpg",
-  "description": "Abre las recomendaciones de Google TV y Fire TV en la app que de verdad usas: Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. 4,99 € una vez, 2 días gratis.",
+  "description": "Abre las recomendaciones de Google TV y Fire TV en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin, y añade una guía de TV para tu propia lista IPTV (M3U, Xtream Codes) y Enviar a la TV desde el móvil. 4,99 € una vez, 2 días gratis.",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Android TV, Google TV, Fire TV",
   "offers": {
@@ -132,6 +132,14 @@
         "@type": "Answer",
         "text": "Hay una versión en Google Play en prueba cerrada, camino de su lanzamiento público. Mientras tanto puedes instalar el APK, que funciona igual."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Incluye canales de TV? ¿Qué listas IPTV funcionan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No se incluye ningún canal ni lista: traes la tuya. WatchBridge acepta un enlace M3U/M3U8, un acceso Xtream Codes (servidor, usuario y contraseña) o un archivo .m3u, y lo muestra como una guía de TV."
+      }
     }
   ]
 }
@@ -188,6 +196,7 @@
     .col-3 { grid-template-columns: 1fr !important; }
     .col-2 { grid-template-columns: 1fr !important; }
     .col-4 { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+    .pillar:hover h3 { color: #FFFFFF; }
     .firetv-grid { grid-template-columns: 1fr !important; }
     .h1 { font-size: 40px !important; }
     .h2 { font-size: 28px !important; }
@@ -255,6 +264,7 @@
     <nav style="display: flex; align-items: center; gap: 28px;" class="nav-links">
       <a href="#how" class="navlink">Cómo funciona</a>
       <a href="#features" class="navlink">Funciones</a>
+      <a href="#iptv" class="navlink">TV en directo</a>
       <a href="#pricing" class="navlink">Precios</a>
       <a href="#firetv" class="navlink">Fire TV</a>
       <a href="#faq" class="navlink">Preguntas</a>
@@ -272,8 +282,8 @@
         <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #262B36; border-radius: 999px; background: #12151C; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #9AA1AC; margin-bottom: 28px;">
           <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span>Google TV y Fire TV</span>
         </div>
-        <h1 class="h1" style="font-weight: 700; font-size: 52px; line-height: 1.05; letter-spacing: -0.03em; color: #FFFFFF; margin: 0 0 22px;">Tus recomendaciones de Google TV.<br>Tu reproductor.</h1>
-        <p style="font-size: 18px; line-height: 1.58; color: #B9BCC4; max-width: 32em; margin: 0 0 14px; text-wrap: pretty;">Google TV te recomienda algo. WatchBridge lo abre directamente en Nuvio, Stremio, Plex, Jellyfin y más, no en la app de la que viene.</p>
+        <h1 class="h1" style="font-weight: 700; font-size: 52px; line-height: 1.05; letter-spacing: -0.03em; color: #FFFFFF; margin: 0 0 22px;">Abre lo que quieras en tu TV.<br>En tu propio reproductor.</h1>
+        <p style="font-size: 18px; line-height: 1.58; color: #B9BCC4; max-width: 32em; margin: 0 0 14px; text-wrap: pretty;">Recomendaciones, búsqueda por voz, tu móvil y tu guía de TV en directo se abren directamente en Nuvio, Stremio, Plex, Jellyfin y más, no en la app de la que vienen.</p>
         <p style="font-size: 14.5px; color: #6B7280; font-style: italic; margin: 0 0 30px;">La recomendación es la correcta. La app, la equivocada — siempre.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px;">
           <a href="#install" class="cta-primary" style="padding: 15px 26px; font-size: 15.5px;">
@@ -298,6 +308,41 @@
         </div>
         <p style="margin: 14px 0 0; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8B93A3;">Vista previa de 16 s · con sonido</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section id="inside" style="padding-top: 8px; padding-bottom: 72px;">
+  <div class="wrap">
+    <p style="text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5B8DEF; margin: 0 0 14px;">Qué incluye</p>
+    <h2 class="h2" style="text-align: center; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 auto 14px; max-width: 26em;">Una app, cuatro maneras de llegar a lo que quieres ver</h2>
+    <p style="text-align: center; margin: 0 auto 40px; max-width: 40em; color: #9AA1AC; font-size: 16px; line-height: 1.6; text-wrap: balance;">Empezó como un arreglo para las recomendaciones de Google TV. Ahora es la puerta de entrada a toda tu tele.</p>
+    <div class="col-4 pillars" style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px;">
+      <a href="#how" class="card pillar" style="display: block; padding: 26px; text-decoration: none;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #5B8DEF1F; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M5 4.5L17 9.5L11.5 12L9.5 17.5L5 4.5Z" stroke="#5B8DEF" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
+        <h3 style="font-size: 17.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF; line-height: 1.3;">Las recomendaciones se abren en tu reproductor</h3>
+        <p style="margin: 0 0 14px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Pulsa una tarjeta en la pantalla de inicio de Google TV o Fire TV —o pídelo por voz— y se abre en Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin.</p>
+        <span style="color: #5B8DEF; font-size: 13.5px; font-weight: 600;">Cómo funciona →</span>
+      </a>
+      <a href="#iptv" class="card pillar" style="display: block; padding: 26px; text-decoration: none;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #F5A6231F; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="3" y="5" width="16" height="11" rx="2.2" stroke="#F5A623" stroke-width="1.6"></rect><path d="M8 19H14M11 16V19" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <h3 style="font-size: 17.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF; line-height: 1.3;">TV en directo con una guía de verdad</h3>
+        <p style="margin: 0 0 14px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Trae tu propia lista IPTV y obtén una guía estilo TV: ahora y después, alertas, marcadores de fútbol en directo —y mantén OK sobre una película para abrirla en tu reproductor.</p>
+        <span style="color: #F5A623; font-size: 13.5px; font-weight: 600;">Ver la guía IPTV →</span>
+      </a>
+      <a href="#features" class="card pillar" style="display: block; padding: 26px; text-decoration: none;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #4CD9641F; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="3" y="3.5" width="7" height="7" rx="1.6" stroke="#4CD964" stroke-width="1.6"></rect><rect x="12" y="3.5" width="7" height="7" rx="1.6" stroke="#4CD964" stroke-width="1.6"></rect><rect x="3" y="12.5" width="7" height="6" rx="1.6" stroke="#4CD964" stroke-width="1.6"></rect><rect x="12" y="12.5" width="7" height="6" rx="1.6" stroke="#4CD964" stroke-width="1.6"></rect></svg></div>
+        <h3 style="font-size: 17.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF; line-height: 1.3;">Una pantalla de inicio propia</h3>
+        <p style="margin: 0 0 14px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Recomendado para ti, Continuar viendo, Mi lista, calendario de próximos episodios, búsqueda por voz y un botón Sorpréndeme para cuando no sabes qué ver.</p>
+        <span style="color: #4CD964; font-size: 13.5px; font-weight: 600;">Ver la app →</span>
+      </a>
+      <a href="#mobile" class="card pillar" style="display: block; padding: 26px; text-decoration: none;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #E85D751F; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="6.5" y="2.5" width="9" height="17" rx="2.2" stroke="#E85D75" stroke-width="1.6"></rect><path d="M10 16.5H12" stroke="#E85D75" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <h3 style="font-size: 17.5px; margin: 0 0 10px; font-weight: 600; color: #FFFFFF; line-height: 1.3;">Móvil y TV, juntos</h3>
+        <p style="margin: 0 0 14px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">WatchBridge Mobile comparte tu cuenta, historial y Mi lista: encuentra algo en el móvil, pulsa Enviar a la TV y se abre en la tele.</p>
+        <span style="color: #E85D75; font-size: 13.5px; font-weight: 600;">WatchBridge Mobile →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -428,6 +473,36 @@
       <div class="card" style="overflow: hidden;">
         <img src="/screenshot-search.jpg" width="1920" height="1080" alt="Pantalla de búsqueda de WatchBridge TV con búsqueda por voz" loading="lazy" style="width: 100%; height: auto; display: block;">
         <p style="padding: 16px 18px; margin: 0; color: #E8E9EB; font-size: 14px; font-weight: 600;">Búsqueda, con voz</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IPTV -->
+<section id="iptv" style="border-top: 1px solid #1C1F26; padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <div class="col-2" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.9fr); gap: 56px; align-items: start;">
+      <div>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #F5A623; margin: 0 0 14px;">TV en directo · IPTV</p>
+        <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 20px; line-height: 1.15;">Una guía de TV de verdad para tu propia lista IPTV</h2>
+        <p style="margin: 0 0 24px; color: #B9BCC4; font-size: 16.5px; line-height: 1.65; text-wrap: pretty;">Añade la lista que te dio tu proveedor y WatchBridge la convierte en una guía estilo TV: canales a la izquierda, programas en una línea de tiempo, lo que se emite ahora resaltado —y se mantiene al día según pasa la hora.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin: 0 0 26px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="margin: 0; color: #E8E9EB; font-size: 15px; line-height: 1.55;">Rejilla EPG completa con ahora y después en cada canal</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="margin: 0; color: #E8E9EB; font-size: 15px; line-height: 1.55;">Alertas: te avisa cuando está a punto de empezar un programa que marcaste</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="margin: 0; color: #E8E9EB; font-size: 15px; line-height: 1.55;">Fútbol en directo: marcadores y eventos del partido en el propio panel</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="margin: 0; color: #E8E9EB; font-size: 15px; line-height: 1.55;">Mantén OK sobre una película o serie de la guía para abrirla en Nuvio, Stremio, Plex o Jellyfin</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="margin: 0; color: #E8E9EB; font-size: 15px; line-height: 1.55;">Funciona en Google TV y Fire TV</p></div>
+        </div>
+        <p style="margin: 0; color: #6B7280; font-size: 14px; line-height: 1.6;">WatchBridge no ofrece ni vende canales ni listas: traes la tuya, como en TiviMate o apps parecidas. Por ahora el IPTV forma parte de la versión APK.</p>
+      </div>
+      <div style="border: 1px solid #262B36; border-radius: 16px; background: #12151C; padding: 28px;">
+        <p style="margin: 0 0 18px; color: #E8E9EB; font-size: 15.5px; font-weight: 600;">Tráela como la tengas</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><p style="margin: 0 0 3px; color: #FFFFFF; font-size: 14.5px; font-weight: 600;">Enlace M3U / M3U8</p><p style="margin: 0; color: #9AA1AC; font-size: 13px; line-height: 1.5;">La URL de lista de siempre — también .m3u.gz y listas PLS</p></div>
+          <div style="padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><p style="margin: 0 0 3px; color: #FFFFFF; font-size: 14.5px; font-weight: 600;">Xtream Codes</p><p style="margin: 0; color: #9AA1AC; font-size: 13px; line-height: 1.5;">Servidor, usuario y contraseña — la URL de la guía se rellena sola</p></div>
+          <div style="padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><p style="margin: 0 0 3px; color: #FFFFFF; font-size: 14.5px; font-weight: 600;">Archivo M3U</p><p style="margin: 0; color: #9AA1AC; font-size: 13px; line-height: 1.5;">Un .m3u guardado en el dispositivo o en un USB</p></div>
+          <div style="padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><p style="margin: 0 0 3px; color: #FFFFFF; font-size: 14.5px; font-weight: 600;">Guía XMLTV (EPG)</p><p style="margin: 0; color: #9AA1AC; font-size: 13px; line-height: 1.5;">Un enlace .xml o .xml.gz, cruzado con tus canales por id o por nombre</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -720,6 +795,10 @@ adb install app-release.apk</code></pre>
     <details class="faq">
       <summary>¿Está en Google Play?</summary>
       <p>Hay una versión en Google Play en prueba cerrada, camino de su lanzamiento público. Mientras tanto puedes instalar el APK, que funciona igual.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Incluye canales de TV? ¿Qué listas IPTV funcionan?</summary>
+      <p>No se incluye ningún canal ni lista: traes la tuya. WatchBridge acepta un enlace M3U/M3U8, un acceso Xtream Codes (servidor, usuario y contraseña) o un archivo .m3u, y lo muestra como una guía de TV.</p>
     </details>
   </div>
 </section>
