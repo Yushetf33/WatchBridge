@@ -26,7 +26,7 @@ WatchBridge TV is not currently distributed through Google Play. The app is inst
 ### Option A: using Downloader (easiest, no phone or computer needed)
 
 1. On the TV, install **[Downloader](https://play.google.com/store/apps/details?id=com.esaba.downloader)** from Google Play (the "by AFTVnews" one).
-2. Open Downloader and enter this code: **4414843**
+2. Open Downloader and enter this code: **8254947**
 3. It'll download the APK and offer to install it straight away.
 4. If Android TV shows a warning about installing from an unknown source, you'll need to temporarily allow installation from that source.
 
