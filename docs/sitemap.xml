@@ -57,6 +57,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/apps.html"/>
   </url>
   <url>
+    <loc>https://watchbridge.app/iptv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/iptv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/iptv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/iptv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/iptv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/iptv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/iptv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/iptv.html"/>
+  </url>
+  <url>
     <loc>https://watchbridge.app/guides/</loc>
     <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/"/>

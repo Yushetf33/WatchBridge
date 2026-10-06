@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproductor IPTV y guía de TV para Google TV y Fire TV — WatchBridge</title>
+<meta name="description" content="Una guía de TV de verdad para tu propia lista IPTV en Google TV y Fire TV: EPG, favoritos, grupos, varias listas, PIN parental, Multiview de dos canales, catch-up y búsqueda por voz. M3U o Xtream Codes.">
+<link rel="canonical" href="https://watchbridge.app/es/iptv.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/iptv.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/iptv.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/iptv.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://watchbridge.app/es/iptv.html">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="Reproductor IPTV y guía de TV para Google TV y Fire TV — WatchBridge">
+<meta property="og:description" content="Una guía de TV de verdad para tu propia lista IPTV en Google TV y Fire TV: EPG, favoritos, grupos, varias listas, PIN parental, Multiview de dos canales, catch-up y búsqueda por voz. M3U o Xtream Codes.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reproductor IPTV y guía de TV para Google TV y Fire TV — WatchBridge">
+<meta name="twitter:description" content="Una guía de TV de verdad para tu propia lista IPTV en Google TV y Fire TV: EPG, favoritos, grupos, varias listas, PIN parental, Multiview de dos canales, catch-up y búsqueda por voz. M3U o Xtream Codes.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿WatchBridge incluye canales de TV o listas IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. WatchBridge no ofrece, aloja ni vende canales ni listas: traes la tuya, igual que en TiviMate o apps parecidas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué listas y guías IPTV acepta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un enlace M3U/M3U8 (también .m3u.gz y PLS), un acceso Xtream Codes (servidor, usuario y contraseña) o un archivo .m3u enviado desde el móvil o el PC por wifi. La guía de TV puede ser un enlace XMLTV .xml o .xml.gz, o la que ya declara tu lista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona Multiview en mi TV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiview muestra dos canales a la vez. Necesita una fuente que permita dos emisiones simultáneas y un equipo capaz de decodificar ambas; WatchBridge incluye su propio decodificador por software para canales MPEG-2, así que también funciona en equipos que no lo traen. Si tu proveedor solo permite una conexión, el segundo canal no se abrirá."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona el catch-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si tu proveedor guarda archivo (listas M3U con etiquetas de catch-up, o paneles Xtream Codes), pulsas un programa que ya se emitió y se reproduce desde el principio. La guía retrocede hasta 48 horas. Depende de que tu proveedor conserve ese archivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué equipos funciona la guía IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En dispositivos Google TV y Android TV, y en Fire TV. Por ahora forma parte de la versión APK de WatchBridge TV."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 70px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0B0D12; color: #FFFFFF; font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { font-family: "Sora", system-ui, sans-serif; margin: 0; }
+  p { margin: 0; }
+  a { color: #5B8DEF; text-decoration: none; }
+  a:hover { color: #86A9F5; text-decoration: underline; }
+  ::selection { background: #5B8DEF; color: #FFFFFF; }
+  img, svg { display: block; }
+
+  .navlink { color: #9AA1AC; text-decoration: none; font-size: 14px; transition: color .15s ease; }
+  .navlink:hover { color: #FFFFFF; text-decoration: none; }
+  .cta-primary { display: inline-flex; align-items: center; gap: 10px; border-radius: 9px; background: #5B8DEF; color: #0B0D12; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .cta-primary:hover { background: #6E9CF2; color: #0B0D12; text-decoration: none; }
+  .cta-hot { display: inline-flex; align-items: center; gap: 10px; border-radius: 10px; background: #F5A623; color: #0B0D12; font-weight: 700; text-decoration: none; box-shadow: 0 8px 30px rgba(245,166,35,.28); transition: background .15s ease, transform .15s ease; }
+  .cta-hot:hover { background: #FFB941; color: #0B0D12; text-decoration: none; transform: translateY(-1px); }
+  .cta-secondary { display: inline-flex; align-items: center; gap: 8px; border-radius: 10px; border: 1px solid #323846; background: #12151C; color: #E8E9EB; font-weight: 600; text-decoration: none; transition: border-color .15s ease; }
+  .cta-secondary:hover { border-color: #5B8DEF; color: #FFFFFF; text-decoration: none; }
+  .card { border: 1px solid #262B36; border-radius: 14px; background: #12151C; transition: border-color .15s ease, transform .15s ease; }
+  .card:hover { border-color: #3A5CA8; }
+  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border-radius: 999px; border: 1px solid #2E3340; background: #151922; font-size: 13px; font-weight: 600; color: #C9CCD3; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #F5A623; margin: 0 0 14px; }
+  .glow-text { background: linear-gradient(100deg, #FFD27A 0%, #F5A623 40%, #FF7A59 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero-bg { background: radial-gradient(900px 480px at 78% -10%, rgba(245,166,35,.20), transparent 60%), radial-gradient(700px 420px at 8% 10%, rgba(91,141,239,.18), transparent 60%); }
+  .frame { border-radius: 16px; overflow: hidden; border: 1px solid #323846; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(245,166,35,.12), 0 0 90px rgba(245,166,35,.10); }
+  .frame video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+  .feat-row { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; }
+  .feat-row.flip { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+  .feat-row.flip > .txt { order: 2; }
+  .tag { display: inline-block; padding: 4px 11px; border-radius: 999px; background: rgba(245,166,35,.12); color: #F5A623; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+  .check { display: flex; align-items: flex-start; gap: 12px; }
+  .check p { color: #E8E9EB; font-size: 15px; line-height: 1.55; }
+
+  section { padding-left: 40px; padding-right: 40px; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .feat-row, .feat-row.flip { grid-template-columns: 1fr !important; gap: 28px; }
+    .feat-row.flip > .txt { order: 0; }
+    .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .h1 { font-size: 38px !important; }
+    .h2 { font-size: 27px !important; }
+    section { padding-left: 20px !important; padding-right: 20px !important; }
+    .steps { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(11,13,18,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26;">
+  <a href="/es/" style="display: flex; align-items: center; gap: 11px;">
+    <img src="/logo.png" width="30" height="30" alt="" style="border-radius: 8px; display: block;">
+    <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; color: #FFFFFF;">WatchBridge</span>
+  </a>
+  <div style="display: flex; align-items: center; gap: 28px;">
+    <nav style="display: flex; align-items: center; gap: 28px;" class="nav-links">
+      <a href="#features" class="navlink">Funciones</a>
+      <a href="#videos" class="navlink">Vídeos</a>
+      <a href="#start" class="navlink">Empezar</a>
+      <a href="#faq" class="navlink">Preguntas</a>
+      <a href="/es/" class="navlink">Inicio de WatchBridge</a>
+    </nav>
+    <a href="/es/#install" class="cta-primary" style="padding: 9px 18px; font-size: 13.5px; flex-shrink: 0;">Conseguir WatchBridge</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-bg" style="padding-top: 80px; padding-bottom: 84px;">
+  <div class="wrap">
+    <div class="hero-grid" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: center;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #3A2F18; border-radius: 999px; background: rgba(245,166,35,.08); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #F5A623; margin-bottom: 24px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #F5A623;"></span><span>TV en directo · IPTV</span>
+        </div>
+        <h1 class="h1" style="font-weight: 800; font-size: 52px; line-height: 1.06; letter-spacing: -0.035em; margin: 0 0 22px;"><span>Tu lista IPTV,</span><br><span class="glow-text">por fin con una guía de TV de verdad.</span></h1>
+        <p style="font-size: 18px; line-height: 1.6; color: #B9BCC4; margin: 0 0 28px; max-width: 30em; text-wrap: pretty;">Trae tu propia lista M3U o Xtream Codes y obtén una guía estilo TV en Google TV y Fire TV: favoritos, dos canales a la vez, catch-up, PIN parental y búsqueda por voz.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px;">
+          <a href="/es/#install" class="cta-hot" style="padding: 15px 28px; font-size: 15.5px;">Conseguir WatchBridge</a>
+          <a href="#features" class="cta-secondary" style="padding: 14px 24px; font-size: 15px;">Ver todo lo que hace ↓</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span class="pill">M3U / M3U8</span><span class="pill">Xtream Codes</span><span class="pill">Archivo M3U</span><span class="pill">XMLTV EPG</span>
+        </div>
+      </div>
+      <div>
+        <div class="frame">
+          <video controls="" playsinline="" preload="metadata" poster="/clip-multiview-es-poster.jpg" data-es-src="/clip-multiview-es.mp4" data-es-poster="/clip-multiview-es-poster.jpg" aria-label="IPTV Multiview: two channels at once">
+            <source src="/clip-multiview-es.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="margin-top: 20px;">
+          <p style="font-family: 'Sora', system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0 0 8px;">Multiview: dos canales a la vez</p>
+          <p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.6; margin: 0 0 8px;">Mantén OK sobre un canal mientras suena otro y elige Multiview. Izquierda y derecha deciden cuál suena; OK pone uno a pantalla completa. La imagen en directo está difuminada en esta demostración.</p>
+          <p style="color: #6B7280; font-size: 13px; line-height: 1.6;">Necesita una fuente que permita dos emisiones a la vez. WatchBridge incluye su propio decodificador por software para canales MPEG-2, así que también los muestran equipos que no lo traen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS STRIP -->
+<section style="border-top: 1px solid #1C1F26; border-bottom: 1px solid #1C1F26; background: #0E1014; padding-top: 28px; padding-bottom: 28px;">
+  <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px 38px; justify-content: center;">
+    <span class="check" style="gap: 9px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="font-size: 14.5px;">No vendemos canales: traes tu lista</p></span>
+    <span class="check" style="gap: 9px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="font-size: 14.5px;">Google TV, Android TV y Fire TV</p></span>
+    <span class="check" style="gap: 9px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink: 0; margin-top: 2px;"><path d="M3.5 9.5L7 13L14.5 4.5" stroke="#4CD964" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><p style="font-size: 14.5px;">2 días de prueba gratis y un único pago</p></span>
+  </div>
+</section>
+
+<!-- BIG FEATURES -->
+<section id="videos" style="padding-top: 96px; padding-bottom: 40px;">
+  <div class="wrap">
+    <p class="eyebrow">Dos más que usarás cada día</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 36px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 64px; max-width: 18em; line-height: 1.15;">Pensado para el mando, no para un ratón</h2>
+
+    <div class="feat-row" style="margin-bottom: 88px;">
+      <div class="txt">
+        <span class="tag">Favoritos</span>
+        <h3 style="font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 14px;">Tus canales, primero</h3>
+        <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65;">Mantén OK sobre cualquier programa de la fila de un canal, elige «Añadir canal a favoritos» y una estrella lo marca. Un toque en el botón Grupo muestra solo tus favoritos, entre cientos de canales.</p>
+      </div>
+      <div class="frame">
+        <video controls="" playsinline="" preload="metadata" poster="/clip-favorites-es-poster.jpg" data-es-src="/clip-favorites-es.mp4" data-es-poster="/clip-favorites-es-poster.jpg" aria-label="IPTV favorites">
+          <source src="/clip-favorites-es.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="feat-row flip">
+      <div class="txt">
+        <span class="tag">Búsqueda por voz</span>
+        <h3 style="font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 14px;">Dilo y lo sintoniza</h3>
+        <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65;">Pulsa Buscar por voz y di un canal («pon BBC News») o lo que quieres ver («pon Men in Black»). WatchBridge lo busca en la guía de TV, o te deja elegir entre los canales que lo emiten. La imagen en directo está difuminada en esta demostración.</p>
+      </div>
+      <div class="frame">
+        <video controls="" playsinline="" preload="metadata" poster="/clip-voice-es-poster.jpg" data-es-src="/clip-voice-es.mp4" data-es-poster="/clip-voice-es-poster.jpg" aria-label="IPTV voice search">
+          <source src="/clip-voice-es.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES -->
+<section id="features" style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 88px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p class="eyebrow">Y mucho más</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 40px;">Todo lo que hace la guía IPTV</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px;">
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Rejilla EPG completa</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Canales a la izquierda, programas en una línea de tiempo, ahora y después en cada fila y lo que se emite resaltado: se mantiene al día según pasa la hora.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Catch-up y guía más larga</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Si tu proveedor guarda archivo (etiquetas catch-up de M3U o Xtream Codes), pulsa un programa ya emitido y lo ves desde el principio. La guía retrocede hasta 48 horas.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Favoritos</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Una estrella los marca y con un toque en Grupo ves solo tus favoritos. Cada lista conserva los suyos.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Grupos y categorías</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Filtra la guía por los grupos que ya trae tu lista —Deportes, Cine, Noticias…— sin salir de la rejilla.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Varias listas</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Guarda tantas listas M3U, Xtream Codes o archivo como quieras y cambia entre ellas. Cada lista conserva sus propios favoritos y bloqueos.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Volver al último canal</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">En pantalla completa, pulsa OK dos veces (o la tecla de último canal del mando) para saltar al canal que veías antes.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Control parental con PIN</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Bloquea canales sueltos o grupos enteros con un PIN de 4 a 8 dígitos. Los canales bloqueados desaparecen de la guía, del zapping y de la búsqueda por voz hasta que lo introduces.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Alertas de programas</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Te avisa cuando está a punto de empezar un programa que marcaste.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Fútbol en directo</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Marcadores y eventos del partido en el propio panel, y búsqueda por voz que encuentra «el partido del Madrid».</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Abre películas en tu reproductor</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Mantén OK sobre una película o serie de la guía para abrirla en Nuvio, Stremio, Plex o Jellyfin.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Acciones del canal en cualquier programa</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Mantén OK sobre cualquier bloque de la fila de un canal —no solo su nombre— para añadirlo a favoritos, abrir Multiview o bloquearlo.</p></div>
+      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Google TV y Fire TV</h3><p style="color: #9AA1AC; font-size: 14px; line-height: 1.6;">Funciona en Google TV y Android TV, y en Fire TV, también en los modelos más antiguos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section id="start" style="border-top: 1px solid #1C1F26; padding-top: 96px; padding-bottom: 96px;">
+  <div class="wrap">
+    <p class="eyebrow">Empezar</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 14px;">Tres pasos, con la lista que tengas</h2>
+    <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65; margin: 0 0 40px; max-width: 40em;">No se incluye ningún canal: WatchBridge convierte la lista que te dio tu proveedor en una guía.</p>
+    <div class="steps" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 44px;">
+      <div class="card" style="padding: 28px;"><div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(245,166,35,.14); color: #F5A623; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; margin-bottom: 18px;">1</div><h3 style="font-size: 17px; margin: 0 0 9px; font-weight: 600;">Instala WatchBridge TV</h3><p style="color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Pon el APK en tu Google TV o Fire TV con Downloader: la guía visual te lo explica paso a paso.</p></div>
+      <div class="card" style="padding: 28px;"><div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(245,166,35,.14); color: #F5A623; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; margin-bottom: 18px;">2</div><h3 style="font-size: 17px; margin: 0 0 9px; font-weight: 600;">Añade tu lista</h3><p style="color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Abre IPTV y pega tu enlace M3U, escribe tu acceso Xtream Codes o envía un archivo .m3u desde el móvil por wifi.</p></div>
+      <div class="card" style="padding: 28px;"><div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(245,166,35,.14); color: #F5A623; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; margin-bottom: 18px;">3</div><h3 style="font-size: 17px; margin: 0 0 9px; font-weight: 600;">Pulsa OK y a ver</h3><p style="color: #9AA1AC; font-size: 14.5px; line-height: 1.6;">Tus canales cargan con su guía. Marca favoritos, abre Multiview o di lo que quieres ver.</p></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+      <a href="/es/#install" class="cta-hot" style="padding: 15px 28px; font-size: 15.5px;">Conseguir WatchBridge</a>
+      <a href="/es/install.html" class="cta-secondary" style="padding: 14px 24px; font-size: 15px;">Guía visual de instalación</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="border-top: 1px solid #1C1F26; background: #0E1014; padding-top: 88px; padding-bottom: 88px;">
+  <div class="wrap" style="max-width: 820px;">
+    <p class="eyebrow" style="color: #5B8DEF;">Preguntas</p>
+    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 32px;">Preguntas sobre IPTV</h2>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <details class="card" style="padding: 20px 24px;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px;">¿WatchBridge incluye canales de TV o listas IPTV?</summary><p style="margin-top: 12px; color: #9AA1AC; font-size: 15px; line-height: 1.65;">No. WatchBridge no ofrece, aloja ni vende canales ni listas: traes la tuya, igual que en TiviMate o apps parecidas.</p></details>
+      <details class="card" style="padding: 20px 24px;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px;">¿Qué listas y guías IPTV acepta?</summary><p style="margin-top: 12px; color: #9AA1AC; font-size: 15px; line-height: 1.65;">Un enlace M3U/M3U8 (también .m3u.gz y PLS), un acceso Xtream Codes (servidor, usuario y contraseña) o un archivo .m3u enviado desde el móvil o el PC por wifi. La guía de TV puede ser un enlace XMLTV .xml o .xml.gz, o la que ya declara tu lista.</p></details>
+      <details class="card" style="padding: 20px 24px;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px;">¿Funciona Multiview en mi TV?</summary><p style="margin-top: 12px; color: #9AA1AC; font-size: 15px; line-height: 1.65;">Multiview muestra dos canales a la vez. Necesita una fuente que permita dos emisiones simultáneas y un equipo capaz de decodificar ambas; WatchBridge incluye su propio decodificador por software para canales MPEG-2, así que también funciona en equipos que no lo traen. Si tu proveedor solo permite una conexión, el segundo canal no se abrirá.</p></details>
+      <details class="card" style="padding: 20px 24px;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px;">¿Cómo funciona el catch-up?</summary><p style="margin-top: 12px; color: #9AA1AC; font-size: 15px; line-height: 1.65;">Si tu proveedor guarda archivo (listas M3U con etiquetas de catch-up, o paneles Xtream Codes), pulsas un programa que ya se emitió y se reproduce desde el principio. La guía retrocede hasta 48 horas. Depende de que tu proveedor conserve ese archivo.</p></details>
+      <details class="card" style="padding: 20px 24px;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px;">¿En qué equipos funciona la guía IPTV?</summary><p style="margin-top: 12px; color: #9AA1AC; font-size: 15px; line-height: 1.65;">En dispositivos Google TV y Android TV, y en Fire TV. Por ahora forma parte de la versión APK de WatchBridge TV.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="hero-bg" style="padding-top: 80px; padding-bottom: 88px;">
+  <div class="wrap" style="max-width: 820px; text-align: center;">
+    <h2 class="h2" style="font-weight: 800; font-size: 38px; letter-spacing: -0.03em; line-height: 1.12; margin: 0 0 16px;"><span>Tu lista ya es buena.</span> <span class="glow-text">Dale una guía que merezca la pena.</span></h2>
+    <p style="color: #B9BCC4; font-size: 17px; line-height: 1.6; margin: 0 0 30px;">2 días de prueba gratis, sin tarjeta. Después, un único pago de 4,99 €, sin suscripción.</p>
+    <a href="/es/#install" class="cta-hot" style="padding: 16px 34px; font-size: 16.5px;">Conseguir WatchBridge</a>
+  </div>
+</section>
+
+<footer style="border-top: 1px solid #1C1F26; background: #0E1014; padding: 40px 40px 56px;">
+  <div class="wrap">
+    <p style="margin: 0 0 10px; color: #6B7280; font-size: 13px; line-height: 1.7;">WatchBridge TV es una herramienta independiente de automatización y redirección. No aloja, almacena, distribuye ni proporciona películas, series, emisiones, canales ni ningún otro contenido audiovisual.</p>
+    <p style="margin: 0 0 20px; color: #6B7280; font-size: 13px; line-height: 1.7;">Sin afiliación, patrocinio ni respaldo de Nuvio, Stremio, Plex, Jellyfin, TiviMate ni ningún proveedor IPTV: esos nombres son marcas de sus respectivos propietarios.</p>
+    <a href="/es/" style="font-size: 14px;">← Volver a WatchBridge</a>
+    <a href="/es/install.html" style="font-size: 14px; margin-left: 16px;">Guía visual de instalación</a>
+    <a href="/es/setup.html" style="font-size: 14px; margin-left: 16px;">Configuración y ayuda</a>
+    <a href="/privacy.html" style="font-size: 14px; margin-left: 16px;">Política de privacidad (en inglés)</a>
+  </div>
+</footer>
+
+
+<script>
+  
+
+  // Navegador en español (aunque llegue a la URL inglesa): vídeos con los rótulos en español.
+  (function () {
+    if (document.documentElement.lang !== 'es') return;
+    document.querySelectorAll('video[data-es-src]').forEach(function (v) {
+      var s = v.querySelector('source');
+      if (!s || s.getAttribute('src') === v.getAttribute('data-es-src')) return;
+      v.setAttribute('poster', v.getAttribute('data-es-poster'));
+      s.setAttribute('src', v.getAttribute('data-es-src'));
+      v.load();
+    });
+  })();
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;53bb5b5a12a24a2bbaf49ec038bedac7&quot;}"></script><!-- End Cloudflare Web Analytics -->
+
+
+</body></html>
