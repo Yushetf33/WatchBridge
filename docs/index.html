@@ -57,7 +57,8 @@
     "Voice search that opens the title in your player",
     "Recommended for you, Continue watching, My list and a calendar of next episodes",
     "Phone and tablet companion app with Send to TV",
-    "Live TV guide (EPG) for your own IPTV list: M3U link, Xtream Codes or M3U file, program alerts, live football scores and voice search for channels, programs and matches"
+    "Live TV guide (EPG) for your own IPTV list: M3U link, Xtream Codes or M3U file, program alerts, live football scores and voice search for channels, programs and matches",
+    "IPTV favorites, groups, several lists, last-channel button, parental control with a PIN, two-channel Multiview and provider catch-up"
   ],
   "publisher": { "@type": "Organization", "name": "WatchBridge", "url": "https://watchbridge.app/", "logo": "https://watchbridge.app/logo-180.png" }
 }
@@ -495,15 +496,45 @@
           <div style="padding: 14px 16px; border-radius: 10px; background: #171B24; border: 1px solid #262B36;"><p style="margin: 0 0 3px; color: #FFFFFF; font-size: 14.5px; font-weight: 600;" data-i18n="iptv.fmt4">XMLTV guide (EPG)</p><p style="margin: 0; color: #9AA1AC; font-size: 13px; line-height: 1.5;" data-i18n="iptv.fmt4s">An .xml or .xml.gz link, matched to your channels by id or by name — or the one your list already declares</p></div>
         </div>
       </div>
+    </div>
 
-      <div class="card" style="overflow: hidden; max-width: 880px; margin: 56px auto 0;">
+    <div style="margin-top: 64px;">
+        <h3 style="font-family: 'Sora', system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 22px;" data-i18n="iptv.f.h">Everything the IPTV guide does</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.fav">Favorites</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.favb">Hold OK on any programme in a channel’s row and add the channel to favorites. A star marks it, and one tap on Group shows only your favorites.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.grp">Groups and categories</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.grpb">Filter the guide by the groups your list already has — Sports, Movies, News… — without leaving the grid.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.lists">Several lists</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.listsb">Keep as many M3U, Xtream Codes or file lists as you want and switch between them. Each list keeps its own favorites and locks.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.last">Back to the last channel</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.lastb">In full screen, press OK twice (or your remote’s last-channel key) to jump to the channel you were watching before.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.pin">Parental control with a PIN</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.pinb">Lock single channels or whole groups with a 4–8 digit PIN. Locked channels disappear from the guide, zapping and voice search until you enter it.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.mv">Multiview</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.mvb">Watch two channels side by side, pick which one plays sound with Left and Right, and press OK to take one full screen. It needs a source that allows two streams at once.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.cu">Catch-up and a longer guide</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.cub">If your provider keeps an archive (M3U catch-up tags or Xtream Codes), press a past programme to watch it from the start. The guide reaches back up to 48 hours.</p></div>
+          <div style="padding: 22px; border-radius: 12px; background: #12151C; border: 1px solid #262B36;"><h3 style="font-size: 15.5px; margin: 0 0 8px; font-weight: 600; color: #FFFFFF;" data-i18n="iptv.f.act">Channel actions on any programme</h3><p style="margin: 0; color: #9AA1AC; font-size: 13.5px; line-height: 1.55;" data-i18n="iptv.f.actb">Hold OK on any block of a channel’s row — not only its name — to add it to favorites, start Multiview or lock it.</p></div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 56px;">
+        <div class="card" style="overflow: hidden;">
+          <video controls playsinline preload="metadata" poster="clip-favorites-poster.jpg" data-es-src="/clip-favorites-es.mp4" data-es-poster="/clip-favorites-es-poster.jpg" aria-label="IPTV favorites" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+            <source src="clip-favorites.mp4" type="video/mp4">
+          </video>
+          <p style="padding: 16px 20px 4px; margin: 0; color: #E8E9EB; font-size: 16px; font-weight: 600;" data-i18n="iptv.vid2.t">Mark your favorite channels</p>
+          <p style="padding: 0 20px 20px; margin: 0; color: #9AA1AC; font-size: 14px; line-height: 1.55;" data-i18n="iptv.vid2.c">Hold OK on any programme of the channel, choose “Add channel to favorites”, then use the Group button to see only your favorites.</p>
+        </div>
+        <div class="card" style="overflow: hidden;">
+          <video controls playsinline preload="metadata" poster="clip-multiview-poster.jpg" data-es-src="/clip-multiview-es.mp4" data-es-poster="/clip-multiview-es-poster.jpg" aria-label="IPTV Multiview" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
+            <source src="clip-multiview.mp4" type="video/mp4">
+          </video>
+          <p style="padding: 16px 20px 4px; margin: 0; color: #E8E9EB; font-size: 16px; font-weight: 600;" data-i18n="iptv.vid3.t">Two channels at once: Multiview</p>
+          <p style="padding: 0 20px 20px; margin: 0; color: #9AA1AC; font-size: 14px; line-height: 1.55;" data-i18n="iptv.vid3.c">Hold OK on a channel while another one is playing and choose Multiview. Left and Right pick which one plays sound. The live picture is blurred in this demo.</p>
+        </div>
+        <div class="card" style="overflow: hidden;">
         <video controls playsinline preload="metadata" poster="clip-voice-poster.jpg" data-es-src="/clip-voice-es.mp4" data-es-poster="/clip-voice-es-poster.jpg" aria-label="IPTV voice search" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
           <source src="clip-voice.mp4" type="video/mp4">
         </video>
         <p style="padding: 16px 20px 4px; margin: 0; color: #E8E9EB; font-size: 16px; font-weight: 600;" data-i18n="iptv.vid.t">Say the channel or the title — it tunes it</p>
         <p style="padding: 0 20px 20px; margin: 0; color: #9AA1AC; font-size: 14px; line-height: 1.55;" data-i18n="iptv.vid.c">Press Voice search (or hold OK in fullscreen) and say a channel (“put on BBC News”) or what you want to watch (“put on Men in Black”): it looks it up in the TV guide. The live picture is blurred in this demo.</p>
       </div>
-    </div>
+      </div>
+    
   </div>
 </section>
 
@@ -904,6 +935,27 @@ adb install app-release.apk</code></pre>
       "iptv.fmt3s": "Envía un .m3u desde tu móvil o PC por wifi — no hace falta selector de archivos",
       "iptv.fmt4": "Guía XMLTV (EPG)",
       "iptv.fmt4s": "Un enlace .xml o .xml.gz, cruzado con tus canales por id o por nombre — o la que ya declara tu lista",
+      "iptv.f.h": "Todo lo que hace la guía IPTV",
+      "iptv.f.fav": "Favoritos",
+      "iptv.f.favb": "Mantén OK sobre cualquier programa de la fila de un canal y añade el canal a favoritos. Una estrella lo marca, y con un toque en Grupo ves solo tus favoritos.",
+      "iptv.f.grp": "Grupos y categorías",
+      "iptv.f.grpb": "Filtra la guía por los grupos que ya trae tu lista —Deportes, Cine, Noticias…— sin salir de la rejilla.",
+      "iptv.f.lists": "Varias listas",
+      "iptv.f.listsb": "Guarda tantas listas M3U, Xtream Codes o archivo como quieras y cambia entre ellas. Cada lista conserva sus propios favoritos y bloqueos.",
+      "iptv.f.last": "Volver al último canal",
+      "iptv.f.lastb": "En pantalla completa, pulsa OK dos veces (o la tecla de último canal del mando) para saltar al canal que veías antes.",
+      "iptv.f.pin": "Control parental con PIN",
+      "iptv.f.pinb": "Bloquea canales sueltos o grupos enteros con un PIN de 4 a 8 dígitos. Los canales bloqueados desaparecen de la guía, del zapping y de la búsqueda por voz hasta que lo introduces.",
+      "iptv.f.mv": "Multiview",
+      "iptv.f.mvb": "Mira dos canales a la vez, elige cuál suena con izquierda y derecha y pulsa OK para ver uno a pantalla completa. Necesita una fuente que permita dos emisiones a la vez.",
+      "iptv.f.cu": "Catch-up y guía más larga",
+      "iptv.f.cub": "Si tu proveedor guarda archivo (etiquetas catch-up de M3U o Xtream Codes), pulsa un programa ya emitido y lo ves desde el principio. La guía retrocede hasta 48 horas.",
+      "iptv.f.act": "Acciones del canal en cualquier programa",
+      "iptv.f.actb": "Mantén OK sobre cualquier bloque de la fila de un canal —no solo su nombre— para añadirlo a favoritos, abrir Multiview o bloquearlo.",
+      "iptv.vid2.t": "Marca tus canales favoritos",
+      "iptv.vid2.c": "Mantén OK sobre cualquier programa del canal, elige «Añadir canal a favoritos» y usa el botón Grupo para ver solo tus favoritos.",
+      "iptv.vid3.t": "Dos canales a la vez: Multiview",
+      "iptv.vid3.c": "Mantén OK sobre un canal mientras suena otro y elige Multiview. Izquierda y derecha deciden cuál suena. La imagen en directo está difuminada en esta demostración.",
       "faq.q9": "¿Incluye canales de TV? ¿Qué listas IPTV funcionan?",
       "faq.a9": "No se incluye ningún canal ni lista: traes la tuya. WatchBridge acepta un enlace M3U/M3U8, un acceso Xtream Codes (servidor, usuario y contraseña) o un archivo .m3u, y lo muestra como una guía de TV.",
       "nav.pricing": "Precios",
