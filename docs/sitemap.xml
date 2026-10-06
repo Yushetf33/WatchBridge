@@ -85,6 +85,62 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/"/>
   </url>
   <url>
+    <loc>https://watchbridge.app/guides/iptv-player-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-player-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/reproductor-iptv-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-player-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/reproductor-iptv-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-player-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/reproductor-iptv-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-player-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/guides/iptv-multiview-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-multiview-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/multiview-iptv-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-multiview-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/multiview-iptv-google-tv-fire-tv.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-multiview-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/multiview-iptv-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-multiview-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/guides/iptv-epg-guide-not-showing.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html"/>
+  </url>
+  <url>
     <loc>https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html</loc>
     <lastmod>2026-10-06</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-nuvio.html"/>

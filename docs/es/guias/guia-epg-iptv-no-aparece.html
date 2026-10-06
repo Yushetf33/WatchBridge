@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guías — WatchBridge TV</title>
-<meta name="description" content="Guías prácticas de WatchBridge TV: tu lista IPTV en Google TV y Fire TV, Multiview, arreglar la EPG y abrir recomendaciones en Nuvio o Plex.">
-<link rel="canonical" href="https://watchbridge.app/es/guias/">
-<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/">
-<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/">
-<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/">
+<title>¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo</title>
+<meta name="description" content="Por qué la guía EPG de tu lista IPTV sale vacía o falta en algunos canales en Google TV y Fire TV y cómo arreglarlo: enlace XMLTV, cruce por id o nombre.">
+<link rel="canonical" href="https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/iptv-epg-guide-not-showing.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://watchbridge.app/es/guias/">
+<meta property="og:url" content="https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html">
 <meta property="og:site_name" content="WatchBridge">
-<meta property="og:title" content="Guías — WatchBridge TV">
-<meta property="og:description" content="Guías prácticas de WatchBridge TV: tu lista IPTV en Google TV y Fire TV, Multiview, arreglar la EPG y abrir recomendaciones en Nuvio o Plex.">
+<meta property="og:title" content="¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo">
+<meta property="og:description" content="Por qué la guía EPG de tu lista IPTV sale vacía o falta en algunos canales en Google TV y Fire TV y cómo arreglarlo: enlace XMLTV, cruce por id o nombre.">
 <meta property="og:image" content="https://watchbridge.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
 <meta property="og:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Guías — WatchBridge TV">
-<meta name="twitter:description" content="Guías prácticas de WatchBridge TV: tu lista IPTV en Google TV y Fire TV, Multiview, arreglar la EPG y abrir recomendaciones en Nuvio o Plex.">
+<meta name="twitter:title" content="¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo">
+<meta name="twitter:description" content="Por qué la guía EPG de tu lista IPTV sale vacía o falta en algunos canales en Google TV y Fire TV y cómo arreglarlo: enlace XMLTV, cruce por id o nombre.">
 <meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
 <meta name="twitter:image:alt" content="Pantalla de inicio de WatchBridge TV con la fila Continuar viendo y las sugerencias de Recomendado para ti">
 <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
@@ -32,11 +32,35 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollectionPage",
-      "name": "Guías — WatchBridge TV",
-      "description": "Guías prácticas de WatchBridge TV: tu lista IPTV en Google TV y Fire TV, Multiview, arreglar la EPG y abrir recomendaciones en Nuvio o Plex.",
+      "@type": "Article",
+      "headline": "¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo",
+      "description": "Por qué la guía EPG de tu lista IPTV sale vacía o falta en algunos canales en Google TV y Fire TV y cómo arreglarlo: enlace XMLTV, cruce por id o nombre.",
       "inLanguage": "es",
-      "url": "https://watchbridge.app/es/guias/"
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "image": "https://watchbridge.app/og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -52,6 +76,12 @@
           "position": 2,
           "name": "Guías",
           "item": "https://watchbridge.app/es/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo",
+          "item": "https://watchbridge.app/es/guias/guia-epg-iptv-no-aparece.html"
         }
       ]
     }
@@ -215,19 +245,37 @@
 
   <header class="hero">
     <a href="/es/" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">← WatchBridge</a>
-    <span class="eyebrow">Guías</span>
-    <h1>Guías de WatchBridge TV</h1>
-    <p class="lede">Guías breves y prácticas para que las recomendaciones de Google TV se abran en el reproductor que de verdad usas.</p>
+    <span class="eyebrow">Guía IPTV</span>
+    <h1>¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo</h1>
+    <p class="lede">Los canales cargan pero la rejilla de programas está vacía, o solo algunos canales tienen guía. Casi siempre es cuestión de <strong>de dónde salen los datos de la guía</strong>, no del reproductor. Así se comprueba en <strong>WatchBridge TV</strong>.</p>
   </header>
 
-  <div class="cards">
-    <a class="card" href="/es/guias/reproductor-iptv-google-tv-fire-tv.html"><h2>Reproductor IPTV para Google TV y Fire TV: qué buscar</h2><p>Qué necesita un buen reproductor IPTV en Google TV y Fire TV —guía EPG, favoritos, listas, catch-up, PIN, Multiview— y cómo lo cubre WatchBridge.</p></a>
-    <a class="card" href="/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html"><h2>Cómo añadir una lista M3U o Xtream Codes en Google TV y Fire TV</h2><p>Añade el enlace M3U, el acceso Xtream Codes o el archivo .m3u de tu proveedor IPTV a WatchBridge TV en Google TV o Fire TV, con guía EPG y más listas.</p></a>
-    <a class="card" href="/es/guias/multiview-iptv-google-tv-fire-tv.html"><h2>Multiview IPTV en Google TV y Fire TV: cómo funciona y qué necesita</h2><p>Mira dos canales IPTV a la vez en Google TV o Fire TV con WatchBridge TV: cómo iniciar Multiview, qué necesita y qué hacer si no se abre.</p></a>
-    <a class="card" href="/es/guias/guia-epg-iptv-no-aparece.html"><h2>¿La guía (EPG) del IPTV no aparece o sale vacía? Cómo arreglarlo</h2><p>Por qué la guía EPG de tu lista IPTV sale vacía o falta en algunos canales en Google TV y Fire TV y cómo arreglarlo: enlace XMLTV, cruce por id o nombre.</p></a>
-    <a class="card" href="/es/guias/abrir-recomendaciones-google-tv-en-nuvio.html"><h2>Cómo abrir las recomendaciones de Google TV en Nuvio, Stremio o Plex</h2><p>Google TV abre cada recomendación en la app de la que viene. Así la envías a Nuvio, Stremio, Plex o Jellyfin, paso a paso.</p></a>
-    <a class="card" href="/es/guias/nuvio-vs-wuplay-vs-stremio.html"><h2>Nuvio vs Wuplay vs Stremio: qué cambia con WatchBridge TV</h2><p>Nuvio, Wuplay y Stremio funcionan igual con WatchBridge TV. Qué cambia, qué comprobar y cómo cambiar de una a otra sin reinstalar.</p></a>
-  </div>
+  <article>
+<h2>De dónde saca la guía sus datos</h2>
+<p>Una lista IPTV solo contiene canales. Los programas vienen de una <strong>guía XMLTV</strong> (un archivo .xml o .xml.gz). WatchBridge la toma de uno de estos dos sitios:</p>
+<ul>
+  <li><strong>La que ya declara tu lista</strong> (muchas listas M3U y paneles Xtream Codes apuntan a su propia guía), o</li>
+  <li><strong>El enlace XMLTV que pegues</strong> en el campo opcional de EPG al añadir la lista.</li>
+</ul>
+<p>Después los programas se cruzan con tus canales <strong>por id o por nombre</strong>.</p>
+
+<h2>Soluciones, por orden</h2>
+<ol>
+  <li><strong>Pulsa Actualizar lista.</strong> Vuelve a cargar los canales y la guía. Una guía grande tarda un momento en descargarse.</li>
+  <li><strong>Añade un enlace XMLTV.</strong> Si tu lista no declara guía, pide a tu proveedor la URL de su XMLTV (EPG) y pégala en el campo de EPG de la lista.</li>
+  <li><strong>Comprueba el enlace.</strong> Abre la URL XMLTV en un navegador de la misma red. Debe descargar un archivo .xml o .xml.gz, no una página de error.</li>
+  <li><strong>¿Solo están vacíos algunos canales?</strong> El archivo de guía no tiene entradas que coincidan con el id o el nombre de esos canales. El arreglo está en el proveedor: pídele una guía que los cubra.</li>
+</ol>
+
+<h2>Conviene saber</h2>
+<ul>
+  <li>La guía retrocede hasta 48 horas y avanza hasta donde llegue el archivo de guía.</li>
+  <li>Cada lista conserva su propio ajuste de EPG. Si usas varias listas, revisa la que estás mirando.</li>
+</ul>
+<div class="callout"><strong>WatchBridge no ofrece listas ni datos de guía.</strong> Lee los que tú traes.</div>
+<p>¿Añades una lista desde cero? Mira <a href="/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html">cómo añadir una lista M3U o Xtream Codes</a>.</p>
+<div class="cta"><a href="/es/iptv.html">Ver las funciones del IPTV</a><a class="alt" href="/es/setup.html">Configuración y ayuda</a></div>
+  </article>
 
   <footer>
     <span>WatchBridge TV · Prueba gratis de 2 días, luego 4,99 € pago único</span>
