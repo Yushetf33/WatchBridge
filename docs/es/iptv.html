@@ -208,26 +208,53 @@
     .steps { grid-template-columns: 1fr !important; }
   }
 </style>
+<!--WBH-CSS--><style>
+  html { scroll-padding-top: 84px; }
+  .wbh { position: sticky; top: 0; z-index: 100; background: rgba(11,13,18,.9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26; font-family: "Manrope", system-ui, sans-serif; text-align: left; }
+  .wbh, .wbh * { box-sizing: border-box; }
+  .wbh-in { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding: 12px 28px; }
+  /* paginas con relleno en el body (instalacion, ajustes, privacidad, guias): la barra se pega arriba y a los lados */
+  .wbh-flush { margin: -4rem -1.5rem 2.5rem; }
+  .wbh-brand { display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; flex-shrink: 0; }
+  .wbh-brand:hover { color: #FFFFFF; text-decoration: none; }
+  .wbh-brand img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .wbh-nav { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+  .wbh-pill { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; color: #B9BCC4; font-size: 13.5px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .wbh-pill:hover { color: #FFFFFF; background: #171B24; border-color: #262B36; text-decoration: none; }
+  .wbh-pill[aria-current="page"] { color: #FFFFFF; background: #171B24; border-color: #323846; }
+  .wbh-pill.wbh-hot { color: #F5A623; background: rgba(245,166,35,.09); border-color: #3A2F18; }
+  .wbh-pill.wbh-hot:hover { color: #FFB941; background: rgba(245,166,35,.17); border-color: #5A4520; }
+  .wbh-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5A623; box-shadow: 0 0 0 3px rgba(245,166,35,.22); }
+  .wbh-cta { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 9px; background: #5B8DEF; color: #0B0D12; font-size: 13.5px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-cta:hover { background: #6E9CF2; color: #0B0D12; text-decoration: none; }
+  @media (max-width: 900px) {
+    html { scroll-padding-top: 112px; }
+    .wbh-in { flex-wrap: wrap; gap: 8px 12px; padding: 10px 16px; }
+    .wbh-cta { padding: 8px 14px; font-size: 13px; }
+    .wbh-nav { order: 3; flex: 0 0 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+    .wbh-nav::-webkit-scrollbar { display: none; }
+  }
+</style><!--/WBH-CSS-->
 </head>
 <body>
 
-<header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 40px; background: rgba(11,13,18,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26;">
-  <a href="/es/" style="display: flex; align-items: center; gap: 11px;">
-    <img src="/logo.png" width="30" height="30" alt="" style="border-radius: 8px; display: block;">
-    <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; color: #FFFFFF;">WatchBridge</span>
-  </a>
-  <div style="display: flex; align-items: center; gap: 28px;">
-    <nav style="display: flex; align-items: center; gap: 28px;" class="nav-links">
-      <a href="#features" class="navlink">Funciones</a>
-      <a href="#videos" class="navlink">Vídeos</a>
-      <a href="#start" class="navlink">Empezar</a>
-      <a href="#faq" class="navlink">Preguntas</a>
-      <a href="/es/guias/" class="navlink">Guías</a>
-      <a href="/es/" class="navlink">Inicio de WatchBridge</a>
+<!--WBH-->
+<header class="wbh">
+  <div class="wbh-in">
+    <a class="wbh-brand" href="/es/"><img src="/logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
+    <nav class="wbh-nav" aria-label="Main">
+      <a class="wbh-pill wbh-hot" href="/es/iptv.html" aria-current="page"><span class="wbh-dot" aria-hidden="true"></span><span>TV en directo</span></a>
+      <a class="wbh-pill" href="/es/#how"><span>Películas y series</span></a>
+      <a class="wbh-pill" href="/es/install.html"><span>Instalar</span></a>
+      <a class="wbh-pill" href="/es/guias/"><span>Guías</span></a>
+      <a class="wbh-pill" href="/es/#pricing"><span>Precios</span></a>
+      <a class="wbh-pill" href="/es/#mobile"><span>App móvil</span></a>
+      <a class="wbh-pill" href="/es/#faq"><span>Preguntas</span></a>
     </nav>
-    <a href="/es/#install" class="cta-primary" style="padding: 9px 18px; font-size: 13.5px; flex-shrink: 0;">Conseguir WatchBridge</a>
+    <a class="wbh-cta" href="/es/#install">Conseguir WatchBridge</a>
   </div>
 </header>
+<!--/WBH-->
 
 <!-- HERO -->
 <section class="hero-bg" style="padding-top: 80px; padding-bottom: 84px;">

@@ -199,8 +199,52 @@
     section.trouble { padding: 1.3rem 1.1rem 1.5rem; }
   }
 </style>
+<!--WBH-CSS--><style>
+  html { scroll-padding-top: 84px; }
+  .wbh { position: sticky; top: 0; z-index: 100; background: rgba(11,13,18,.9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1F26; font-family: "Manrope", system-ui, sans-serif; text-align: left; }
+  .wbh, .wbh * { box-sizing: border-box; }
+  .wbh-in { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding: 12px 28px; }
+  /* paginas con relleno en el body (instalacion, ajustes, privacidad, guias): la barra se pega arriba y a los lados */
+  .wbh-flush { margin: -4rem -1.5rem 2.5rem; }
+  .wbh-brand { display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-family: "Sora", system-ui, sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; flex-shrink: 0; }
+  .wbh-brand:hover { color: #FFFFFF; text-decoration: none; }
+  .wbh-brand img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+  .wbh-nav { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+  .wbh-pill { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; color: #B9BCC4; font-size: 13.5px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .wbh-pill:hover { color: #FFFFFF; background: #171B24; border-color: #262B36; text-decoration: none; }
+  .wbh-pill[aria-current="page"] { color: #FFFFFF; background: #171B24; border-color: #323846; }
+  .wbh-pill.wbh-hot { color: #F5A623; background: rgba(245,166,35,.09); border-color: #3A2F18; }
+  .wbh-pill.wbh-hot:hover { color: #FFB941; background: rgba(245,166,35,.17); border-color: #5A4520; }
+  .wbh-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5A623; box-shadow: 0 0 0 3px rgba(245,166,35,.22); }
+  .wbh-cta { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 9px; background: #5B8DEF; color: #0B0D12; font-size: 13.5px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-cta:hover { background: #6E9CF2; color: #0B0D12; text-decoration: none; }
+  @media (max-width: 900px) {
+    html { scroll-padding-top: 112px; }
+    .wbh-in { flex-wrap: wrap; gap: 8px 12px; padding: 10px 16px; }
+    .wbh-cta { padding: 8px 14px; font-size: 13px; }
+    .wbh-nav { order: 3; flex: 0 0 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+    .wbh-nav::-webkit-scrollbar { display: none; }
+  }
+</style><!--/WBH-CSS-->
 </head>
 <body>
+<!--WBH-->
+<header class="wbh wbh-flush">
+  <div class="wbh-in">
+    <a class="wbh-brand" href="index.html"><img src="logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
+    <nav class="wbh-nav" aria-label="Main">
+      <a class="wbh-pill wbh-hot" href="iptv.html"><span class="wbh-dot" aria-hidden="true"></span><span data-i18n="hdr.live">Live TV</span></a>
+      <a class="wbh-pill" href="index.html#how"><span data-i18n="hdr.movies">Movies &amp; series</span></a>
+      <a class="wbh-pill" href="install.html"><span data-i18n="hdr.install">Install</span></a>
+      <a class="wbh-pill" href="guides/"><span data-i18n="hdr.guides">Guides</span></a>
+      <a class="wbh-pill" href="index.html#pricing"><span data-i18n="hdr.pricing">Pricing</span></a>
+      <a class="wbh-pill" href="index.html#mobile"><span data-i18n="hdr.mobile">Mobile app</span></a>
+      <a class="wbh-pill" href="index.html#faq"><span data-i18n="hdr.faq">FAQ</span></a>
+    </nav>
+    <a class="wbh-cta" href="index.html#install" data-i18n="hdr.cta">Get WatchBridge</a>
+  </div>
+</header>
+<!--/WBH-->
 
 <div class="page">
 
@@ -370,6 +414,16 @@
 <script src="i18n.js"></script>
 <script>
   tvrbApplyI18n({
+      /*WBH-DICT*/
+      "hdr.live": "TV en directo",
+      "hdr.movies": "Películas y series",
+      "hdr.install": "Instalar",
+      "hdr.guides": "Guías",
+      "hdr.pricing": "Precios",
+      "hdr.mobile": "App móvil",
+      "hdr.faq": "Preguntas",
+      "hdr.cta": "Conseguir WatchBridge",
+      /*/WBH-DICT*/
     "eyebrow": "Guía de configuración",
     "h1": "Configura y soluciona problemas de WatchBridge TV",
     "lede": "\n      ¿Todavía no la has instalado, o el interruptor de Accesibilidad no se\n      queda activado? Empieza por la <a href=\"install.html\">guía de instalación</a> —\n      esta página sigue justo después: verificar tu suscripción, sincronizar\n      con la app de móvil, <strong>el modo Fire TV</strong>, <strong>la\n      búsqueda por voz</strong> y <strong>Jellyfin</strong>, más la solución\n      a cada problema conocido, por código de error.\n    ",
