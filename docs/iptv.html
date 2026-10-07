@@ -115,7 +115,7 @@
   "description": "Hold OK on a channel while another one is playing and choose Multiview: two channels side by side, Left and Right choose which one plays sound.",
   "thumbnailUrl": "https://watchbridge.app/clip-multiview-poster.jpg",
   "uploadDate": "2026-10-06T12:00:00+02:00",
-  "duration": "PT30S",
+  "duration": "PT18S",
   "contentUrl": "https://watchbridge.app/clip-multiview.mp4"
 }
 </script>
@@ -127,7 +127,7 @@
   "description": "Hold OK on any programme of a channel, choose “Add channel to favorites” and use the Group button to see only your favorites.",
   "thumbnailUrl": "https://watchbridge.app/clip-favorites-poster.jpg",
   "uploadDate": "2026-10-06T12:00:00+02:00",
-  "duration": "PT24S",
+  "duration": "PT15S",
   "contentUrl": "https://watchbridge.app/clip-favorites.mp4"
 }
 </script>
@@ -135,11 +135,11 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "WatchBridge TV — Voice search in the IPTV guide",
-  "description": "Say a channel or the title of what you want to watch and WatchBridge looks it up in the TV guide and tunes it.",
+  "name": "WatchBridge TV — Search in the IPTV guide, by typing or voice",
+  "description": "Type a channel or the title of what you want to watch, or say it, and WatchBridge looks it up in the TV guide and tunes it.",
   "thumbnailUrl": "https://watchbridge.app/clip-voice-poster.jpg",
   "uploadDate": "2026-10-06T12:00:00+02:00",
-  "duration": "PT20S",
+  "duration": "PT11S",
   "contentUrl": "https://watchbridge.app/clip-voice.mp4"
 }
 </script>
@@ -275,30 +275,15 @@
       </div>
       <div>
         <div class="frame">
-          <video controls playsinline preload="metadata" poster="clip-multiview-poster.jpg" data-es-src="/clip-multiview-es.mp4" data-es-poster="/clip-multiview-es-poster.jpg" aria-label="IPTV Multiview: two channels at once">
-            <source src="clip-multiview.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" poster="iptv-tour-poster.jpg" data-es-src="/iptv-tour-es.mp4" data-es-poster="/iptv-tour-es-poster.jpg" aria-label="IPTV tour: guide, alerts, favorites, Multiview, movies and series">
+            <source src="iptv-tour.mp4" type="video/mp4">
           </video>
         </div>
         <div style="margin-top: 20px;">
-          <p style="font-family: 'Sora', system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0 0 8px;" data-i18n="hero.mvh">Multiview: two channels at once</p>
-          <p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.6; margin: 0 0 8px;" data-i18n="big.mv.p">Hold OK on a channel while another one is playing and choose Multiview. Left and Right pick which one plays sound; OK takes one full screen. The live picture is blurred in this demo.</p>
-          <p style="color: #6B7280; font-size: 13px; line-height: 1.6;" data-i18n="big.mv.n">It needs a source that allows two streams at once. WatchBridge includes its own software decoder for MPEG-2 channels, so devices without one can show them too.</p>
+          <p style="font-family: 'Sora', system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0 0 8px;" data-i18n="hero.mvh">The whole IPTV player in 90 seconds</p>
+          <p style="color: #B9BCC4; font-size: 14.5px; line-height: 1.6; margin: 0 0 8px;" data-i18n="hero.tp">The live guide, program alerts, favorites, opening a title in Nuvio or Stremio, Multiview, search by typing or voice — and Movies and Series when your list is an Xtream Codes account. Recorded on a real TV; the live pictures are blurred in this demo.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TOUR -->
-<section id="tour" style="padding-top: 72px; padding-bottom: 8px;">
-  <div class="wrap" style="max-width: 1040px;">
-    <p class="eyebrow" data-i18n="tour.eyebrow">The whole thing in 90 seconds</p>
-    <h2 class="h2" style="font-weight: 700; font-size: 34px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 14px; line-height: 1.15;" data-i18n="tour.h2">Everything the IPTV player does</h2>
-    <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65; margin: 0 0 30px; max-width: 46em;" data-i18n="tour.p">The live guide, program alerts, favorites, opening a title in Nuvio or Stremio, Multiview, search by typing or voice — and Movies and Series when your list is an Xtream Codes account. Recorded on a real TV.</p>
-    <div class="frame">
-      <video controls playsinline preload="metadata" poster="iptv-tour-poster.jpg" data-es-src="/iptv-tour-es.mp4" data-es-poster="/iptv-tour-es-poster.jpg" aria-label="IPTV tour: guide, alerts, favorites, Multiview, movies and series" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000;">
-        <source src="iptv-tour.mp4" type="video/mp4">
-      </video>
     </div>
   </div>
 </section>
@@ -331,14 +316,28 @@
       </div>
     </div>
 
-    <div class="feat-row flip">
+    <div class="feat-row flip" style="margin-bottom: 88px;">
       <div class="txt">
-        <span class="tag" data-i18n="big.voice.tag">Voice search</span>
-        <h3 style="font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 14px;" data-i18n="big.voice.h">Say it, it tunes it</h3>
-        <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65;" data-i18n="big.voice.p">Press Voice search and say a channel (“put on BBC News”) or what you want to watch (“put on Men in Black”). WatchBridge looks it up in the TV guide — or lets you pick between the channels showing it. The live picture is blurred in this demo.</p>
+        <span class="tag" data-i18n="big.mvr.tag">Multiview</span>
+        <h3 style="font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 14px;" data-i18n="big.mvr.h">Two channels at once</h3>
+        <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65; margin: 0 0 10px;" data-i18n="big.mv.p">Hold OK on a channel while another one is playing and choose Multiview. Left and Right pick which one plays sound; OK takes one full screen. The live picture is blurred in this demo.</p>
+        <p style="color: #6B7280; font-size: 13.5px; line-height: 1.6;" data-i18n="big.mv.n">It needs a source that allows two streams at once. WatchBridge includes its own software decoder for MPEG-2 channels, so devices without one can show them too.</p>
       </div>
       <div class="frame">
-        <video controls playsinline preload="metadata" poster="clip-voice-poster.jpg" data-es-src="/clip-voice-es.mp4" data-es-poster="/clip-voice-es-poster.jpg" aria-label="IPTV voice search">
+        <video controls playsinline preload="metadata" poster="clip-multiview-poster.jpg" data-es-src="/clip-multiview-es.mp4" data-es-poster="/clip-multiview-es-poster.jpg" aria-label="IPTV Multiview: two channels at once">
+          <source src="clip-multiview.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="feat-row">
+      <div class="txt">
+        <span class="tag" data-i18n="big.voice.tag">Search</span>
+        <h3 style="font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 14px;" data-i18n="big.voice.h">Type it or say it, it tunes it</h3>
+        <p style="color: #B9BCC4; font-size: 16px; line-height: 1.65;" data-i18n="big.voice.p">Press the magnifier and type a channel or what you want to watch — or press the microphone and say it (“put on BBC News”, “put on Men in Black”). WatchBridge looks it up in the TV guide, or lets you pick between the channels showing it. The live picture is blurred in this demo.</p>
+      </div>
+      <div class="frame">
+        <video controls playsinline preload="metadata" poster="clip-voice-poster.jpg" data-es-src="/clip-voice-es.mp4" data-es-poster="/clip-voice-es-poster.jpg" aria-label="IPTV search by typing or voice">
           <source src="clip-voice.mp4" type="video/mp4">
         </video>
       </div>
@@ -489,20 +488,20 @@
       "strip.1": "No vendemos canales: traes tu lista",
       "strip.2": "Google TV, Android TV y Fire TV",
       "strip.3": "2 días de prueba gratis y un único pago",
-      "tour.eyebrow": "Todo en 90 segundos",
-      "tour.h2": "Todo lo que hace el reproductor IPTV",
-      "tour.p": "La guía en directo, alertas de programas, favoritos, abrir un título en Nuvio o Stremio, Multiview, búsqueda escribiendo o por voz — y Películas y Series cuando tu lista es una cuenta Xtream Codes. Grabado en una TV real.",
+      "hero.tp": "La guía en directo, alertas de programas, favoritos, abrir un título en Nuvio o Stremio, Multiview, búsqueda escribiendo o por voz — y Películas y Series cuando tu lista es una cuenta Xtream Codes. Grabado en una TV real; las imágenes en directo están difuminadas en esta demo.",
+      "big.mvr.tag": "Multiview",
+      "big.mvr.h": "Dos canales a la vez",
       "big.eyebrow": "Dos más que usarás cada día",
-      "hero.mvh": "Multiview: dos canales a la vez",
+      "hero.mvh": "Todo el reproductor IPTV en 90 segundos",
       "big.h2": "Pensado para el mando, no para un ratón",
       "big.mv.p": "Mantén OK sobre un canal mientras suena otro y elige Multiview. Izquierda y derecha deciden cuál suena; OK pone uno a pantalla completa. La imagen en directo está difuminada en esta demostración.",
       "big.mv.n": "Necesita una fuente que permita dos emisiones a la vez. WatchBridge incluye su propio decodificador por software para canales MPEG-2, así que también los muestran equipos que no lo traen.",
       "big.fav.tag": "Favoritos",
       "big.fav.h": "Tus canales, primero",
       "big.fav.p": "Mantén OK sobre cualquier programa de la fila de un canal, elige «Añadir canal a favoritos» y una estrella lo marca. Un toque en el botón Grupo muestra solo tus favoritos, entre cientos de canales.",
-      "big.voice.tag": "Búsqueda por voz",
-      "big.voice.h": "Dilo y lo sintoniza",
-      "big.voice.p": "Pulsa Buscar por voz y di un canal («pon BBC News») o lo que quieres ver («pon Men in Black»). WatchBridge lo busca en la guía de TV, o te deja elegir entre los canales que lo emiten. La imagen en directo está difuminada en esta demostración.",
+      "big.voice.tag": "Búsqueda",
+      "big.voice.h": "Escríbelo o dilo, y lo sintoniza",
+      "big.voice.p": "Pulsa la lupa y escribe un canal o lo que quieres ver — o pulsa el micrófono y dilo («pon BBC News», «pon Men in Black»). WatchBridge lo busca en la guía de TV, o te deja elegir entre los canales que lo emiten. La imagen en directo está difuminada en esta demo.",
       "all.eyebrow": "Y mucho más",
       "all.h2": "Todo lo que hace la guía IPTV",
       "f.epg": "Rejilla EPG completa",
