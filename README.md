@@ -19,7 +19,7 @@ WatchBridge TV is an independent automation and redirection tool. **It does not 
 
 ## Installation
 
-WatchBridge TV is not currently distributed through Google Play. The app is installed manually ("sideloaded") using the APK file available in this repository's releases section.
+WatchBridge TV is available on [Google Play](https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play). You can also install the APK manually ("sideloaded") from this repository's releases section — that is the way to go on Fire TV, which has no Google Play.
 
 👉 **[Visual step-by-step install guide](https://watchbridge.app/install.html)** — the same steps below, laid out more clearly.
 

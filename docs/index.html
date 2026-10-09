@@ -133,7 +133,7 @@
       "name": "Is it on Google Play?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Google Play version is in closed testing and heading for public release. Until then you can install the APK, which works the same way."
+        "text": "Yes. Install it from Google Play on your Google TV. On Fire TV, which has no Google Play, you install the APK instead — it works the same way."
       }
     }
   ]
@@ -295,10 +295,7 @@
         <p style="font-size: 18px; line-height: 1.58; color: #B9BCC4; max-width: 32em; margin: 0 0 14px; text-wrap: pretty;" data-i18n="hero.sub">Movies, series, voice search, your phone and your live IPTV guide all open straight in Nuvio, Stremio, Plex, Jellyfin and more — not in whatever app they came from.</p>
         <p style="font-size: 14.5px; color: #6B7280; font-style: italic; margin: 0 0 30px;" data-i18n="hero.tag">Right recommendation. Wrong app — every time.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px;">
-          <a href="#install" class="cta-primary" style="padding: 15px 26px; font-size: 15.5px;">
-            <span data-i18n="cta.get">Get WatchBridge</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="#0B0D12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play" target="_blank" rel="noopener" data-i18n="badge.link" style="display: inline-flex;"><img src="google-play-badge.png" alt="Get it on Google Play" height="64" style="height: 64px; width: auto;"></a>
           <a href="#how" class="cta-secondary" style="padding: 15px 26px; font-size: 15.5px;" data-i18n="cta.see">See how it works</a>
         </div>
         <div class="trust" style="display: flex; flex-wrap: wrap; gap: 10px 22px; color: #B9BCC4; font-size: 14px;">
@@ -616,7 +613,7 @@
         </div>
       </div>
     </div>
-    <p style="text-align: center; margin: 28px 0 0; color: #6B7280; font-size: 13.5px;" data-i18n="price.footnote">Scan the QR code shown in the app with your phone, pay with the same email, then verify it on the TV.</p>
+    <p style="text-align: center; margin: 28px 0 0; color: #6B7280; font-size: 13.5px;" data-i18n="price.footnote">On Google Play, buy it with your Google account right from the TV. With the APK, scan the QR code shown in the app and pay with your phone.</p>
     <div style="text-align: center; margin-top: 32px;"><a href="#install" class="cta-primary" style="padding: 15px 28px; font-size: 15.5px;" data-i18n="cta.get">Get WatchBridge</a></div>
   </div>
 </section>
@@ -632,8 +629,8 @@
       <div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 10px;">
         <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B8DEF;" data-i18n="inst.c1k">Google TV</p>
         <h3 style="font-size: 19px; margin: 0; font-weight: 600; color: #FFFFFF;" data-i18n="inst.c1t">Google Play</h3>
-        <p style="margin: 0 0 8px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6; flex: 1;" data-i18n="inst.c1b">In closed testing now — join the test to install it from the Play Store. The public release is on its way.</p>
-        <a href="https://play.google.com/apps/testing/com.tunombre.tvbridge.play" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600;" data-i18n="inst.c1l">Join the closed test</a>
+        <p style="margin: 0 0 8px; color: #9AA1AC; font-size: 14.5px; line-height: 1.6; flex: 1;" data-i18n="inst.c1b">Install it straight from the Play Store on your Google TV.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600;" data-i18n="inst.c1l">Open in Google Play</a>
       </div>
       <div class="card" style="padding: 26px; display: flex; flex-direction: column; gap: 10px;">
         <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B8DEF;" data-i18n="inst.c2k">Fire TV</p>
@@ -791,7 +788,7 @@ adb install app-release.apk</code></pre>
     </details>
     <details class="faq">
       <summary data-i18n="faq.q8">Is it on Google Play?</summary>
-      <p data-i18n="faq.a8">A Google Play version is in closed testing and heading for public release. Until then you can install the APK, which works the same way.</p>
+      <p data-i18n="faq.a8">Yes. Install it from Google Play on your Google TV. On Fire TV, which has no Google Play, you install the APK instead — it works the same way.</p>
     </details>
     <details class="faq">
       <summary data-i18n="faq.q9">Does it include TV channels? Which IPTV lists work?</summary>
@@ -875,6 +872,14 @@ adb install app-release.apk</code></pre>
       "hdr.faq": "Preguntas",
       "hdr.cta": "Conseguir WatchBridge",
       /*/WBH-DICT*/
+      "hdr.live": "TV en directo",
+      "hdr.movies": "Películas y series",
+      "hdr.install": "Instalar",
+      "hdr.guides": "Guías",
+      "hdr.pricing": "Precios",
+      "hdr.mobile": "App móvil",
+      "hdr.faq": "Preguntas",
+      "hdr.cta": "Conseguir WatchBridge",
       "nav.how": "Cómo funciona",
       "nav.movies": "Películas y series",
       "nav.live": "TV en directo",
@@ -1046,7 +1051,7 @@ adb install app-release.apk</code></pre>
       "price.lifenote": "se paga una vez, tuyo para siempre",
       "price.b1": "Hasta 5 dispositivos, gestiónalos cuando quieras",
       "price.b2": "Sin suscripción ni cuotas mensuales",
-      "price.footnote": "Escanea el código QR que muestra la app con el móvil, paga con ese mismo email, y verifícalo luego en la TV.",
+      "price.footnote": "En Google Play, cómpralo con tu cuenta de Google directamente desde la TV. Con el APK, escanea el código QR que muestra la app y paga con el móvil.",
       "inst.h2": "Instala WatchBridge",
       "inst.intro": "Elige el camino que encaje con tu TV.",
       "inst.tabdl": "Código de Downloader",
@@ -1087,8 +1092,8 @@ adb install app-release.apk</code></pre>
       "video0.title": "WatchBridge en 1 minuto",
       "inst.c1k": "Google TV",
       "inst.c1t": "Google Play",
-      "inst.c1b": "En prueba cerrada ahora: únete a la prueba para instalarla desde Play Store. La versión pública está en camino.",
-      "inst.c1l": "Unirme a la prueba cerrada",
+      "inst.c1b": "Instálala directamente desde Play Store en tu Google TV.",
+      "inst.c1l": "Abrir en Google Play",
       "inst.c2k": "Fire TV",
       "inst.c2t": "Fire TV",
       "inst.c2b": "Fire TV usa la tienda de Amazon, no Google Play: instala el APK y activa el modo Fire TV.",
@@ -1115,7 +1120,7 @@ adb install app-release.apk</code></pre>
       "faq.q7": "¿Hay prueba gratuita?",
       "faq.a7": "Sí: 2 días con todo desbloqueado y sin tarjeta.",
       "faq.q8": "¿Está en Google Play?",
-      "faq.a8": "Hay una versión en Google Play en prueba cerrada, camino de su lanzamiento público. Mientras tanto puedes instalar el APK, que funciona igual.",
+      "faq.a8": "Sí. Instálala desde Google Play en tu Google TV. En Fire TV, que no tiene Google Play, se instala el APK, que funciona igual.",
       "footer.product": "Producto",
       "footer.support": "Ayuda",
       "nav.mobilebtn": "WatchBridge Mobile",
@@ -1125,7 +1130,8 @@ adb install app-release.apk</code></pre>
       "clip.d.t": "Enviar a la TV",
       "clip.d.c": "¿Has encontrado algo en el móvil? Pulsa Enviar a la TV y se abre en tu televisión.",
       "clip.e.t": "Abrir desde la guía de TV",
-      "clip.e.c": "Mantén OK sobre una película o serie de tu guía IPTV y ábrela en tu reproductor."
+      "clip.e.c": "Mantén OK sobre una película o serie de tu guía IPTV y ábrela en tu reproductor.",
+      "badge.link": "<img src=\"google-play-badge-es.png\" alt=\"Disponible en Google Play\" height=\"64\" style=\"height: 64px; width: auto;\">"
   });
 
   // Navegador en español (aunque llegue a la URL inglesa): vídeos con los rótulos en español.
