@@ -310,7 +310,7 @@
 
 <h2>Step by step</h2>
 <ol>
-  <li><strong>Install WatchBridge TV.</strong> Follow the <a href="/install.html">install guide</a>: the APK goes on the TV with Downloader, Send Files to TV or ADB.</li>
+  <li><strong>Install WatchBridge TV.</strong> On Google TV, get it from <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play">Google Play</a>. On Fire TV, or if you prefer the APK, follow the <a href="/install.html">install guide</a> (Downloader, Send Files to TV or ADB).</li>
   <li><strong>Turn it on.</strong> On Google TV, WatchBridge uses Android's Accessibility service in a narrow way: it only watches for clicks on the launcher's recommendation cards, and ignores every other click. If the toggle switches itself off, see the <a href="/setup.html#errors">troubleshooting guide</a>. On Fire TV, Fire OS blocks Accessibility for sideloaded apps, so there is a dedicated <strong>Fire TV mode</strong> instead — see <a href="/setup.html#firetv">Fire TV mode</a>.</li>
   <li><strong>Pick your player.</strong> In Settings choose Nuvio, Stremio, Plex, Jellyfin, WuPlay or Wholphin. You can change it any time, with no reinstall. If you use a Nuvio fork such as Nuvio Reshaped, WatchBridge detects any app that handles <code class="inline">nuvio://</code> links.</li>
   <li><strong>Click a recommendation</strong> on the Google TV home screen. The exact title opens in your player.</li>
@@ -332,17 +332,19 @@
 <h2>If it doesn't work</h2>
 <ul>
   <li><strong>The player opens but lands nowhere.</strong> Almost always an outdated or unofficial build of Nuvio or Stremio. Update it to the latest build.</li>
-  <li><strong>The Accessibility toggle turns itself off.</strong> Android 13+ blocks it for apps installed outside Google Play by default. The <a href="/setup.html#errors">troubleshooting guide</a> has the fix, including the one-time ADB step for the Google TV Streamer.</li>
+  <li><strong>The Accessibility toggle turns itself off.</strong> This mainly affects the APK: Android 13+ blocks it for apps installed outside Google Play by default. The <a href="/setup.html#errors">troubleshooting guide</a> has the fix, including the one-time ADB step for the Google TV Streamer.</li>
   <li><strong>Nothing happens on Fire TV.</strong> Activate <a href="/setup.html#firetv">Fire TV mode</a> from inside the app.</li>
 </ul>
 
 <h2>Two extras worth trying</h2>
 <ul>
-  <li><strong>Voice search.</strong> Ask for a title ("put on La Casa de Papel") and it opens straight in your player. It is opt-in on Google TV, from Settings, and asks for a one-time screen-recording permission.</li>
+  <li><strong>Voice search.</strong> Ask Google for a title: when its own page for that title opens, WatchBridge catches it and sends you to your player. It needs the Accessibility service on and, on some TVs, the optional Voice search setting (a one-time screen-recording permission). It can still fail on some devices.</li>
   <li><strong>Surprise me.</strong> A button in the in-app "Recommended for you" screen picks a random movie or series from what you are browsing and opens it directly.</li>
 </ul>
-<div class="cta"><a href="/install.html">Install guide</a><a class="alt" href="/apps.html">Compatible apps</a><a class="alt" href="/setup.html">Setup &amp; troubleshooting</a></div>
+<div class="cta"><a href="/install.html">Install guide</a><a class="alt" href="/apps.html">Compatible apps</a><a class="alt" href="/guides/jellyfin-wholphin-google-tv-recommendations.html">Jellyfin &amp; Wholphin</a><a class="alt" href="/setup.html">Setup &amp; troubleshooting</a></div>
   </article>
+  <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-open-google-tv-recommendations-in-nuvio" rel="noopener">Get WatchBridge TV on Google Play</a></div>
+  <p style="margin: 0.7rem 0 0; font-size: 0.88rem; color: var(--text-muted);">On Fire TV or a device without Google Play? Use the <a href="/install.html">APK</a>. 2-day free trial, no card, then €4.99 once.</p>
 
   <footer>
     <span>WatchBridge TV · 2-day free trial, then €4.99 one-time</span>

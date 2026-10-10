@@ -310,7 +310,7 @@
 
 <h2>Paso a paso</h2>
 <ol>
-  <li><strong>Instala WatchBridge TV.</strong> Sigue la <a href="/es/install.html">guía de instalación</a>: el APK se instala en la TV con Downloader, Send Files to TV o ADB.</li>
+  <li><strong>Instala WatchBridge TV.</strong> En Google TV, consíguelo en <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play">Google Play</a>. En Fire TV, o si prefieres el APK, sigue la <a href="/es/install.html">guía de instalación</a> (Downloader, Send Files to TV o ADB).</li>
   <li><strong>Actívalo.</strong> En Google TV, WatchBridge usa el servicio de Accesibilidad de Android de forma muy acotada: solo vigila los clics en las tarjetas de recomendación del launcher e ignora cualquier otro clic. Si el interruptor se apaga solo, mira la <a href="/es/setup.html#errors">guía de solución de problemas</a>. En Fire TV, Fire OS bloquea la Accesibilidad a las apps instaladas por sideload, así que hay un <strong>modo Fire TV</strong> propio; mira <a href="/es/setup.html#firetv">modo Fire TV</a>.</li>
   <li><strong>Elige tu reproductor.</strong> En Ajustes escoge Nuvio, Stremio, Plex, Jellyfin, WuPlay o Wholphin. Puedes cambiarlo cuando quieras, sin reinstalar. Si usas un fork de Nuvio como Nuvio Reshaped, WatchBridge detecta cualquier app que gestione enlaces <code class="inline">nuvio://</code>.</li>
   <li><strong>Pulsa una recomendación</strong> en la pantalla de inicio de Google TV. El título exacto se abre en tu reproductor.</li>
@@ -332,17 +332,19 @@
 <h2>Si no funciona</h2>
 <ul>
   <li><strong>El reproductor se abre pero no llega a ningún sitio.</strong> Casi siempre es una versión antigua o no oficial de Nuvio o Stremio. Actualízala a la última.</li>
-  <li><strong>El interruptor de Accesibilidad se apaga solo.</strong> Android 13 y posteriores lo bloquean por defecto en apps instaladas fuera de Google Play. La <a href="/es/setup.html#errors">guía de solución de problemas</a> tiene el arreglo, incluido el paso único con ADB para el Google TV Streamer.</li>
+  <li><strong>El interruptor de Accesibilidad se apaga solo.</strong> Afecta sobre todo al APK: Android 13 y posteriores lo bloquean por defecto en apps instaladas fuera de Google Play. La <a href="/es/setup.html#errors">guía de solución de problemas</a> tiene el arreglo, incluido el paso único con ADB para el Google TV Streamer.</li>
   <li><strong>No pasa nada en Fire TV.</strong> Activa el <a href="/es/setup.html#firetv">modo Fire TV</a> desde dentro de la app.</li>
 </ul>
 
 <h2>Dos extras que merece la pena probar</h2>
 <ul>
-  <li><strong>Búsqueda por voz.</strong> Pide un título («pon La casa de papel») y se abre directo en tu reproductor. En Google TV es opcional, se activa en Ajustes y pide un permiso de grabación de pantalla, una sola vez.</li>
+  <li><strong>Búsqueda por voz.</strong> Pide un título a Google: cuando se abre su propia ficha de ese título, WatchBridge la detecta y te lleva a tu reproductor. Necesita el servicio de Accesibilidad activado y, en algunas teles, el ajuste opcional «Búsqueda por voz» (un permiso de grabación de pantalla, una sola vez). Aun así, puede fallar en algunos dispositivos.</li>
   <li><strong>Sorpréndeme.</strong> Un botón de la pantalla «Recomendado para ti» de la app elige al azar una película o serie de lo que estás viendo y la abre directamente.</li>
 </ul>
-<div class="cta"><a href="/es/install.html">Guía de instalación</a><a class="alt" href="/es/apps.html">Apps compatibles</a><a class="alt" href="/es/setup.html">Configuración y ayuda</a></div>
+<div class="cta"><a href="/es/install.html">Guía de instalación</a><a class="alt" href="/es/apps.html">Apps compatibles</a><a class="alt" href="/es/guias/recomendaciones-google-tv-jellyfin-wholphin.html">Jellyfin y Wholphin</a><a class="alt" href="/es/setup.html">Configuración y ayuda</a></div>
   </article>
+  <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-abrir-recomendaciones-google-tv-en-nuvio" rel="noopener">Consigue WatchBridge TV en Google Play</a></div>
+  <p style="margin: 0.7rem 0 0; font-size: 0.88rem; color: var(--text-muted);">¿Fire TV o un equipo sin Google Play? Usa el <a href="/es/install.html">APK</a>. 2 días de prueba sin tarjeta, después 4,99 € una sola vez.</p>
 
   <footer>
     <span>WatchBridge TV · Prueba gratis de 2 días, luego 4,99 € pago único</span>

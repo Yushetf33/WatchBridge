@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to add an M3U or Xtream Codes list on Google TV and Fire TV</title>
-<meta name="description" content="Add your IPTV provider's M3U link, Xtream Codes login or .m3u file to WatchBridge TV on Google TV or Fire TV, set the EPG guide and add more lists.">
-<link rel="canonical" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html">
-<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html">
-<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html">
-<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html">
+<title>Open Google TV recommendations in Jellyfin or Wholphin</title>
+<meta name="description" content="Send Google TV recommendations to your own Jellyfin or Wholphin library: pick it as your player, or check your server first and fall back to another app.">
+<link rel="canonical" href="https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/recomendaciones-google-tv-jellyfin-wholphin.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html">
+<meta property="og:url" content="https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html">
 <meta property="og:site_name" content="WatchBridge">
-<meta property="og:title" content="How to add an M3U or Xtream Codes list on Google TV and Fire TV">
-<meta property="og:description" content="Add your IPTV provider's M3U link, Xtream Codes login or .m3u file to WatchBridge TV on Google TV or Fire TV, set the EPG guide and add more lists.">
+<meta property="og:title" content="Open Google TV recommendations in Jellyfin or Wholphin">
+<meta property="og:description" content="Send Google TV recommendations to your own Jellyfin or Wholphin library: pick it as your player, or check your server first and fall back to another app.">
 <meta property="og:image" content="https://watchbridge.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
 <meta property="og:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to add an M3U or Xtream Codes list on Google TV and Fire TV">
-<meta name="twitter:description" content="Add your IPTV provider's M3U link, Xtream Codes login or .m3u file to WatchBridge TV on Google TV or Fire TV, set the EPG guide and add more lists.">
+<meta name="twitter:title" content="Open Google TV recommendations in Jellyfin or Wholphin">
+<meta name="twitter:description" content="Send Google TV recommendations to your own Jellyfin or Wholphin library: pick it as your player, or check your server first and fall back to another app.">
 <meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
 <meta name="twitter:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -37,11 +37,11 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "How to add an M3U or Xtream Codes list on Google TV and Fire TV",
-      "description": "Add your IPTV provider's M3U link, Xtream Codes login or .m3u file to WatchBridge TV on Google TV or Fire TV, set the EPG guide and add more lists.",
+      "headline": "Open Google TV recommendations in Jellyfin or Wholphin",
+      "description": "Send Google TV recommendations to your own Jellyfin or Wholphin library: pick it as your player, or check your server first and fall back to another app.",
       "inLanguage": "en",
-      "datePublished": "2026-10-06",
-      "dateModified": "2026-10-06",
+      "datePublished": "2026-10-04",
+      "dateModified": "2026-10-04",
       "image": "https://watchbridge.app/og-image.jpg",
       "author": {
         "@type": "Organization",
@@ -63,7 +63,7 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"
+        "@id": "https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html"
       }
     },
     {
@@ -84,8 +84,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "How to add an M3U or Xtream Codes list on Google TV and Fire TV",
-          "item": "https://watchbridge.app/guides/add-m3u-xtream-list-google-tv-fire-tv.html"
+          "name": "Open Google TV recommendations in Jellyfin or Wholphin",
+          "item": "https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html"
         }
       ]
     }
@@ -294,50 +294,52 @@
 
   <header class="hero">
     <a href="/" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">← WatchBridge</a>
-    <span class="eyebrow">IPTV guide</span>
-    <h1>How to add an M3U or Xtream Codes list on Google TV and Fire TV</h1>
-    <p class="lede">Your provider gave you an M3U link, an Xtream Codes login or a file. Here is how to turn any of them into a TV guide on <strong>Google TV, Android TV or Fire TV</strong> with <strong>WatchBridge TV</strong>.</p>
+    <span class="eyebrow">Guide</span>
+    <h1>Open Google TV recommendations in Jellyfin or Wholphin</h1>
+    <p class="lede">Google TV recommends titles but opens them in the app they came from. <strong>WatchBridge TV</strong> can send them to your own <strong>Jellyfin</strong> or <strong>Wholphin</strong> library instead, or look in your server first and use another player only if the title is not there.</p>
   </header>
 
   <article>
-<h2>Before you start</h2>
+<h2>Two ways to use Jellyfin or Wholphin with WatchBridge TV</h2>
+<p>Jellyfin is free, self-hosted media server software; <strong>Wholphin</strong> is a separate open-source Android TV client for that same kind of server. Google TV doesn't know either of them, so by default a recommendation opens in the app it came from. WatchBridge TV catches that click and sends the title to your library in one of two ways:</p>
 <ul>
-  <li><strong>WatchBridge TV installed</strong> on your TV — see the <a href="/install.html">install guide</a>.</li>
-  <li><strong>Your own list</strong> from your IPTV provider. WatchBridge doesn't provide or sell channels.</li>
+  <li><strong>As your player.</strong> Choose Jellyfin or Wholphin as the app to open titles in. WatchBridge opens the app and searches for the title.</li>
+  <li><strong>As a first stop (recommended if you also use another player).</strong> Turn on <strong>My Jellyfin / Emby</strong> and add your server. If the recommended title is already in your library, WatchBridge opens that exact item. If it isn't, it falls back to the player you chose, such as Nuvio or Stremio.</li>
+</ul>
+<div class="callout"><strong>WatchBridge doesn't provide or host any content.</strong> It only opens titles from your own server or from apps you already use.</div>
+
+<h2>What you need</h2>
+<ul>
+  <li>A <strong>Google TV / Android TV</strong> device or a <strong>Fire TV</strong>, with <strong>Jellyfin</strong> or <strong>Wholphin</strong> installed.</li>
+  <li>For the first-stop option: your server address (for example <code class="inline">http://192.168.1.10:8096</code>) and an <strong>API key</strong>, created in the Jellyfin dashboard under <em>API Keys</em>.</li>
+  <li><strong>WatchBridge TV</strong>, from <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play">Google Play</a> (Google TV) or as an APK (see the <a href="/install.html">install guide</a>). 2-day free trial with no card, then €4.99 once.</li>
 </ul>
 
-<h2>Add the list</h2>
+<h2>Set it up</h2>
 <ol>
-  <li>Open <strong>WatchBridge TV</strong> and go to <strong>IPTV</strong>.</li>
-  <li>Choose how you have your list:
-    <ul>
-      <li><strong>M3U link</strong> — paste the URL (it looks like <code class="inline">https://provider.com/list.m3u</code>). .m3u8, .m3u.gz and PLS lists also work.</li>
-      <li><strong>Xtream Codes</strong> — enter the server (for example <code class="inline">http://provider.com:8080</code>), your username and your password. The guide URL is filled in for you.</li>
-      <li><strong>M3U file</strong> — press <strong>Receive from phone or PC</strong>. The TV shows an address; open it from a phone or PC on the same Wi-Fi, choose your .m3u file and send it. No file picker needed on the TV.</li>
-    </ul>
-  </li>
-  <li>Optional: if your provider gives you a separate <strong>XMLTV guide</strong> link (an .xml or .xml.gz file), paste it in the EPG field. It is matched to your channels by id or by name.</li>
-  <li>Press <strong>Load list</strong>.</li>
+  <li><strong>Install and turn on WatchBridge.</strong> Follow the <a href="/guides/open-google-tv-recommendations-in-nuvio.html">main setup guide</a>; on Google TV that means enabling the Accessibility service once.</li>
+  <li><strong>Choose your player.</strong> In Settings, open <em>Open movies and series in</em> and pick <strong>Jellyfin</strong> or <strong>Wholphin</strong>.</li>
+  <li><strong>Optional: check your server first.</strong> In Settings, open <em>My Jellyfin / Emby</em>, enter the server URL and the API key, and save. The server type (Jellyfin or Emby) is detected automatically.</li>
+  <li><strong>Click a recommendation</strong> on the Google TV home screen. If it is in your library, it opens there.</li>
 </ol>
 
-<h2>Add more lists or refresh</h2>
+<h2>What to expect</h2>
 <ul>
-  <li>The <strong>Lists</strong> button lets you keep several lists, switch between them and add or remove them. Each list keeps its own favorites and locks.</li>
-  <li><strong>Refresh list</strong> reloads the channels and the guide.</li>
+  <li>Jellyfin and Wholphin have no public catalogue like Nuvio or Stremio: they can only open what <strong>your library</strong> contains. If the title isn't there, there is nothing to open, which is why the "first stop" option plus a second player works well.</li>
+  <li>Matching is done by title, using the same TMDB lookup as the other players. A library entry with a very different name, or in another language, can fail to match.</li>
 </ul>
 
-<h2>If the list doesn't load</h2>
+<h2>If it doesn't work</h2>
 <ul>
-  <li><strong>“Could not download the list (error …)”.</strong> The link is wrong, expired or blocked. Open it in a browser on the same network to check it.</li>
-  <li><strong>“This list has no channels”.</strong> The URL loads something that is not an M3U list. Check you copied the whole link.</li>
-  <li><strong>The guide is empty.</strong> See <a href="/guides/iptv-epg-guide-not-showing.html">IPTV guide (EPG) not showing</a>.</li>
+  <li><strong>The server isn't found.</strong> The TV must be able to reach the address you typed. Use the local IP and port (usually 8096), include <code class="inline">http://</code>, and check you are on the same network.</li>
+  <li><strong>The API key is rejected.</strong> Create a new key in the Jellyfin dashboard and paste it again without extra spaces.</li>
+  <li><strong>It opens the app but not the title.</strong> Check the title exists in your library with the same name, and that your library metadata is complete.</li>
+  <li>The <a href="/setup.html#errors">troubleshooting guide</a> covers the rest, by error code.</li>
 </ul>
-
-<h2>Then</h2>
-<p>Mark favorites, filter by group, try <a href="/guides/iptv-multiview-google-tv-fire-tv.html">Multiview</a> or say a channel name with voice search. The full list is on the <a href="/iptv.html">IPTV page</a>.</p>
-<div class="cta"><a href="/iptv.html">See the IPTV features</a><a class="alt" href="/install.html">Install guide</a></div>
+<div class="callout warn"><strong>Independent tool.</strong> WatchBridge TV is not affiliated with, sponsored by, or endorsed by Jellyfin, Wholphin or Emby.</div>
+<div class="cta"><a href="/guides/open-google-tv-recommendations-in-nuvio.html">Main setup guide</a><a class="alt" href="/apps.html">Compatible apps</a><a class="alt" href="/install.html">Install guide</a></div>
   </article>
-  <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-add-m3u-xtream-list-google-tv-fire-tv" rel="noopener">Get WatchBridge TV on Google Play</a></div>
+  <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-jellyfin-wholphin-google-tv-recommendations" rel="noopener">Get WatchBridge TV on Google Play</a></div>
   <p style="margin: 0.7rem 0 0; font-size: 0.88rem; color: var(--text-muted);">On Fire TV or a device without Google Play? Use the <a href="/install.html">APK</a>. 2-day free trial, no card, then €4.99 once.</p>
 
   <footer>
