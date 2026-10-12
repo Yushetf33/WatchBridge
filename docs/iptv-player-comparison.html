@@ -75,6 +75,8 @@
   table.cmp th.wb, table.cmp td.wb { background: rgba(91,141,239,.09); }
   table.cmp thead th.wb { color: #FFFFFF; background: rgba(91,141,239,.18); }
   table.cmp tr.grp td { background: #0E1014; color: #5B8DEF; font-family: "JetBrains Mono", monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; text-align: left; font-weight: 500; padding: 11px 16px; }
+  .pl { font-size: 12px; line-height: 1.3; color: #B9BCC4; }
+  .ps { display: none; }
   .y { color: #4CD964; font-weight: 700; font-size: 16px; }
   .n { color: #4A505C; }
   .soon { color: #F5A623; font-weight: 700; font-size: 12px; line-height: 1.2; }
@@ -90,6 +92,8 @@
     table.cmp thead th:not(:first-child) { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; text-align: left; }
     table.cmp tr.grp td { padding: 9px 9px; font-size: 10px; letter-spacing: 0.1em; }
     .y { font-size: 14px; }
+    .pl { display: none; }
+    .ps { display: inline; font-size: 9.5px; font-weight: 600; color: #B9BCC4; white-space: nowrap; letter-spacing: -0.02em; }
     .soon-t { display: none; }
     .soon-i { display: inline; font-size: 14px; }
     .part { font-size: 10px; }
@@ -130,7 +134,8 @@
   <div class="wbh-in">
     <a class="wbh-brand" href="./"><img src="logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
     <nav class="wbh-nav" aria-label="Main">
-      <a class="wbh-pill wbh-hot" href="iptv.html" aria-current="page"><span class="wbh-dot" aria-hidden="true"></span><span data-i18n="hdr.live">Live TV</span></a>
+      <a class="wbh-pill wbh-hot" href="iptv.html"><span class="wbh-dot" aria-hidden="true"></span><span data-i18n="hdr.live">Live TV</span></a>
+      <a class="wbh-pill" href="iptv-player-comparison.html" aria-current="page"><span data-i18n="hdr.compare">Compare</span></a>
       <a class="wbh-pill" href="./#how"><span data-i18n="hdr.movies">Movies &amp; series</span></a>
       <a class="wbh-pill" href="install.html"><span data-i18n="hdr.install">Install</span></a>
       <a class="wbh-pill" href="guides/"><span data-i18n="hdr.guides">Guides</span></a>
@@ -169,6 +174,7 @@
 <tr><td data-i18n="r.parent">Parental control</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td></tr>
 <tr><td data-i18n="r.rec">Recording (DVR)</td><td class="wb"><span class="soon" title="Coming soon"><span class="soon-t" data-i18n="soon">Coming soon</span><span class="soon-i" aria-hidden="true">⏳</span></span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr><td data-i18n="r.vod">Movies and series (Xtream VOD)</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
+<tr><td data-i18n="r.price">Price</td><td class="wb"><span class="pl" data-i18n="p.wb">Trial, then €4.99 once</span><span class="ps" data-i18n="ps.wb">€4.99</span></td><td><span class="pl" data-i18n="p.freeplus">Free + paid Premium</span><span class="ps" data-i18n="ps.freeplus">€0+</span></td><td><span class="pl" data-i18n="p.freeplus">Free + paid Premium</span><span class="ps" data-i18n="ps.freeplus">€0+</span></td><td><span class="pl" data-i18n="p.ads">Free, with ads</span><span class="ps" data-i18n="ps.free">€0</span></td><td><span class="pl" data-i18n="p.extreme">Free (ads) + paid Pro</span><span class="ps" data-i18n="ps.freeplus">€0+</span></td><td><span class="pl" data-i18n="p.sparkle">Free + paid Plus</span><span class="ps" data-i18n="ps.freeplus">€0+</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="pl" data-i18n="p.freeplus">Free + paid Premium</span><span class="ps" data-i18n="ps.freeplus">€0+</span></td></tr>
 <tr class="grp"><td colspan="9" data-i18n="g.only">Only in WatchBridge</td></tr>
 <tr><td data-i18n="o.open">Open guide programs and movies in Stremio, Nuvio, WuPlay, Plex or Jellyfin</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr><td data-i18n="o.home">Open the movie and series recommendations on your TV home screen directly in the streaming app you choose (Nuvio, Stremio...)</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
@@ -181,6 +187,7 @@
       </table>
     </div>
     <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.65; color: #B9BCC4;" data-i18n="notes0">The WatchBridge column is WatchBridge TV: every feature marked there is available on Android TV, Google TV and Fire TV (recording is coming soon).</p>
+    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;" data-i18n="notes4">Price: “€0+” = free app with a paid upgrade, “€0” = free with ads. Exact prices change by country and plan, so check each store; the model is taken from each app's store listing or website.</p>
     <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;" data-i18n="notes1">* Not on Google Play with an official listing we could open; based on third-party store descriptions, so it may be incomplete. “PiP” = picture-in-picture, a small floating window, which is not the same as two channels side by side. Catch-up depends on your provider's archive. Apps change with every update. Store listings do not always say which device (TV, phone, tablet) a feature is on, so some items may differ on Android TV; ⏳ = coming soon.</p>
     <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;" data-i18n="notes3">WatchBridge also includes its own MPEG-2 video and MP2 audio decoders, so streams in those formats play even on devices without built-in support.</p>
     <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;" data-i18n="notes2">Recording is not in WatchBridge yet; it is planned. Spotted a mistake? Write to <a href="mailto:contacto@watchbridge.app">contacto@watchbridge.app</a> and we will correct it.</p>
@@ -235,6 +242,7 @@
   tvrbApplyI18n({
       /*WBH-DICT*/
       "hdr.live": "TV en directo",
+      "hdr.compare": "Comparativa",
       "hdr.movies": "Películas y series",
       "hdr.install": "Instalar",
       "hdr.guides": "Guías",
@@ -257,6 +265,16 @@
       "r.rec": "Grabación (DVR)",
       "r.vod": "Películas y series (VOD Xtream)",
       "soon": "Próximamente",
+      "r.price": "Precio",
+      "p.wb": "Prueba de 2 días y luego 4,99 € una vez",
+      "ps.wb": "4,99€",
+      "p.freeplus": "Gratis + Premium de pago",
+      "ps.freeplus": "0 €+",
+      "p.ads": "Gratis, con anuncios",
+      "ps.free": "0 €",
+      "p.extreme": "Gratis (anuncios) + Pro de pago",
+      "p.sparkle": "Gratis + Plus de pago",
+      "notes4": "Precio: «0 €+» = app gratuita con una mejora de pago, «0 €» = gratis con anuncios. Los precios exactos cambian según el país y el plan, así que consulta cada tienda; el modelo sale de la ficha de tienda o la web de cada app.",
       "notes0": "La columna de WatchBridge es la de WatchBridge TV: todas las funciones marcadas están disponibles en Android TV, Google TV y Fire TV (la grabación llegará próximamente).",
       "notes1": "* No está en Google Play con una ficha oficial que hayamos podido abrir; se basa en descripciones de tiendas de terceros, así que puede estar incompleto. «PiP» = imagen en imagen, una ventana pequeña flotante, que no es lo mismo que dos canales lado a lado. El catch-up depende del archivo de tu proveedor. Las apps cambian con cada actualización. Las fichas de tienda no siempre dicen en qué equipo (TV, móvil, tableta) está cada función, así que algo puede variar en Android TV; ⏳ = próximamente.",
       "notes3": "WatchBridge también incluye sus propios decodificadores de vídeo MPEG-2 y de audio MP2, así que las emisiones en esos formatos se ven y se oyen aunque el equipo no los admita de serie.",
