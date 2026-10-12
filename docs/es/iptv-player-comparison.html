@@ -77,8 +77,6 @@
   .ps { display: none; }
   .y { color: #4CD964; font-weight: 700; font-size: 16px; }
   .n { color: #4A505C; }
-  .soon { color: #F5A623; font-weight: 700; font-size: 12px; line-height: 1.2; }
-  .soon-i { display: none; }
   .part { color: #B9BCC4; font-size: 12px; font-weight: 600; }
   .src li { margin: 0 0 8px; color: #9AA1AC; font-size: 14px; line-height: 1.55; }
   .src a { word-break: break-word; }
@@ -92,8 +90,6 @@
     .y { font-size: 14px; }
     .pl { display: none; }
     .ps { display: inline; font-size: 9.5px; font-weight: 600; color: #B9BCC4; white-space: nowrap; letter-spacing: -0.02em; }
-    .soon-t { display: none; }
-    .soon-i { display: inline; font-size: 14px; }
     .part { font-size: 10px; }
   }
 </style>
@@ -170,7 +166,7 @@
 <tr><td>Catch-up (si tu proveedor lo tiene)</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td></tr>
 <tr><td>Multiview / varias pantallas</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="part">PiP</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr><td>Control parental</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td></tr>
-<tr><td>Grabación (DVR)</td><td class="wb"><span class="soon" title="Coming soon"><span class="soon-t">Próximamente</span><span class="soon-i" aria-hidden="true">⏳</span></span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
+<tr><td>Grabación (DVR)</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr><td>Películas y series (VOD Xtream)</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr class="grp"><td colspan="9">Solo en WatchBridge</td></tr>
 <tr><td>Abre programas de la guía y películas en Stremio, Nuvio, WuPlay, Plex o Jellyfin</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
@@ -184,17 +180,17 @@
         </tbody>
       </table>
     </div>
-    <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.65; color: #B9BCC4;">La columna de WatchBridge es la de WatchBridge TV: todas las funciones marcadas están disponibles en Android TV, Google TV y Fire TV (la grabación llegará próximamente).</p>
-    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;">* No está en Google Play con una ficha oficial que hayamos podido abrir; se basa en descripciones de tiendas de terceros, así que puede estar incompleto. «PiP» = imagen en imagen, una ventana pequeña flotante, que no es lo mismo que dos canales lado a lado. El catch-up depende del archivo de tu proveedor. Las apps cambian con cada actualización. Las fichas de tienda no siempre dicen en qué equipo (TV, móvil, tableta) está cada función, así que algo puede variar en Android TV; ⏳ = próximamente.</p>
+    <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.65; color: #B9BCC4;">La columna de WatchBridge es la de WatchBridge TV: todas las funciones marcadas están disponibles en Android TV, Google TV y Fire TV.</p>
+    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;">* No está en Google Play con una ficha oficial que hayamos podido abrir; se basa en descripciones de tiendas de terceros, así que puede estar incompleto. «PiP» = imagen en imagen, una ventana pequeña flotante, que no es lo mismo que dos canales lado a lado. El catch-up depende del archivo de tu proveedor. Las apps cambian con cada actualización. Las fichas de tienda no siempre dicen en qué equipo (TV, móvil, tableta) está cada función, así que algo puede variar en Android TV.</p>
     <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;">WatchBridge también incluye sus propios decodificadores de vídeo MPEG-2 y de audio MP2, así que las emisiones en esos formatos se ven y se oyen aunque el equipo no los admita de serie.</p>
-    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;">La grabación aún no está en WatchBridge; está prevista. ¿Ves algún error? Escribe a <a href="mailto:contacto@watchbridge.app">contacto@watchbridge.app</a> y lo corregimos.</p>
+    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #6B7280;">La grabación de WatchBridge se guarda en un USB o en la memoria de la TV, y las grabaciones programadas necesitan que la TV esté encendida a esa hora. ¿Ves algún error? Escribe a <a href="mailto:contacto@watchbridge.app">contacto@watchbridge.app</a> y lo corregimos.</p>
   </div>
 </section>
 
 <section style="padding-top: 64px; padding-bottom: 64px;">
   <div class="wrap" style="max-width: 900px;">
     <h2 class="h2" style="font-weight: 700; font-size: 26px; letter-spacing: -0.02em; color: #FFFFFF; margin: 0 0 14px;">Grabación</h2>
-    <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65;">TiviMate, Sparkle TV, XCIPTV, IPTV Extreme y Smarters Pro ya permiten grabar programas. La grabación es la próxima función que llegará a WatchBridge.</p>
+    <p style="color: #9AA1AC; font-size: 16px; line-height: 1.65;">TiviMate, Sparkle TV, XCIPTV, IPTV Extreme y Smarters Pro ya permiten grabar programas, y WatchBridge TV también: programa un programa desde la guía o graba el canal que estás viendo, en un USB o en la memoria de la TV, y míralo después desde la app.</p>
   </div>
 </section>
 
