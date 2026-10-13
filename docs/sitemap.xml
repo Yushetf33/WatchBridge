@@ -85,6 +85,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/iptv-player-comparison.html"/>
   </url>
   <url>
+    <loc>https://watchbridge.app/mobile.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/mobile.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/mobile.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/mobile.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/mobile.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/mobile.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/mobile.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/mobile.html"/>
+  </url>
+  <url>
     <loc>https://watchbridge.app/guides/</loc>
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/"/>
