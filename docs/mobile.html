@@ -342,6 +342,18 @@
       "faq.q5": "¿Cuántos canales puedo ver a la vez?",
       "faq.a5": "Hasta 3 en Multiview. Solo uno tiene sonido; toca otra pantalla para pasarle el sonido. Tu fuente puede limitar cuántos canales deja abrir a la vez."
   });
+
+  // Navegador en español (aunque llegue a la URL inglesa): video con los rótulos en español.
+  (function () {
+    if (document.documentElement.lang !== 'es') return;
+    document.querySelectorAll('video[data-es-src]').forEach(function (v) {
+      var s = v.querySelector('source');
+      if (!s || s.getAttribute('src') === v.getAttribute('data-es-src')) return;
+      v.setAttribute('poster', v.getAttribute('data-es-poster'));
+      s.setAttribute('src', v.getAttribute('data-es-src'));
+      v.load();
+    });
+  })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
