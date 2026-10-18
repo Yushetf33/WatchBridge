@@ -163,6 +163,11 @@
     </div>
   </section>
 
+  <section class="card" id="batches-card" style="margin-bottom: 24px;" hidden>
+    <h3 style="font-size: 17px; margin-bottom: 14px; text-align: center;" data-i18n="batches_title">Latest batches</h3>
+    <ul id="batch-list" style="list-style: none; margin: 0; padding: 0;"></ul>
+  </section>
+
   <section class="card" style="text-align: center; margin-bottom: 24px; opacity: 0.85;">
     <h3 style="font-size: 17px; margin-bottom: 8px;" data-i18n="more_title">More promotions</h3>
     <p style="font-size: 14px; line-height: 1.6; color: #9AA1AC; max-width: 30em; margin-inline: auto;" data-i18n="more_text">No other promotions are active right now. When there is a new one, it will show up here.</p>
@@ -195,6 +200,9 @@
     claim_done_title: "✓ Tu código",
     copy_button: "Copiar",
     redeem_instructions: "Canjéalo en Google Play → menú ☰ → Canjear código. Tarda unos minutos en activarse en tu cuenta.",
+    batches_title: "Últimas tandas",
+    batch_claimed: "repartidos",
+    batch_soldout: "agotada",
     claim_none_yet: "Todavía no hay códigos en esta tanda — vuelve cuando llegue a cero.",
     claim_already: "Ya has reclamado un código desde este dispositivo/red.",
     claim_sold_out: "Se han repartido todos los códigos.",
@@ -202,6 +210,9 @@
   };
   var EN_STRINGS = {
     claim_intro: "Codes are available right now in this batch.",
+    batches_title: "Latest batches",
+    batch_claimed: "claimed",
+    batch_soldout: "sold out",
     claim_none_yet: "No codes in this batch yet — check back when the countdown hits zero.",
     claim_already: "You've already claimed a code from this device/network.",
     claim_sold_out: "All codes have been claimed.",
@@ -258,6 +269,36 @@
   }
   setInterval(tick, 1000);
 
+  // Ultimas tandas: hora (en la hora local de quien mira), cuantos codigos trae y cuantos se han repartido de ella.
+  function renderBatches(batches) {
+    var card = document.getElementById('batches-card');
+    var list = document.getElementById('batch-list');
+    if (!batches || !batches.length) { card.hidden = true; return; }
+    var es = document.documentElement.lang === "es";
+    var dict = es ? ES_STRINGS : EN_STRINGS;
+    list.innerHTML = "";
+    batches.forEach(function (b) {
+      var when = new Date(b.at);
+      var today = new Date();
+      var sameDay = when.toDateString() === today.toDateString();
+      var time = when.toLocaleTimeString(es ? "es-ES" : "en-GB", { hour: "2-digit", minute: "2-digit" });
+      var day = sameDay ? "" : when.toLocaleDateString(es ? "es-ES" : "en-GB", { day: "numeric", month: "short" }) + " ";
+      var done = b.claimed >= b.size;
+      var li = document.createElement("li");
+      li.style.cssText = "display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 2px; border-top: 1px solid #1C1F26; font-size: 14px;";
+      var left = document.createElement("span");
+      left.style.color = "#E8E9EB";
+      left.textContent = day + time;
+      var right = document.createElement("span");
+      right.style.cssText = "font-weight: 600; color: " + (done ? "#6B7280" : "#4CD964") + ";";
+      right.textContent = b.claimed + "/" + b.size + " " + dict.batch_claimed + (done ? " — " + dict.batch_soldout : "");
+      li.appendChild(left); li.appendChild(right);
+      list.appendChild(li);
+    });
+    list.firstChild.style.borderTop = "none";
+    card.hidden = false;
+  }
+
   async function refreshStatus() {
     try {
       var res = await fetch(API_URL, {
@@ -272,6 +313,7 @@
       document.getElementById('progress-bar').style.width = Math.min(100, (data.claimedCount / data.totalCodes) * 100) + '%';
       nextBatchAtMs = data.nextBatchAt;
       tick();
+      renderBatches(data.batches);
       var btn = document.getElementById('claim-btn');
       btn.disabled = data.claimedCount >= data.unlockedCount;
     } catch (e) {
