@@ -159,6 +159,7 @@
         <button class="copy-btn" id="copy-btn" onclick="copyCode()" data-i18n="copy_button">Copy</button>
       </div>
       <p style="font-size: 13px; color: #9AA1AC; line-height: 1.6; max-width: 30em; margin-inline: auto;" data-i18n="redeem_instructions">Redeem it on Google Play → ☰ menu → Redeem code. Takes a few minutes to show up on your account.</p>
+      <p style="font-size: 12px; color: #6B7280; line-height: 1.6; max-width: 30em; margin: 12px auto 0;" data-i18n="code_saved">Your code is saved in this browser: if you close this page you will see it again here. Copy it now anyway.</p>
     </div>
   </section>
 
@@ -190,6 +191,7 @@
     claim_intro: "Hay códigos disponibles ahora mismo en esta tanda.",
     claim_button: "Consigue tu código",
     claim_footnote: "Un código por persona/dispositivo.",
+    code_saved: "Tu código se guarda en este navegador: si cierras la página, lo verás aquí otra vez. Aun así, cópialo ahora.",
     claim_done_title: "✓ Tu código",
     copy_button: "Copiar",
     redeem_instructions: "Canjéalo en Google Play → menú ☰ → Canjear código. Tarda unos minutos en activarse en tu cuenta.",
@@ -224,6 +226,22 @@
       // aplicando igual.
       return "web-" + Math.random().toString(36).slice(2);
     }
+  }
+
+  // El codigo reclamado se recuerda en este navegador: si la persona cierra la pagina sin copiarlo, al volver lo ve otra
+  // vez (el servidor no se lo volveria a dar: un codigo solo se entrega una vez).
+  var CODE_KEY = "wb_promo_code";
+  function saveCode(code) { try { localStorage.setItem(CODE_KEY, code); } catch (e) {} }
+  function showCode(code) {
+    document.getElementById('code-value').textContent = code;
+    document.getElementById('claim-idle').hidden = true;
+    document.getElementById('claim-done').hidden = false;
+  }
+  function restoreCode() {
+    try {
+      var saved = localStorage.getItem(CODE_KEY);
+      if (saved) showCode(saved);
+    } catch (e) {}
   }
 
   var nextBatchAtMs = null;
@@ -262,6 +280,7 @@
     }
   }
   refreshStatus();
+  restoreCode();
   setInterval(refreshStatus, 30000);
 
   var RECAPTCHA_SITE_KEY = "6LdBI8YtAAAAAEmfgtt2C-E7gr5RwG3ITbKH_JM3";
@@ -299,9 +318,8 @@
       });
       var data = await res.json();
       if (data.ok) {
-        document.getElementById('code-value').textContent = data.code;
-        document.getElementById('claim-idle').hidden = true;
-        document.getElementById('claim-done').hidden = false;
+        saveCode(data.code);
+        showCode(data.code);
         refreshStatus();
         return;
       }
