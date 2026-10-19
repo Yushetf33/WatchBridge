@@ -394,7 +394,7 @@
     var emailInput = document.getElementById('claim-email');
     var email = (emailInput.value || '').trim();
     var dict0 = isSpanish() ? ES_STRINGS : EN_STRINGS;
-    if (!/^[^s@]+@[^s@]+.[^s@]{2,}$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
       statusText.textContent = dict0.claim_bad_email;
       emailInput.focus();
       return;
