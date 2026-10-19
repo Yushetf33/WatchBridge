@@ -204,7 +204,7 @@
     batches_title: "Últimas tandas",
     batch_claimed: "repartidos",
     batch_soldout: "agotada",
-    claim_none_yet: "Todavía no hay códigos en esta tanda — vuelve cuando llegue a cero.",
+    claim_none_yet: "Esta tanda ya se ha agotado. La siguiente se desbloquea cuando la cuenta atrás llegue a cero.",
     claim_already: "Ya has reclamado un código desde este dispositivo/red.",
     claim_sold_out: "Se han repartido todos los códigos.",
     claim_error: "Algo ha fallado — inténtalo de nuevo en un momento."
@@ -215,7 +215,7 @@
     batches_title: "Latest batches",
     batch_claimed: "claimed",
     batch_soldout: "sold out",
-    claim_none_yet: "No codes in this batch yet — check back when the countdown hits zero.",
+    claim_none_yet: "Too slow, this batch is already gone. The next one unlocks when the countdown hits zero.",
     claim_already: "You've already claimed a code from this device/network.",
     claim_sold_out: "All codes have been claimed.",
     claim_error: "Something went wrong — try again in a moment."
@@ -260,6 +260,7 @@
   var nextBatchAtMs = null;
 
   var refreshingAtZero = false;
+  var lastZeroAt = 0;
   var labelOriginal = null;
 
   // La cuenta atras llego a cero: se pide el estado al servidor hasta que traiga la tanda siguiente (en vez de esperar al
@@ -281,6 +282,9 @@
     if (!nextBatchAtMs) return;
     if (nextBatchAtMs - Date.now() <= 0 && !refreshingAtZero) {
       refreshingAtZero = true;
+      lastZeroAt = Date.now();
+      var claimBtn = document.getElementById('claim-btn');
+      if (claimBtn && document.getElementById('claim-done').hidden) claimBtn.disabled = false;
       refreshAtZero(nextBatchAtMs);
     }
     var diff = Math.max(0, nextBatchAtMs - Date.now());
@@ -339,7 +343,7 @@
       tick();
       renderBatches(data.batches);
       var btn = document.getElementById('claim-btn');
-      btn.disabled = data.claimedCount >= data.unlockedCount;
+      btn.disabled = data.claimedCount >= data.unlockedCount && (Date.now() - lastZeroAt > 20000);
     } catch (e) {
       // Sin conexion o el backend caido: se deja la ultima cuenta atras
       // visible en vez de romper la pagina.
