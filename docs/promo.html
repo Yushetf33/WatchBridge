@@ -145,6 +145,9 @@
   <section class="card" style="text-align: center; margin-bottom: 24px;">
     <div id="claim-idle">
       <p id="claim-status-text" style="font-size: 14px; color: #9AA1AC; margin-bottom: 18px;" data-i18n="claim_intro">Codes are available right now in this batch.</p>
+      <input type="email" id="claim-email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-label="Email" style="width: 100%; max-width: 340px; box-sizing: border-box; padding: 12px 14px; margin-bottom: 14px; border-radius: 10px; border: 1px solid #2A2F3A; background: #0B0D12; color: #FFFFFF; font-size: 15px; font-family: inherit; text-align: center;">
+      <p style="font-size: 12px; color: #6B7280; margin: -6px auto 16px; max-width: 30em;" data-i18n="claim_email_hint">Use the email of your WatchBridge TV free trial (even if it has expired).</p>
+      <br>
       <button class="cta-primary" id="claim-btn" onclick="claimCode()">
         <span data-i18n="claim_button">Get your code</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="#0B0D12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -195,7 +198,7 @@
     claimed: "repartidos", of: "de", total: "en total",
     claim_intro: "Hay códigos disponibles ahora mismo en esta tanda.",
     claim_button: "Consigue tu código",
-    claim_footnote: "Un código por persona/dispositivo.",
+    claim_footnote: "Un código por persona, email y dispositivo.",
     code_saved: "Tu código se guarda en este navegador: si cierras la página, lo verás aquí otra vez. Aun así, cópialo ahora.",
     claim_done_title: "✓ Tu código",
     copy_button: "Copiar",
@@ -204,8 +207,13 @@
     batches_title: "Últimas tandas",
     batch_claimed: "repartidos",
     batch_soldout: "agotada",
+    claim_email_hint: "Usa el email de tu prueba gratuita de WatchBridge TV (aunque ya haya caducado).",
+    claim_email_placeholder: "tu@correo.com",
+    claim_bad_email: "Escribe un email válido.",
+    claim_not_registered: "Ese email no tiene ninguna prueba de WatchBridge TV. Abre la app en tu TV, inicia la prueba gratuita con ese email y vuelve aquí.",
+    claim_too_many: "Demasiados intentos desde tu red. Espera unos minutos.",
     claim_none_yet: "Esta tanda ya se ha agotado. La siguiente se desbloquea cuando la cuenta atrás llegue a cero.",
-    claim_already: "Ya has reclamado un código desde este dispositivo/red.",
+    claim_already: "Ya se ha reclamado un código con este email, dispositivo o red.",
     claim_sold_out: "Se han repartido todos los códigos.",
     claim_error: "Algo ha fallado — inténtalo de nuevo en un momento."
   };
@@ -215,13 +223,23 @@
     batches_title: "Latest batches",
     batch_claimed: "claimed",
     batch_soldout: "sold out",
+    claim_email_hint: "Use the email of your WatchBridge TV free trial (even if it has expired).",
+    claim_email_placeholder: "you@example.com",
+    claim_bad_email: "Enter a valid email address.",
+    claim_not_registered: "That email has no WatchBridge TV trial. Open the app on your TV, start the free trial with that email, then come back here.",
+    claim_too_many: "Too many attempts from your network. Wait a few minutes.",
     claim_none_yet: "Too slow, this batch is already gone. The next one unlocks when the countdown hits zero.",
-    claim_already: "You've already claimed a code from this device/network.",
+    claim_already: "A code has already been claimed with this email, device or network.",
     claim_sold_out: "All codes have been claimed.",
     claim_error: "Something went wrong — try again in a moment."
   };
   tvrbApplyI18n(ES_STRINGS);
   function isSpanish() { return document.documentElement.lang === "es"; }
+  (function () {
+    var inp = document.getElementById('claim-email');
+    inp.placeholder = (isSpanish() ? ES_STRINGS : EN_STRINGS).claim_email_placeholder;
+    try { var saved = localStorage.getItem('wb_promo_email'); if (saved) inp.value = saved; } catch (e) {}
+  })();
 
   var API_URL = "https://tvbridge-backend.vercel.app/api/devices";
 
@@ -372,8 +390,17 @@
 
   async function claimCode() {
     var btn = document.getElementById('claim-btn');
-    btn.disabled = true;
     var statusText = document.getElementById('claim-status-text');
+    var emailInput = document.getElementById('claim-email');
+    var email = (emailInput.value || '').trim();
+    var dict0 = isSpanish() ? ES_STRINGS : EN_STRINGS;
+    if (!/^[^s@]+@[^s@]+.[^s@]{2,}$/.test(email)) {
+      statusText.textContent = dict0.claim_bad_email;
+      emailInput.focus();
+      return;
+    }
+    try { localStorage.setItem('wb_promo_email', email); } catch (e) {}
+    btn.disabled = true;
     try {
       var recaptchaToken;
       try {
@@ -384,7 +411,7 @@
       var res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "claim", deviceId: getDeviceId(), recaptchaToken: recaptchaToken })
+        body: JSON.stringify({ action: "claim", deviceId: getDeviceId(), email: email, recaptchaToken: recaptchaToken })
       });
       var data = await res.json();
       if (data.ok) {
@@ -396,6 +423,9 @@
       var key = data.reason === "none_available_yet" ? "claim_none_yet"
         : data.reason === "already_claimed" ? "claim_already"
         : data.reason === "sold_out" ? "claim_sold_out"
+        : data.reason === "not_registered" ? "claim_not_registered"
+        : data.reason === "bad_email" ? "claim_bad_email"
+        : data.reason === "too_many_attempts" ? "claim_too_many"
         : "claim_error";
       var dict = isSpanish() ? ES_STRINGS : EN_STRINGS;
       statusText.textContent = dict[key];
