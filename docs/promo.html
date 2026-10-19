@@ -124,7 +124,7 @@
   </section>
 
   <section class="card" style="text-align: center; margin-bottom: 24px;">
-    <p class="mono" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 18px;" data-i18n="countdown_label">Next batch unlocks in</p>
+    <p class="mono" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 18px;" id="cd-label" data-i18n="countdown_label">Next batch unlocks in</p>
     <div class="countdown-grid" style="margin-bottom: 26px;">
       <div class="countdown-cell"><div id="cd-h" class="countdown-num mono">--</div><p class="countdown-label" data-i18n="hours">hours</p></div>
       <div class="countdown-sep">:</div>
@@ -200,6 +200,7 @@
     claim_done_title: "✓ Tu código",
     copy_button: "Copiar",
     redeem_instructions: "Canjéalo en Google Play → menú ☰ → Canjear código. Tarda unos minutos en activarse en tu cuenta.",
+    unlocking: "¡Códigos nuevos desbloqueados! Actualizando…",
     batches_title: "Últimas tandas",
     batch_claimed: "repartidos",
     batch_soldout: "agotada",
@@ -210,6 +211,7 @@
   };
   var EN_STRINGS = {
     claim_intro: "Codes are available right now in this batch.",
+    unlocking: "New codes unlocked! Updating…",
     batches_title: "Latest batches",
     batch_claimed: "claimed",
     batch_soldout: "sold out",
@@ -257,8 +259,30 @@
 
   var nextBatchAtMs = null;
 
+  var refreshingAtZero = false;
+  var labelOriginal = null;
+
+  // La cuenta atras llego a cero: se pide el estado al servidor hasta que traiga la tanda siguiente (en vez de esperar al
+  // refresco de cada 30 s con la cuenta parada en 00:00:00 y el boton con el estado viejo).
+  async function refreshAtZero(previousBatchAt) {
+    var label = document.getElementById('cd-label');
+    if (labelOriginal === null) labelOriginal = label.textContent;
+    label.textContent = (document.documentElement.lang === "es" ? ES_STRINGS : EN_STRINGS).unlocking;
+    for (var i = 0; i < 10; i++) {
+      await refreshStatus();
+      if (nextBatchAtMs !== previousBatchAt) break;
+      await new Promise(function (r) { setTimeout(r, 2000); });
+    }
+    label.textContent = labelOriginal;
+    refreshingAtZero = false;
+  }
+
   function tick() {
     if (!nextBatchAtMs) return;
+    if (nextBatchAtMs - Date.now() <= 0 && !refreshingAtZero) {
+      refreshingAtZero = true;
+      refreshAtZero(nextBatchAtMs);
+    }
     var diff = Math.max(0, nextBatchAtMs - Date.now());
     var h = Math.floor(diff / 3600000);
     var m = Math.floor((diff % 3600000) / 60000);
