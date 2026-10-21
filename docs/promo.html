@@ -235,6 +235,7 @@
     claim_bad_email: "Escribe un email válido.",
     claim_not_registered: "Ese email no tiene ninguna prueba de WatchBridge TV. Abre la app en tu TV, inicia la prueba gratuita con ese email y vuelve aquí.",
     claim_too_many: "Demasiados intentos desde tu red. Espera unos minutos.",
+    claim_not_yet: "Todavía no se ha abierto la siguiente tanda. Vuelve a pulsar cuando la cuenta atrás llegue a cero.",
     claim_none_yet: "Esta tanda ya se ha agotado. La siguiente se desbloquea cuando la cuenta atrás llegue a cero.",
     claim_already: "Ya se ha reclamado un código con este email, dispositivo o red.",
     claim_sold_out: "Se han repartido todos los códigos.",
@@ -251,6 +252,7 @@
     claim_bad_email: "Enter a valid email address.",
     claim_not_registered: "That email has no WatchBridge TV trial. Open the app on your TV, start the free trial with that email, then come back here.",
     claim_too_many: "Too many attempts from your network. Wait a few minutes.",
+    claim_not_yet: "The next batch hasn't opened yet. Press again when the countdown reaches zero.",
     claim_none_yet: "Too slow, this batch is already gone. The next one unlocks when the countdown hits zero.",
     claim_already: "A code has already been claimed with this email, device or network.",
     claim_sold_out: "All codes have been claimed.",
@@ -300,6 +302,11 @@
 
   var nextBatchAtMs = null;
 
+  // Desfase entre el reloj de este aparato y el del servidor (ms): serverNow() = hora del servidor aunque el reloj local vaya
+  // adelantado o atrasado. Se recalcula en cada respuesta de estado (si el servidor no manda su hora, queda en 0 como antes).
+  var clockOffsetMs = 0;
+  function serverNow() { return Date.now() + clockOffsetMs; }
+
   var refreshingAtZero = false;
   var lastZeroAt = 0;
   var labelOriginal = null;
@@ -321,14 +328,14 @@
 
   function tick() {
     if (!nextBatchAtMs) return;
-    if (nextBatchAtMs - Date.now() <= 0 && !refreshingAtZero) {
+    if (nextBatchAtMs - serverNow() <= 0 && !refreshingAtZero) {
       refreshingAtZero = true;
-      lastZeroAt = Date.now();
+      lastZeroAt = serverNow();
       var claimBtn = document.getElementById('claim-btn');
       if (claimBtn && document.getElementById('claim-done').hidden) claimBtn.disabled = false;
       refreshAtZero(nextBatchAtMs);
     }
-    var diff = Math.max(0, nextBatchAtMs - Date.now());
+    var diff = Math.max(0, nextBatchAtMs - serverNow());
     var h = Math.floor(diff / 3600000);
     var m = Math.floor((diff % 3600000) / 60000);
     var s = Math.floor((diff % 60000) / 1000);
@@ -370,6 +377,7 @@
 
   async function refreshStatus() {
     try {
+      var sentAt = Date.now();
       var res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -377,6 +385,10 @@
       });
       var data = await res.json();
       if (!data.ok) return;
+      if (typeof data.serverNow === "number") {
+        // La hora del servidor corresponde, de media, a mitad del viaje de ida y vuelta.
+        clockOffsetMs = data.serverNow - (sentAt + Date.now()) / 2;
+      }
       document.getElementById('claimed-count').textContent = data.claimedCount;
       document.getElementById('total-count').textContent = data.totalCodes;
       document.getElementById('progress-bar').style.width = Math.min(100, (data.claimedCount / data.totalCodes) * 100) + '%';
@@ -384,7 +396,7 @@
       tick();
       renderBatches(data.batches);
       var btn = document.getElementById('claim-btn');
-      btn.disabled = data.claimedCount >= data.unlockedCount && (Date.now() - lastZeroAt > 20000);
+      btn.disabled = data.claimedCount >= data.unlockedCount && (serverNow() - lastZeroAt > 20000);
     } catch (e) {
       // Sin conexion o el backend caido: se deja la ultima cuenta atras
       // visible en vez de romper la pagina.
@@ -443,7 +455,8 @@
         refreshStatus();
         return;
       }
-      var key = data.reason === "none_available_yet" ? "claim_none_yet"
+      var earlyClick = nextBatchAtMs && nextBatchAtMs - serverNow() > 0;
+      var key = data.reason === "none_available_yet" ? (earlyClick ? "claim_not_yet" : "claim_none_yet")
         : data.reason === "already_claimed" ? "claim_already"
         : data.reason === "sold_out" ? "claim_sold_out"
         : data.reason === "not_registered" ? "claim_not_registered"
