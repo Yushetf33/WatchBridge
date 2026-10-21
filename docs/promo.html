@@ -120,11 +120,12 @@
   <section style="padding-block: 20px 14px; text-align: center;">
     <span class="badge-active" data-i18n="badge_active">Active</span>
     <h2 style="font-weight: 700; font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; margin: 12px 0 10px; text-wrap: balance;" data-i18n="free_title">499 free WatchBridge TV licenses</h2>
-    <p style="font-size: 15px; line-height: 1.6; color: #9AA1AC; max-width: 32em; margin-inline: auto;" data-i18n="free_desc">Lifetime licenses released in small batches. One code per person, valid for the Google Play version of WatchBridge TV.</p>
+    <p style="font-size: 15px; line-height: 1.6; color: #9AA1AC; max-width: 32em; margin-inline: auto;" data-i18n="free_desc">Lifetime licenses for the Google Play version of WatchBridge TV. All the remaining codes open at once at the time shown below and stay available until they run out. One code per person.</p>
   </section>
 
   <section class="card" style="text-align: center; margin-bottom: 24px;">
-    <p class="mono" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 18px;" id="cd-label" data-i18n="countdown_label">Next batch unlocks in</p>
+    <p class="mono" style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 18px;" id="cd-label" data-i18n="countdown_label">All remaining codes open in</p>
+    <p id="open-when" style="font-size: 14px; color: #E8E9EB; margin: -8px 0 16px;" hidden></p>
     <div class="countdown-grid" style="margin-bottom: 26px;">
       <div class="countdown-cell"><div id="cd-h" class="countdown-num mono">--</div><p class="countdown-label" data-i18n="hours">hours</p></div>
       <div class="countdown-sep">:</div>
@@ -148,7 +149,7 @@
     <ol style="margin: 0 auto; padding-left: 22px; max-width: 34em; font-size: 14px; line-height: 1.65; color: #C9CED6; text-align: left;">
       <li style="margin-bottom: 8px;" data-i18n="howto_1">Install WatchBridge TV from Google Play on your Android TV or Google TV.</li>
       <li style="margin-bottom: 8px;" data-i18n="howto_2">Open the app and start the free trial with your email (2 days, no card needed). The email must be the one you will type below.</li>
-      <li style="margin-bottom: 8px;" data-i18n="howto_3">Come back here, type that same email and press the button when the countdown reaches zero. Each batch goes fast.</li>
+      <li style="margin-bottom: 8px;" data-i18n="howto_3">Come back here when the codes open (see the countdown), type that same email and press the button. They go first come, first served until they run out.</li>
       <li style="margin-bottom: 8px;" data-i18n="howto_4">Copy your code and redeem it on Google Play → ☰ menu → Redeem code, using the same Google account you use on the TV. It takes a few minutes to show up.</li>
       <li data-i18n="howto_5">Open WatchBridge TV, go to Subscription and tap "Verify subscription" with the same email. It will show Lifetime access. The app does not refresh by itself after you redeem, and there is no need to wait for the trial to end.</li>
     </ol>
@@ -158,7 +159,7 @@
 
   <section class="card" style="text-align: center; margin-bottom: 24px;">
     <div id="claim-idle">
-      <p id="claim-status-text" style="font-size: 14px; color: #9AA1AC; margin-bottom: 18px;" data-i18n="claim_intro">Codes are available right now in this batch.</p>
+      <p id="claim-status-text" style="font-size: 14px; color: #9AA1AC; margin-bottom: 18px;" data-i18n="claim_intro">Type your email now. When the countdown ends, all the remaining codes open at once: press the button, first come, first served until they run out.</p>
       <input type="email" id="claim-email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-label="Email" style="width: 100%; max-width: 340px; box-sizing: border-box; padding: 12px 14px; margin-bottom: 14px; border-radius: 10px; border: 1px solid #2A2F3A; background: #0B0D12; color: #FFFFFF; font-size: 15px; font-family: inherit; text-align: center;">
       <p style="font-size: 12px; color: #6B7280; margin: -6px auto 16px; max-width: 30em;" data-i18n="claim_email_hint">Use the email of your WatchBridge TV free trial (even if it has expired).</p>
       <br>
@@ -204,13 +205,15 @@
     sub: "Códigos y ofertas de WatchBridge. Las nuevas aparecerán en esta página.",
     badge_active: "Activa",
     free_title: "499 licencias de WatchBridge TV, gratis",
-    free_desc: "Licencias de por vida repartidas en pequeñas tandas. Un código por persona, válido para la versión de Google Play de WatchBridge TV.",
+    free_desc: "Licencias de por vida para la versión de Google Play de WatchBridge TV. Todos los códigos que quedan se abren de una vez a la hora que aparece abajo y siguen disponibles hasta que se agoten. Un código por persona.",
     more_title: "Más promociones",
     more_text: "Ahora mismo no hay otras promociones activas. Cuando haya una nueva, aparecerá aquí.",
-    countdown_label: "Siguiente tanda en",
+    countdown_label: "Todos los códigos restantes se abren en",
+    opens_at: "Se abren el {when} (tu hora)",
+    open_now: "¡Ya están abiertos todos los códigos restantes! Siguen disponibles hasta que se agoten.",
     hours: "horas", min: "min", sec: "seg",
     claimed: "repartidos", of: "de", total: "en total",
-    claim_intro: "Hay códigos disponibles ahora mismo en esta tanda.",
+    claim_intro: "Escribe tu email ahora. Cuando termine la cuenta atrás se abren de una vez todos los códigos que quedan: pulsa el botón, por orden de llegada hasta que se agoten.",
     claim_button: "Consigue tu código",
     claim_footnote: "Un código por persona, email y dispositivo.",
     code_saved: "Tu código se guarda en este navegador: si cierras la página, lo verás aquí otra vez. Aun así, cópialo ahora.",
@@ -225,7 +228,7 @@
     howto_sub: "Para que los códigos lleguen a usuarios reales y no a bots, primero necesitas la app y su prueba gratuita.",
     howto_1: "Instala WatchBridge TV desde Google Play en tu Android TV o Google TV.",
     howto_2: "Abre la app e inicia la prueba gratuita con tu email (2 días, sin tarjeta). Tiene que ser el mismo email que escribirás aquí abajo.",
-    howto_3: "Vuelve aquí, escribe ese mismo email y pulsa el botón cuando la cuenta atrás llegue a cero. Cada tanda vuela.",
+    howto_3: "Vuelve aquí cuando se abran los códigos (mira la cuenta atrás), escribe ese mismo email y pulsa el botón. Se dan por orden de llegada hasta que se agoten.",
     howto_4: "Copia tu código y canjéalo en Google Play → menú ☰ → Canjear código, con la misma cuenta de Google que usas en la TV. Tarda unos minutos en aparecer.",
     howto_5: "Abre WatchBridge TV, entra en Suscripción y pulsa «Verificar suscripción» con el mismo email. Ya aparecerá Acceso de por vida. La app no se actualiza sola al canjear, y no hace falta esperar a que acabe la prueba.",
     howto_note: "El código solo funciona con la versión de Google Play de WatchBridge TV, no con el APK de GitHub. Un código por email, dispositivo y red.",
@@ -242,7 +245,9 @@
     claim_error: "Algo ha fallado — inténtalo de nuevo en un momento."
   };
   var EN_STRINGS = {
-    claim_intro: "Codes are available right now in this batch.",
+    opens_at: "Opens {when} (your time)",
+    open_now: "All the remaining codes are open now! They stay available until they run out.",
+    claim_intro: "Type your email now. When the countdown ends, all the remaining codes open at once: press the button, first come, first served until they run out.",
     unlocking: "New codes unlocked! Updating…",
     batches_title: "Latest batches",
     batch_claimed: "claimed",
@@ -301,6 +306,33 @@
   }
 
   var nextBatchAtMs = null;
+  var openAllAtMs = null;
+  var allOpen = false;
+
+  // Antes de la apertura: cuenta atras y la hora local de apertura. Despues: se oculta la cuenta atras y se avisa de que
+  // estan abiertos (siguen hasta agotarse).
+  function applyOpenAllUi() {
+    var dict = isSpanish() ? ES_STRINGS : EN_STRINGS;
+    var label = document.getElementById('cd-label');
+    var when = document.getElementById('open-when');
+    var grid = document.querySelector('.countdown-grid');
+    if (allOpen) {
+      label.textContent = dict.open_now;
+      when.hidden = true;
+      if (grid) grid.hidden = true;
+      var card = document.getElementById('batches-card');
+      if (card) card.hidden = true;
+      return;
+    }
+    if (grid) grid.hidden = false;
+    label.textContent = dict.countdown_label;
+    if (openAllAtMs) {
+      var d = new Date(openAllAtMs);
+      var text = d.toLocaleString(isSpanish() ? "es-ES" : "en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+      when.textContent = dict.opens_at.replace('{when}', text);
+      when.hidden = false;
+    }
+  }
 
   // Desfase entre el reloj de este aparato y el del servidor (ms): serverNow() = hora del servidor aunque el reloj local vaya
   // adelantado o atrasado. Se recalcula en cada respuesta de estado (si el servidor no manda su hora, queda en 0 como antes).
@@ -322,7 +354,7 @@
       if (nextBatchAtMs !== previousBatchAt) break;
       await new Promise(function (r) { setTimeout(r, 2000); });
     }
-    label.textContent = labelOriginal;
+    applyOpenAllUi();
     refreshingAtZero = false;
   }
 
@@ -393,8 +425,12 @@
       document.getElementById('total-count').textContent = data.totalCodes;
       document.getElementById('progress-bar').style.width = Math.min(100, (data.claimedCount / data.totalCodes) * 100) + '%';
       nextBatchAtMs = data.nextBatchAt;
+      openAllAtMs = data.openAllAt || null;
+      allOpen = !!data.allOpen;
+      applyOpenAllUi();
       tick();
       renderBatches(data.batches);
+      if (allOpen) { var bc = document.getElementById('batches-card'); if (bc) bc.hidden = true; }
       var btn = document.getElementById('claim-btn');
       btn.disabled = data.claimedCount >= data.unlockedCount && (serverNow() - lastZeroAt > 20000);
     } catch (e) {
