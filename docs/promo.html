@@ -319,12 +319,12 @@
     if (allOpen) {
       label.textContent = dict.open_now;
       when.hidden = true;
-      if (grid) grid.hidden = true;
+      if (grid) grid.style.display = 'none';
       var card = document.getElementById('batches-card');
       if (card) card.hidden = true;
       return;
     }
-    if (grid) grid.hidden = false;
+    if (grid) grid.style.display = '';
     label.textContent = dict.countdown_label;
     if (openAllAtMs) {
       var d = new Date(openAllAtMs);
