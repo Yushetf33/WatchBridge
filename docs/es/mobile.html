@@ -108,53 +108,6 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" schibsted="" grotesk":wght@500;600;700;800&family="Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap&quot;" rel="stylesheet">
-<style>
-  html { scroll-behavior: smooth; }
-  section[id] { scroll-margin-top: 70px; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #14120D; color: #F2EDE0; font-family: "Schibsted Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  h1, h2, h3 { font-family: "Schibsted Grotesk", system-ui, sans-serif; margin: 0; }
-  p { margin: 0; }
-  a { color: #FFD84D; text-decoration: none; }
-  a:hover { color: #FFE48A; text-decoration: underline; }
-  ::selection { background: #FFD84D; color: #F2EDE0; }
-  img, svg { display: block; }
-
-  .navlink { color: #B5AE9C; text-decoration: none; font-size: 14px; transition: color .15s ease; }
-  .navlink:hover { color: #F2EDE0; text-decoration: none; }
-  .cta-primary { display: inline-flex; align-items: center; gap: 10px; border-radius: 3px; background: #FFD84D; color: #14120D; font-weight: 700; text-decoration: none; transition: background .15s ease; }
-  .cta-primary:hover { background: #FFE48A; text-decoration: none; }
-  .cta-secondary { display: inline-flex; align-items: center; gap: 10px; border-radius: 3px; border: 1px solid #2E2A20; background: #1B1913; color: #F2EDE0; font-weight: 600; text-decoration: none; transition: border-color .15s ease, background .15s ease; }
-  .cta-secondary:hover { border-color: #8C8573; background: #1B2029; text-decoration: none; }
-  .card { border: 1px solid #2E2A20; border-radius: 3px; background: #1B1913; transition: border-color .15s ease; }
-  .card:hover { border-color: #8C8573; }
-  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 2px; border: 1px solid #2E2A20; background: #1B1913; font-size: 12.5px; font-weight: 600; color: #D9D3C3; }
-
-
-  .dev { position: relative; background: #000; border: 1px solid #433D2D; box-shadow: none; overflow: hidden; }
-  .dev video, .dev .dev-fill { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
-  .dev-phone { width: 250px; aspect-ratio: 720 / 1485; border-width: 9px; border-color: #1B1913; border-radius: 3px; }
-  .dev-tablet { width: 100%; max-width: 760px; aspect-ratio: 1280 / 704; border-width: 12px; border-color: #1B1913; border-radius: 3px; }
-  .dev-fill { display: grid; place-items: center; color: #8C8573; font-size: 13px; background: #1B1913; }
-  .stage { display: flex; align-items: flex-end; justify-content: center; gap: 36px; flex-wrap: wrap; }
-  .showcase { border: 1px solid #2E2A20; border-radius: 3px; overflow: hidden; background: #14120D; box-shadow: none; }
-  .showcase video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #14120D; }
-  .feat { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-  @media (max-width: 900px) { .feat { grid-template-columns: 1fr !important; } .dev-phone { width: 210px; } }
-  section { padding-left: 40px; padding-right: 40px; }
-  .wrap { max-width: 1200px; margin: 0 auto; }
-
-  @media (max-width: 900px) {
-    .nav-links { display: none !important; }
-    .col-2 { grid-template-columns: 1fr !important; }
-    .h1 { font-size: 36px !important; }
-    .h2 { font-size: 26px !important; }
-    section { padding-left: 20px !important; padding-right: 20px !important; }
-  }
-</style>
 <!--WBH-CSS--><style>
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
@@ -181,9 +134,12 @@
     .wbh-pill { padding: 12px 11px; font-size: 14px; }
   }
 </style><!--/WBH-CSS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=8">
 </head>
 <body>
-
 <!--WBH-->
 <header class="wbh">
   <div class="wbh-in">
@@ -192,7 +148,7 @@
       <a class="wbh-pill" href="/es/features.html"><span>Funciones</span></a>
       <a class="wbh-pill" href="/es/iptv.html"><span>TV en directo</span></a>
       <a class="wbh-pill" href="/es/launchers.html"><span>Launchers</span></a>
-      <a class="wbh-pill" href="/mobile.html" aria-current="page"><span>App móvil</span></a>
+      <a class="wbh-pill" href="/es/mobile.html" aria-current="page"><span>App móvil</span></a>
       <a class="wbh-pill" href="/es/install.html"><span>Instalar</span></a>
       <a class="wbh-pill" href="/es/guias/"><span>Guías</span></a>
       <a class="wbh-pill" href="/es/#pricing"><span>Precio</span></a>
@@ -201,120 +157,151 @@
   </div>
 </header>
 <!--/WBH-->
-<section style="padding-top: 72px; padding-bottom: 28px; text-align: center;">
-  <div class="wrap" style="max-width: 860px;">
-    <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #2E2A20; border-radius: 2px; background: #1B1913; font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.07em;="" text-transform:="" uppercase;="" color:="" #b5ae9c;="" margin-bottom:="" 22px;"="">
-      <span style="width: 6px; height: 6px; border-radius: 50%; background: #4CD964;"></span><span>Móvil y tablet Android</span>
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Móvil y tablet Android</p>
+      <h1 class="h1">WatchBridge Mobile: tu IPTV y tu TV, en el bolsillo</h1>
+      <p class="lede">Un reproductor para <strong style="color: #E8E9EB;">tu propia lista M3U o Xtream</strong> en móviles y tablets Android: guía de TV con desplazamiento, eventos deportivos con marcador en directo, hasta tres canales a la vez y un botón para enviar lo que ves a tu TV. La misma cuenta que WatchBridge TV.</p>
+      <p class="muted" style="margin: -10px 0 30px;">2 días gratis, sin tarjeta. Después, 4,99 € una sola vez, para todos tus dispositivos.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#beta">Únete a la beta en Google Play</a>
+        <a class="arrow-link" href="https://github.com/Yushetf33/WatchBridge-Mobile/releases/latest/download/app-release.apk">Descargar el APK</a>
+      </div>
+      <p class="note">Android 7.0 o superior · sé de los primeros en probarla</p>
     </div>
-    <h1 class="h1" style="font-weight: 700; font-size: 46px; line-height: 1.12; letter-spacing: -0.03em; color: #F2EDE0; margin: 0 0 20px;">WatchBridge Mobile: tu IPTV y tu TV, en el bolsillo</h1>
-    <p style="font-size: 17.5px; line-height: 1.65; color: #D9D3C3; margin: 0 auto 12px; max-width: 46em; text-wrap: pretty;">Un reproductor para <strong style="color: #F2EDE0;">tu propia lista M3U o Xtream</strong> en móviles y tablets Android: guía de TV con desplazamiento, eventos deportivos con marcador en directo, hasta tres canales a la vez y un botón para enviar lo que ves a tu TV. La misma cuenta que WatchBridge TV.</p>
-    <p style="font-size: 14.5px; line-height: 1.6; color: #B5AE9C; margin: 0 0 28px;">2 días gratis, sin tarjeta. Después, 4,99 € una sola vez, para todos tus dispositivos.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
-      <a href="#beta" class="cta-primary" style="padding: 15px 28px; font-size: 15.5px;">Únete a la beta en Google Play</a>
-      <a href="https://github.com/Yushetf33/WatchBridge-Mobile/releases/latest/download/app-release.apk" class="cta-secondary" style="padding: 15px 26px; font-size: 15.5px;">Descargar el APK</a>
-    </div>
-    <p style="font-size: 12.5px; color: #8C8573; margin: 14px 0 0;">Android 7.0 o superior · sé de los primeros en probarla</p>
+    <figure class="fig hero-video"><video controls="" playsinline="" preload="metadata" poster="/mobile-showcase-es-poster.jpg" data-es-src="/mobile-showcase-es.mp4" data-es-poster="/mobile-showcase-es-poster.jpg" aria-label="WatchBridge TV — tour de 1 minuto"><source src="/mobile-showcase-es.mp4" type="video/mp4"></video></figure>
   </div>
 </section>
 
-<section id="demo" style="padding-top: 20px; padding-bottom: 80px;">
-  <div class="wrap" style="max-width: 1100px;">
-    <div class="showcase">
-      <video controls="" playsinline="" preload="metadata" poster="/mobile-showcase-es-poster.jpg" data-es-src="/mobile-showcase-es.mp4" data-es-poster="/mobile-showcase-es-poster.jpg" aria-label="WatchBridge Mobile on a phone and a tablet: continue watching, TV guide, sports events, channel actions and multiview"><source src="/mobile-showcase-es.mp4" type="video/mp4"></video>
-    </div>
-  </div>
-</section>
-
-<section id="beta" style="border-top: 1px solid #232018; background: #14120D; padding-top: 72px; padding-bottom: 72px;">
-  <div class="wrap" style="max-width: 820px;">
-    <p style="font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.14em;="" text-transform:="" uppercase;="" color:="" #ffd84d;="" margin:="" 0="" 14px;"="">Prueba cerrada en Google Play</p>
-    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 16px;">¿Quieres ser el primero en probarla en tu móvil o tablet?</h2>
-    <p style="color: #B5AE9C; font-size: 16px; line-height: 1.65; margin: 0 0 24px;">WatchBridge Mobile está en prueba cerrada en Google Play. Únete en dos pasos e instálala como cualquier otra app, con las actualizaciones a través de Google Play. Lo que más ayuda es seguir apuntado un par de semanas.</p>
-    <ol style="color: #B5AE9C; font-size: 15.5px; line-height: 1.7; padding-left: 22px; margin: 0 0 28px;">
-      <li style="margin-bottom: 8px;">Únete al grupo de probadores con la <strong style="color: #F2EDE0;">cuenta de Google que usas en Google Play</strong>.</li>
-      <li>Abre la ficha de Google Play y pulsa <strong style="color: #F2EDE0;">Instalar</strong>. Si aún no aparece, espera unos minutos tras unirte e inténtalo de nuevo.</li>
-    </ol>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-      <a href="https://groups.google.com/g/watchbridge-mobile" class="cta-primary" style="padding: 14px 24px; font-size: 15px;">1 · Unirme al grupo de probadores</a>
-      <a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.mobile.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dmobile-beta" class="cta-secondary" style="padding: 14px 24px; font-size: 15px;">2 · Abrir Google Play</a>
-    </div>
-    <p style="color: #8C8573; font-size: 13px; line-height: 1.6; margin: 18px 0 0;">¿Algo no funciona? Cuéntamelo en contacto@watchbridge.app. ¿Prefieres no usar Google Play? El APK de más abajo es la misma app y la misma licencia.</p>
-  </div>
-</section>
-
-<section id="features" style="border-top: 1px solid #232018; padding-top: 72px; padding-bottom: 72px;">
+<section class="sec" id="beta">
   <div class="wrap">
-    <p style="font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.14em;="" text-transform:="" uppercase;="" color:="" #ffd84d;="" margin:="" 0="" 14px;"="">Qué hace</p>
-    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 36px;">Todo lo que usas en la TV, a un toque</h2>
-    <div class="feat">
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Guía de TV con desplazamiento</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Canales a la izquierda y programas en una línea de tiempo, con lo que se emite ahora y lo siguiente. Búsqueda, grupos, favoritos y una fila «Seguir viendo» con tus últimos canales.</p></div>
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Marcadores deportivos en directo</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Los partidos de la lista de deportes muestran el marcador y el minuto cuando están cubiertos, y mientras ves fútbol el reproductor enseña goles y tarjetas amarillas y rojas al tocar la pantalla.</p></div>
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Multiview</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Mira hasta 3 canales a la vez: uno grande y dos pequeños. El sonido sigue a la pantalla que toques y con doble toque se abre a pantalla completa.</p></div>
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Envía a tu TV</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Envía una película, una serie o un canal en directo a tu TV con un toque. Se abre allí solo si WatchBridge TV está en marcha.</p></div>
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Graba en tu TV</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Desde el móvil, pide a tu TV que grabe un canal de 30 minutos a 3 horas. Se guarda en la TV y lo ves después.</p></div>
-      <div class="card" style="padding: 26px;"><h3 style="font-size: 16.5px; margin: 0 0 9px; font-weight: 600;">Tu biblioteca y recomendaciones</h3><p style="color: #B5AE9C; font-size: 14px; line-height: 1.6;">Películas, series, Mi lista e historial sincronizados con tus TVs, y una ficha para cada título. Elige qué app lo abre: Nuvio, Stremio, Plex, Jellyfin y más.</p></div>
+    <div class="sec-head">
+      <p class="kicker"><span class="num">01</span><span>Prueba cerrada en Google Play</span></p>
+      <div><h2 class="h2">¿Quieres ser el primero en probarla en tu móvil o tablet?</h2><p class="lede">WatchBridge Mobile está en prueba cerrada en Google Play. Únete en dos pasos e instálala como cualquier otra app, con las actualizaciones a través de Google Play. Lo que más ayuda es seguir apuntado un par de semanas.</p></div>
+    </div>
+    <ol class="steps-list">
+      <li>Únete al grupo de probadores con la <strong style="color: #E8E9EB;">cuenta de Google que usas en Google Play</strong>.</li>
+      <li>Abre la ficha de Google Play y pulsa <strong style="color: #E8E9EB;">Instalar</strong>. Si aún no aparece, espera unos minutos tras unirte e inténtalo de nuevo.</li>
+    </ol>
+    <div class="links"><a class="btn btn-primary" href="https://groups.google.com/g/watchbridge-mobile">1 · Unirme al grupo de probadores</a><a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.mobile.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dmobile-beta">2 · Abrir Google Play</a></div>
+    <p class="note" style="margin-top: 22px;">¿Algo no funciona? Cuéntamelo en contacto@watchbridge.app. ¿Prefieres no usar Google Play? El APK de más abajo es la misma app y la misma licencia.</p>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><span class="num">02</span><span>Qué hace</span></p>
+      <div><h2 class="h2">Todo lo que usas en la TV, a un toque</h2></div>
+    </div>
+    <dl class="spec">
+  <dt>Guía de TV con desplazamiento</dt>
+  <dd>Canales a la izquierda y programas en una línea de tiempo, con lo que se emite ahora y lo siguiente. Búsqueda, grupos, favoritos y una fila «Seguir viendo» con tus últimos canales.</dd>
+  <dt>Marcadores deportivos en directo</dt>
+  <dd>Los partidos de la lista de deportes muestran el marcador y el minuto cuando están cubiertos, y mientras ves fútbol el reproductor enseña goles y tarjetas amarillas y rojas al tocar la pantalla.</dd>
+  <dt>Multiview</dt>
+  <dd>Mira hasta 3 canales a la vez: uno grande y dos pequeños. El sonido sigue a la pantalla que toques y con doble toque se abre a pantalla completa.</dd>
+  <dt>Envía a tu TV</dt>
+  <dd>Envía una película, una serie o un canal en directo a tu TV con un toque. Se abre allí solo si WatchBridge TV está en marcha.</dd>
+  <dt>Graba en tu TV</dt>
+  <dd>Desde el móvil, pide a tu TV que grabe un canal de 30 minutos a 3 horas. Se guarda en la TV y lo ves después.</dd>
+  <dt>Tu biblioteca y recomendaciones</dt>
+  <dd>Películas, series, Mi lista e historial sincronizados con tus TVs, y una ficha para cada título. Elige qué app lo abre: Nuvio, Stremio, Plex, Jellyfin y más.</dd>
+</dl>
+  </div>
+</section>
+
+<section class="sec" id="together">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><span class="num">03</span><span>Junto a WatchBridge TV</span></p>
+      <div><h2 class="h2">Una cuenta, todas las pantallas</h2><p class="lede">Usa el mismo correo en el móvil y en la TV: la prueba y el pago valen para las dos. Tu historial y Mi lista se comparten, y desde el móvil puedes enviar contenido a la TV o pedirle que grabe.</p></div>
     </div>
   </div>
 </section>
 
-<section id="together" style="border-top: 1px solid #232018; background: #14120D; padding-top: 72px; padding-bottom: 72px;">
-  <div class="wrap" style="max-width: 820px;">
-    <p style="font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.14em;="" text-transform:="" uppercase;="" color:="" #ffd84d;="" margin:="" 0="" 14px;"="">Junto a WatchBridge TV</p>
-    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 16px;">Una cuenta, todas las pantallas</h2>
-    <p style="color: #B5AE9C; font-size: 16px; line-height: 1.65;">Usa el mismo correo en el móvil y en la TV: la prueba y el pago valen para las dos. Tu historial y Mi lista se comparten, y desde el móvil puedes enviar contenido a la TV o pedirle que grabe.</p>
-    <p style="margin-top: 18px;"><a href="/es/" style="font-size: 15px;">WatchBridge TV →</a></p>
-  </div>
-</section>
-
-<section id="install" style="border-top: 1px solid #232018; padding-top: 72px; padding-bottom: 72px;">
-  <div class="wrap" style="max-width: 820px;">
-    <p style="font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.14em;="" text-transform:="" uppercase;="" color:="" #ffd84d;="" margin:="" 0="" 14px;"="">Instalar</p>
-    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 24px;">Instálala en un minuto</h2>
-    <ol style="color: #B5AE9C; font-size: 15.5px; line-height: 1.7; padding-left: 22px; margin: 0 0 28px;">
-      <li style="margin-bottom: 8px;">Pulsa <strong style="color: #F2EDE0;">Descargar el APK</strong> en tu móvil o tablet y abre el archivo.</li>
-      <li style="margin-bottom: 8px;">Si Android avisa de un origen desconocido o de Play Protect, pulsa <strong style="color: #F2EDE0;">Más detalles → Instalar de todos modos</strong>: es normal en apps instaladas fuera de una tienda.</li>
+<section class="sec" id="install">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><span class="num">04</span><span>Instalar</span></p>
+      <div><h2 class="h2">Instálala en un minuto</h2></div>
+    </div>
+    <ol class="steps-list">
+      <li>Pulsa <strong style="color: #E8E9EB;">Descargar el APK</strong> en tu móvil o tablet y abre el archivo.</li>
+      <li>Si Android avisa de un origen desconocido o de Play Protect, pulsa <strong style="color: #E8E9EB;">Más detalles → Instalar de todos modos</strong>: es normal en apps instaladas fuera de una tienda.</li>
       <li>Añade tu enlace M3U o tus datos de Xtream Codes en la pestaña IPTV. La app no trae canales propios.</li>
     </ol>
-    <a href="https://github.com/Yushetf33/WatchBridge-Mobile/releases/latest/download/app-release.apk" class="cta-primary" style="padding: 15px 28px; font-size: 15.5px;">Descargar el APK</a>
+    <div class="links"><a class="btn btn-primary" href="https://github.com/Yushetf33/WatchBridge-Mobile/releases/latest/download/app-release.apk">Descargar el APK</a></div>
   </div>
 </section>
 
-<section id="faq" style="border-top: 1px solid #232018; background: #14120D; padding-top: 72px; padding-bottom: 72px;">
-  <div class="wrap" style="max-width: 820px;">
-    <h2 class="h2" style="font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 20px;">Preguntas</h2>
-      <details style="border-top: 1px solid #232018; padding: 18px 0;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: #F2EDE0;">¿WatchBridge Mobile es gratis?</summary><p style="color: #B5AE9C; font-size: 14.5px; line-height: 1.65; margin: 12px 0 0;">Tiene 2 días de prueba gratis sin tarjeta y después un único pago de 4,99 €: la misma cuenta y el mismo pago que WatchBridge TV, así que no pagas dos veces.</p></details>
-      <details style="border-top: 1px solid #232018; padding: 18px 0;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: #F2EDE0;">¿WatchBridge Mobile incluye canales de TV?</summary><p style="color: #B5AE9C; font-size: 14.5px; line-height: 1.65; margin: 12px 0 0;">No. WatchBridge no aloja ni ofrece canales ni contenido: tú añades tu enlace M3U o tus datos de Xtream Codes de tu proveedor, y la app muestra sus canales con una guía de TV.</p></details>
-      <details style="border-top: 1px solid #232018; padding: 18px 0;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: #F2EDE0;">¿Funciona en tablets?</summary><p style="color: #B5AE9C; font-size: 14.5px; line-height: 1.65; margin: 12px 0 0;">Sí. Es la misma app para móviles y tablets Android (Android 7.0 o superior), en horizontal y en vertical.</p></details>
-      <details style="border-top: 1px solid #232018; padding: 18px 0;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: #F2EDE0;">¿Necesito WatchBridge TV para usarla?</summary><p style="color: #B5AE9C; font-size: 14.5px; line-height: 1.65; margin: 12px 0 0;">No, funciona sola. Si también usas WatchBridge TV con el mismo correo, puedes enviar una película, una serie o un canal en directo del móvil a la TV, y pedirle que grabe un canal.</p></details>
-      <details style="border-top: 1px solid #232018; padding: 18px 0;"><summary style="cursor: pointer; font-weight: 600; font-size: 16px; color: #F2EDE0;">¿Cuántos canales puedo ver a la vez?</summary><p style="color: #B5AE9C; font-size: 14.5px; line-height: 1.65; margin: 12px 0 0;">Hasta 3 en Multiview. Solo uno tiene sonido; toca otra pantalla para pasarle el sonido. Tu fuente puede limitar cuántos canales deja abrir a la vez.</p></details>
-    </div>
-</section>
-
-<footer style="border-top: 1px solid #232018; background: #14120D; padding: 40px 40px 56px;">
+<section class="sec" id="faq">
   <div class="wrap">
-    <p style="margin: 0 0 10px; color: #8C8573; font-size: 13px; line-height: 1.7;">WatchBridge Mobile es un reproductor y mando independiente. No aloja, almacena, distribuye ni ofrece películas, series, emisiones, canales ni ningún otro contenido audiovisual: tú añades tus propias listas de tu propio proveedor.</p>
-    <p style="margin: 0 0 20px; color: #8C8573; font-size: 13px; line-height: 1.7;">No está afiliada, patrocinada ni respaldada por Nuvio, Stremio, Plex, Jellyfin, TiviMate ni ningún proveedor de IPTV; esos nombres son marcas de sus respectivos propietarios.</p>
-    <a href="/es/" style="font-size: 14px;">← Volver a WatchBridge</a>
-    <a href="/es/setup.html" style="font-size: 14px; margin-left: 16px;">Configuración y ayuda</a>
-    <a href="/privacy.html" style="font-size: 14px; margin-left: 16px;">Política de privacidad (en inglés)</a>
+    <div class="sec-head"><p class="kicker"><span class="num">05</span><span>FAQ</span></p><div><h2 class="h2">Preguntas</h2></div></div>
+    <div class="faq-list">
+  <details>
+    <summary>¿WatchBridge Mobile es gratis?</summary>
+    <p>Tiene 2 días de prueba gratis sin tarjeta y después un único pago de 4,99 €: la misma cuenta y el mismo pago que WatchBridge TV, así que no pagas dos veces.</p>
+  </details>
+  <details>
+    <summary>¿WatchBridge Mobile incluye canales de TV?</summary>
+    <p>No. WatchBridge no aloja ni ofrece canales ni contenido: tú añades tu enlace M3U o tus datos de Xtream Codes de tu proveedor, y la app muestra sus canales con una guía de TV.</p>
+  </details>
+  <details>
+    <summary>¿Funciona en tablets?</summary>
+    <p>Sí. Es la misma app para móviles y tablets Android (Android 7.0 o superior), en horizontal y en vertical.</p>
+  </details>
+  <details>
+    <summary>¿Necesito WatchBridge TV para usarla?</summary>
+    <p>No, funciona sola. Si también usas WatchBridge TV con el mismo correo, puedes enviar una película, una serie o un canal en directo del móvil a la TV, y pedirle que grabe un canal.</p>
+  </details>
+  <details>
+    <summary>¿Cuántos canales puedo ver a la vez?</summary>
+    <p>Hasta 3 en Multiview. Solo uno tiene sonido; toca otra pantalla para pasarle el sonido. Tu fuente puede limitar cuántos canales deja abrir a la vez.</p>
+  </details>
+</div>
+  </div>
+</section>
+</main>
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="/es/"><img src="/logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal">WatchBridge Mobile es un reproductor y mando independiente. No aloja, almacena, distribuye ni ofrece películas, series, emisiones, canales ni ningún otro contenido audiovisual: tú añades tus propias listas de tu propio proveedor.</p>
+      <p class="legal">No está afiliada, patrocinada ni respaldada por Nuvio, Stremio, Plex, Jellyfin, TiviMate ni ningún proveedor de IPTV; esos nombres son marcas de sus respectivos propietarios.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4>Producto</h4>
+        <a href="/es/features.html">Funciones</a>
+        <a href="/es/iptv.html">TV en directo</a>
+        <a href="/es/launchers.html">Projectivy y Monet</a>
+        <a href="/es/mobile.html">App móvil</a>
+        <a href="/es/apps.html">Apps compatibles</a>
+        <a href="/es/firetv.html">Fire TV</a>
+        <a href="/es/guias/">Guías</a>
+        <a href="/es/#pricing">Precio</a>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="/es/install.html">Guía de instalación</a>
+        <a href="/es/setup.html">Configuración y ayuda</a>
+        <a href="/es/#faq">Preguntas</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener">YouTube</a>
+        <a href="/privacy.html">Política de privacidad</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener">Repositorio</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener">Última versión</a>
+      </div>
+    </div>
   </div>
 </footer>
-
+<!--/WBF-->
 
 <script>
   
-
-  // Navegador en español (aunque llegue a la URL inglesa): video con los rótulos en español.
-  (function () {
-    if (document.documentElement.lang !== 'es') return;
-    document.querySelectorAll('video[data-es-src]').forEach(function (v) {
-      var s = v.querySelector('source');
-      if (!s || s.getAttribute('src') === v.getAttribute('data-es-src')) return;
-      v.setAttribute('poster', v.getAttribute('data-es-poster'));
-      s.setAttribute('src', v.getAttribute('data-es-src'));
-      v.load();
-    });
-  })();
 </script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;53bb5b5a12a24a2bbaf49ec038bedac7&quot;}"></script><!-- End Cloudflare Web Analytics -->
 

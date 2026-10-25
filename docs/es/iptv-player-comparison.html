@@ -29,70 +29,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" schibsted="" grotesk":wght@500;600;700;800&family="Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap&quot;" rel="stylesheet">
-<style>
-  html { scroll-behavior: smooth; }
-  section[id] { scroll-margin-top: 70px; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #14120D; color: #F2EDE0; font-family: "Schibsted Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  h1, h2, h3 { font-family: "Schibsted Grotesk", system-ui, sans-serif; margin: 0; }
-  p { margin: 0; }
-  a { color: #FFD84D; text-decoration: none; }
-  a:hover { color: #FFE48A; text-decoration: underline; }
-  ::selection { background: #FFD84D; color: #F2EDE0; }
-  img, svg { display: block; }
-
-  .navlink { color: #B5AE9C; text-decoration: none; font-size: 14px; transition: color .15s ease; }
-  .navlink:hover { color: #F2EDE0; text-decoration: none; }
-  .cta-primary { display: inline-flex; align-items: center; gap: 10px; border-radius: 3px; background: #FFD84D; color: #14120D; font-weight: 700; text-decoration: none; transition: background .15s ease; }
-  .cta-primary:hover { background: #FFE48A; text-decoration: none; }
-  .card { border: 1px solid #2E2A20; border-radius: 3px; background: #1B1913; transition: border-color .15s ease; }
-  .card:hover { border-color: #8C8573; }
-  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 2px; border: 1px solid #2E2A20; background: #1B1913; font-size: 12.5px; font-weight: 600; color: #D9D3C3; }
-
-  section { padding-left: 40px; padding-right: 40px; }
-  .wrap { max-width: 1200px; margin: 0 auto; }
-
-  @media (max-width: 900px) {
-    .nav-links { display: none !important; }
-    .col-2 { grid-template-columns: 1fr !important; }
-    .h1 { font-size: 36px !important; }
-    .h2 { font-size: 26px !important; }
-    section { padding-left: 20px !important; padding-right: 20px !important; }
-  }
-</style>
-<style>
-  .cmp-wrap { border: 1px solid #2E2A20; border-radius: 3px; background: #1B1913; overflow: hidden; }
-  table.cmp { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 13.5px; }
-  table.cmp th, table.cmp td { padding: 11px 6px; text-align: center; border-bottom: 1px solid #232018; vertical-align: middle; }
-  table.cmp th:first-child, table.cmp td:first-child { width: 31%; text-align: left; padding-left: 16px; padding-right: 10px; font-weight: 600; color: #F2EDE0; line-height: 1.35; }
-  table.cmp thead th { font-family: "Schibsted Grotesk", system-ui, sans-serif; font-size: 12.5px; font-weight: 600; color: #D9D3C3; background: #14120D; line-height: 1.25; padding-top: 14px; padding-bottom: 14px; }
-  table.cmp tbody tr:last-child td { border-bottom: 0; }
-  table.cmp th.wb, table.cmp td.wb { background: rgba(255,216,77,.10); }
-  table.cmp thead th.wb { color: #F2EDE0; background: rgba(255,216,77,.10); }
-  table.cmp tr.grp td { background: #14120D; color: #FFD84D; font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; text-align: left; font-weight: 500; padding: 11px 16px; }
-  .pl { font-size: 12px; line-height: 1.3; color: #D9D3C3; }
-  .ps { display: none; }
-  .y { color: #4CD964; font-weight: 700; font-size: 16px; }
-  .n { color: #4A505C; }
-  .part { color: #D9D3C3; font-size: 12px; font-weight: 600; }
-  .src li { margin: 0 0 8px; color: #B5AE9C; font-size: 14px; line-height: 1.55; }
-  .src a { word-break: break-word; }
-  @media (max-width: 760px) {
-    table.cmp { font-size: 11.5px; }
-    table.cmp th, table.cmp td { padding: 8px 0; }
-    table.cmp th:first-child, table.cmp td:first-child { width: 36%; padding-left: 9px; padding-right: 6px; }
-    table.cmp thead th:not(:first-child) { height: 118px; vertical-align: bottom; padding: 8px 0; font-size: 11px; }
-    table.cmp thead th:not(:first-child) { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; text-align: left; }
-    table.cmp tr.grp td { padding: 9px 9px; font-size: 10px; letter-spacing: 0.1em; }
-    .y { font-size: 14px; }
-    .pl { display: none; }
-    .ps { display: inline; font-size: 9.5px; font-weight: 600; color: #D9D3C3; white-space: nowrap; letter-spacing: -0.02em; }
-    .part { font-size: 10px; }
-  }
-</style>
 <!--WBH-CSS--><style>
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
@@ -119,9 +55,12 @@
     .wbh-pill { padding: 12px 11px; font-size: 14px; }
   }
 </style><!--/WBH-CSS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=8">
 </head>
 <body>
-
 <!--WBH-->
 <header class="wbh">
   <div class="wbh-in">
@@ -130,7 +69,7 @@
       <a class="wbh-pill" href="/es/features.html"><span>Funciones</span></a>
       <a class="wbh-pill" href="/es/iptv.html" aria-current="page"><span>TV en directo</span></a>
       <a class="wbh-pill" href="/es/launchers.html"><span>Launchers</span></a>
-      <a class="wbh-pill" href="/mobile.html"><span>App móvil</span></a>
+      <a class="wbh-pill" href="/es/mobile.html"><span>App móvil</span></a>
       <a class="wbh-pill" href="/es/install.html"><span>Instalar</span></a>
       <a class="wbh-pill" href="/es/guias/"><span>Guías</span></a>
       <a class="wbh-pill" href="/es/#pricing"><span>Precio</span></a>
@@ -139,22 +78,19 @@
   </div>
 </header>
 <!--/WBH-->
-
-<section style="padding-top: 72px; padding-bottom: 40px;">
-  <div class="wrap" style="max-width: 900px;">
-    <div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px; border: 1px solid #2E2A20; border-radius: 2px; background: #1B1913; font-family: " ibm="" plex="" mono",="" monospace;="" font-size:="" 11.5px;="" letter-spacing:="" 0.07em;="" text-transform:="" uppercase;="" color:="" #d9d3c3;="" margin-bottom:="" 26px;"="">
-      <span style="width: 6px; height: 6px; border-radius: 50%; background: #FFD84D;"></span><span>Mejores reproductores IPTV · Android TV</span>
-    </div>
-    <h1 class="h1" style="font-weight: 700; font-size: 44px; line-height: 1.12; letter-spacing: -0.03em; color: #F2EDE0; margin: 0 0 20px;">Mejores reproductores IPTV para Android TV: comparativa de funciones</h1>
-    <p style="font-size: 17px; line-height: 1.65; color: #B5AE9C; margin: 0 0 14px; text-wrap: pretty;">WatchBridge TV junto a siete reproductores IPTV conocidos para Android TV y Google TV: lo que anuncia cada uno y en qué se diferencia WatchBridge.</p>
-    <p style="font-size: 14px; line-height: 1.6; color: #8C8573;">Revisado el 12 de octubre de 2026 con la ficha de tienda o la descripción de cada app. Un guion significa que la función no se menciona en las fuentes consultadas, no que la app no pueda hacerlo.</p>
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <p class="kicker">Mejores reproductores IPTV · Android TV</p>
+    <h1 class="h1">Mejores reproductores IPTV para Android TV: comparativa de funciones</h1>
+    <p class="lede">WatchBridge TV junto a siete reproductores IPTV conocidos para Android TV y Google TV: lo que anuncia cada uno y en qué se diferencia WatchBridge.</p>
+    <p class="muted" style="margin-top: 16px; max-width: 44em;">Revisado el 12 de octubre de 2026 con la ficha de tienda o la descripción de cada app. Un guion significa que la función no se menciona en las fuentes consultadas, no que la app no pueda hacerlo.</p>
   </div>
 </section>
 
-<section style="padding-top: 8px; padding-bottom: 56px;">
+<section class="sec first">
   <div class="wrap">
-    <div class="cmp-wrap" aria-label="IPTV player feature comparison">
-      <table class="cmp">
+    <div class="table-scroll"><table class="cmp">
         <thead><tr><th scope="col">Función</th><th scope="col" class="wb">WatchBridge</th><th scope="col">TiviMate</th><th scope="col">OTT Navigator*</th><th scope="col">XCIPTV</th><th scope="col">IPTV Extreme</th><th scope="col">Sparkle TV</th><th scope="col">Smarters Pro*</th><th scope="col">Televizo*</th></tr></thead>
         <tbody>
 <tr class="grp"><td colspan="9">Lo básico del IPTV</td></tr>
@@ -176,51 +112,64 @@
 <tr><td>Envía un título del móvil a la TV</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
 <tr><td>Envía un canal de tu lista IPTV del móvil a la TV</td><td class="wb"><span class="y" aria-label="Yes">✓</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td><td><span class="n" aria-label="Not listed">–</span></td></tr>
         </tbody>
-      </table>
+      </table></div>
+    <div class="notes">
+      <p>La columna de WatchBridge es la de WatchBridge TV: todas las funciones marcadas están disponibles en Android TV, Google TV y Fire TV.</p>
+      <p>* No está en Google Play con una ficha oficial que hayamos podido abrir; se basa en descripciones de tiendas de terceros, así que puede estar incompleto. «PiP» = imagen en imagen, una ventana pequeña flotante, que no es lo mismo que dos canales lado a lado. El catch-up depende del archivo de tu proveedor. Las apps cambian con cada actualización. Las fichas de tienda no siempre dicen en qué equipo (TV, móvil, tableta) está cada función, así que algo puede variar en Android TV.</p>
+      <p>WatchBridge también incluye sus propios decodificadores de vídeo MPEG-2 y de audio MP2, así que las emisiones en esos formatos se ven y se oyen aunque el equipo no los admita de serie.</p>
+      <p>La grabación de WatchBridge se guarda en un USB o en la memoria de la TV, y las grabaciones programadas necesitan que la TV esté encendida a esa hora. ¿Ves algún error? Escribe a <a href="mailto:contacto@watchbridge.app">contacto@watchbridge.app</a> y lo corregimos.</p>
     </div>
-    <p style="margin: 16px 0 0; font-size: 14px; line-height: 1.65; color: #D9D3C3;">La columna de WatchBridge es la de WatchBridge TV: todas las funciones marcadas están disponibles en Android TV, Google TV y Fire TV.</p>
-    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #8C8573;">* No está en Google Play con una ficha oficial que hayamos podido abrir; se basa en descripciones de tiendas de terceros, así que puede estar incompleto. «PiP» = imagen en imagen, una ventana pequeña flotante, que no es lo mismo que dos canales lado a lado. El catch-up depende del archivo de tu proveedor. Las apps cambian con cada actualización. Las fichas de tienda no siempre dicen en qué equipo (TV, móvil, tableta) está cada función, así que algo puede variar en Android TV.</p>
-    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #8C8573;">WatchBridge también incluye sus propios decodificadores de vídeo MPEG-2 y de audio MP2, así que las emisiones en esos formatos se ven y se oyen aunque el equipo no los admita de serie.</p>
-    <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.65; color: #8C8573;">La grabación de WatchBridge se guarda en un USB o en la memoria de la TV, y las grabaciones programadas necesitan que la TV esté encendida a esa hora. ¿Ves algún error? Escribe a <a href="mailto:contacto@watchbridge.app">contacto@watchbridge.app</a> y lo corregimos.</p>
   </div>
 </section>
 
-<section style="border-top: 1px solid #232018; background: #14120D; padding-top: 56px; padding-bottom: 56px;">
-  <div class="wrap" style="max-width: 900px;">
-    <h2 class="h2" style="font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 16px;">Fuentes</h2>
-    <ul class="src" style="margin: 0; padding-left: 18px;">
-<li><strong style="color:#F2EDE0;">TiviMate</strong> — <a href="https://play.google.com/store/apps/details?id=ar.tvplayer.tv" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li>
-<li><strong style="color:#F2EDE0;">XCIPTV</strong> — <a href="https://play.google.com/store/apps/details?id=com.nathnetwork.xciptv" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li>
-<li><strong style="color:#F2EDE0;">IPTV Extreme</strong> — <a href="https://play.google.com/store/apps/details?id=com.pecana.iptvextreme" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li>
-<li><strong style="color:#F2EDE0;">Sparkle TV</strong> — <a href="https://play.google.com/store/apps/details?id=se.hedekonsult.sparkle" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li>
-<li><strong style="color:#F2EDE0;">OTT Navigator*</strong> — <a href="https://apkmirror.com/apk/sia-scillarium-studio/ott-navigator-iptv" rel="nofollow noopener" target="_blank">Ficha de APKMirror</a></li>
-<li><strong style="color:#F2EDE0;">IPTV Smarters Pro*</strong> — <a href="https://www.apkmirror.com/apk/whmcs-smarters/iptv-smarters-pro/" rel="nofollow noopener" target="_blank">Ficha de APKMirror</a></li>
-<li><strong style="color:#F2EDE0;">Televizo*</strong> — <a href="https://www.apkmirror.com/apk/andrey-menscikov/televizo-iptv-player/" rel="nofollow noopener" target="_blank">Notas de versión de APKMirror</a></li>
-    </ul>
-  </div>
-</section>
-
-<section style="padding-top: 72px; padding-bottom: 88px;">
+<section class="sec" id="sources">
   <div class="wrap">
-    <div style="border: 1px solid #2E2A20; border-radius: 3px; background: #1B1913; padding: 40px 44px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-      <div style="max-width: 32em;">
-        <h2 class="h2" style="font-weight: 700; font-size: 24px; letter-spacing: -0.02em; color: #F2EDE0; margin: 0 0 10px;">Pruébalo con tu propia lista</h2>
-        <p style="color: #B5AE9C; font-size: 15px; line-height: 1.6;">2 días de prueba gratis y luego 4,99 € una sola vez. WatchBridge no incluye canales: traes tu propia lista M3U o Xtream.</p>
+    <div class="sec-head"><p class="kicker"><span class="num">01</span></p><div><h2 class="h2">Fuentes</h2></div></div>
+    <ul class="src-list"><li><strong>TiviMate</strong> — <a href="https://play.google.com/store/apps/details?id=ar.tvplayer.tv" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li><li><strong>XCIPTV</strong> — <a href="https://play.google.com/store/apps/details?id=com.nathnetwork.xciptv" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li><li><strong>IPTV Extreme</strong> — <a href="https://play.google.com/store/apps/details?id=com.pecana.iptvextreme" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li><li><strong>Sparkle TV</strong> — <a href="https://play.google.com/store/apps/details?id=se.hedekonsult.sparkle" rel="nofollow noopener" target="_blank">Ficha de Google Play</a></li><li><strong>OTT Navigator*</strong> — <a href="https://apkmirror.com/apk/sia-scillarium-studio/ott-navigator-iptv" rel="nofollow noopener" target="_blank">Ficha de APKMirror</a></li><li><strong>IPTV Smarters Pro*</strong> — <a href="https://www.apkmirror.com/apk/whmcs-smarters/iptv-smarters-pro/" rel="nofollow noopener" target="_blank">Ficha de APKMirror</a></li><li><strong>Televizo*</strong> — <a href="https://www.apkmirror.com/apk/andrey-menscikov/televizo-iptv-player/" rel="nofollow noopener" target="_blank">Notas de versión de APKMirror</a></li></ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-in">
+    <div><h2 class="h2">Pruébalo con tu propia lista</h2><p>2 días de prueba gratis y luego 4,99 € una sola vez. WatchBridge no incluye canales: traes tu propia lista M3U o Xtream.</p></div>
+    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dcomparison-footer" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a><a class="arrow-link" href="https://github.com/Yushetf33/WatchBridge/releases/latest">Descargar el APK</a></div>
+  </div>
+</section>
+</main>
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="/es/"><img src="/logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal">WatchBridge TV no ofrece ni vende canales ni listas; traes las tuyas.</p>
+      <p class="legal">No está afiliada, patrocinada ni respaldada por TiviMate, OTT Navigator, XCIPTV, IPTV Extreme, Sparkle TV, IPTV Smarters Pro ni Televizo; esos nombres son marcas de sus respectivos propietarios y se usan solo para identificar las apps que se comparan.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4>Producto</h4>
+        <a href="/es/features.html">Funciones</a>
+        <a href="/es/iptv.html">TV en directo</a>
+        <a href="/es/launchers.html">Projectivy y Monet</a>
+        <a href="/es/mobile.html">App móvil</a>
+        <a href="/es/apps.html">Apps compatibles</a>
+        <a href="/es/firetv.html">Fire TV</a>
+        <a href="/es/guias/">Guías</a>
+        <a href="/es/#pricing">Precio</a>
       </div>
-      <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" class="cta-primary" style="flex-shrink: 0; padding: 15px 28px; font-size: 15.5px;">Descargar el APK</a>
+      <div>
+        <h4>Ayuda</h4>
+        <a href="/es/install.html">Guía de instalación</a>
+        <a href="/es/setup.html">Configuración y ayuda</a>
+        <a href="/es/#faq">Preguntas</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener">YouTube</a>
+        <a href="/privacy.html">Política de privacidad</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener">Repositorio</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener">Última versión</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<footer style="border-top: 1px solid #232018; background: #14120D; padding: 40px 40px 56px;">
-  <div class="wrap">
-    <p style="margin: 0 0 10px; color: #8C8573; font-size: 13px; line-height: 1.7;">WatchBridge TV no ofrece ni vende canales ni listas; traes las tuyas.</p>
-    <p style="margin: 0 0 20px; color: #8C8573; font-size: 13px; line-height: 1.7;">No está afiliada, patrocinada ni respaldada por TiviMate, OTT Navigator, XCIPTV, IPTV Extreme, Sparkle TV, IPTV Smarters Pro ni Televizo; esos nombres son marcas de sus respectivos propietarios y se usan solo para identificar las apps que se comparan.</p>
-    <a href="/es/iptv.html" style="font-size: 14px;">Guía IPTV de WatchBridge</a>
-    <a href="/es/" style="font-size: 14px; margin-left: 16px;">← Volver a WatchBridge</a>
-    <a href="/privacy.html" style="font-size: 14px; margin-left: 16px;">Política de privacidad (en inglés)</a>
   </div>
 </footer>
+<!--/WBF-->
 
 <script>
   

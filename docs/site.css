@@ -41,7 +41,7 @@ strong { font-weight: 650; color: var(--text); }
 .lede { font-size: clamp(1.08rem, 1.5vw, 1.25rem); line-height: 1.55; color: var(--muted); max-width: 34em; text-wrap: pretty; }
 .kicker { font: 500 12.5px/1.4 var(--f-mono); letter-spacing: .09em; text-transform: uppercase; color: var(--faint); }
 .kicker .num { color: var(--accent); margin-right: 10px; }
-mark.sub { background: none; color: var(--accent); white-space: nowrap; }
+mark.sub { background: none; color: var(--accent); }
 .note { font-size: 14px; line-height: 1.55; color: var(--faint); max-width: 46em; }
 
 /* ---------- botones ---------- */
@@ -199,8 +199,8 @@ details.more p { margin-top: 14px; }
 .picker .opt.off { color: var(--muted); font-weight: 500; }
 
 .steps-list { counter-reset: s; border-top: 1px solid var(--line2); }
-.steps-list li { counter-increment: s; display: grid; grid-template-columns: 56px minmax(0, 1fr); padding: 22px 0; border-bottom: 1px solid var(--line); }
-.steps-list li::before { content: counter(s, decimal-leading-zero); font: 500 13px/1.9 var(--f-mono); color: var(--accent); }
+.steps-list li { counter-increment: s; position: relative; padding: 22px 0 22px 56px; border-bottom: 1px solid var(--line); color: var(--muted); line-height: 1.65; }
+.steps-list li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 22px; font: 500 13px/1.9 var(--f-mono); color: var(--accent); }
 .steps-list p { color: var(--muted); }
 .steps-list strong { color: var(--text); }
 
@@ -238,3 +238,32 @@ details.more p { margin-top: 14px; }
 
 .links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 22px; }
 .compat li .nm { font: inherit; color: var(--text); letter-spacing: inherit; text-align: left; }
+
+/* ---- paginas de producto (IPTV, movil, apps, comparativa) */
+.stat-sm { font: 600 1.08rem/1.45 var(--f-sans); letter-spacing: -0.01em; color: var(--text); }
+.doc-links { display: grid; gap: 0; }
+.doc-links .kicker { margin-bottom: 8px; }
+.doc-link { display: block; padding: 16px 0; border-top: 1px solid var(--line); text-decoration: none; }
+.doc-links .doc-link:last-child { border-bottom: 1px solid var(--line); }
+.doc-link .t { display: block; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
+.doc-link .d { display: block; margin-top: 4px; font-size: .95rem; color: var(--muted); }
+.doc-link:hover .t { color: var(--accent); }
+.hero-actions .btn, .links .btn { display: inline-flex; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); background: var(--bg2); }
+table.cmp { width: 100%; min-width: 880px; border-collapse: collapse; font-size: .93rem; }
+table.cmp th, table.cmp td { padding: 11px 14px; text-align: center; border-bottom: 1px solid var(--line); color: var(--muted); }
+table.cmp th:first-child, table.cmp td:first-child { text-align: left; color: var(--text); position: sticky; left: 0; background: var(--bg2); min-width: 250px; }
+table.cmp thead th { font: 500 11.5px/1.3 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--faint); border-bottom-color: var(--line2); vertical-align: bottom; }
+table.cmp .wb { background: var(--bg3); color: var(--text); }
+table.cmp thead th.wb { color: var(--accent); }
+table.cmp tr.grp td { text-align: left; font: 500 11.5px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); background: var(--bg); padding: 22px 14px 10px; border-bottom-color: var(--line2); position: static; }
+table.cmp .y { color: var(--accent); font-weight: 700; }
+table.cmp .n { color: var(--line2); }
+table.cmp .part { font: 400 12px/1 var(--f-mono); color: var(--muted); }
+table.cmp tbody tr:last-child td { border-bottom: 0; }
+.notes { margin-top: 28px; display: grid; gap: 12px; color: var(--muted); font-size: .95rem; max-width: 52em; }
+.src-list { display: grid; gap: 0; border-top: 1px solid var(--line); max-width: 46em; margin-left: 252px; }
+.src-list li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+.src-list strong { color: var(--text); }
+@media (max-width: 960px) { .src-list { margin-left: 0; } }
+@media (max-width: 960px) { [style*="252px"] { margin-left: 0 !important; } }

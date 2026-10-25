@@ -92,156 +92,11 @@
   ]
 }
 </script>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"Schibsted Grotesk":wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  :root {
-    --bg: #F2EDE0;
-    --surface: #FBF8F0;
-    --surface-2: #EAE4D4;
-    --text: #1B1913;
-    --text-muted: #5E5849;
-    --accent: #7A5C00;
-    --accent-strong: #5E4700;
-    --accent-ink: #FBF8F0;
-    --border: #D2CAB6;
-    --success: #1a7a4c;
-    --code-bg: #EAE4D4;
-    --shadow: none;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #14120D;
-      --surface: #1B1913;
-      --surface-2: #2E2A20;
-      --text: #F2EDE0;
-      --text-muted: #B5AE9C;
-      --accent: #FFD84D;
-      --accent-strong: #FFE48A;
-      --accent-ink: #14120D;
-      --border: #2E2A20;
-      --success: #4ade80;
-      --warn: #FFD84D;
-      --code-bg: #1B1913;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #14120D;
-    --surface: #1B1913;
-    --surface-2: #2E2A20;
-    --text: #F2EDE0;
-    --text-muted: #B5AE9C;
-    --accent: #FFD84D;
-    --accent-strong: #FFE48A;
-    --accent-ink: #14120D;
-    --border: #2E2A20;
-    --success: #4ade80;
-    --warn: #FFD84D;
-    --code-bg: #1B1913;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Schibsted Grotesk", system-ui, sans-serif;
-    line-height: 1.55;
-    margin: 0;
-    padding: 4rem 1.5rem 6rem;
-  }
-
-  .page { max-width: 760px; margin: 0 auto; }
-
-  h1, h2, h3 { font-family: "Schibsted Grotesk", system-ui, sans-serif; text-wrap: balance; margin: 0; }
-
-  header.hero { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 3rem; }
-
-  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-
-  h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em; }
-
-  .lede { color: var(--text-muted); font-size: 1.05rem; max-width: 56ch; }
-  .lede strong { color: var(--text); font-weight: 700; }
-
-  nav.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
-  nav.jump a { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--text-muted); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 0.35rem 0.8rem; }
-  nav.jump a:hover { border-color: var(--accent); color: var(--text); }
-
-  section.method { margin-bottom: 3.25rem; scroll-margin-top: 2rem; }
-
-  .method-head { display: flex; align-items: baseline; gap: 0.7rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
-  .method-head .num { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); width: 1.9rem; height: 1.9rem; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .method-head h2 { font-size: 1.3rem; }
-  .method-head .sub { color: var(--text-muted); font-size: 0.85rem; margin-left: auto; font-family: "IBM Plex Mono", monospace; }
-
-  ol.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: step; }
-  ol.steps > li { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.85rem; }
-  ol.steps > li::before { counter-increment: step; content: counter(step); font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; color: var(--text-muted); padding-top: 0.1rem; }
-  .step-body p { margin: 0 0 0.5rem; }
-  .step-body p:last-child { margin-bottom: 0; }
-
-  code.inline { font-family: "IBM Plex Mono", monospace; font-size: 0.88em; background: var(--code-bg); padding: 0.12em 0.4em; border-radius: 5px; border: 1px solid var(--border); word-break: break-word; }
-
-  pre { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 3px; padding: 0.9rem 1rem; overflow-x: auto; margin: 0.5rem 0 0; line-height: 1.6; }
-  .code-line { display: block; }
-  .code-line + .code-line { margin-top: 0.15rem; }
-
-  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 3px; padding: 0.8rem 1rem; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); margin-top: 0.4rem; }
-  .callout strong { color: var(--text); }
-  .callout.warn { border-left-color: var(--warn); }
-
-  ul.limits { margin: 0.4rem 0 0; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  ul.limits li strong { color: var(--text); }
-
-  section.trouble { background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 2.5rem; }
-  section.trouble > .th { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.3rem; }
-  section.trouble h2 { font-size: 1.35rem; }
-  section.trouble > p.intro { color: var(--text-muted); font-size: 0.92rem; margin: 0.4rem 0 1.4rem; }
-
-  .code-badge { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 700; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); border-radius: 3px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
-
-  .qa { display: flex; flex-direction: column; gap: 1.6rem; }
-  .qa-item { padding-top: 1.4rem; border-top: 1px solid var(--border); }
-  .qa-item:first-child { padding-top: 0; border-top: none; }
-  .qa .q { display: flex; align-items: baseline; gap: 0.6rem; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
-  .qa .a { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 0.6rem; }
-  .qa .a:last-child { margin-bottom: 0; }
-  .qa .a strong { color: var(--text); }
-
-  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-  /*wb-links*/ a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: 3px; }
-  footer a { color: var(--accent-strong); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  @media (max-width: 480px) {
-    section.trouble { padding: 1.3rem 1.1rem 1.5rem; }
-  }
-</style>
-<style>
-  article h2 { font-size: 1.4rem; margin: 2.6rem 0 0.9rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--border); }
-  article p { margin: 0 0 1.05rem; }
-  article ul, article ol { margin: 0 0 1.2rem; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  article a { color: var(--accent-strong); }
-  article strong { color: var(--text); }
-  .table-wrap { overflow-x: auto; margin: 0 0 1.4rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
-  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 560px; }
-  th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
-  tr:last-child td { border-bottom: none; }
-  .cards { display: grid; gap: 1rem; margin-top: 1.5rem; }
-  .card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.4rem; text-decoration: none; color: var(--text); box-shadow: var(--shadow); }
-  .card:hover { border-color: var(--accent); }
-  .card h2 { font-size: 1.15rem; border: 0; margin: 0 0 0.4rem; padding: 0; }
-  .card p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
-  .cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.6rem 0 0; }
-  .cta a { background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 700; padding: 0.7rem 1.1rem; border-radius: 10px; font-size: 0.92rem; }
-  .cta a.alt { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=8">
+<link rel="stylesheet" href="/doc.css?v=3">
 <!--WBH-CSS--><style>
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
@@ -272,7 +127,7 @@
 <body>
 
 <!--WBH-->
-<header class="wbh wbh-flush">
+<header class="wbh">
   <div class="wbh-in">
     <a class="wbh-brand" href="/"><img src="/logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
     <nav class="wbh-nav" aria-label="Main">
@@ -289,10 +144,9 @@
 </header>
 <!--/WBH-->
 
-<div class="page">
+<main class="doc">
 
-  <header class="hero">
-    <a href="/" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">← WatchBridge</a>
+  <header class="doc-head">
     <span class="eyebrow">Guide</span>
     <h1>Wholphin and Jellyfin on Google TV: open recommendations in your library</h1>
     <p class="lede">Google TV recommends titles but opens them in the app they came from. <strong>WatchBridge TV</strong> can send them to your own <strong>Jellyfin</strong> or <strong>Wholphin</strong> library instead, or look in your server first and use another player only if the title is not there.</p>
@@ -341,20 +195,42 @@
   <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-jellyfin-wholphin-google-tv-recommendations" rel="noopener">Get WatchBridge TV on Google Play</a></div>
   <p style="margin: 0.7rem 0 0; font-size: 0.88rem; color: var(--text-muted);">On Fire TV or a device without Google Play? Use the <a href="/install.html">APK</a>. 2-day free trial, no card, then €4.99 once.</p>
 
-  <footer>
-    <span>WatchBridge TV · 2-day free trial, then €4.99 one-time</span>
-    <span>
-      <a href="/install.html">Install guide</a>
-      &nbsp;·&nbsp;
-      <a href="/setup.html">Setup & troubleshooting</a>
-      &nbsp;·&nbsp;
-      <a href="/guides/">Guides</a>
-      &nbsp;·&nbsp;
-      <a href="/privacy.html">Privacy policy</a>
-    </span>
-  </footer>
+</main>
 
-</div>
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="/"><img src="/logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal">WatchBridge TV is an independent automation and redirection tool. It does not host, store, distribute, or provide any movies, series, streams, channels or other audiovisual content.</p>
+      <p class="legal">Not affiliated with, sponsored by, or endorsed by Nuvio, Stremio, Plex, Jellyfin, TiviMate or any IPTV provider — those names are trademarks of their respective owners.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4>Product</h4>
+        <a href="/features.html">Features</a>
+        <a href="/iptv.html">Live TV</a>
+        <a href="/launchers.html">Projectivy &amp; Monet</a>
+        <a href="/mobile.html">Mobile app</a>
+        <a href="/apps.html">Compatible apps</a>
+        <a href="/firetv.html">Fire TV</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="/install.html">Install guide</a>
+        <a href="/setup.html">Setup &amp; troubleshooting</a>
+        <a href="/#faq">FAQ</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener">YouTube</a>
+        <a href="/privacy.html">Privacy policy</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener">Repository</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener">Latest release</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/WBF-->
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

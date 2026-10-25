@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install WatchBridge TV on Google TV &amp; Fire TV — APK, Downloader, ADB</title>
@@ -31,379 +30,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"Schibsted Grotesk":wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-  :root {
-    --bg: #F2EDE0;
-    --surface: #FBF8F0;
-    --surface-2: #EAE4D4;
-    --text: #1B1913;
-    --text-muted: #5E5849;
-    --accent: #7A5C00;
-    --accent-strong: #5E4700;
-    --accent-ink: #FBF8F0;
-    --border: #D2CAB6;
-    --success: #1a7a4c;
-    --code-bg: #EAE4D4;
-    --shadow: none;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #14120D;
-      --surface: #1B1913;
-      --surface-2: #2E2A20;
-      --text: #F2EDE0;
-      --text-muted: #B5AE9C;
-      --accent: #FFD84D;
-      --accent-strong: #FFE48A;
-      --accent-ink: #14120D;
-      --border: #2E2A20;
-      --success: #4ade80;
-      --code-bg: #1B1913;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #14120D;
-    --surface: #1B1913;
-    --surface-2: #2E2A20;
-    --text: #F2EDE0;
-    --text-muted: #B5AE9C;
-    --accent: #FFD84D;
-    --accent-strong: #FFE48A;
-    --accent-ink: #14120D;
-    --border: #2E2A20;
-    --success: #4ade80;
-    --code-bg: #1B1913;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Schibsted Grotesk", system-ui, sans-serif;
-    line-height: 1.55;
-    margin: 0;
-    padding: 4rem 1.5rem 6rem;
-  }
-
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  h1, h2, h3 {
-    font-family: "Schibsted Grotesk", system-ui, sans-serif;
-    text-wrap: balance;
-    margin: 0;
-  }
-
-  header.hero {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    margin-bottom: 3rem;
-  }
-
-  .eyebrow {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  h1 {
-    font-size: clamp(1.9rem, 4vw, 2.5rem);
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-
-  .lede {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    max-width: 56ch;
-  }
-
-  .lede strong { color: var(--text); font-weight: 700; }
-
-  /* --- Method picker --- */
-
-  section.picker {
-    margin-bottom: 3.5rem;
-  }
-
-  .picker h2 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.9rem;
-  }
-
-  @media (max-width: 860px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 480px) {
-    .cards { grid-template-columns: 1fr; }
-  }
-
-  .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 1.15rem 1.15rem 1.3rem;
-    box-shadow: none;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-  }
-
-  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-
-  .card .tag {
-    display: inline-block;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--success);
-    background: color-mix(in srgb, var(--success) 15%, transparent);
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.65rem;
-  }
-
-  .card .tag.neutral {
-    color: var(--text-muted);
-    background: var(--surface-2);
-  }
-
-  .card h3 {
-    font-size: 1.02rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .card p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.88rem;
-  }
-
-  /* --- Method sections --- */
-
-  section.method {
-    margin-bottom: 3.25rem;
-    scroll-margin-top: 2rem;
-  }
-
-  .method-head {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-    padding-bottom: 0.9rem;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 1.5rem;
-  }
-
-  .method-head .num {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.85rem;
-    color: var(--accent-strong);
-    background: color-mix(in srgb, var(--accent) 16%, transparent);
-    width: 1.9rem;
-    height: 1.9rem;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .method-head h2 {
-    font-size: 1.3rem;
-  }
-
-  .method-head .sub {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-left: auto;
-    font-family: "IBM Plex Mono", monospace;
-  }
-
-  ol.steps {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-  }
-
-  ol.steps > li {
-    display: grid;
-    grid-template-columns: 1.75rem 1fr;
-    gap: 0.85rem;
-  }
-
-  ol.steps > li::before {
-    counter-increment: step;
-    content: counter(step);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    padding-top: 0.1rem;
-  }
-
-  ol.steps { counter-reset: step; }
-
-  .step-body p { margin: 0 0 0.5rem; }
-  .step-body p:last-child { margin-bottom: 0; }
-
-  code.inline {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.88em;
-    background: var(--code-bg);
-    padding: 0.12em 0.4em;
-    border-radius: 5px;
-    border: 1px solid var(--border);
-  }
-
-  pre {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.85rem;
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 0.9rem 1rem;
-    overflow-x: auto;
-    margin: 0.5rem 0 0;
-    line-height: 1.6;
-  }
-
-  .code-line { display: block; }
-  .code-line + .code-line { margin-top: 0.15rem; }
-
-  .callout {
-    display: flex;
-    gap: 0.6rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 3px;
-    padding: 0.8rem 1rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-top: 0.4rem;
-  }
-
-  .callout strong { color: var(--text); }
-
-  .code-download {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    background: var(--surface-2);
-    border-radius: 3px;
-    padding: 0.75rem 1rem;
-    margin-top: 0.4rem;
-  }
-
-  .code-download .digits {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 1.35rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--accent-strong);
-  }
-
-  .code-download .label {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-
-  /* --- Activation + troubleshooting --- */
-
-  section.activate ol.steps > li::before { color: var(--success); }
-
-  .trouble {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 1.4rem 1.5rem;
-  }
-
-  .trouble h2 {
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .trouble > p.intro {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin: 0 0 1.1rem;
-  }
-
-  .qa {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .qa .q {
-    font-weight: 700;
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .qa .a {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  footer {
-    margin-top: 3.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  /*wb-links*/ a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: 3px; }
-  footer a { color: var(--accent-strong); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  a.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--accent);
-    color: var(--accent-ink);
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-decoration: none;
-    padding: 0.55rem 1rem;
-    border-radius: 3px;
-    margin-top: 0.5rem;
-  }
-</style>
 <!--WBH-CSS--><style>
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
@@ -430,10 +57,10 @@
     .wbh-pill { padding: 12px 11px; font-size: 14px; }
   }
 </style><!--/WBH-CSS-->
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"><link rel="stylesheet" href="/site.css?v=8"><link rel="stylesheet" href="/doc.css?v=3"></head>
 <body>
 <!--WBH-->
-<header class="wbh wbh-flush">
+<header class="wbh">
   <div class="wbh-in">
     <a class="wbh-brand" href="./"><img src="logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
     <nav class="wbh-nav" aria-label="Main">
@@ -450,10 +77,10 @@
 </header>
 <!--/WBH-->
 
-<div class="page">
+<main class="doc">
 
-  <header class="hero">
-    <a href="./" style="font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">&larr; WatchBridge</a>
+  <header class="doc-head">
+    
     <span class="eyebrow" data-i18n="eyebrow">Install guide</span>
     <h1 data-i18n="h1">Install WatchBridge TV</h1>
     <p class="lede" data-i18n="lede">
@@ -667,7 +294,7 @@
         </div>
       </li>
     </ol>
-    <p class="act-help" data-i18n="act.help" style="margin-top: 16px; padding: 12px 14px; border-radius: 3px; background: rgba(255,216,77,.10); border: 1px solid #1F2D4D; font-size: 14px; line-height: 1.6;">Does the switch turn itself off, or won't your box let you enable Accessibility? <a href="setup.html#errors" style="color: #FFE48A; text-decoration: underline; text-underline-offset: 3px;"><strong>Fix it here →</strong></a> (error codes E01–E02, including how to enable it over ADB on boxes that block it).</p>
+    <p class="act-help" data-i18n="act.help">Does the switch turn itself off, or won't your box let you enable Accessibility? <a href="setup.html#errors"><strong>Fix it here →</strong></a> (error codes E01–E02, including how to enable it over ADB on boxes that block it).</p>
   </section>
 
   <section class="trouble">
@@ -736,21 +363,44 @@
     </div>
   </section>
 
-  <footer>
-    <span data-i18n="footer.tag">WatchBridge TV · 2-day free trial, then €4.99 one-time</span>
-    <span>
-      <a href="setup.html" data-i18n="footer.setup">Setup &amp; troubleshooting</a>
-      &nbsp;·&nbsp;
-      <a href="guides/" data-i18n="footer.guides">Guides</a>
-      &nbsp;·&nbsp;
-      <a href="https://github.com/Yushetf33/WatchBridge" data-i18n="footer.repo">GitHub repository →</a>
-      &nbsp;·&nbsp;
-      <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
-    </span>
-  </footer>
+  
 
-</div>
+</main>
 
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="./"><img src="logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal" data-i18n="ft.legal1">WatchBridge TV is an independent automation and redirection tool. It does not host, store, distribute, or provide any movies, series, streams, channels or other audiovisual content.</p>
+      <p class="legal" data-i18n="ft.legal2">Not affiliated with, sponsored by, or endorsed by Nuvio, Stremio, Plex, Jellyfin, TiviMate or any IPTV provider — those names are trademarks of their respective owners.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4 data-i18n="ft.h.product">Product</h4>
+        <a href="features.html" data-i18n="ft.features">Features</a>
+        <a href="iptv.html" data-i18n="ft.live">Live TV</a>
+        <a href="launchers.html" data-i18n="ft.launchers">Projectivy &amp; Monet</a>
+        <a href="mobile.html" data-i18n="ft.mobile">Mobile app</a>
+        <a href="apps.html" data-i18n="ft.apps">Compatible apps</a>
+        <a href="firetv.html" data-i18n="ft.firetv">Fire TV</a>
+        <a href="guides/" data-i18n="ft.guides">Guides</a>
+        <a href="./#pricing" data-i18n="ft.pricing">Pricing</a>
+      </div>
+      <div>
+        <h4 data-i18n="ft.h.support">Help</h4>
+        <a href="install.html" data-i18n="ft.install">Install guide</a>
+        <a href="setup.html" data-i18n="ft.setup">Setup &amp; troubleshooting</a>
+        <a href="./#faq" data-i18n="ft.faq">FAQ</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener" data-i18n="ft.youtube">YouTube</a>
+        <a href="privacy.html" data-i18n="ft.privacy">Privacy policy</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener" data-i18n="ft.repo">Repository</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener" data-i18n="ft.release">Latest release</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/WBF-->
 <script src="i18n.js"></script>
 <script>
   tvrbApplyI18n({
@@ -763,6 +413,25 @@
       "hdr.guides": "Guías",
       "hdr.pricing": "Precio",
       "hdr.cta": "Conseguir WatchBridge",
+      "ft.features": "Funciones",
+      "ft.live": "TV en directo",
+      "ft.launchers": "Projectivy y Monet",
+      "ft.mobile": "App móvil",
+      "ft.apps": "Apps compatibles",
+      "ft.firetv": "Fire TV",
+      "ft.guides": "Guías",
+      "ft.pricing": "Precio",
+      "ft.install": "Guía de instalación",
+      "ft.setup": "Configuración y ayuda",
+      "ft.faq": "Preguntas",
+      "ft.youtube": "YouTube",
+      "ft.privacy": "Política de privacidad",
+      "ft.repo": "Repositorio",
+      "ft.release": "Última versión",
+      "ft.h.product": "Producto",
+      "ft.h.support": "Ayuda",
+      "ft.legal1": "WatchBridge TV es una herramienta independiente de automatización y redirección. No aloja, almacena, distribuye ni proporciona películas, series, emisiones, canales ni ningún otro contenido audiovisual.",
+      "ft.legal2": "Sin afiliación, patrocinio ni respaldo de Nuvio, Stremio, Plex, Jellyfin, TiviMate ni ningún proveedor IPTV: esos nombres son marcas de sus respectivos propietarios.",
       /*/WBH-DICT*/
       "hdr.live": "TV en directo",
       "hdr.movies": "Películas y series",
@@ -814,7 +483,7 @@
       "act.sub": "una vez instalada",
       "act.s1": "Abre <strong>WatchBridge TV</strong> desde el launcher\n          de la TV.",
       "act.s2": "Toca <strong>\"Activar el servicio en Accesibilidad\"</strong> —\n          te lleva directo a la pantalla correcta. Actívalo ahí.",
-      "act.help": "¿El interruptor se apaga solo, o tu caja no te deja activar Accesibilidad? <a href=\"setup.html#errors\" style=\"color: #FFE48A; text-decoration: underline; text-underline-offset: 3px;\"><strong>Arréglalo aquí →</strong></a> (códigos de error E01–E02, incluida la forma de activarlo por ADB en cajas que lo bloquean).",
+      "act.help": "¿El interruptor se apaga solo, o tu caja no te deja activar Accesibilidad? <a href=\"setup.html#errors\" style=\"color: #86AAF5; text-decoration: underline; text-underline-offset: 3px;\"><strong>Arréglalo aquí →</strong></a> (códigos de error E01–E02, incluida la forma de activarlo por ADB en cajas que lo bloquean).",
       "act.s3": "Verifica tu suscripción con el email con el que pagaste (o\n          empieza la prueba gratis de 2 días, sin tarjeta) — y ya está, pulsa\n          cualquier recomendación del launcher para probarlo.",
       "tr.h2": "El interruptor se desactiva solo",
       "tr.intro": "\n      Lo más habitual con lo que se topa la gente al instalar y activar el\n      servicio. Por qué pasa y cómo arreglarlo.\n    ",
@@ -835,6 +504,7 @@
       "footer.privacy": "Política de privacidad"
   });
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
-</html>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;53bb5b5a12a24a2bbaf49ec038bedac7&quot;}"></script><!-- End Cloudflare Web Analytics -->
+
+
+</body></html>

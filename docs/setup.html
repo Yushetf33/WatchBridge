@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Setup & Troubleshooting — WatchBridge TV</title>
+<title>Setup &amp; Troubleshooting — WatchBridge TV</title>
 <meta name="description" content="Fix Accessibility turning itself off, set up Fire TV mode, voice search and Jellyfin, and troubleshoot Google TV Streamer, TCL and Nuvio or Stremio issues.">
 <link rel="canonical" href="https://watchbridge.app/setup.html">
 <link rel="alternate" hreflang="en" href="https://watchbridge.app/setup.html">
@@ -12,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://watchbridge.app/setup.html">
 <meta property="og:site_name" content="WatchBridge">
-<meta property="og:title" content="Setup & Troubleshooting — WatchBridge TV">
+<meta property="og:title" content="Setup &amp; Troubleshooting — WatchBridge TV">
 <meta property="og:description" content="Fix Accessibility turning itself off, set up Fire TV mode, voice search and Jellyfin, and troubleshoot Google TV Streamer, TCL and Nuvio or Stremio issues.">
 <meta property="og:image" content="https://watchbridge.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -20,7 +19,7 @@
 <meta property="og:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Setup & Troubleshooting — WatchBridge TV">
+<meta name="twitter:title" content="Setup &amp; Troubleshooting — WatchBridge TV">
 <meta name="twitter:description" content="Fix Accessibility turning itself off, set up Fire TV mode, voice search and Jellyfin, and troubleshoot Google TV Streamer, TCL and Nuvio or Stremio issues.">
 <meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
 <meta name="twitter:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
@@ -69,136 +68,7 @@
   ]
 }
 </script>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"Schibsted Grotesk":wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-  :root {
-    --bg: #F2EDE0;
-    --surface: #FBF8F0;
-    --surface-2: #EAE4D4;
-    --text: #1B1913;
-    --text-muted: #5E5849;
-    --accent: #7A5C00;
-    --accent-strong: #5E4700;
-    --accent-ink: #FBF8F0;
-    --border: #D2CAB6;
-    --success: #1a7a4c;
-    --code-bg: #EAE4D4;
-    --shadow: none;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #14120D;
-      --surface: #1B1913;
-      --surface-2: #2E2A20;
-      --text: #F2EDE0;
-      --text-muted: #B5AE9C;
-      --accent: #FFD84D;
-      --accent-strong: #FFE48A;
-      --accent-ink: #14120D;
-      --border: #2E2A20;
-      --success: #4ade80;
-      --warn: #FFD84D;
-      --code-bg: #1B1913;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #14120D;
-    --surface: #1B1913;
-    --surface-2: #2E2A20;
-    --text: #F2EDE0;
-    --text-muted: #B5AE9C;
-    --accent: #FFD84D;
-    --accent-strong: #FFE48A;
-    --accent-ink: #14120D;
-    --border: #2E2A20;
-    --success: #4ade80;
-    --warn: #FFD84D;
-    --code-bg: #1B1913;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Schibsted Grotesk", system-ui, sans-serif;
-    line-height: 1.55;
-    margin: 0;
-    padding: 4rem 1.5rem 6rem;
-  }
-
-  .page { max-width: 760px; margin: 0 auto; }
-
-  h1, h2, h3 { font-family: "Schibsted Grotesk", system-ui, sans-serif; text-wrap: balance; margin: 0; }
-
-  header.hero { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 3rem; }
-
-  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-
-  h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em; }
-
-  .lede { color: var(--text-muted); font-size: 1.05rem; max-width: 56ch; }
-  .lede strong { color: var(--text); font-weight: 700; }
-
-  nav.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
-  nav.jump a { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--text-muted); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 2px; padding: 0.35rem 0.8rem; }
-  nav.jump a:hover { border-color: var(--accent); color: var(--text); }
-
-  section.method { margin-bottom: 3.25rem; scroll-margin-top: 2rem; }
-
-  .method-head { display: flex; align-items: baseline; gap: 0.7rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
-  .method-head .num { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); width: 1.9rem; height: 1.9rem; border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .method-head h2 { font-size: 1.3rem; }
-  .method-head .sub { color: var(--text-muted); font-size: 0.85rem; margin-left: auto; font-family: "IBM Plex Mono", monospace; }
-
-  ol.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: step; }
-  ol.steps > li { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.85rem; }
-  ol.steps > li::before { counter-increment: step; content: counter(step); font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; color: var(--text-muted); padding-top: 0.1rem; }
-  .step-body p { margin: 0 0 0.5rem; }
-  .step-body p:last-child { margin-bottom: 0; }
-
-  code.inline { font-family: "IBM Plex Mono", monospace; font-size: 0.88em; background: var(--code-bg); padding: 0.12em 0.4em; border-radius: 5px; border: 1px solid var(--border); word-break: break-word; }
-
-  pre { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; background: var(--code-bg); border: 1px solid var(--border); border-radius: 3px; padding: 0.9rem 1rem; overflow-x: auto; margin: 0.5rem 0 0; line-height: 1.6; }
-  .code-line { display: block; }
-  .code-line + .code-line { margin-top: 0.15rem; }
-
-  .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 3px; padding: 0.8rem 1rem; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); margin-top: 0.4rem; }
-  .callout strong { color: var(--text); }
-  .callout.warn { border-left-color: var(--warn); }
-
-  ul.limits { margin: 0.4rem 0 0; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  ul.limits li strong { color: var(--text); }
-
-  section.trouble { background: var(--surface); border: 1px solid var(--border); border-radius: 3px; padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 2.5rem; }
-  section.trouble > .th { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.3rem; }
-  section.trouble h2 { font-size: 1.35rem; }
-  section.trouble > p.intro { color: var(--text-muted); font-size: 0.92rem; margin: 0.4rem 0 1.4rem; }
-
-  .code-badge { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 700; color: var(--accent-strong); background: color-mix(in srgb, var(--accent) 16%, transparent); border-radius: 3px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
-
-  .qa { display: flex; flex-direction: column; gap: 1.6rem; }
-  .qa-item { padding-top: 1.4rem; border-top: 1px solid var(--border); }
-  .qa-item:first-child { padding-top: 0; border-top: none; }
-  .qa .q { display: flex; align-items: baseline; gap: 0.6rem; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
-  .qa .a { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 0.6rem; }
-  .qa .a:last-child { margin-bottom: 0; }
-  .qa .a strong { color: var(--text); }
-
-  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.82rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-  /*wb-links*/ a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: 3px; }
-  footer a { color: var(--accent-strong); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  @media (max-width: 480px) {
-    section.trouble { padding: 1.3rem 1.1rem 1.5rem; }
-  }
-</style>
 <!--WBH-CSS--><style>
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
@@ -225,10 +95,10 @@
     .wbh-pill { padding: 12px 11px; font-size: 14px; }
   }
 </style><!--/WBH-CSS-->
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"><link rel="stylesheet" href="/site.css?v=8"><link rel="stylesheet" href="/doc.css?v=3"></head>
 <body>
 <!--WBH-->
-<header class="wbh wbh-flush">
+<header class="wbh">
   <div class="wbh-in">
     <a class="wbh-brand" href="./"><img src="logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
     <nav class="wbh-nav" aria-label="Main">
@@ -245,10 +115,10 @@
 </header>
 <!--/WBH-->
 
-<div class="page">
+<main class="doc">
 
-  <header class="hero">
-    <a href="./" style="font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">&larr; WatchBridge</a>
+  <header class="doc-head">
+    
     <span class="eyebrow" data-i18n="eyebrow">Setup guide</span>
     <h1 data-i18n="h1">Configure &amp; troubleshoot WatchBridge TV</h1>
     <p class="lede" data-i18n="lede">
@@ -274,27 +144,27 @@
       <h2 data-i18n="vf.h2">Verify your subscription &amp; sync with mobile</h2>
       <span class="sub" data-i18n="vf.sub">same email, both apps</span>
     </div>
-    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="vf.intro">
+    <p data-i18n="vf.intro">
       There's no account or password — just an email. Using that <strong>same
       email</strong> on the mobile app is also what links it to your TV, so
       watch history and recommendations sync both ways. How you pay depends
       on where you got WatchBridge TV from:
     </p>
 
-    <p style="font-weight: 700; font-size: 0.92rem; margin: 1.2rem 0 0.6rem;" data-i18n="vf.playhead">Installed from Google Play</p>
+    <p data-i18n="vf.playhead">Installed from Google Play</p>
     <ol class="steps">
       <li><div class="step-body"><p data-i18n="vf.play1">Settings → Subscription. Buy the lifetime plan right there with <strong>Google Play Billing</strong> — pay with your Google account, directly on the remote, no phone or QR code involved.</p></div></li>
       <li><div class="step-body"><p data-i18n="vf.play2">Prefer to try it free first? Type an email and tap <strong>"Start 2-day free trial"</strong> instead — no card, no Play purchase yet.</p></div></li>
       <li><div class="step-body"><p data-i18n="vf.play3">To also use it on your phone: with that email still in the field, tap <strong>"Verify subscription"</strong> — this links your Play purchase (or your trial) to that email.</p></div></li>
     </ol>
 
-    <p style="font-weight: 700; font-size: 0.92rem; margin: 1.4rem 0 0.6rem;" data-i18n="vf.apkhead">Installed the APK (sideload)</p>
+    <p data-i18n="vf.apkhead">Installed the APK (sideload)</p>
     <ol class="steps">
       <li><div class="step-body"><p data-i18n="vf.apk1">Scan the QR code shown for the free trial (no card, 2 days) or the €4.99 lifetime plan with your phone, and pay with whichever email you want linked to your account.</p></div></li>
       <li><div class="step-body"><p data-i18n="vf.apk2">Back on the TV, enter that same email and tap <strong>"Verify subscription"</strong>. That's it — the TV is linked.</p></div></li>
     </ol>
 
-    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 1.3rem 0 0;" data-i18n="vf.common">Either way, once you have an email verified on the TV: install <a href="./#mobile">WatchBridge Mobile</a> on your phone or tablet and verify it there with <strong>the exact same email</strong> — no separate purchase needed. Watch history and recommendations now sync automatically between the TV and the phone.</p>
+    <p data-i18n="vf.common">Either way, once you have an email verified on the TV: install <a href="./#mobile">WatchBridge Mobile</a> on your phone or tablet and verify it there with <strong>the exact same email</strong> — no separate purchase needed. Watch history and recommendations now sync automatically between the TV and the phone.</p>
     <div class="callout" data-i18n="vf.note">The same email can link up to <strong>5 devices</strong> at once (a phone/tablet counts separately from your TVs). Settings → "Manage devices" shows every linked device and lets you unlink any of them, anytime — no waiting period. A Google Play purchase alone doesn't show up there until you link an email to it (step 3 above).</div>
   </section>
 
@@ -304,7 +174,7 @@
       <h2 data-i18n="ft.h2">Fire TV mode</h2>
       <span class="sub" data-i18n="ft.sub">hold + confirm</span>
     </div>
-    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="ft.intro">
+    <p data-i18n="ft.intro">
       Fire OS blocks the standard Accessibility method for any app not installed from the Amazon Appstore — the same method every recommendation-redirect app depends on. Fire TV mode works around it using on-device text recognition instead, nothing recorded leaves the device.
     </p>
     <ol class="steps">
@@ -312,7 +182,7 @@
       <li><div class="step-body"><p data-i18n="ft.s2">Accept the one-time <strong>screen recording</strong> permission (the standard Android system dialog). Android keeps a persistent notification visible while it's active — a system requirement, not something the app adds.</p></div></li>
       <li><div class="step-body"><p data-i18n="ft.s3">If the app asks for <strong>Usage access</strong>: Settings → Apps → Special app access → Usage access → WatchBridge TV → enable it. Many Fire TVs (older sticks on Fire OS 6, for example) don't have that screen at all — the app detects it and skips this step.</p></div></li>
     </ol>
-    <p style="font-weight: 700; font-size: 0.85rem; margin: 1.3rem 0 0.5rem;" data-i18n="ft.limitstitle">Known limitations</p>
+    <p data-i18n="ft.limitstitle">Known limitations</p>
     <ul class="limits">
       <li data-i18n="ft.l1">Only works from the actual home screen — nothing happens from inside another app.</li>
       <li data-i18n="ft.l2">Not instant like Google TV: hold still on a recommendation for a couple of seconds, then confirm with <strong>OK</strong> on the prompt that appears (use its on-screen "Back" to dismiss, not the remote's physical Back button).</li>
@@ -327,14 +197,14 @@
       <h2 data-i18n="vs.h2">Voice search</h2>
       <span class="sub" data-i18n="vs.sub">Google TV only</span>
     </div>
-    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="vs.intro">
+    <p data-i18n="vs.intro">
       By default, a recommendation opened by voice ("Ok Google, open &lt;title&gt;", or holding the remote's mic button) isn't picked up automatically the way a regular click is — it's opt-in.
     </p>
     <ol class="steps">
       <li><div class="step-body"><p data-i18n="vs.s1">Open the app and tap <strong>"Enable voice search (experimental)"</strong> — only shown on Google TV, since Fire TV mode already covers this on Fire TV.</p></div></li>
       <li><div class="step-body"><p data-i18n="vs.s2">Accept the one-time <strong>screen recording</strong> permission. Android shows a persistent notification while it's on, same as Fire TV mode.</p></div></li>
     </ol>
-    <p style="font-weight: 700; font-size: 0.85rem; margin: 1.3rem 0 0.5rem;" data-i18n="vs.limitstitle">Known limitations</p>
+    <p data-i18n="vs.limitstitle">Known limitations</p>
     <ul class="limits">
       <li data-i18n="vs.l1">Keeps the screen-recording notification visible for as long as it's enabled.</li>
       <li data-i18n="vs.l2">Only helps once a voice search lands you on a movie/show detail page — it doesn't add voice search itself, just makes recommendations opened that way work like a regular click.</li>
@@ -347,7 +217,7 @@
       <h2 data-i18n="jf.h2">Check my Jellyfin first</h2>
       <span class="sub" data-i18n="jf.sub">optional</span>
     </div>
-    <p style="color: var(--text-muted); font-size: 0.94rem; margin: 0 0 1.1rem;" data-i18n="jf.intro">
+    <p data-i18n="jf.intro">
       A self-hosted library has no universal catalog to link to directly, so WatchBridge TV can check <strong>your own server</strong> first — if the recommendation is already there, it opens straight to that exact title instead of your regular player.
     </p>
     <ol class="steps">
@@ -397,21 +267,44 @@
     </div>
   </section>
 
-  <footer>
-    <span data-i18n="footer.tag">WatchBridge TV · 2-day free trial, then €4.99 one-time</span>
-    <span>
-      <a href="install.html" data-i18n="footer.install">Install guide</a>
-      &nbsp;·&nbsp;
-      <a href="guides/" data-i18n="footer.guides">Guides</a>
-      &nbsp;·&nbsp;
-      <a href="https://github.com/Yushetf33/WatchBridge" data-i18n="footer.repo">GitHub repository →</a>
-      &nbsp;·&nbsp;
-      <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
-    </span>
-  </footer>
+  
 
-</div>
+</main>
 
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="./"><img src="logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal" data-i18n="ft.legal1">WatchBridge TV is an independent automation and redirection tool. It does not host, store, distribute, or provide any movies, series, streams, channels or other audiovisual content.</p>
+      <p class="legal" data-i18n="ft.legal2">Not affiliated with, sponsored by, or endorsed by Nuvio, Stremio, Plex, Jellyfin, TiviMate or any IPTV provider — those names are trademarks of their respective owners.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4 data-i18n="ft.h.product">Product</h4>
+        <a href="features.html" data-i18n="ft.features">Features</a>
+        <a href="iptv.html" data-i18n="ft.live">Live TV</a>
+        <a href="launchers.html" data-i18n="ft.launchers">Projectivy &amp; Monet</a>
+        <a href="mobile.html" data-i18n="ft.mobile">Mobile app</a>
+        <a href="apps.html" data-i18n="ft.apps">Compatible apps</a>
+        <a href="firetv.html" data-i18n="ft.firetv">Fire TV</a>
+        <a href="guides/" data-i18n="ft.guides">Guides</a>
+        <a href="./#pricing" data-i18n="ft.pricing">Pricing</a>
+      </div>
+      <div>
+        <h4 data-i18n="ft.h.support">Help</h4>
+        <a href="install.html" data-i18n="ft.install">Install guide</a>
+        <a href="setup.html" data-i18n="ft.setup">Setup &amp; troubleshooting</a>
+        <a href="./#faq" data-i18n="ft.faq">FAQ</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener" data-i18n="ft.youtube">YouTube</a>
+        <a href="privacy.html" data-i18n="ft.privacy">Privacy policy</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener" data-i18n="ft.repo">Repository</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener" data-i18n="ft.release">Latest release</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/WBF-->
 <script src="i18n.js"></script>
 <script>
   tvrbApplyI18n({
@@ -424,6 +317,25 @@
       "hdr.guides": "Guías",
       "hdr.pricing": "Precio",
       "hdr.cta": "Conseguir WatchBridge",
+      "ft.features": "Funciones",
+      "ft.live": "TV en directo",
+      "ft.launchers": "Projectivy y Monet",
+      "ft.mobile": "App móvil",
+      "ft.apps": "Apps compatibles",
+      "ft.firetv": "Fire TV",
+      "ft.guides": "Guías",
+      "ft.pricing": "Precio",
+      "ft.install": "Guía de instalación",
+      "ft.setup": "Configuración y ayuda",
+      "ft.faq": "Preguntas",
+      "ft.youtube": "YouTube",
+      "ft.privacy": "Política de privacidad",
+      "ft.repo": "Repositorio",
+      "ft.release": "Última versión",
+      "ft.h.product": "Producto",
+      "ft.h.support": "Ayuda",
+      "ft.legal1": "WatchBridge TV es una herramienta independiente de automatización y redirección. No aloja, almacena, distribuye ni proporciona películas, series, emisiones, canales ni ningún otro contenido audiovisual.",
+      "ft.legal2": "Sin afiliación, patrocinio ni respaldo de Nuvio, Stremio, Plex, Jellyfin, TiviMate ni ningún proveedor IPTV: esos nombres son marcas de sus respectivos propietarios.",
       /*/WBH-DICT*/
     "eyebrow": "Guía de configuración",
     "h1": "Configura y soluciona problemas de WatchBridge TV",
@@ -497,6 +409,7 @@
     "footer.privacy": "Política de privacidad"
   });
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
-</html>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;53bb5b5a12a24a2bbaf49ec038bedac7&quot;}"></script><!-- End Cloudflare Web Analytics -->
+
+
+</body></html>
