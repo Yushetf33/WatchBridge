@@ -83,8 +83,14 @@
   .wbh-pill:hover { color: #F2EDE0; text-decoration: none; }
   .wbh-pill[aria-current="page"] { color: #F2EDE0; border-bottom-color: #FFD84D; }
   .wbh-dot { display: none; }
-  .wbh-cta { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-apk { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 14px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+  .wbh-apk:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .apk-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; padding: 0 20px; border: 1px solid #6B6350; border-radius: 8px; color: #F2EDE0; background: transparent; font: 600 15px/1 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-decoration: none; vertical-align: middle; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+  .apk-btn:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .wbh-cta { flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
   .wbh-cta:hover { background: #FFE48A; color: #16120A; text-decoration: none; }
+  /* con menos de ~1180 px no cabe el boton del APK junto al menu: queda el del bloque principal de cada pagina */
+  @media (max-width: 1179px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
   @media (max-width: 960px) {
     html { scroll-padding-top: 112px; }
     .wbh-in { flex-wrap: wrap; gap: 0 12px; padding: 10px 18px 0; min-height: 0; }
@@ -109,6 +115,7 @@
       <a class="wbh-pill" href="/es/guias/"><span>Guías</span></a>
       <a class="wbh-pill" href="/es/#pricing"><span>Precio</span></a>
     </nav>
+    <a class="wbh-apk" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a>
     <a class="wbh-cta" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dheader" target="_blank" rel="noopener">Conseguir WatchBridge</a>
   </div>
 </header>
@@ -291,7 +298,7 @@
 <section class="cta-band">
   <div class="wrap cta-band-in">
     <div><h2 class="h2">Pruébala 2 días gratis</h2><p>Sin tarjeta. Todas las funciones desbloqueadas y, tras la prueba, un único pago de 4,99 €.</p></div>
-    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dfeatures-cta" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64"></a><a class="arrow-link" href="/es/install.html">Instalar sin Google Play</a></div>
+    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dfeatures-cta" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64"></a><a class="apk-btn" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a><a class="arrow-link" href="/es/install.html">Instalar sin Google Play</a></div>
   </div>
 </section>
 

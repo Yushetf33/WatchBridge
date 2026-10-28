@@ -46,8 +46,14 @@
   .wbh-pill:hover { color: #F2EDE0; text-decoration: none; }
   .wbh-pill[aria-current="page"] { color: #F2EDE0; border-bottom-color: #FFD84D; }
   .wbh-dot { display: none; }
-  .wbh-cta { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-apk { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 14px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+  .wbh-apk:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .apk-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; padding: 0 20px; border: 1px solid #6B6350; border-radius: 8px; color: #F2EDE0; background: transparent; font: 600 15px/1 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-decoration: none; vertical-align: middle; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+  .apk-btn:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .wbh-cta { flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
   .wbh-cta:hover { background: #FFE48A; color: #16120A; text-decoration: none; }
+  /* con menos de ~1180 px no cabe el boton del APK junto al menu: queda el del bloque principal de cada pagina */
+  @media (max-width: 1179px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
   @media (max-width: 960px) {
     html { scroll-padding-top: 112px; }
     .wbh-in { flex-wrap: wrap; gap: 0 12px; padding: 10px 18px 0; min-height: 0; }
@@ -76,6 +82,7 @@
       <a class="wbh-pill" href="guides/"><span data-i18n="hdr.guides">Guides</span></a>
       <a class="wbh-pill" href="./#pricing"><span data-i18n="hdr.pricing">Pricing</span></a>
     </nav>
+    <a class="wbh-apk" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener" data-i18n="hdr.apk">Download APK</a>
     <a class="wbh-cta" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dheader" target="_blank" rel="noopener" data-i18n="hdr.cta">Get WatchBridge</a>
   </div>
 </header>
@@ -134,7 +141,7 @@
 <section class="cta-band">
   <div class="wrap cta-band-in">
     <div><h2 class="h2" data-i18n="c.h2">Try it with your own list</h2><p data-i18n="c.p">2-day free trial, then a one-time €4.99. WatchBridge includes no channels: you bring your own M3U or Xtream list.</p></div>
-    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dcomparison-footer" target="_blank" rel="noopener" data-i18n="badge.link"><img src="google-play-badge.png" alt="Get it on Google Play" width="165" height="64"></a><a class="arrow-link" href="https://github.com/Yushetf33/WatchBridge/releases/latest" data-i18n="cta.download">Download the APK</a></div>
+    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dcomparison-footer" target="_blank" rel="noopener" data-i18n="badge.link"><img src="google-play-badge.png" alt="Get it on Google Play" width="165" height="64"></a><a class="apk-btn" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener" data-i18n="hdr.apk">Download APK</a><a class="arrow-link" href="https://github.com/Yushetf33/WatchBridge/releases/latest" data-i18n="cta.download">Download the APK</a></div>
   </div>
 </section>
 </main>
@@ -185,6 +192,7 @@
       "hdr.guides": "Guías",
       "hdr.pricing": "Precio",
       "hdr.cta": "Conseguir WatchBridge",
+      "hdr.apk": "Descargar APK",
       "ft.features": "Funciones",
       "ft.live": "TV en directo",
       "ft.launchers": "Projectivy y Monet",

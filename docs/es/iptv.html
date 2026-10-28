@@ -183,8 +183,14 @@
   .wbh-pill:hover { color: #F2EDE0; text-decoration: none; }
   .wbh-pill[aria-current="page"] { color: #F2EDE0; border-bottom-color: #FFD84D; }
   .wbh-dot { display: none; }
-  .wbh-cta { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-apk { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 14px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+  .wbh-apk:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .apk-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; padding: 0 20px; border: 1px solid #6B6350; border-radius: 8px; color: #F2EDE0; background: transparent; font: 600 15px/1 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-decoration: none; vertical-align: middle; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+  .apk-btn:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .wbh-cta { flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
   .wbh-cta:hover { background: #FFE48A; color: #16120A; text-decoration: none; }
+  /* con menos de ~1180 px no cabe el boton del APK junto al menu: queda el del bloque principal de cada pagina */
+  @media (max-width: 1179px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
   @media (max-width: 960px) {
     html { scroll-padding-top: 112px; }
     .wbh-in { flex-wrap: wrap; gap: 0 12px; padding: 10px 18px 0; min-height: 0; }
@@ -213,6 +219,7 @@
       <a class="wbh-pill" href="/es/guias/"><span>Guías</span></a>
       <a class="wbh-pill" href="/es/#pricing"><span>Precio</span></a>
     </nav>
+    <a class="wbh-apk" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a>
     <a class="wbh-cta" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dheader" target="_blank" rel="noopener">Conseguir WatchBridge</a>
   </div>
 </header>
@@ -225,7 +232,7 @@
       <h1 class="h1"><span>Tu lista IPTV,</span><br><mark class="sub"><span>por fin con una guía de TV de verdad.</span></mark></h1>
       <p class="lede">Trae tu propia lista M3U o Xtream Codes y obtén una guía estilo TV en Google TV y Fire TV: favoritos, dos canales a la vez, catch-up, PIN parental y búsqueda por voz.</p>
       <div class="hero-actions">
-        <a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-hero" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-hero" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a><a class="apk-btn" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a>
         <a class="arrow-link" href="#features">Ver todo lo que hace ↓</a>
         <a class="arrow-link" href="/es/iptv-player-comparison.html">Comparar con TiviMate y otras →</a>
       </div>
@@ -351,7 +358,7 @@
       <div class="step"><p class="n">02</p><h3 class="h3">Añade tu lista</h3><p>Abre IPTV y pega tu enlace M3U, escribe tu acceso Xtream Codes o envía un archivo .m3u desde el móvil por wifi.</p></div>
       <div class="step"><p class="n">03</p><h3 class="h3">Pulsa OK y a ver</h3><p>Tus canales cargan con su guía. Marca favoritos, abre Multiview o di lo que quieres ver.</p></div>
     </div>
-    <div class="links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-start" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a><a class="arrow-link" href="/es/install.html">Guía visual de instalación</a></div>
+    <div class="links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-start" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a><a class="apk-btn" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a><a class="arrow-link" href="/es/install.html">Guía visual de instalación</a></div>
   </div>
 </section>
 
@@ -396,7 +403,7 @@
       <h2 class="h2"><span>Tu lista ya es buena.</span><br><span>Dale una guía que merezca la pena.</span></h2>
       <p>2 días de prueba gratis, sin tarjeta. Después, un único pago de 4,99 €, sin suscripción.</p>
     </div>
-    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-footer" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a></div>
+    <div class="cta-links"><a class="badge" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Diptv-footer" target="_blank" rel="noopener"><img src="/google-play-badge-es.png" alt="Disponible en Google Play" width="165" height="64" style="height: 64px; width: auto;"></a><a class="apk-btn" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Descargar APK</a></div>
   </div>
 </section>
 </main>
