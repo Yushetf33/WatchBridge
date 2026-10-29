@@ -230,12 +230,9 @@
           <strong>WatchBridge TV</strong> en la lista de apps de atvTools,
           abre la pestaña <strong>Permisos</strong>, baja hasta
           <code class="inline">android.permission.WRITE_SECURE_SETTINGS</code>,
-          y activa su interruptor.</p>
+          y activa su interruptor (no "Write settings", que es otro permiso).</p>
           <div class="callout">
-            Es la forma más fácil de desbloquear la app en dispositivos como el
-            Google TV Streamer, donde el interruptor "Permitir ajuste restringido"
-            no aparece por ningún lado — tampoco hace falta ordenador para
-            esto.
+            En dispositivos como el Google TV Streamer, donde el interruptor "Permitir ajuste restringido" no aparece por ningún lado, esto puede no bastar: Android 14 también necesita el comando ACCESS_RESTRICTED_SETTINGS de la sección de ADB más abajo. atvTools también puede ejecutar comandos ADB, así que no hace falta ordenador.
           </div>
         </div>
       </li>
@@ -347,19 +344,10 @@
       <div>
         <p class="q">¿Y si esa opción no aparece? (p. ej. Google TV Streamer)</p>
         <p class="a">
-          Hace falta ADB una vez — ejecutar
-          <code class="inline">adb shell pm grant com.tunombre.tvbridge android.permission.WRITE_SECURE_SETTINGS</code>
-          deja que la app se active sola a partir de ahí, sin necesitar ADB
-          nunca más.
+          Hace falta ADB una vez. En Android 14 (confirmado en el Google TV Streamer) el primer comando es obligatorio; el segundo deja que la app active la accesibilidad por sí sola: <code class="inline">adb shell appops set com.tunombre.tvbridge ACCESS_RESTRICTED_SETTINGS allow</code> y luego <code class="inline">adb shell pm grant com.tunombre.tvbridge android.permission.WRITE_SECURE_SETTINGS</code>. Después, abre WatchBridge y toca <strong>Activar accesibilidad</strong> dentro de la app: se activa sola, sin necesitar ADB nunca más.
         </p>
         <p class="a">
-          <strong>¿Sin ordenador?</strong> Hazlo desde el móvil con
-          <a href="#atvtools">atvTools</a>: empareja con la TV
-          (ver la sección de atvTools arriba), toca
-          WatchBridge TV en su lista de apps, abre la pestaña
-          <strong>Permisos</strong>, y activa
-          <code class="inline">android.permission.WRITE_SECURE_SETTINGS</code>
-          — mismo resultado que el comando ADB, sin escribir nada.
+          <strong>¿Sin ordenador?</strong> Hazlo desde el móvil con <a href="#atvtools">atvTools</a>: empareja con la TV (ver la sección de atvTools arriba) y ejecuta los dos comandos de arriba en su consola ADB. O toca WatchBridge TV en su lista de apps, abre la pestaña <strong>Permisos</strong> y activa <code class="inline">android.permission.WRITE_SECURE_SETTINGS</code> (no "Write settings", que es otro permiso) — pero en el Google TV Streamer el primer comando sigue haciendo falta.
         </p>
         <p class="a">
           La referencia completa de códigos de error (E01–E06), más la
