@@ -41,7 +41,7 @@
       "description": "Mira dos canales IPTV a la vez en Google TV o Fire TV con WatchBridge TV: cómo iniciar Multiview, qué necesita y qué hacer si no se abre.",
       "inLanguage": "es",
       "datePublished": "2026-10-06",
-      "dateModified": "2026-10-06",
+      "dateModified": "2026-10-29",
       "image": "https://watchbridge.app/og-image.jpg",
       "author": {
         "@type": "Organization",
@@ -160,6 +160,8 @@
   </header>
 
   <article>
+<figure class="fig"><video controls playsinline preload="metadata" poster="/clip-multiview-es-poster.jpg" aria-label="IPTV Multiview: dos canales a la vez"><source src="/clip-multiview-es.mp4" type="video/mp4"></video><figcaption>Dos canales a la vez con Multiview en WatchBridge TV (imagen desenfocada).</figcaption></figure>
+
 <h2>Cómo iniciar Multiview</h2>
 <ol>
   <li>Reproduce un canal desde la guía IPTV.</li>
@@ -180,6 +182,18 @@
   <li><strong>Una fuente que permita dos emisiones a la vez.</strong> Algunos proveedores dan una sola conexión; entonces el segundo canal no puede abrirse. Los canales del mismo múltiplex suelen funcionar en un receptor de un solo sintonizador.</li>
   <li><strong>Un equipo que pueda decodificar las dos imágenes.</strong> WatchBridge usa el decodificador por hardware de la TV e incluye su propio decodificador por software para canales MPEG-2, así que los equipos sin un segundo decodificador por hardware también pueden mostrarlos. El sonido de los canales con audio MPEG también se decodifica por software cuando el equipo no lo trae.</li>
 </ul>
+
+<h2>Qué canales funcionan juntos</h2>
+<p>La primera imagen usa el reproductor normal de la TV. La segunda se elige según el formato de vídeo, para que dos decodificadores nunca se pisen en el mismo chip:</p>
+<ul>
+  <li><strong>Canales MPEG-2</strong> (emisiones antiguas en definición estándar) usan en la segunda imagen el decodificador por software propio de WatchBridge. Dos decodificadores MPEG-2 por hardware a la vez pueden bloquear un equipo, así que se evita a propósito.</li>
+  <li><strong>Canales H.264</strong> usan el decodificador por hardware cuando el equipo tiene uno moderno. Los equipos más antiguos recurren al software, que va más justo con canales 1080i.</li>
+  <li><strong>Lo que el equipo no pueda mostrar</strong> en la segunda imagen muestra un aviso en pantalla (<em>«Este equipo no puede mostrar este canal junto al otro»</em>) en vez de una celda negra.</li>
+</ul>
+<p>En la práctica, dos canales SD son la pareja más segura, y los canales HD dependen del equipo. Solo suena una imagen a la vez: usa izquierda / derecha para cambiarla.</p>
+
+<h2>Multiview con una lista Xtream Codes o M3U</h2>
+<p>Multiview funciona con cualquier lista que añadas (enlace M3U, archivo M3U o Xtream Codes), porque solo reproduce dos de sus canales. Lo que decide si funciona es el <strong>límite de conexiones simultáneas de tu cuenta</strong>, que fija tu proveedor, no la app. Con una conexión solo puede reproducirse un canal a la vez; con dos o más puedes abrir dos. Si no estás seguro, pregúntale a tu proveedor o mira los datos de tu cuenta. ¿Aún no tienes la lista? <a href="/es/guias/anadir-lista-m3u-xtream-google-tv-fire-tv.html">Añádela primero</a>.</p>
 
 <h2>Si el segundo canal no se abre</h2>
 <ul>

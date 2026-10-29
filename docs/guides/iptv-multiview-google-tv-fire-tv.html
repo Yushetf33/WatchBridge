@@ -41,7 +41,7 @@
       "description": "Watch two IPTV channels at once on Google TV or Fire TV with WatchBridge TV: how to start Multiview, what it needs, and what to do if it won't open.",
       "inLanguage": "en",
       "datePublished": "2026-10-06",
-      "dateModified": "2026-10-06",
+      "dateModified": "2026-10-29",
       "image": "https://watchbridge.app/og-image.jpg",
       "author": {
         "@type": "Organization",
@@ -160,6 +160,8 @@
   </header>
 
   <article>
+<figure class="fig"><video controls playsinline preload="metadata" poster="/clip-multiview-poster.jpg" aria-label="IPTV Multiview: two channels at once"><source src="/clip-multiview.mp4" type="video/mp4"></video><figcaption>Two channels at once with Multiview in WatchBridge TV (picture blurred).</figcaption></figure>
+
 <h2>How to start Multiview</h2>
 <ol>
   <li>Play a channel from the IPTV guide.</li>
@@ -180,6 +182,18 @@
   <li><strong>A source that allows two streams at once.</strong> Some providers give you a single connection; then the second channel can't open. Channels on the same multiplex often work on a single tuner box.</li>
   <li><strong>A device that can decode both pictures.</strong> WatchBridge uses the TV's hardware decoder, and includes its own software decoder for MPEG-2 channels so devices without a second hardware decoder can still show them. Sound for MPEG audio channels is also decoded in software when the device lacks it.</li>
 </ul>
+
+<h2>Which channels work side by side</h2>
+<p>The first picture uses the TV's normal player. The second one is chosen by video format, so that two decoders never fight over the same chip:</p>
+<ul>
+  <li><strong>MPEG-2 channels</strong> (older standard-definition broadcast feeds) use WatchBridge's own software decoder in the second picture. Two hardware MPEG-2 decoders at once can freeze a device, so this is deliberately avoided.</li>
+  <li><strong>H.264 channels</strong> use the hardware decoder when the device has a modern one. Older devices fall back to software, which is tighter with 1080i channels.</li>
+  <li><strong>Anything the device can't show</strong> in the second picture gets a message on screen (<em>"This device cannot show this channel next to the other one"</em>) instead of a black cell.</li>
+</ul>
+<p>In practice, two SD channels are the safest pair, and HD channels depend on the device. Only one picture plays sound at a time: use Left / Right to switch it.</p>
+
+<h2>Multiview with an Xtream Codes or M3U list</h2>
+<p>Multiview works with any list you add — M3U link, M3U file or Xtream Codes — because it just plays two of its channels. What decides whether it works is your <strong>account's simultaneous-connection limit</strong>, which your provider sets, not the app. An account with one connection can only play one channel at a time; with two or more you can open two. If you're not sure, ask your provider or check your account details. New here? <a href="/guides/add-m3u-xtream-list-google-tv-fire-tv.html">Add your list first</a>.</p>
 
 <h2>If the second channel doesn't open</h2>
 <ul>
