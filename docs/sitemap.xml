@@ -256,4 +256,18 @@
     <loc>https://watchbridge.app/privacy.html</loc>
     <lastmod>2026-10-25</lastmod>
   </url>
+  <url>
+    <loc>https://watchbridge.app/guides/open-google-tv-recommendations-in-arvio.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-arvio.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/abrir-recomendaciones-google-tv-en-arvio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-arvio.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/abrir-recomendaciones-google-tv-en-arvio.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-arvio.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/abrir-recomendaciones-google-tv-en-arvio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/open-google-tv-recommendations-in-arvio.html"/>
+  </url>
 </urlset>
