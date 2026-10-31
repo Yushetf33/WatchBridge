@@ -5,7 +5,11 @@
 // con innerHTML). Los videos con rotulos en español (data-es-src) tambien se cambian.
 function tvrbApplyI18n(es) {
   var lang = ((navigator.language || "en") + "").toLowerCase();
-  if (lang.indexOf("es") !== 0) return;
+  // Eleccion del selector de idioma de la barra (EN / ES): manda sobre el idioma del navegador.
+  var pref = null;
+  try { pref = localStorage.getItem("wbLang"); } catch (e) {}
+  if (pref === "en") return;
+  if (pref !== "es" && lang.indexOf("es") !== 0) return;
   document.documentElement.lang = "es";
   document.querySelectorAll("[data-i18n]").forEach(function (el) {
     var key = el.getAttribute("data-i18n");

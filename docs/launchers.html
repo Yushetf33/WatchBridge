@@ -74,7 +74,7 @@
   html { scroll-padding-top: 84px; }
   .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
   .wbh, .wbh * { box-sizing: border-box; }
-  .wbh-in { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding: 0 24px; min-height: 64px; }
+  .wbh-in { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding: 0 24px; min-height: 64px; }
   /* paginas con relleno en el body (instalacion, ajustes, privacidad, guias): la barra se pega arriba y a los lados */
   .wbh-flush { margin: -4rem -1.5rem 2.5rem; }
   .wbh-brand { display: flex; align-items: center; gap: 10px; color: #F2EDE0; text-decoration: none; font-weight: 700; font-size: 17px; letter-spacing: -0.02em; flex-shrink: 0; }
@@ -91,10 +91,12 @@
   .apk-btn:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
   .wbh-cta { flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
   .wbh-cta:hover { background: #FFE48A; color: #16120A; text-decoration: none; }
-  /* con menos de 1280 px no cabe el boton del APK junto al menu (ocho enlaces, con Contacto): queda el del bloque principal de cada pagina */
-  @media (max-width: 1279px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
+  .wbh-lang { flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 9px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; line-height: 1; text-decoration: none; }
+  .wbh-lang:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  /* con menos de ~1340 px no cabe el boton del APK junto al menu (ocho enlaces y el selector de idioma): queda el del bloque principal de cada pagina */
+  @media (max-width: 1339px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
   /* con ocho enlaces el menu no cabe junto al logo y el boton por debajo de ~1120 px: pasa a una segunda fila con desplazamiento */
-  @media (max-width: 1119px) {
+  @media (max-width: 1149px) {
     html { scroll-padding-top: 112px; }
     .wbh-in { flex-wrap: wrap; gap: 0 12px; padding: 10px 18px 0; min-height: 0; }
     .wbh-cta { padding: 8px 13px; font-size: 13px; }
@@ -121,6 +123,7 @@
     </nav>
     <a class="wbh-apk" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener" data-i18n="hdr.apk">Download APK</a>
     <a class="wbh-cta" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dheader" target="_blank" rel="noopener" data-i18n="hdr.cta">Get WatchBridge</a>
+    <a class="wbh-lang" data-lang-switch="es" href="/es/launchers.html" hreflang="es" lang="es" title="Ver en español" aria-label="Ver en español" onclick="try{localStorage.setItem('wbLang','es')}catch(e){}">ES</a>
   </div>
 </header>
 <!--/WBH-->
