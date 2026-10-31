@@ -284,4 +284,18 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/busqueda-por-voz-iptv-canales-peliculas-google-tv.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/voice-search-iptv-channels-movies-google-tv.html"/>
   </url>
+  <url>
+    <loc>https://watchbridge.app/contact.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/contact.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/contacto.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/contact.html"/>
+  </url>
 </urlset>
