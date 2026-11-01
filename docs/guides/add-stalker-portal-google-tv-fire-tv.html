@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var p=localStorage.getItem('wbLang');if(p==='es'||(p!=='en'&&/^es/i.test(navigator.language||'')))location.replace("/es/guias/anadir-portal-stalker-google-tv-fire-tv.html"+location.hash)}catch(e){}</script>
+<title>Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV</title>
+<meta name="description" content="Some IPTV providers give you a portal address and a MAC instead of an M3U link. Add it in WatchBridge TV and Mobile (experimental): what works, what to check.">
+<link rel="canonical" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html">
+<link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html">
+<link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-portal-stalker-google-tv-fire-tv.html">
+<link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html">
+<meta property="og:site_name" content="WatchBridge">
+<meta property="og:title" content="Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV">
+<meta property="og:description" content="Some IPTV providers give you a portal address and a MAC instead of an M3U link. Add it in WatchBridge TV and Mobile (experimental): what works, what to check.">
+<meta property="og:image" content="https://watchbridge.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV">
+<meta name="twitter:description" content="Some IPTV providers give you a portal address and a MAC instead of an M3U link. Add it in WatchBridge TV and Mobile (experimental): what works, what to check.">
+<meta name="twitter:image" content="https://watchbridge.app/og-image.jpg">
+<meta name="twitter:image:alt" content="WatchBridge TV home screen with a Continue watching row and Recommended for you suggestions">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV",
+      "description": "Some IPTV providers give you a portal address and a MAC instead of an M3U link. Add it in WatchBridge TV and Mobile (experimental): what works, what to check.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-01",
+      "dateModified": "2026-11-01",
+      "image": "https://watchbridge.app/og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WatchBridge",
+        "url": "https://watchbridge.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://watchbridge.app/logo-180.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WatchBridge",
+          "item": "https://watchbridge.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://watchbridge.app/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV",
+          "item": "https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=8">
+<link rel="stylesheet" href="/doc.css?v=3">
+<!--WBH-CSS--><style>
+  html { scroll-padding-top: 84px; }
+  .wbh { position: sticky; top: 0; z-index: 100; background: #14120D; border-bottom: 1px solid #2E2A20; font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left; }
+  .wbh, .wbh * { box-sizing: border-box; }
+  .wbh-in { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; gap: 18px; padding: 0 24px; min-height: 64px; }
+  /* paginas con relleno en el body (instalacion, ajustes, privacidad, guias): la barra se pega arriba y a los lados */
+  .wbh-flush { margin: -4rem -1.5rem 2.5rem; }
+  .wbh-brand { display: flex; align-items: center; gap: 10px; color: #F2EDE0; text-decoration: none; font-weight: 700; font-size: 17px; letter-spacing: -0.02em; flex-shrink: 0; }
+  .wbh-brand:hover { color: #F2EDE0; text-decoration: none; }
+  .wbh-brand img { width: 28px; height: 28px; border-radius: 7px; display: block; }
+  .wbh-nav { display: flex; align-items: stretch; gap: 2px; flex: 1; min-width: 0; align-self: stretch; }
+  .wbh-pill { display: inline-flex; align-items: center; padding: 0 8px; border-bottom: 2px solid transparent; color: #B5AE9C; font-size: 14.5px; font-weight: 550; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: color .15s ease, border-color .15s ease; }
+  .wbh-pill:hover { color: #F2EDE0; text-decoration: none; }
+  .wbh-pill[aria-current="page"] { color: #F2EDE0; border-bottom-color: #FFD84D; }
+  .wbh-dot { display: none; }
+  .wbh-apk { margin-left: auto; flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 12px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+  .wbh-apk:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .apk-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; padding: 0 20px; border: 1px solid #6B6350; border-radius: 8px; color: #F2EDE0; background: transparent; font: 600 15px/1 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; text-decoration: none; vertical-align: middle; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+  .apk-btn:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  .wbh-cta { flex-shrink: 0; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 3px; background: #FFD84D; color: #16120A; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s ease; }
+  .wbh-cta:hover { background: #FFE48A; color: #16120A; text-decoration: none; }
+  .wbh-lang { flex-shrink: 0; display: inline-flex; align-items: center; padding: 9px 9px; border: 1px solid #4A4433; border-radius: 3px; color: #F2EDE0; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; line-height: 1; text-decoration: none; }
+  .wbh-lang:hover { border-color: #FFD84D; color: #FFD84D; text-decoration: none; }
+  /* con menos de ~1340 px no cabe el boton del APK junto al menu (ocho enlaces y el selector de idioma): queda el del bloque principal de cada pagina */
+  @media (max-width: 1339px) { .wbh-apk { display: none; } .wbh-cta { margin-left: auto; } }
+  /* con ocho enlaces el menu no cabe junto al logo y el boton por debajo de ~1120 px: pasa a una segunda fila con desplazamiento */
+  @media (max-width: 1149px) {
+    html { scroll-padding-top: 112px; }
+    .wbh-in { flex-wrap: wrap; gap: 0 12px; padding: 10px 18px 0; min-height: 0; }
+    .wbh-cta { padding: 8px 13px; font-size: 13px; }
+    .wbh-nav { order: 3; flex: 0 0 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin: 8px -18px 0; padding: 0 12px; }
+    .wbh-nav::-webkit-scrollbar { display: none; }
+    .wbh-pill { padding: 12px 11px; font-size: 14px; }
+  }
+</style><!--/WBH-CSS-->
+</head>
+<body>
+
+<!--WBH-->
+<header class="wbh">
+  <div class="wbh-in">
+    <a class="wbh-brand" href="/"><img src="/logo.png" width="30" height="30" alt=""><span>WatchBridge</span></a>
+    <nav class="wbh-nav" aria-label="Main">
+      <a class="wbh-pill" href="/features.html"><span>Features</span></a>
+      <a class="wbh-pill" href="/iptv.html"><span>Live TV</span></a>
+      <a class="wbh-pill" href="/launchers.html"><span>Launchers</span></a>
+      <a class="wbh-pill" href="/mobile.html"><span>Mobile app</span></a>
+      <a class="wbh-pill" href="/install.html"><span>Install</span></a>
+      <a class="wbh-pill" href="/guides/" aria-current="page"><span>Guides</span></a>
+      <a class="wbh-pill" href="/#pricing"><span>Pricing</span></a>
+      <a class="wbh-pill" href="/contact.html"><span>Contact</span></a>
+    </nav>
+    <a class="wbh-apk" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Download APK</a>
+    <a class="wbh-cta" href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dheader" target="_blank" rel="noopener">Get WatchBridge</a>
+    <a class="wbh-lang" data-lang-switch="es" href="/es/guias/anadir-portal-stalker-google-tv-fire-tv.html" hreflang="es" lang="es" title="Ver en español" aria-label="Ver en español" onclick="try{localStorage.setItem('wbLang','es')}catch(e){}">ES</a>
+  </div>
+</header>
+<!--/WBH-->
+
+<main class="doc">
+
+  <header class="doc-head">
+    <span class="eyebrow">Guide</span>
+    <h1>Add a Stalker (Ministra) portal to your IPTV on Google TV and Fire TV</h1>
+    <p class="lede">Some IPTV providers don't give you an M3U link or an Xtream Codes login: they give you a <strong>portal address</strong> and register a <strong>MAC address</strong> for you, the way MAG set-top boxes log in. <strong>WatchBridge TV</strong> and <strong>WatchBridge Mobile</strong> can use that pair too. This feature is <strong>experimental</strong>: this guide says exactly what it does and what to check if your provider behaves differently.</p>
+  </header>
+
+  <article>
+<h2>What you need</h2>
+<ul>
+  <li>The <strong>portal address</strong> your provider gave you, for example <code>http://provider.com:8080/c/</code>. It can also be given as just <code>provider.com:8080</code> or ending in <code>/stalker_portal/c/</code>.</li>
+  <li>The <strong>MAC address</strong> your provider registered for you: 12 hexadecimal digits such as <code>00:1A:79:AB:CD:EF</code>. Separators don't matter (<code>:</code>, <code>-</code> or none) and neither do capitals.</li>
+  <li><strong>WatchBridge TV 1.8.26</strong> or newer, or <strong>WatchBridge Mobile 1.3.18</strong> or newer. A 2-day free trial with no card, then €4.99 once for both.</li>
+</ul>
+<div class="callout"><strong>WatchBridge doesn't provide or sell any channels.</strong> A Stalker portal is your own subscription with your own provider, exactly like an M3U link or an Xtream Codes login: you bring it, WatchBridge turns it into a TV guide.</div>
+
+<h2>On the TV, step by step</h2>
+<ol>
+  <li>Open <strong>IPTV</strong>. If you already have a list, open <em>More options</em> (the three dots) → <em>Your lists</em> → <em>+ Add a list</em>. With no list yet you land on this screen straight away.</li>
+  <li>Choose <strong>Stalker portal</strong> among the four options (M3U link, Xtream Codes, Stalker portal, M3U file).</li>
+  <li>Type the <strong>portal</strong> address and the <strong>MAC</strong>. Give the list a name if you like.</li>
+  <li>Press <strong>Load list</strong>. The channels load with their categories and the guide the portal provides.</li>
+</ol>
+
+<h2>On the phone or tablet</h2>
+<ol>
+  <li>Open the <strong>IPTV</strong> tab, tap the name of your list at the top → <em>Add a list</em>.</li>
+  <li>Choose <strong>Stalker</strong>, type the portal and the MAC, and tap <strong>Add</strong>.</li>
+</ol>
+
+<h2>What works and what doesn't yet</h2>
+<table class="cmp">
+  <thead><tr><th>Works</th><th>Not yet</th></tr></thead>
+  <tbody>
+    <tr><td>Live channels with their categories</td><td>Movies and series (VOD) from the portal</td></tr>
+    <tr><td>The TV guide (EPG) the portal gives, with now and next</td><td>Catch-up</td></tr>
+    <tr><td>Favorites, several lists, Multiview, program alerts</td><td>Radio</td></tr>
+    <tr><td>Voice search, program search and Best movies today</td><td></td></tr>
+    <tr><td>Recordings on the TV</td><td></td></tr>
+  </tbody>
+</table>
+
+<h2>How it works</h2>
+<p>WatchBridge identifies itself to the portal with your MAC, as a set-top box would, and downloads the channel list. Channels in a Stalker portal don't have a fixed link: when you open one, WatchBridge asks the portal for a <strong>temporary link</strong> and plays that, so each time you change channel it asks again. If the portal stops recognising the session, WatchBridge logs in again by itself.</p>
+
+<h2>Good to know</h2>
+<ul>
+  <li><strong>It is experimental.</strong> We have tested it against a test portal that behaves like Stalker, not yet against a provider's real one. Portals differ in small ways, so some may need adjustments.</li>
+  <li>Some providers allow <strong>one device per MAC</strong> or a limited number of simultaneous streams. If the original box is on at the same time, a channel may refuse to start.</li>
+  <li>The MAC is stored only on your device, in the list you create, and is sent only to the portal you typed.</li>
+</ul>
+
+<h2>If it doesn't work</h2>
+<ul>
+  <li><strong>"The portal didn't respond or doesn't accept this MAC address".</strong> Check the address (try it with and without <code>/c/</code>), that the MAC is exactly the one registered with your provider, and that your subscription is active.</li>
+  <li><strong>The channels load but one won't play.</strong> Your provider may be limiting simultaneous connections for that MAC: turn off the other box or try again in a minute. WatchBridge shows "Couldn't get the stream from the portal" when the portal doesn't give a link.</li>
+  <li><strong>No guide.</strong> Not every portal publishes one. The channels still work; the rows say there is no guide.</li>
+  <li><strong>Still failing?</strong> Tell us through the <a href="/contact.html">contact page</a> which type of portal it is (never send your MAC or credentials) so we can adjust it.</li>
+</ul>
+<div class="callout warn"><strong>Independent tool.</strong> WatchBridge is not affiliated with, sponsored by, or endorsed by any IPTV provider or by the makers of the Stalker / Ministra middleware.</div>
+<div class="cta"><a href="/guides/add-m3u-xtream-list-google-tv-fire-tv.html">Add an M3U or Xtream Codes list</a><a class="alt" href="/iptv.html">See the IPTV features</a><a class="alt" href="/install.html">Install guide</a></div>
+  </article>
+  <div class="cta" style="margin-top: 2.2rem;"><a href="https://play.google.com/store/apps/details?id=com.tunombre.tvbridge.play&amp;referrer=utm_source%3Dwatchbridge.app%26utm_medium%3Dweb%26utm_campaign%3Dguide-add-stalker-portal-google-tv-fire-tv" rel="noopener">Get WatchBridge TV on Google Play</a><a class="alt" href="https://github.com/Yushetf33/WatchBridge/releases/latest/download/app-release.apk" rel="noopener">Download APK</a></div>
+  <p style="margin: 0.7rem 0 0; font-size: 0.88rem; color: var(--text-muted);">On Fire TV or a device without Google Play? Download the APK (<a href="/install.html">install guide</a>). 2-day free trial, no card, then €4.99 once.</p>
+
+</main>
+
+<!--WBF-->
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="foot-brand" href="/"><img src="/logo.png" width="24" height="24" alt=""><span>WatchBridge</span></a>
+      <p class="legal">WatchBridge TV is an independent automation and redirection tool. It does not host, store, distribute, or provide any movies, series, streams, channels or other audiovisual content.</p>
+      <p class="legal">Not affiliated with, sponsored by, or endorsed by Nuvio, Stremio, Plex, Jellyfin, TiviMate or any IPTV provider — those names are trademarks of their respective owners.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h4>Product</h4>
+        <a href="/features.html">Features</a>
+        <a href="/iptv.html">Live TV</a>
+        <a href="/launchers.html">Projectivy &amp; Monet</a>
+        <a href="/mobile.html">Mobile app</a>
+        <a href="/apps.html">Compatible apps</a>
+        <a href="/firetv.html">Fire TV</a>
+        <a href="/guides/">Guides</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="/install.html">Install guide</a>
+        <a href="/setup.html">Setup &amp; troubleshooting</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener">YouTube</a>
+        <a href="/privacy.html">Privacy policy</a>
+        <a href="https://github.com/Yushetf33/WatchBridge" target="_blank" rel="noopener">Repository</a>
+        <a href="https://github.com/Yushetf33/WatchBridge/releases/latest" target="_blank" rel="noopener">Latest release</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/apk-track.js" defer></script>
+<!--/WBF-->
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53bb5b5a12a24a2bbaf49ec038bedac7"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

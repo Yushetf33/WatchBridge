@@ -298,4 +298,18 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/contact.html"/>
   </url>
+  <url>
+    <loc>https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-portal-stalker-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/anadir-portal-stalker-google-tv-fire-tv.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/anadir-portal-stalker-google-tv-fire-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/add-stalker-portal-google-tv-fire-tv.html"/>
+  </url>
 </urlset>
