@@ -21,6 +21,7 @@ function tvrbApplyI18n(es) {
     if (poster) v.setAttribute("poster", poster);
     if (source && src) { source.setAttribute("src", src); v.load(); }
   });
+  document.querySelectorAll("img[data-es-src]").forEach(function (i) { i.setAttribute("src", i.getAttribute("data-es-src")); });
   var pre = document.querySelector('link[rel="preload"][as="image"]');
   var hero = document.querySelector(".hero-video video");
   if (pre && hero && hero.getAttribute("poster")) pre.setAttribute("href", hero.getAttribute("poster"));
