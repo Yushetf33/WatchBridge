@@ -156,14 +156,14 @@
   </url>
   <url>
     <loc>https://watchbridge.app/guides/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/"/>
   </url>
   <url>
     <loc>https://watchbridge.app/es/guias/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/"/>
@@ -240,17 +240,31 @@
   </url>
   <url>
     <loc>https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
   </url>
   <url>
     <loc>https://watchbridge.app/es/guias/nuvio-vs-wuplay-vs-stremio.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/nuvio-vs-wuplay-vs-stremio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/nuvio-vs-wuplay-vs-stremio.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/guides/nuvio-vs-stremio-google-tv.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/nuvio-vs-stremio-google-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/nuvio-vs-stremio-google-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/nuvio-vs-stremio-google-tv.html"/>
+  </url>
+  <url>
+    <loc>https://watchbridge.app/es/guias/nuvio-vs-stremio-google-tv.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://watchbridge.app/guides/nuvio-vs-stremio-google-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://watchbridge.app/es/guias/nuvio-vs-stremio-google-tv.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://watchbridge.app/guides/nuvio-vs-stremio-google-tv.html"/>
   </url>
   <url>
     <loc>https://watchbridge.app/guides/jellyfin-wholphin-google-tv-recommendations.html</loc>
