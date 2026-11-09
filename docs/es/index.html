@@ -316,8 +316,32 @@
   <figcaption id="fig3">Mantén OK sobre un canal mientras suena otro y elige Multiview. Izquierda y derecha deciden cuál suena. La imagen en directo está difuminada en esta demostración.</figcaption>
 </figure></div>
     </div>
+    <div class="band flip">
+      <div>
+        <p class="kicker">Tour en vídeo</p>
+        <h3 class="h3">Toda la app en un solo vídeo</h3>
+        <p class="lead">Un recorrido real en una Google TV: recomendaciones que se abren en tu reproductor, la pantalla de inicio, la guía IPTV, los eventos deportivos, el multiview, las grabaciones y el envío de títulos desde el móvil. Unos 13 minutos, con capítulos para saltar a lo que te interesa.</p>
+        <p class="links"><a class="arrow-link" href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener">Más vídeos en YouTube</a></p>
+      </div>
+      <div class="band-media"><div class="yt-wrap"><a class="yt" href="https://www.youtube.com/watch?v=zSf4TGh_o3c" target="_blank" rel="noopener" data-yt="zSf4TGh_o3c"><img src="/tour-es-thumb.jpg" width="1280" height="720" alt="Tour en vídeo de WatchBridge TV: ver el vídeo en YouTube" loading="lazy"><span class="yt-play" aria-hidden="true"></span></a></div></div>
+    </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a.yt[data-yt]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + a.getAttribute('data-yt') + '?autoplay=1&rel=0';
+  f.title = 'WatchBridge TV';
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  a.replaceWith(f);
+});
+</script>
 
 <section class="sec" id="compat">
   <div class="wrap">

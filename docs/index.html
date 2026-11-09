@@ -322,8 +322,32 @@
   <figcaption id="fig3" data-i18n="iptv.vid3.c">Hold OK on a channel while another one is playing and choose Multiview. Left and Right pick which one plays sound. The live picture is blurred in this demo.</figcaption>
 </figure></div>
     </div>
+    <div class="band flip">
+      <div>
+        <p class="kicker" data-i18n="tour.k">Video tour</p>
+        <h3 class="h3" data-i18n="tour.h">The whole app in one video</h3>
+        <p class="lead" data-i18n="tour.lead">A real walkthrough on a Google TV: recommendations that open in your player, the home screen, the IPTV guide, sports events, Multiview, recordings and sending titles from your phone. About 13 minutes, with chapters so you can jump to what you care about.</p>
+        <p class="links"><a class="arrow-link" href="https://www.youtube.com/@WatchBridgeTv" target="_blank" rel="noopener" data-i18n="tour.l">More videos on YouTube</a></p>
+      </div>
+      <div class="band-media"><div class="yt-wrap" data-i18n="tour.embed"><a class="yt" href="https://www.youtube.com/watch?v=S-EAz-bZhwE" target="_blank" rel="noopener" data-yt="S-EAz-bZhwE"><img src="/tour-en-thumb.jpg" width="1280" height="720" alt="WatchBridge TV video tour: play the video on YouTube" loading="lazy"><span class="yt-play" aria-hidden="true"></span></a></div></div>
+    </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a.yt[data-yt]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + a.getAttribute('data-yt') + '?autoplay=1&rel=0';
+  f.title = 'WatchBridge TV';
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  a.replaceWith(f);
+});
+</script>
 
 <section class="sec" id="compat">
   <div class="wrap">
@@ -610,6 +634,11 @@
       "what.c.t4": "Búsqueda escribiendo o por voz: «pon La Sexta»",
       "what.c.l1": "La guía IPTV",
       "what.c.l2": "Comparar con TiviMate y otras",
+      "tour.k": "Tour en vídeo",
+      "tour.h": "Toda la app en un solo vídeo",
+      "tour.lead": "Un recorrido real en una Google TV: recomendaciones que se abren en tu reproductor, la pantalla de inicio, la guía IPTV, los eventos deportivos, el multiview, las grabaciones y el envío de títulos desde el móvil. Unos 13 minutos, con capítulos para saltar a lo que te interesa.",
+      "tour.l": "Más vídeos en YouTube",
+      "tour.embed": "<a class=\"yt\" href=\"https://www.youtube.com/watch?v=zSf4TGh_o3c\" target=\"_blank\" rel=\"noopener\" data-yt=\"zSf4TGh_o3c\"><img src=\"/tour-es-thumb.jpg\" width=\"1280\" height=\"720\" alt=\"Tour en vídeo de WatchBridge TV: ver el vídeo en YouTube\" loading=\"lazy\"><span class=\"yt-play\" aria-hidden=\"true\"></span></a>",
       "iptv.vid3.c": "Mantén OK sobre un canal mientras suena otro y elige Multiview. Izquierda y derecha deciden cuál suena. La imagen en directo está difuminada en esta demostración.",
       "compat.k": "Compatibilidad",
       "compat.h2": "Funciona con lo que ya usas",
