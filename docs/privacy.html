@@ -82,7 +82,7 @@
   <header class="doc-head">
     
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: October 2026</p>
+    <p class="updated">Last updated: November 2026</p>
     <p>This policy covers <strong>WatchBridge TV</strong> (Android TV / Google TV / Fire TV) and <strong>WatchBridge Mobile</strong> (Android phones/tablets) — two apps sharing one account and one backend, referred to together below as "the app".</p>
   </header>
 
@@ -98,14 +98,18 @@
       <li><strong>Device identifier and device name</strong> — an Android system ID (not tied to your Google account) and a human-readable name like "Chromecast with Google TV", so you can recognize and manage your own linked devices.</li>
       <li><strong>Watch activity you generate through the app</strong> — titles you open, add to "My list", or that get resolved via a recommendation click — used to power optional features like History, Continue Watching, and "Recommended for you", and to sync that across your own devices.</li>
       <li><strong>Referral codes</strong> — your own code and, if you enter one, the friend's code, to track the referral program.</li>
+      <li><strong>Profiles</strong> — the name and colour of each profile you create (up to four per account), so the same profile appears on your TV and on your phone.</li>
+      <li><strong>IPTV favourites</strong> — the channels you mark as favourites, stored as channel identifiers and names and linked to a one-way hash of your list's source. We never store your list address, username or password.</li>
+      <li><strong>Notification token</strong> — for each device, the token that Google's Firebase Cloud Messaging assigns to it, used only to wake your TV when you send it a title or channel from your phone. What you send is kept only until your TV picks it up.</li>
+      <li><strong>Anonymous usage counters</strong> — the apps send a few anonymous counters to our own server so we can see where people get stuck: that a setup step was reached (for example "opened IPTV"), why an IPTV list failed to load (a generic reason such as "timed out"), the app version, the type of device (TV, Fire TV or phone) and the day the app was installed. They carry no email, device identifier, title, list address or other personal data, and they are stored only as daily totals.</li>
       <li><strong>Messages you send us</strong> — if you use the <a href="contact.html">contact form</a>: your message, the email address only if you choose to add one, and the language and page you wrote from. We keep the 500 most recent messages and older ones are deleted automatically. We do not store your IP address: a one-way hash of it is kept for one hour, only to limit how many messages one person can send.</li>
     </ul>
-    <p>We do not collect contacts, location, microphone/camera data, or browsing history outside the app. We do not run any advertising or analytics SDKs.</p>
+    <p>We do not collect contacts, location, microphone/camera data, or browsing history outside the app. We do not run any advertising or third-party analytics SDKs.</p>
   </section>
 
   <section>
     <h2>Website analytics</h2>
-    <p>This website (watchbridge.app) uses <a href="https://www.cloudflare.com/web-analytics/">Cloudflare Web Analytics</a> to count visits. It does not use cookies, and according to Cloudflare it does not track individual visitors across sites. We only see aggregated figures such as page views, which pages are visited, the referring site, country, device type and page-loading speed. The apps themselves contain no analytics.</p>
+    <p>This website (watchbridge.app) uses <a href="https://www.cloudflare.com/web-analytics/">Cloudflare Web Analytics</a> to count visits. It does not use cookies, and according to Cloudflare it does not track individual visitors across sites. We only see aggregated figures such as page views, which pages are visited, the referring site, country, device type and page-loading speed. The apps contain no third-party analytics; the only counters they send are the anonymous ones described under "Data we collect".</p>
   </section>
 
   <section>
@@ -114,6 +118,7 @@
       <li><strong><a href="https://www.themoviedb.org/">The Movie Database (TMDB)</a></strong> — receives the recommended title's text to identify the exact movie/show. No account or personal data is sent.</li>
       <li><strong>Stripe</strong> (sideload version) or <strong>Google Play Billing</strong> (Play Store version) — process payments directly; we never receive your card details.</li>
       <li><strong>Vercel</strong> and <strong>Upstash</strong> — host the backend and the small database that stores the data listed above.</li>
+      <li><strong>Google Firebase Cloud Messaging</strong> — delivers the push notification that tells your TV something is waiting for it. The notification contains no title and no personal data.</li>
       <li><strong><a href="https://ntfy.sh/">ntfy</a></strong> — a notification service that delivers the text of a message you send through the contact form to the app owner's phone (never your email address).</li>
       <li><strong>Cloudflare</strong> — provides the website analytics described above.</li>
       <li><strong>GitHub</strong> — hosts the APK downloads for the sideload version (no personal data involved in a download itself).</li>
@@ -122,7 +127,7 @@
 
   <section>
     <h2>Data retention and deletion</h2>
-    <p>Removing a device from "Manage devices" unlinks it immediately. To delete your account data entirely (email, linked devices, watch history), contact us at the email below and we'll remove it — usually within a few days.</p>
+    <p>Removing a device from "Manage devices" unlinks it immediately. To delete your account data entirely (email, linked devices, watch history), contact us at the email below and we'll remove it — usually within a few days. The anonymous usage counters contain no personal data and are kept as daily totals, so there is nothing in them to delete.</p>
   </section>
 
   <section>
