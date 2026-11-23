@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WatchBridge — Your year</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-180.png">
+<style>
+  :root { --bg:#0B0D12; --fg:#F2F4F8; --muted:#A9B0C0; --accent:#FFD84D; --panel:#161A24; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; padding: 20px 16px 40px; }
+  main { max-width: 520px; margin: 0 auto; }
+  h1 { font-size: 26px; line-height: 1.15; margin: 8px 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 20px; line-height: 1.45; }
+  .card { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 20px; background: var(--panel); }
+  .actions { display: flex; gap: 10px; margin: 18px 0 6px; flex-wrap: wrap; }
+  button, .btn { appearance: none; border: 0; border-radius: 12px; padding: 14px 18px; font-weight: 600; font-size: 16px; font-family: inherit; cursor: pointer; text-decoration: none; text-align: center; }
+  .primary { background: var(--accent); color: #1a1500; flex: 1 1 200px; }
+  .ghost { background: var(--panel); color: var(--fg); flex: 1 1 160px; }
+  .note { color: var(--muted); font-size: 13px; line-height: 1.45; margin: 10px 0 0; }
+  .more { margin-top: 28px; padding: 18px; background: var(--panel); border-radius: 16px; }
+  .more h2 { font-size: 18px; margin: 0 0 6px; }
+  .more p { color: var(--muted); margin: 0 0 14px; line-height: 1.45; }
+  .more .btn { display: inline-block; background: #2A3042; color: var(--fg); margin-right: 8px; margin-top: 4px; }
+  #msg { padding: 40px 0; text-align: center; color: var(--muted); line-height: 1.5; }
+  [hidden] { display: none !important; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="t"></h1>
+  <p class="lead" id="lead"></p>
+  <div id="msg" hidden></div>
+  <div id="view" hidden>
+    <canvas id="card" class="card" width="1080" height="1920"></canvas>
+    <div class="actions">
+      <button class="primary" id="share" type="button"></button>
+      <button class="ghost" id="download" type="button"></button>
+    </div>
+    <p class="note" id="err" hidden></p>
+    <p class="note" id="privacy"></p>
+  </div>
+  <section class="more">
+    <h2 id="mt"></h2>
+    <p id="mx"></p>
+    <a class="btn" id="mb" href="/mobile.html"></a>
+    <a class="btn" id="home" href="/"></a>
+  </section>
+</main>
+<script>
+(function () {
+  var DICT = {"en":{"kicker":"MY {0} IN WATCHBRIDGE","titles":"titles","moviesSeries":"films/series","topGenre":"star genre","footer":"watchbridge.app","tags":["🌙 Night owl","📅 Weekend watcher","☀️ Early bird","🍿 {0} titles in a single day"],"arch":[["Anime at heart","You never skip the opening, you barely read the subtitles anymore, and there's always one more episode."],["K-drama heart","Your tissue box has a season pass and your Korean series list is longer than your shopping list."],["Horror lover","You sleep with the light on… and still come back for more."],["Mission: laughing","Your favourite plan is not taking anything seriously. And you're great at it."],["Time traveller","You live in the future; the rest of the world hasn't arrived yet."],["Couch detective","You suspected the butler from minute one. You're usually right."],["Curious mind","You learn something even on the couch. Christmas dinner will be a masterclass."],["Kid at heart","Cartoons, adventures and zero shame. The world looks better that way."],["Tissue-box heart","You cry, you get angry, you cry again… and you do it all over."],["Explosions nearby","Chases, punches and epic music: your favourite routine."],["Citizen of other worlds","You spend more time in fantasy realms than in your own neighbourhood."],["Couch historian","History goes down better with popcorn, and you know it."],["You're a series marathoner","For you, “one more episode” is a promise that's never kept."],["Couch cinephile","Two hours, one film and no episodes pending. Perfect."],["Night owl","While the world sleeps, you're on to the next title."],["Weekend plan","Weekdays you hold on. Saturday and Sunday, the couch rules."],["Explorer without a compass","Horror today, a documentary tomorrow and cartoons on Friday. Nobody pigeonholes you."],["Truly selective","Few titles, all chosen with care. Quality over quantity."],["A bit of everything","No labels, no hang-ups: whatever you feel like that night."]],"shareText":"My {0} in WatchBridge: “{1}”. What about yours? {2}"},"es":{"kicker":"MI {0} EN WATCHBRIDGE","titles":"títulos","moviesSeries":"pelis/series","topGenre":"género estrella","footer":"watchbridge.app","tags":["🌙 Noctámbulo","📅 De fin de semana","☀️ Madrugador","🍿 {0} títulos en un solo día"],"arch":[["Alma de anime","Los openings no te los saltas, los subtítulos ya ni los lees y siempre hay un capítulo más."],["Corazón de K-drama","Tus pañuelos tienen abono y tu lista de series coreanas es más larga que la de la compra."],["Amante del terror","Duermes con la luz encendida… y aun así vuelves a por más."],["Misión: reírte","Tu plan favorito es no tomarte nada en serio. Y se te da genial."],["Viajero del futuro","Vives en el futuro; el resto del mundo aún no ha llegado."],["Detective de sofá","Sospechabas del mayordomo desde el minuto uno. Casi siempre aciertas."],["Mente curiosa","Hasta en el sofá aprendes algo. Tu cena de Navidad va a ser un máster."],["Alma de niño","Dibujos, aventuras y cero vergüenza. Así se ve mejor el mundo."],["Corazón de pañuelo","Lloras, te enfadas, vuelves a llorar… y repites."],["Siempre hay una explosión cerca","Persecuciones, puñetazos y música épica: tu rutina favorita."],["Ciudadano de otros mundos","Pasas más tiempo en reinos de fantasía que en tu propio barrio."],["Historiador de sofá","La historia entra mejor con palomitas, y tú lo sabes."],["Eres un maratoniano de series","Para ti, «un capítulo más» es una promesa que nunca se cumple."],["Cinéfilo de sofá","Dos horas, una película y ningún capítulo pendiente. Así da gusto."],["Búho nocturno","Mientras el mundo duerme, tú vas por el siguiente título."],["Plan de fin de semana","Entre semana aguantas. Sábado y domingo, el sofá manda."],["Explorador sin brújula","Hoy terror, mañana un documental y el viernes dibujos. Nadie te encasilla."],["Selectivo de verdad","Pocos títulos, todos elegidos con cariño. Calidad antes que cantidad."],["Un poco de todo","Sin etiquetas ni manías: lo que te apetezca esa noche."]],"shareText":"Mi {0} en WatchBridge: «{1}». ¿Y el tuyo? {2}"}};
+  var UI = {"en":{"title":"Your 2026 in WatchBridge","lead":"This is the summary your TV prepared for you. Save it or share it.","share":"Share my year","download":"Download image","privacy":"Your summary is not uploaded anywhere: it travels inside the QR link and is drawn here, on your phone.","mobileTitle":"WatchBridge is also on your phone","mobileText":"Send titles and channels to your TV, and keep your history and My list in both.","mobileBtn":"See the mobile app","home":"Discover WatchBridge","invalid":"This link has no summary in it. Scan the “Your year” QR on your TV.","failed":"The image could not be prepared."},"es":{"title":"Tu 2026 en WatchBridge","lead":"Este es el resumen que tu TV ha preparado para ti. Guárdalo o compártelo.","share":"Compartir mi año","download":"Descargar imagen","privacy":"Tu resumen no se sube a ningún sitio: viaja dentro del enlace del QR y se dibuja aquí, en tu móvil.","mobileTitle":"WatchBridge también está en el móvil","mobileText":"Envía títulos y canales a tu TV y mira tu historial y Mi lista en los dos.","mobileBtn":"Ver la app móvil","home":"Conocer WatchBridge","invalid":"Este enlace no lleva ningún resumen. Escanea el QR de «Tu año» en tu TV.","failed":"No se pudo preparar la imagen."}};
+  var COLORS = {"horror":["#7A1020","#1A0508"],"comedy":["#E08A1E","#4A2A06"],"scifi":["#1F6FE0","#14083A"],"crime":["#3A4458","#0C0F16"],"documentary":["#1B7A5A","#07251C"],"family_animation":["#E05BA8","#3A0F2E"],"romance_drama":["#C23B6B","#2E0A1B"],"action":["#E0561F","#3A1206"],"fantasy":["#7A3BE0","#1C0A3A"],"history_war":["#8A6A2E","#2A1F0A"],"anime":["#E0457A","#2A0A3A"],"kdrama":["#D65C8A","#2A0F2E"],"marathoner":["#5B8DEF","#14083A"],"cinephile":["#B08A2E","#1A1206"],"night_owl":["#2B3A8A","#05071A"],"weekend":["#1FA3A0","#062826"],"explorer":["#E0782F","#1C2A5A"],"selective":["#5E6B8A","#0E121C"],"all_rounder":["#5B8DEF","#1B1F3A"]};
+  var ARCH = ["anime","kdrama","horror","comedy","scifi","crime","documentary","family_animation","romance_drama","action","fantasy","history_war","marathoner","cinephile","night_owl","weekend","explorer","selective","all_rounder"];
+  var YEAR = 2026;
+  var SHARE_URL = 'https://watchbridge.app/?utm_source=wrapped&utm_medium=share&utm_campaign=wrapped2026';
+
+  function fmt(s) { var a = arguments; return s.replace(/\{(\d)\}/g, function (_, i) { return a[+i + 1]; }); }
+  function $(id) { return document.getElementById(id); }
+
+  // ---- Leer el resumen de la direccion ----
+  function parse(hash) {
+    var h = (hash || '').replace(/^#/, '');
+    if (!h) return null;
+    var parts = h.split('~');
+    var head = parts[0].split('.');
+    if (head[0] !== 'v1' || head.length < 9) return null;
+    var n = function (i) { var v = parseInt(head[i], 10); return isFinite(v) && v >= 0 ? v : null; };
+    var d = { arch: n(1), total: n(2), movies: n(3), series: n(4), days: n(5), tags: n(6), maxDay: n(7), lang: head[8] === 'es' ? 'es' : 'en' };
+    if ([d.arch, d.total, d.movies, d.series, d.days, d.tags, d.maxDay].some(function (v) { return v === null; })) return null;
+    if (d.arch >= ARCH.length || d.total < 1 || d.total > 9999) return null;
+    var genre = '';
+    try { genre = decodeURIComponent(parts[1] || ''); } catch (e) { genre = ''; }
+    d.genre = genre.slice(0, 40);
+    d.posters = parts.slice(2, 6).filter(function (p) { return /^[A-Za-z0-9]{10,40}$/.test(p); });
+    return d;
+  }
+
+  var data = parse(location.hash);
+  var lang = data ? data.lang : ((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en');
+  var ui = UI[lang], tx = DICT[lang];
+  document.documentElement.lang = lang;
+  document.title = 'WatchBridge — ' + ui.title;
+  $('t').textContent = ui.title; $('lead').textContent = ui.lead;
+  $('mt').textContent = ui.mobileTitle; $('mx').textContent = ui.mobileText; $('mb').textContent = ui.mobileBtn; $('home').textContent = ui.home;
+  $('privacy').textContent = ui.privacy; $('share').textContent = ui.share; $('download').textContent = ui.download;
+  $('mb').href = lang === 'es' ? '/es/mobile.html' : '/mobile.html';
+  $('home').href = lang === 'es' ? '/es/' : '/';
+
+  if (!data) {
+    $('lead').hidden = true;
+    var m = $('msg'); m.hidden = false; m.textContent = ui.invalid;
+    return;
+  }
+  $('view').hidden = false;
+
+  // ---- Dibujar la tarjeta (el mismo diseño que WrappedCardRenderer.kt, a 1080x1920) ----
+  function wrap(ctx, text, maxW) {
+    var words = text.split(/\s+/), lines = [], cur = '';
+    words.forEach(function (w) {
+      var t = cur ? cur + ' ' + w : w;
+      if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t;
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  var FONT = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  function font(px, bold) { return (bold ? '700 ' : '400 ') + px + 'px ' + FONT; }
+
+  function draw(posters) {
+    var cv = $('card'), ctx = cv.getContext('2d');
+    var W = 1080, H = 1920, k = W / 320;
+    var c = COLORS[ARCH[data.arch]];
+    var g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, c[0]); g.addColorStop(1, c[1]);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    var padX = 22 * k, padY = 24 * k, inner = W - 2 * padX;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+
+    ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.font = font(12 * k, true);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = (1.5 * k) + 'px';
+    ctx.fillText(fmt(tx.kicker, YEAR), W / 2, padY + 12 * k);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    var kickerBottom = padY + 12 * k + 6 * k;
+
+    ctx.fillStyle = 'rgba(255,255,255,.67)'; ctx.font = font(12 * k, true);
+    ctx.fillText(tx.footer, W / 2, H - padY);
+    var tilesBottom = H - padY - 12 * k - 14 * k, tileH = 54 * k, tilesTop = tilesBottom - tileH;
+    var tiles = [[String(data.total), tx.titles], [data.movies + '/' + data.series, tx.moviesSeries]];
+    if (data.genre) tiles.push([data.genre, tx.topGenre]);
+    var weights = tiles.length === 3 ? [1, 1, 1.3] : [1, 1];
+    var gap = 8 * k, unit = (inner - gap * (tiles.length - 1)) / weights.reduce(function (a, b) { return a + b; }, 0), x = padX;
+    tiles.forEach(function (t, i) {
+      var tw = unit * weights[i];
+      ctx.fillStyle = 'rgba(255,255,255,.15)'; roundRect(ctx, x, tilesTop, tw, tileH, 12 * k); ctx.fill();
+      var size = 17 * k; ctx.font = font(size, true);
+      while (ctx.measureText(t[0]).width > tw - 12 * k && size > 10 * k) { size -= k * 0.5; ctx.font = font(size, true); }
+      ctx.fillStyle = '#fff'; ctx.fillText(t[0], x + tw / 2, tilesTop + 10 * k + 17 * k * 0.95);
+      ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.font = font(10.5 * k, false);
+      ctx.fillText(t[1], x + tw / 2, tilesTop + 10 * k + 17 * k * 0.95 + 4 * k + 10.5 * k * 0.95);
+      x += tw + gap;
+    });
+
+    var titleSize = 30 * k, phraseSize = 14.5 * k, tagSize = 11.5 * k;
+    ctx.font = font(titleSize, true); var titleLines = wrap(ctx, tx.arch[data.arch][0], inner), titleLH = titleSize * 1.11;
+    ctx.font = font(phraseSize, false); var phraseLines = wrap(ctx, tx.arch[data.arch][1], inner), phraseLH = phraseSize * 1.35;
+    var tagLabels = [];
+    for (var b = 0; b < TAGSN && tagLabels.length < 3; b++) if (data.tags & (1 << b)) tagLabels.push(b === 3 ? fmt(tx.tags[3], data.maxDay) : tx.tags[b]);
+    ctx.font = font(tagSize, false);
+    var pillH = tagSize * 1.25 + 8 * k, pillGap = 6 * k, rows = [], rowW = 0;
+    tagLabels.forEach(function (label) {
+      var pw = ctx.measureText(label).width + 20 * k;
+      if (!rows.length || rowW + pillGap + pw > inner) { rows.push([]); rowW = 0; }
+      rows[rows.length - 1].push([label, pw]); rowW += (rowW > 0 ? pillGap : 0) + pw;
+    });
+    var posterW = (inner - 3 * 7 * k) / 4, posterH = posterW * 1.5, usePosters = posters.length >= 2;
+    var total = (usePosters ? posterH + 22 * k : 0) + titleLines.length * titleLH + 10 * k + phraseLines.length * phraseLH +
+      (rows.length ? 14 * k + rows.length * pillH + (rows.length - 1) * pillGap : 0);
+    var y = kickerBottom + (tilesTop - kickerBottom - total) / 2;
+    if (y < kickerBottom + 8 * k) y = kickerBottom + 8 * k;
+
+    if (usePosters) {
+      var px = padX;
+      posters.forEach(function (img) {
+        var r = img.width / img.height, sx = 0, sy = 0, sw = img.width, sh = img.height;
+        if (r > 2 / 3) { sw = img.height * 2 / 3; sx = (img.width - sw) / 2; } else { sh = img.width * 3 / 2; sy = (img.height - sh) / 2; }
+        ctx.save(); roundRect(ctx, px, y, posterW, posterH, 7 * k); ctx.clip();
+        ctx.drawImage(img, sx, sy, sw, sh, px, y, posterW, posterH); ctx.restore();
+        px += posterW + 7 * k;
+      });
+      y += posterH + 22 * k;
+    }
+    ctx.fillStyle = '#fff'; ctx.font = font(titleSize, true);
+    titleLines.forEach(function (l, i) { ctx.fillText(l, W / 2, y + titleSize * 0.9 + i * titleLH); });
+    y += titleLines.length * titleLH + 10 * k;
+    ctx.fillStyle = 'rgba(255,255,255,.93)'; ctx.font = font(phraseSize, false);
+    phraseLines.forEach(function (l, i) { ctx.fillText(l, W / 2, y + phraseSize * 0.95 + i * phraseLH); });
+    y += phraseLines.length * phraseLH;
+    if (rows.length) {
+      y += 14 * k; ctx.font = font(tagSize, false);
+      rows.forEach(function (row) {
+        var rw = row.reduce(function (a, p) { return a + p[1]; }, 0) + pillGap * (row.length - 1), tx0 = (W - rw) / 2;
+        row.forEach(function (p) {
+          ctx.fillStyle = 'rgba(255,255,255,.2)'; roundRect(ctx, tx0, y, p[1], pillH, pillH / 2); ctx.fill();
+          ctx.fillStyle = '#fff'; ctx.fillText(p[0], tx0 + p[1] / 2, y + pillH / 2 + tagSize * 0.36);
+          tx0 += p[1] + pillGap;
+        });
+        y += pillH + pillGap;
+      });
+    }
+  }
+  var TAGSN = 4;
+
+  // ---- Posters (de TMDb, que permite dibujarlos en un canvas) ----
+  function loadPoster(id) {
+    return new Promise(function (resolve) {
+      var img = new Image(); img.crossOrigin = 'anonymous';
+      img.onload = function () { resolve(img); }; img.onerror = function () { resolve(null); };
+      img.src = 'https://image.tmdb.org/t/p/w342/' + id + '.jpg';
+    });
+  }
+  draw([]);   // ya con el texto; los posters entran al llegar
+  Promise.all(data.posters.map(loadPoster)).then(function (imgs) {
+    imgs = imgs.filter(Boolean);
+    if (imgs.length >= 2) draw(imgs);
+  });
+
+  // ---- Compartir y descargar ----
+  function toBlob() { return new Promise(function (resolve) { $('card').toBlob(resolve, 'image/png'); }); }
+  function showErr(msg) { var e = $('err'); e.textContent = msg; e.hidden = !msg; }
+  function download(blob) {
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'watchbridge-' + YEAR + '.png';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+  }
+  $('download').addEventListener('click', function () {
+    showErr('');
+    toBlob().then(function (blob) { if (blob) download(blob); else showErr(ui.failed); });
+  });
+  $('share').addEventListener('click', function () {
+    showErr('');
+    toBlob().then(function (blob) {
+      if (!blob) { showErr(ui.failed); return; }
+      var file = new File([blob], 'watchbridge-' + YEAR + '.png', { type: 'image/png' });
+      var text = fmt(tx.shareText, YEAR, tx.arch[data.arch][0], SHARE_URL);
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], text: text }).catch(function () {});
+      } else if (navigator.share) {
+        navigator.share({ text: text, url: SHARE_URL }).catch(function () {}); download(blob);
+      } else download(blob);
+    });
+  });
+})();
+</script>
+</body>
+</html>
